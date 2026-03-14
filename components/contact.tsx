@@ -1,4 +1,5 @@
 "use client"
+import { useState } from "react"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -9,15 +10,71 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { MessageSquare, Mail, MapPin, Clock } from "lucide-react"
 
 export function Contact() {
+const [name, setName] = useState("")
+const [email, setEmail] = useState("")
+const [phone, setPhone] = useState("")
+const [message, setMessage] = useState("")
+const [loading, setLoading] = useState(false)
+
+async function handleSubmit(e: React.FormEvent) {
+  e.preventDefault()
+  setLoading(true)
+
+  const res = await fetch("/api/contact", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      name,
+      email,
+      phone,
+      message,
+    }),
+  })
+
+  if (res.ok) {
+    window.location.href = "/thank-you"
+  } else {
+    alert("Er ging iets mis. Probeer opnieuw.")
+    setLoading(false)
+  }
+}
+
+
   const handleWhatsApp = () => {
     window.open(
-      "https://wa.me/32123456789?text=Hallo, ik ben geïnteresseerd in een gratis consultatie voor property management.",
+      "https://wa.me/573127659066?text=Hallo, ik ben geïnteresseerd in een gratis consultatie voor property management.",
       "_blank",
     )
   }
 
   return (
     <section id="contact" className="py-20 bg-gray-50">
+      <div className="max-w-4xl mx-auto mb-16">
+
+      <div className="bg-black text-white rounded-2xl p-10 text-center border border-gold">
+
+        <h3 className="text-3xl font-serif mb-4 text-gold">
+          Gratis Revenue Analyse
+        </h3>
+
+        <p className="text-lg text-gray-300 mb-6">
+          Ontdek hoeveel extra omzet uw accommodatie kan genereren
+          met professionele revenue management en platform optimalisatie.
+        </p>
+
+        <a
+          href="https://calendly.com/smitsro7/consult"
+          target="_blank"
+          className="inline-block bg-gold text-black px-6 py-3 rounded-lg font-medium hover:bg-gold/90"
+        >
+          Boek gratis strategiegesprek
+        </a>
+
+      </div>
+
+    </div>
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-serif text-black mb-4">
@@ -39,22 +96,41 @@ export function Contact() {
                   Vertel me over uw accommodatie en ik neem binnen 24 uur contact met u op.
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-6">
+              <CardContent>
+                <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="name">Naam *</Label>
-                    <Input id="name" placeholder="Uw volledige naam" />
+                    <Input
+                      id="name"
+                      placeholder="Uw volledige naam"
+                      value={name}
+                      required
+                      onChange={(e) => setName(e.target.value)}
+                    />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="email">Email *</Label>
-                    <Input id="email" type="email" placeholder="uw@email.com" />
+                    <Input
+                      id="email"
+                      type="email"
+                      placeholder="uw@email.com"
+                      value={email}
+                      requieres
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
                   </div>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="phone">Telefoon</Label>
-                    <Input id="phone" placeholder="+32 123 456 789" />
+                    <Input
+                      id="phone"
+                      placeholder="+32 123 456 789"
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
+                    />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="property-type">Type Accommodatie *</Label>
@@ -84,12 +160,19 @@ export function Contact() {
                     id="message"
                     placeholder="Vertel me over uw accommodatie, huidige uitdagingen en doelen..."
                     rows={4}
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
                   />
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Button size="lg" className="bg-gold text-black hover:bg-gold/90 flex-1">
-                    Verstuur Aanvraag
+                  <Button
+                    type="submit"
+                    size="lg"
+                    disabled={loading}
+                    className="bg-gold text-black hover:bg-gold/90 flex-1"
+                  >
+                    {loading ? "Versturen..." : "Vraag Gratis Analyse Aan"}
                   </Button>
                   <Button
                     size="lg"
@@ -100,7 +183,7 @@ export function Contact() {
                     <MessageSquare className="mr-2 h-5 w-5" />
                     WhatsApp Direct
                   </Button>
-                </div>
+                </div></form>
               </CardContent>
             </Card>
           </div>
@@ -116,21 +199,21 @@ export function Contact() {
                   <MessageSquare className="h-5 w-5 text-gold mt-1" />
                   <div>
                     <div className="font-medium text-black">WhatsApp</div>
-                    <div className="text-gray-600">+32 123 456 789</div>
+                    <div className="text-gray-600">+57 3127659066</div>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <Mail className="h-5 w-5 text-gold mt-1" />
                   <div>
                     <div className="font-medium text-black">Email</div>
-                    <div className="text-gray-600">info@havn.be</div>
+                    <div className="text-gray-600">projects@ateliersmits.be</div>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <MapPin className="h-5 w-5 text-gold mt-1" />
                   <div>
                     <div className="font-medium text-black">Locatie</div>
-                    <div className="text-gray-600">België</div>
+                    <div className="text-gray-600">Colombia</div>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
