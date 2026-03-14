@@ -1,14 +1,19 @@
+export const dynamic = "force-dynamic"
+
 import { Resend } from "resend"
 
-const resendApiKey = process.env.RESEND_API_KEY
-
-if (!resendApiKey) {
-  throw new Error("RESEND_API_KEY is missing in environment variables")
-}
-
-const resend = new Resend(resendApiKey)
-
 export async function POST(req: Request) {
+
+  const resendApiKey = process.env.RESEND_API_KEY
+
+  if (!resendApiKey) {
+    return Response.json(
+      { error: "RESEND_API_KEY missing" },
+      { status: 500 }
+    )
+  }
+
+  const resend = new Resend(resendApiKey)
 
   const { name, email, phone, message } = await req.json()
 
@@ -58,40 +63,44 @@ export async function POST(req: Request) {
     })
 
     // SLACK NOTIFICATIE
-    await fetch(process.env.SLACK_WEBHOOK!, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        text: `Nieuwe HAVN lead 🚀
+    if (process.env.SLACK_WEBHOOK) {
+      await fetch(process.env.SLACK_WEBHOOK, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          text: `Nieuwe HAVN lead 🚀
 Naam: ${name}
 Email: ${email}
 Telefoon: ${phone}
 Bericht: ${message}`
+        })
       })
-    })
+    }
 
     // AIRTABLE CRM
-    await fetch(
-      `https://api.airtable.com/v0/${process.env.AIRTABLE_BASE_ID}/${process.env.AIRTABLE_TABLE}`,
-      {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${process.env.AIRTABLE_API_KEY}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          fields: {
-            Name: name,
-            Email: email,
-            Phone: phone,
-            Message: message,
-            Source: "Website",
+    if (process.env.AIRTABLE_API_KEY) {
+      await fetch(
+        `https://api.airtable.com/v0/${process.env.AIRTABLE_BASE_ID}/${process.env.AIRTABLE_TABLE}`,
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${process.env.AIRTABLE_API_KEY}`,
+            "Content-Type": "application/json",
           },
-        }),
-      }
-    )
+          body: JSON.stringify({
+            fields: {
+              Name: name,
+              Email: email,
+              Phone: phone,
+              Message: message,
+              Source: "Website",
+            },
+          }),
+        }
+      )
+    }
 
     return Response.json({ success: true })
 
