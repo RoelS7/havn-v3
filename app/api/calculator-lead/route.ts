@@ -1,8 +1,12 @@
 import { Resend } from "resend"
 
-const resend = new Resend(process.env.RESEND_API_KEY)
-
 export async function POST(req: Request) {
+
+const resend = new Resend(process.env.RESEND_API_KEY || "")
+
+if(!process.env.RESEND_API_KEY){
+console.error("Missing RESEND_API_KEY")
+}
 
 try{
 
@@ -103,7 +107,7 @@ messages:[
 
 const aiData = await ai.json()
 
-const report = aiData.choices[0].message.content
+const report = aiData?.choices?.[0]?.message?.content || "AI report unavailable."
 
 /* -----------------------------
 AIRTABLE LEAD OPSLAAN
