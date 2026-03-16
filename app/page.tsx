@@ -14,7 +14,6 @@ import { ScrollToTop } from "@/components/scroll-to-top"
 import { FAQSection } from "@/components/faq-section"
 import { useLanguage } from "@/hooks/use-language"
 import RevenueCalculator from "@/components/RevenueCalculator"
-import TimeSaver from "@/components/TimeSaver"
 
 export default function Home() {
   const { language, changeLanguage, isLoaded } = useLanguage()
@@ -43,7 +42,6 @@ export default function Home() {
         <HowItWorks language={language} />
         <CaseStudy language={language} />
         <RevenueCalculator />
-        <TimeSaver />
         <FinalCta language={language} />
         <section id="faq">
           <FAQSection language={language} />
