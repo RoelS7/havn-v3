@@ -43,10 +43,20 @@
     font-family: var(--font-montserrat), system-ui, sans-serif;
   }
 
-  /* Forceer consistente achtergrond op alle secties */
+/* Basis achtergrond voor alle secties */
   section, main > * {
     background-color: var(--background);
   }
+
+  /* Automatisch alternerende achtergronden binnen de main tag */
+  main section:nth-of-type(odd) {
+    background-color: #f8f4ed; /* Jouw warme ivoor / --background */
+  }
+
+  main section:nth-of-type(even) {
+    background-color: #f0e9db; /* De iets donkerdere tint / --muted */
+  }
+}
 
   /* Verwijder witte strook tussen navbar en hero */
   #home {
