@@ -3,7 +3,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #f8f4ed;        /* Warm ivory / eiig geelwit – luxe & zacht */
+  --background: #f8f4ed;        /* Warm ivory / eiig geelwit – luxe feel */
   --foreground: #1a1a1a;
   --card: #ffffff;
   --card-foreground: #1a1a1a;
@@ -11,7 +11,7 @@
   --popover-foreground: #1a1a1a;
   --primary: #b8925c;           /* jouw gold */
   --primary-foreground: #1a1a1a;
-  --secondary: #f5f0e6;         /* zachte warme off-white */
+  --secondary: #f5f0e6;
   --secondary-foreground: #1a1a1a;
   --muted: #f0e9db;
   --muted-foreground: #555555;
@@ -19,7 +19,7 @@
   --accent-foreground: #1a1a1a;
   --destructive: #9f2a2a;
   --destructive-foreground: #ffffff;
-  --border: #e5d9c2;
+  --border: #e5d9c2;            /* warme lichte border */
   --input: #f8f4ed;
   --ring: #b8925c;
   --radius: 0.75rem;
@@ -35,40 +35,38 @@
   --border: #444444;
 }
 
-/* ==================== BASE LAYOUT IMPROVEMENTS ==================== */
+/* ==================== BASE STYLES & LAYOUT IMPROVEMENTS ==================== */
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    border-color: var(--border);        /* Fix voor border-border error */
+    outline-color: hsl(var(--ring) / 0.5);
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
   }
 
-  /* Betere sectie scheiding */
+  /* Betere verticale ruimte tussen secties */
   section {
-    @apply py-20 lg:py-28;           /* meer verticale ruimte */
+    padding-top: 5rem;
+    padding-bottom: 5rem;
   }
 
-  /* Alternerende achtergrond voor betere visuele scheiding */
+  @media (min-width: 1024px) {
+    section {
+      padding-top: 7rem;
+      padding-bottom: 7rem;
+    }
+  }
+
+  /* Alternerende subtiele achtergrond voor duidelijke sectie-scheiding */
   .section-even {
-    background-color: #f8f4ed;      /* warm ivory */
+    background-color: #f8f4ed;
   }
   .section-odd {
-    background-color: #f0e9db;      /* iets donkerder warme tint */
-  }
-
-  /* Subtiele divider onder secties (optioneel) */
-  .section-divider {
-    border-bottom: 1px solid #e5d9c2;
-  }
-
-  /* Cursor fix (blijft behouden) */
-  a, button, [role="button"], .cursor-pointer {
-    cursor: pointer;
-  }
-  button:disabled, [role="button"]:disabled, .cursor-not-allowed {
-    cursor: not-allowed;
+    background-color: #f0e9db;
   }
 }
 
@@ -85,14 +83,11 @@
   .hover\:bg-gold:hover { background-color: #b8925c; }
   .hover\:bg-gold\/90:hover { background-color: rgba(184, 146, 92, 0.9); }
 
-  .font-sans {
-    font-family: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
-  }
   .font-serif {
     font-family: var(--font-playfair), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   }
 
-  /* Extra luxe touch voor cards en containers */
+  /* Extra luxe card look */
   .luxury-card {
     background-color: #ffffff;
     box-shadow: 0 10px 30px -10px rgba(184, 146, 92, 0.12);
