@@ -1,15 +1,14 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-@custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #f8f4ed;        /* Warm ivory / eiig geelwit – luxe feel */
+  --background: #f8f4ed;        /* Warm ivory */
   --foreground: #1a1a1a;
-  --card: #ffffff;
+  --card: #ffffff;              /* We houden cards wit voor contrast */
   --card-foreground: #1a1a1a;
   --popover: #ffffff;
   --popover-foreground: #1a1a1a;
-  --primary: #b8925c;           /* jouw gold */
+  --primary: #b8925c;
   --primary-foreground: #1a1a1a;
   --secondary: #f5f0e6;
   --secondary-foreground: #1a1a1a;
@@ -19,7 +18,7 @@
   --accent-foreground: #1a1a1a;
   --destructive: #9f2a2a;
   --destructive-foreground: #ffffff;
-  --border: #e5d9c2;            /* warme lichte border */
+  --border: #e5d9c2;
   --input: #f8f4ed;
   --ring: #b8925c;
   --radius: 0.75rem;
@@ -30,44 +29,47 @@
   --foreground: #f5f5f5;
   --card: #1a1a1a;
   --card-foreground: #f5f5f5;
-  --secondary: #262626;
-  --muted: #333333;
-  --border: #444444;
 }
 
-/* ==================== BASE STYLES & LAYOUT IMPROVEMENTS ==================== */
+/* ==================== GLOBAL LAYOUT FIXES ==================== */
 @layer base {
-  * {
-    border-color: var(--border);        /* Fix voor border-border error */
-    outline-color: hsl(var(--ring) / 0.5);
+  *, ::after, ::before {
+    border-color: var(--border);
   }
 
   body {
     background-color: var(--background);
     color: var(--foreground);
-    font-family: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+    font-family: var(--font-montserrat), system-ui, sans-serif;
   }
 
-  /* Betere verticale ruimte tussen secties */
+  /* Forceer consistente achtergrond op alle secties */
+  section, main > * {
+    background-color: var(--background);
+  }
+
+  /* Verwijder witte strook tussen navbar en hero */
+  #home {
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  /* Meer ademruimte + betere scheiding */
   section {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-top: 5.5rem;
+    padding-bottom: 5.5rem;
   }
 
   @media (min-width: 1024px) {
     section {
-      padding-top: 7rem;
-      padding-bottom: 7rem;
+      padding-top: 7.5rem;
+      padding-bottom: 7.5rem;
     }
   }
 
-  /* Alternerende subtiele achtergrond voor duidelijke sectie-scheiding */
-  .section-even {
-    background-color: #f8f4ed;
-  }
-  .section-odd {
-    background-color: #f0e9db;
-  }
+  /* Alternerende tinten voor visuele scheiding (optioneel) */
+  .section-even { background-color: #f8f4ed; }
+  .section-odd  { background-color: #f0e9db; }
 }
 
 /* ==================== UTILITIES ==================== */
@@ -77,19 +79,16 @@
   .border-gold { border-color: #b8925c; }
   .bg-gold\/90 { background-color: rgba(184, 146, 92, 0.9); }
   .bg-gold\/20 { background-color: rgba(184, 146, 92, 0.2); }
-  .border-gold\/20 { border-color: rgba(184, 146, 92, 0.2); }
 
   .hover\:text-gold:hover { color: #b8925c; }
   .hover\:bg-gold:hover { background-color: #b8925c; }
-  .hover\:bg-gold\/90:hover { background-color: rgba(184, 146, 92, 0.9); }
 
   .font-serif {
     font-family: var(--font-playfair), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   }
 
-  /* Extra luxe card look */
   .luxury-card {
     background-color: #ffffff;
-    box-shadow: 0 10px 30px -10px rgba(184, 146, 92, 0.12);
+    box-shadow: 0 10px 30px -10px rgba(184, 146, 92, 0.15);
   }
 }
