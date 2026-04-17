@@ -128,7 +128,7 @@ export function FAQSection({ language }: FAQSectionProps) {
   }
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <HelpCircle className="h-16 w-16 text-gold mx-auto mb-4" />
