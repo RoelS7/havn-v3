@@ -56,7 +56,6 @@
   main section:nth-of-type(even) {
     background-color: #f0e9db; /* De iets donkerdere tint / --muted */
   }
-}
 
   /* Verwijder witte strook tussen navbar en hero */
   #home {
