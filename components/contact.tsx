@@ -50,7 +50,7 @@ async function handleSubmit(e: React.FormEvent) {
   }
 
   return (
-    <section id="contact" className="py-20 bg-gray-50">
+    <section id="contact" className="py-20">
       <div className="max-w-4xl mx-auto mb-16">
 
       <div className="bg-black text-white rounded-2xl p-10 text-center border border-gold">

@@ -54,19 +54,6 @@
     padding-top: 0;
   }
 
-  /* Meer ademruimte + betere scheiding */
-  section {
-    padding-top: 5.5rem;
-    padding-bottom: 5.5rem;
-  }
-
-  @media (min-width: 1024px) {
-    section {
-      padding-top: 7.5rem;
-      padding-bottom: 7.5rem;
-    }
-  }
-
   /* Alternerende tinten voor visuele scheiding (optioneel) */
   .section-even { background-color: #f8f4ed; }
   .section-odd  { background-color: #f0e9db; }
