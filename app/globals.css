@@ -1,6 +1,5 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-
 @custom-variant dark (&:is(.dark *));
 
 :root {
@@ -117,56 +116,62 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground font-sans;
   }
+
+  /* ==================== CURSOR FIX ==================== */
+  a,
+  button,
+  [role="button"],
+  .cursor-pointer {
+    cursor: pointer;
+  }
+
+  /* Zorg dat disabled elementen geen handje krijgen */
+  button:disabled,
+  [role="button"]:disabled,
+  .cursor-not-allowed {
+    cursor: not-allowed;
+  }
+  /* ==================================================== */
 }
 
 @layer utilities {
   .text-gold {
     color: #b8925c;
   }
-
   .bg-gold {
     background-color: #b8925c;
   }
-
   .border-gold {
     border-color: #b8925c;
   }
-
   .bg-gold\/90 {
     background-color: rgba(184, 146, 92, 0.9);
   }
-
   .bg-gold\/20 {
     background-color: rgba(184, 146, 92, 0.2);
   }
-
   .border-gold\/20 {
     border-color: rgba(184, 146, 92, 0.2);
   }
-
   .hover\:text-gold:hover {
     color: #b8925c;
   }
-
   .hover\:bg-gold:hover {
     background-color: #b8925c;
   }
-
   .hover\:bg-gold\/90:hover {
     background-color: rgba(184, 146, 92, 0.9);
   }
-
   .hover\:border-gold:hover {
     border-color: #b8925c;
   }
-
   .font-sans {
     font-family: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
   }
-
   .font-serif {
     font-family: var(--font-playfair), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   }

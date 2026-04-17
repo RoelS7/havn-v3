@@ -247,7 +247,7 @@ export const translations = {
     footer: {
       description: "Property Management Specialist voor B&B's, vakantiewoningen en kleine hotels.",
       services: "Services",
-      packages: "Pakketten",
+      packages: "Gratis Consultatie",
       contact: "Contact",
       rights: "Alle rechten voorbehouden.",
       privacy: "Privacy Policy",
@@ -502,7 +502,7 @@ export const translations = {
     footer: {
       description: "Property Management Specialist for B&Bs, vacation rentals and small hotels.",
       services: "Services",
-      packages: "Packages",
+      packages: "Free Consultation",
       contact: "Contact",
       rights: "All rights reserved.",
       privacy: "Privacy Policy",

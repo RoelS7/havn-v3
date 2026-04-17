@@ -61,21 +61,6 @@ export function Footer({ language }: FooterProps) {
             <ul className="space-y-2 text-gray-400 text-sm">
               <li>
                 <Link href="#pricing" className="hover:text-gold transition-colors">
-                  Basic Pakket
-                </Link>
-              </li>
-              <li>
-                <Link href="#pricing" className="hover:text-gold transition-colors">
-                  Growth Pakket
-                </Link>
-              </li>
-              <li>
-                <Link href="#pricing" className="hover:text-gold transition-colors">
-                  Full Management
-                </Link>
-              </li>
-              <li>
-                <Link href="#pricing" className="hover:text-gold transition-colors">
                   Persoonlijke Offerte
                 </Link>
               </li>
@@ -85,7 +70,7 @@ export function Footer({ language }: FooterProps) {
           <div className="space-y-4">
             <h4 className="text-lg font-semibold text-gold">{t.footer.contact}</h4>
             <ul className="space-y-2 text-gray-400 text-sm">
-              <li>WhatsApp: +32 123 456 789</li>
+              <li>WhatsApp: +32 473 358 581</li>
               <li>Email: info@havn.be</li>
               <li>België</li>
               <li>
@@ -116,13 +101,13 @@ export function Footer({ language }: FooterProps) {
                   GDPR Compliance
                 </Link>
               </li>
-              <li className="text-xs text-gray-500">BTW: BE0123.456.789</li>
+              <li className="text-xs text-gray-500">NIT: 901.684.632</li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-gold/20 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-400">
-          <p className="text-sm">&copy; 2024 HAVN. {t.footer.rights}</p>
+          <p className="text-sm">&copy; 2026 HAVN. {t.footer.rights}</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link href="#" className="hover:text-gold transition-colors text-sm">
               {currentLang === "nl" ? "NL" : "EN"}
