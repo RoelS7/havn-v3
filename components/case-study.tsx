@@ -11,7 +11,7 @@ export function CaseStudy({ language }: CaseStudyProps) {
   const t = translations[currentLang]
 
   return (
-    <section id="case-study" className="py-20 bg-gray-50">
+    <section id="case-study" className="py-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-serif text-black mb-4">

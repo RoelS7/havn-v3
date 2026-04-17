@@ -45,10 +45,10 @@ export default function Home() {
         {/* 4. Diensten */}
         <section id="services">
           <Services language={language} />
+          <RevenueCalculator />
         </section>
 
-        {/* 5. Revenue Calculator - VERPLAATST NAAR BOVEN (belangrijke lead magnet) */}
-        <RevenueCalculator />
+        
 
         {/* 6. Hoe het werkt */}
         <HowItWorks language={language} />
