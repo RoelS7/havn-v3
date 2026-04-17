@@ -48,13 +48,9 @@
     background-color: var(--background);
   }
 
-  /* Automatisch alternerende achtergronden binnen de main tag */
-  main section:nth-of-type(odd) {
-    background-color: #f8f4ed; /* Jouw warme ivoor / --background */
-  }
-
-  main section:nth-of-type(even) {
-    background-color: #f0e9db; /* De iets donkerdere tint / --muted */
+/* Zorg dat secties transparant zijn zodat de parent div kleur zichtbaar is */
+  section {
+    background-color: transparent;
   }
 
   /* Verwijder witte strook tussen navbar en hero */

@@ -31,41 +31,49 @@ export default function Home() {
       <ScrollToTop />
 
       <main>
-        {/* 1. Hero */}
-        <section id="home">
+        {/* 1. Hero (Ivory/Zwart afhankelijk van je CSS) */}
+        <section id="home" className={bgLight}>
           <Hero language={language} />
         </section>
 
-        {/* 2. Probleem */}
-        <ProblemSection language={language} />
+        {/* 2. Probleem (Beige) */}
+        <div className={bgAlt}>
+          <ProblemSection language={language} />
+        </div>
 
-        {/* 3. Oplossing */}
-        <SolutionSection language={language} />
+        {/* 3. Oplossing (Ivory) */}
+        <div className={bgLight}>
+          <SolutionSection language={language} />
+        </div>
 
-        {/* 4. Diensten */}
-        <section id="services">
+        {/* 4. Diensten & Calculator (Beige) */}
+        <section id="services" className={bgAlt}>
           <Services language={language} />
           <RevenueCalculator />
         </section>
 
-        
+        {/* 5. Hoe het werkt (Ivory) */}
+        <div className={bgLight}>
+          <HowItWorks language={language} />
+        </div>
 
-        {/* 6. Hoe het werkt */}
-        <HowItWorks language={language} />
+        {/* 6. Case Study (Beige) */}
+        <div className={bgAlt}>
+          <CaseStudy language={language} />
+        </div>
 
-        {/* 7. Case Study */}
-        <CaseStudy language={language} />
+        {/* 7. Final CTA (Ivory) */}
+        <div className={bgLight}>
+          <FinalCta language={language} />
+        </div>
 
-        {/* 8. Final CTA */}
-        <FinalCta language={language} />
-
-        {/* 9. FAQ */}
-        <section id="faq">
+        {/* 8. FAQ (Beige) */}
+        <section id="faq" className={bgAlt}>
           <FAQSection language={language} />
         </section>
 
-        {/* 10. Contact */}
-        <section id="contact">
+        {/* 9. Contact (Ivory) */}
+        <section id="contact" className={bgLight}>
           <Contact />
         </section>
       </main>
