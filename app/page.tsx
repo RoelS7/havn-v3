@@ -14,6 +14,10 @@ import { FAQSection } from "@/components/faq-section"
 import RevenueCalculator from "@/components/RevenueCalculator"
 import { useLanguage } from "@/hooks/use-language"
 
+// DEZE TWEE MOETEN HIER STAAN:
+const bgLight = "bg-[var(--background)]";
+const bgAlt = "bg-[var(--muted)]"; // We gebruiken --muted uit je css, dat is die beige kleur
+
 export default function Home() {
   const { language, changeLanguage, isLoaded } = useLanguage()
 
@@ -30,49 +34,49 @@ export default function Home() {
       <Navbar language={language} onLanguageChange={changeLanguage} />
       <ScrollToTop />
 
-      <main>
-        {/* 1. Hero (Ivory/Zwart afhankelijk van je CSS) */}
+      <main className="w-full">
+        {/* 1. Hero - Ivory */}
         <section id="home" className={bgLight}>
           <Hero language={language} />
         </section>
 
-        {/* 2. Probleem (Beige) */}
+        {/* 2. Probleem - Beige */}
         <div className={bgAlt}>
           <ProblemSection language={language} />
         </div>
 
-        {/* 3. Oplossing (Ivory) */}
+        {/* 3. Oplossing - Ivory */}
         <div className={bgLight}>
           <SolutionSection language={language} />
         </div>
 
-        {/* 4. Diensten & Calculator (Beige) */}
+        {/* 4. Diensten & Calculator - Beige */}
         <section id="services" className={bgAlt}>
           <Services language={language} />
           <RevenueCalculator />
         </section>
 
-        {/* 5. Hoe het werkt (Ivory) */}
+        {/* 5. Hoe het werkt - Ivory */}
         <div className={bgLight}>
           <HowItWorks language={language} />
         </div>
 
-        {/* 6. Case Study (Beige) */}
+        {/* 6. Case Study - Beige */}
         <div className={bgAlt}>
           <CaseStudy language={language} />
         </div>
 
-        {/* 7. Final CTA (Ivory) */}
+        {/* 7. Final CTA - Ivory */}
         <div className={bgLight}>
           <FinalCta language={language} />
         </div>
 
-        {/* 8. FAQ (Beige) */}
+        {/* 8. FAQ - Beige */}
         <section id="faq" className={bgAlt}>
           <FAQSection language={language} />
         </section>
 
-        {/* 9. Contact (Ivory) */}
+        {/* 9. Contact - Ivory */}
         <section id="contact" className={bgLight}>
           <Contact />
         </section>
