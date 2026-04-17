@@ -13,10 +13,12 @@ export function Services({ language }: ServicesProps) {
   const icons = [Settings, Link, TrendingUp, Zap, FileText, Users]
 
   return (
-    <section id="services" className="py-20 bg-gray-50">
+    <section id="services" className="py-20 bg-[var(--background)]">   {/* Gebruik warme achtergrond */}
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-serif text-black mb-4">{t.services.title}</h2>
+          <h2 className="text-3xl lg:text-4xl font-serif text-black mb-4">
+            {t.services.title}
+          </h2>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12">
@@ -25,7 +27,7 @@ export function Services({ language }: ServicesProps) {
             return (
               <div
                 key={index}
-                className="flex items-center gap-3 p-4 rounded-lg bg-white border border-gray-100 hover:border-gold/50 transition-colors"
+                className="flex items-center gap-3 p-6 rounded-xl bg-white border border-gray-100 hover:border-gold/50 transition-all duration-300 luxury-card"
               >
                 <Icon className="h-6 w-6 text-gold flex-shrink-0" />
                 <span className="text-black font-medium text-sm lg:text-base">{item}</span>
@@ -35,7 +37,10 @@ export function Services({ language }: ServicesProps) {
         </div>
 
         <div className="text-center">
-          <Button size="lg" className="bg-black text-gold hover:bg-gray-900 text-lg px-8">
+          <Button 
+            size="lg" 
+            className="bg-black text-gold hover:bg-gray-900 text-lg px-8"
+          >
             {t.services.cta}
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
