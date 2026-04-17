@@ -11,7 +11,7 @@ export const translations = {
     hero: {
       title: "Meer rendement uit je vakantieverhuur",
       subtitle: "HAVN helpt short-term rental hosts hun verhuur professioneel te runnen met slimme systemen, automatisatie en datagedreven prijsstrategieën.",
-      cta: "Plan een kennismakingsgesprek",
+      cta: "Gratis strategiegesprek plannen",
       secondaryCta: "Bekijk hoe het werkt",
       positioning: "Voor hosts en operators die hun verhuur willen runnen als een professionele hospitality business.",
       valueBullets: [
@@ -76,7 +76,7 @@ export const translations = {
     },
     finalCta: {
       title: "Klaar om je verhuur te optimaliseren?",
-      button: "Plan een kennismakingsgesprek",
+      button: "Gratis strategiegesprek plannen",
     },
     services: {
       title: "Wat HAVN optimaliseert",
@@ -88,7 +88,7 @@ export const translations = {
         "Workflow optimalisatie",
         "Operationele consultancy voor hosts",
       ],
-      cta: "Plan een kennismakingsgesprek",
+      cta: "Gratis strategiegesprek plannen",
     },
     caseStudy: {
       title: "Resultaten in de praktijk",
@@ -121,7 +121,7 @@ export const translations = {
         "Kies het pakket dat perfect past bij uw accommodatie en ambities. Alle pakketten zijn maandelijks opzegbaar en zonder verborgen kosten.",
       mostPopular: "Meest Populair",
       requestQuote: "Vraag Persoonlijke Offerte",
-      freeConsultation: "Plan Gratis Kennismakingsgesprek",
+      freeConsultation: "Gratis strategiegesprek plannen",
       notSure: "Niet zeker welk pakket het beste bij u past? Laten we het samen bespreken.",
       packages: {
         basic: {
@@ -261,12 +261,12 @@ export const translations = {
       caseStudy: "Case Study",
       faq: "FAQ",
       contact: "Contact",
-      freeConsultation: "Schedule a Call",
+      freeConsultation: "Book your free strategy call",
     },
     hero: {
       title: "More revenue from your vacation rental",
       subtitle: "HAVN helps short-term rental hosts run their rental professionally with smart systems, automation and data-driven pricing strategies.",
-      cta: "Schedule a call",
+      cta: "Book your free strategy call",
       secondaryCta: "See how it works",
       positioning: "For hosts and operators who want to run their rental as a professional hospitality business.",
       valueBullets: [
@@ -331,7 +331,7 @@ export const translations = {
     },
     finalCta: {
       title: "Ready to optimize your rental?",
-      button: "Schedule a call",
+      button: "Book your free strategy call",
     },
     services: {
       title: "What HAVN optimizes",
@@ -343,7 +343,7 @@ export const translations = {
         "Workflow optimization",
         "Operational consultancy for hosts",
       ],
-      cta: "Schedule a call",
+      cta: "Book your free strategy call",
     },
     caseStudy: {
       title: "Results in practice",
@@ -376,7 +376,7 @@ export const translations = {
         "Choose the package that perfectly fits your accommodation and ambitions. All packages are monthly cancellable and without hidden costs.",
       mostPopular: "Most Popular",
       requestQuote: "Request Personal Quote",
-      freeConsultation: "Schedule Free Consultation",
+      freeConsultation: "Book your free strategy call",
       notSure: "Not sure which package suits you best? Let's discuss it together.",
       packages: {
         basic: {

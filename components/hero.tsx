@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { ArrowRight, CheckCircle } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 import { translations } from "@/lib/translations"
 
 interface HeroProps {
@@ -22,20 +23,33 @@ export function Hero({ language }: HeroProps) {
             <p className="text-lg lg:text-xl text-gray-300 leading-relaxed font-light">
               {t.hero.subtitle}
             </p>
+
             <div className="flex flex-col sm:flex-row gap-4 relative z-20">
-              <Button size="lg" className="bg-gold text-black hover:bg-gold/90 text-base lg:text-lg px-6 lg:px-8">
-                {t.hero.cta}
-                <ArrowRight className="ml-2 h-5 w-5" />
+              {/* Primaire knop - nu gelinkt aan Calendly */}
+              <Button 
+                asChild 
+                size="lg" 
+                className="bg-gold text-black hover:bg-gold/90 text-base lg:text-lg px-6 lg:px-8"
+              >
+                <Link href="https://calendly.com/smitsro7/consult">
+                  {currentLang === "nl" ? "Gratis strategiegesprek inplannen" : "Book your free strategy call"}
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
               </Button>
+
+              {/* Secundaire knop */}
               <Button
+                asChild
                 size="lg"
                 variant="outline"
                 className="border-gold text-gold hover:bg-gold hover:text-black text-base lg:text-lg px-6 lg:px-8 bg-transparent"
               >
-                {t.hero.secondaryCta}
+                <Link href="https://calendly.com/smitsro7/consult">
+                  {t.hero.secondaryCta}
+                </Link>
               </Button>
             </div>
-            
+           
             <p className="text-sm text-gray-400 italic pt-2">
               {t.hero.positioning}
             </p>
