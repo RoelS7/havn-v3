@@ -14,10 +14,31 @@ export default function RevenueCalculator() {
   const benchmarkRevenue = rooms * adr * 0.68 * 365
 
   const text = {
-    nl: { /* ... je bestaande vertalingen ... */ },
-    en: { /* ... je bestaande vertalingen ... */ },
-    es: { /* ... je bestaande vertalingen ... */ }
-  }[language || "en"] || { /* fallback */ }
+    nl: {
+      title: "Hotel Revenue Calculator",
+      rooms: "Aantal kamers",
+      adr: "Gemiddelde kamerprijs (€)",
+      occ: "Bezettingsgraad (%)",
+      calculate: "Bereken mijn omzet",
+      result: "Geschatte jaarlijkse omzet",
+      increase: "Potentiële stijging met HAVN optimalisatie",
+      email: "Email voor volledige analyse",
+      cta: "Ontvang volledige analyse",
+      based: "Gebaseerd op gemiddelde optimalisaties van 10–20%"
+    },
+    en: {
+      title: "Hotel Revenue Calculator",
+      rooms: "Number of rooms",
+      adr: "Average nightly rate (€)",
+      occ: "Occupancy rate (%)",
+      calculate: "Calculate my revenue",
+      result: "Estimated yearly revenue",
+      increase: "Potential increase with HAVN optimization",
+      email: "Email for full analysis",
+      cta: "Get full revenue analysis",
+      based: "Based on average optimization improvements of 10–20%"
+    }
+  }[language || "en"]
 
   const calculate = () => {
     const revenue = rooms * adr * (occupancy / 100) * 365
@@ -36,13 +57,13 @@ export default function RevenueCalculator() {
   }
 
   return (
-    <div className="max-w-2xl mx-auto px-4 pt-8 pb-12">
-      <div className="luxury-card p-10 rounded-3xl border border-gold/20 bg-white shadow-xl">
-        <h2 className="text-3xl font-serif text-black mb-8 text-center">
+    <div className="max-w-2xl mx-auto px-4">
+      <div className="luxury-card p-10 rounded-3xl bg-white shadow-xl border border-gold/20">
+        <h2 className="text-3xl font-serif text-center text-black mb-10">
           {text.title}
         </h2>
 
-        <div className="space-y-6">
+        <div className="space-y-8">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">{text.rooms}</label>
             <input
@@ -50,7 +71,7 @@ export default function RevenueCalculator() {
               min="1"
               value={rooms}
               onChange={(e) => setRooms(Number(e.target.value))}
-              className="w-full border border-gray-200 rounded-xl p-4 focus:border-gold focus:ring-gold"
+              className="w-full border border-gray-200 rounded-2xl p-4 focus:border-gold focus:ring-2 focus:ring-gold/30 text-lg"
             />
           </div>
 
@@ -61,7 +82,7 @@ export default function RevenueCalculator() {
               min="10"
               value={adr}
               onChange={(e) => setAdr(Number(e.target.value))}
-              className="w-full border border-gray-200 rounded-xl p-4 focus:border-gold focus:ring-gold"
+              className="w-full border border-gray-200 rounded-2xl p-4 focus:border-gold focus:ring-2 focus:ring-gold/30 text-lg"
             />
           </div>
 
@@ -73,46 +94,43 @@ export default function RevenueCalculator() {
               max="100"
               value={occupancy}
               onChange={(e) => setOccupancy(Number(e.target.value))}
-              className="w-full border border-gray-200 rounded-xl p-4 focus:border-gold focus:ring-gold"
+              className="w-full border border-gray-200 rounded-2xl p-4 focus:border-gold focus:ring-2 focus:ring-gold/30 text-lg"
             />
           </div>
 
           <button
             onClick={calculate}
-            className="w-full bg-black hover:bg-gray-900 text-white font-medium py-4 rounded-2xl transition-all"
+            className="w-full bg-black hover:bg-gray-900 text-white font-medium py-4 rounded-2xl text-lg transition-all mt-4"
           >
             {text.calculate}
           </button>
 
           {result !== null && (
             <div className="mt-10 p-8 bg-[var(--background)] rounded-2xl border border-gold/30">
-              <p className="text-lg text-gray-600">{text.result}</p>
-              <p className="text-4xl font-bold text-black mt-2">
-                €{Math.round(result).toLocaleString()}
-              </p>
+              <p className="text-lg text-gray-600 mb-1">{text.result}</p>
+              <p className="text-4xl font-bold text-black">€{Math.round(result).toLocaleString()}</p>
 
-              <div className="mt-8 pt-8 border-t border-gray-200">
+              <div className="mt-8 pt-6 border-t border-gray-200">
                 <p className="text-sm text-gray-500">{text.increase}</p>
-                <p className="text-3xl font-semibold text-green-600">
-                  +€{Math.round(result * 0.18).toLocaleString()}
-                </p>
+                <p className="text-3xl font-semibold text-green-600">+€{Math.round(result * 0.18).toLocaleString()}</p>
                 <p className="text-xs text-gray-500 mt-1">{text.based}</p>
               </div>
 
-              <div className="mt-8">
+              <div className="mt-10">
+                <label className="block text-sm font-medium text-gray-700 mb-2">{text.email}</label>
                 <input
                   type="email"
-                  placeholder={text.email}
+                  placeholder="jouw@email.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full border border-gray-200 rounded-xl p-4"
+                  className="w-full border border-gray-200 rounded-2xl p-4 text-lg"
                 />
                 <button
                   onClick={submitLead}
                   disabled={!email || loading}
-                  className="mt-4 w-full bg-gold hover:bg-gold/90 text-black font-medium py-4 rounded-2xl transition-all disabled:opacity-50"
+                  className="mt-4 w-full bg-gold hover:bg-gold/90 text-black font-medium py-4 rounded-2xl text-lg disabled:opacity-50 transition-all"
                 >
-                  {loading ? "..." : text.cta}
+                  {loading ? "Bezig..." : text.cta}
                 </button>
               </div>
             </div>

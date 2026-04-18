@@ -12,7 +12,7 @@ export function Services({ language }: ServicesProps) {
   const icons = [Settings, LinkIcon, TrendingUp, Zap, FileText, Users]
 
   return (
-    <div className="pb-12">   {/* Geen extra section tag meer, want die zit in page.tsx */}
+    <div className="pb-16">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-serif text-black mb-4">
@@ -20,19 +20,32 @@ export function Services({ language }: ServicesProps) {
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {t.services.items.map((item, index) => {
             const Icon = icons[index]
             return (
               <div
                 key={index}
-                className="flex items-center gap-4 p-6 rounded-2xl bg-white border border-gray-100 hover:border-gold transition-all duration-300 luxury-card"
+                className="group flex items-center gap-5 p-8 rounded-3xl bg-white border border-gray-100 
+                           hover:border-gold hover:shadow-xl transition-all duration-300 luxury-card"
               >
-                <Icon className="h-7 w-7 text-gold flex-shrink-0" />
-                <span className="text-black font-medium text-base">{item}</span>
+                <div className="w-14 h-14 flex-shrink-0 flex items-center justify-center rounded-2xl bg-gold/10 group-hover:bg-gold/20 transition-colors">
+                  <Icon className="h-7 w-7 text-gold" />
+                </div>
+                <span className="text-black font-medium text-lg leading-tight">{item}</span>
               </div>
             )
           })}
+        </div>
+
+        <div className="text-center mt-12">
+          <Button
+            size="lg"
+            className="bg-black text-gold hover:bg-gray-900 text-lg px-10 py-7 rounded-2xl"
+          >
+            {t.services.cta}
+            <ArrowRight className="ml-3 h-5 w-5" />
+          </Button>
         </div>
       </div>
     </div>
