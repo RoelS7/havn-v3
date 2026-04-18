@@ -14,10 +14,6 @@ import { FAQSection } from "@/components/faq-section"
 import RevenueCalculator from "@/components/RevenueCalculator"
 import { useLanguage } from "@/hooks/use-language"
 
-// DEZE TWEE MOETEN HIER STAAN:
-const bgLight = "bg-[var(--background)]";
-const bgAlt = "bg-[var(--muted)]"; // We gebruiken --muted uit je css, dat is die beige kleur
-
 export default function Home() {
   const { language, changeLanguage, isLoaded } = useLanguage()
 
@@ -34,50 +30,50 @@ export default function Home() {
       <Navbar language={language} onLanguageChange={changeLanguage} />
       <ScrollToTop />
 
-      <main className="w-full">
-        {/* 1. Hero - Ivory */}
-        <section id="home" className={bgLight}>
+      <main>
+        {/* 1. Hero */}
+        <section id="home">
           <Hero language={language} />
         </section>
 
-        {/* 2. Probleem - Beige */}
-        <div className={bgAlt}>
+        {/* 2. Probleem */}
+        <section className="bg-[var(--background)]">
           <ProblemSection language={language} />
-        </div>
+        </section>
 
-        {/* 3. Oplossing - Ivory */}
-        <div className={bgLight}>
+        {/* 3. Oplossing */}
+        <section className="bg-[var(--background)]">
           <SolutionSection language={language} />
-        </div>
+        </section>
 
-        {/* 4. Diensten & Calculator - Beige */}
-        <section id="services" className={bgAlt}>
+        {/* 4. Services + Revenue Calculator (beige highlight) */}
+        <section id="services" className="bg-[var(--muted)]">
           <Services language={language} />
           <RevenueCalculator />
         </section>
 
-        {/* 5. Hoe het werkt - Ivory */}
-        <div className={bgLight}>
+        {/* 5. Hoe het werkt */}
+        <section className="bg-[var(--background)]">
           <HowItWorks language={language} />
-        </div>
+        </section>
 
-        {/* 6. Case Study - Beige */}
-        <div className={bgAlt}>
+        {/* 6. Case Study */}
+        <section className="bg-[var(--background)]">
           <CaseStudy language={language} />
-        </div>
+        </section>
 
-        {/* 7. Final CTA - Ivory */}
-        <div className={bgLight}>
+        {/* 7. Final CTA (donker voor contrast) */}
+        <section className="bg-black text-white">
           <FinalCta language={language} />
-        </div>
+        </section>
 
-        {/* 8. FAQ - Beige */}
-        <section id="faq" className={bgAlt}>
+        {/* 8. FAQ */}
+        <section id="faq" className="bg-[var(--background)]">
           <FAQSection language={language} />
         </section>
 
-        {/* 9. Contact - Ivory */}
-        <section id="contact" className={bgLight}>
+        {/* 9. Contact */}
+        <section id="contact" className="bg-[var(--background)]">
           <Contact />
         </section>
       </main>
