@@ -46,10 +46,16 @@ export default function Home() {
           <SolutionSection language={language} />
         </section>
 
-        {/* 4. Services + Revenue Calculator - highlight blok */}
-        <section id="services" className="bg-[var(--muted)] pb-0">
+        {/* 4. Services + Revenue Calculator - Eén consistent highlight blok */}
+        <section id="services" className="bg-[#f0e9db] py-20">   {/* Dit is een vaste warme beige kleur */}
+          
           <Services language={language} />
-          <RevenueCalculator />
+
+          {/* Revenue Calculator op exact dezelfde achtergrond */}
+          <div className="mt-16 max-w-4xl mx-auto px-4">
+            <RevenueCalculator />
+          </div>
+
         </section>
 
         {/* 5. Hoe het werkt */}
