@@ -43,33 +43,33 @@ export default function Home() {
 
         {/* 3. Oplossing */}
         <section className="bg-[var(--background)]">
-          <SolutionSection language={language) />
+          <SolutionSection language={language} />
         </section>
 
-        {/* 4. Services + Revenue Calculator - samen als highlight blok (beige) */}
+        {/* 4. Services + Revenue Calculator - highlight blok */}
         <section id="services" className="bg-[var(--muted)] pb-0">
           <Services language={language} />
           <RevenueCalculator />
         </section>
 
-        {/* 5. Hoe het werkt - terug naar ivory (duidelijk onderscheid) */}
+        {/* 5. Hoe het werkt */}
         <section className="bg-[var(--background)]">
-          <HowItWorks language={language) />
+          <HowItWorks language={language} />
         </section>
 
-        {/* 6. Resultaten in praktijk (Case Study) - lichte afwisseling */}
+        {/* 6. Case Study */}
         <section className="bg-[var(--muted)]">
-          <CaseStudy language={language) />
+          <CaseStudy language={language} />
         </section>
 
         {/* 7. Final CTA - zwart voor impact */}
         <section className="bg-black text-white">
-          <FinalCta language={language) />
+          <FinalCta language={language} />
         </section>
 
         {/* 8. FAQ */}
         <section id="faq" className="bg-[var(--background)]">
-          <FAQSection language={language) />
+          <FAQSection language={language} />
         </section>
 
         {/* 9. Contact */}
@@ -78,7 +78,7 @@ export default function Home() {
         </section>
       </main>
 
-      <Footer language={language) />
+      <Footer language={language} />
     </>
   )
 }
