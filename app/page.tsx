@@ -47,24 +47,24 @@ export default function Home() {
         </section>
 
         {/* 4. Services + Revenue Calculator - Eén consistent highlight blok */}
-        <section id="services" className="bg-[#f0e9db] py-20">   {/* Dit is een vaste warme beige kleur */}
+        <section id="services" className="bg-[var(--background)] py-20">   {/* Dit is een vaste warme beige kleur */}
           
           <Services language={language} />
 
           {/* Revenue Calculator op exact dezelfde achtergrond */}
-          <div className="mt-16 max-w-4xl mx-auto px-4">
+          <div className="mt-16 max-w-4xl mx-auto px-4 bg-[var(--background)]">
             <RevenueCalculator />
           </div>
 
         </section>
 
         {/* 5. Hoe het werkt */}
-        <section className="bg-[var(--background)]">
+        <section className="bg-[var(--muted)]">
           <HowItWorks language={language} />
         </section>
 
         {/* 6. Case Study */}
-        <section className="bg-[var(--muted)]">
+        <section className="bg-[var(--background)]">
           <CaseStudy language={language} />
         </section>
 
@@ -74,7 +74,7 @@ export default function Home() {
         </section>
 
         {/* 8. FAQ */}
-        <section id="faq" className="bg-[var(--background)]">
+        <section id="faq" className="bg-[var(--muted)]">
           <FAQSection language={language} />
         </section>
 
