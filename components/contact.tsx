@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { MessageSquare, Mail, MapPin, Clock } from "lucide-react"
+import { translations } from "@/lib/translations"
 
 export function Contact() {
   const [name, setName] = useState("")
@@ -16,6 +17,10 @@ export function Contact() {
   const [currentPlatforms, setCurrentPlatforms] = useState("")
   const [message, setMessage] = useState("")
   const [loading, setLoading] = useState(false)
+
+  // Vertalingen ophalen
+  const currentLang = "nl" // Dit komt later uit je useLanguage hook als je dat wilt integreren
+  const t = translations[currentLang] || translations.nl
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -54,11 +59,10 @@ export function Contact() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-serif text-black mb-4">
-            Start Uw <span className="text-gold">Gratis Consultatie</span>
+            {t.contact?.title || "Start Uw Gratis Consultatie"}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto font-light">
-            Klaar om meer rendement te halen uit uw accommodatie? 
-            Laat uw gegevens achter en ik neem binnen 24 uur contact met u op.
+            {t.contact?.subtitle || "Klaar om meer rendement te halen uit uw accommodatie? Laat uw gegevens achter en ik neem binnen 24 uur contact met u op."}
           </p>
         </div>
 
@@ -68,10 +72,10 @@ export function Contact() {
             <Card className="luxury-card border border-gold/20">
               <CardHeader>
                 <CardTitle className="text-2xl font-serif text-black">
-                  Vraag Uw Gratis Consultatie Aan
+                  {t.contact?.formTitle || "Vraag Uw Gratis Consultatie Aan"}
                 </CardTitle>
                 <CardDescription className="text-lg">
-                  Vertel me kort over uw accommodatie en ik maak een persoonlijke analyse.
+                  {t.contact?.formDescription || "Vertel me over uw accommodatie en ik neem binnen 24 uur contact met u op."}
                 </CardDescription>
               </CardHeader>
 
@@ -175,8 +179,9 @@ export function Contact() {
             </Card>
           </div>
 
-          {/* Contact Info Sidebar */}
+          {/* Sidebar */}
           <div className="space-y-8">
+            {/* Contact Info */}
             <Card className="luxury-card border border-gold/20">
               <CardHeader>
                 <CardTitle className="text-xl font-serif text-black">Contact Informatie</CardTitle>
@@ -189,7 +194,6 @@ export function Contact() {
                     <div className="text-gray-600">+57 312 765 9066</div>
                   </div>
                 </div>
-
                 <div className="flex items-start gap-4">
                   <Mail className="h-6 w-6 text-gold mt-1" />
                   <div>
@@ -197,7 +201,6 @@ export function Contact() {
                     <div className="text-gray-600">projects@ateliersmits.be</div>
                   </div>
                 </div>
-
                 <div className="flex items-start gap-4">
                   <MapPin className="h-6 w-6 text-gold mt-1" />
                   <div>
@@ -205,7 +208,6 @@ export function Contact() {
                     <div className="text-gray-600">Medellín, Colombia (remote)</div>
                   </div>
                 </div>
-
                 <div className="flex items-start gap-4">
                   <Clock className="h-6 w-6 text-gold mt-1" />
                   <div>
@@ -216,10 +218,12 @@ export function Contact() {
               </CardContent>
             </Card>
 
-            {/* Waarom HAVN sidebar */}
-            <Card className="luxury-card border border-gold/20 bg-black text-white">
+            {/* Waarom HAVN - Zwart zoals je wilt */}
+            <Card className="bg-black text-white border-2 border-gold/20">
               <CardHeader>
-                <CardTitle className="text-xl font-serif text-gold">Waarom HAVN?</CardTitle>
+                <CardTitle className="text-xl font-serif text-gold">
+                  {t.contact?.whyTitle || "Waarom Kiezen Voor HAVN?"}
+                </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4 text-sm">
                 <div className="flex items-center gap-3">
