@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button"
 import { Settings, Link as LinkIcon, TrendingUp, Zap, FileText, Users, ArrowRight } from "lucide-react"
 import { translations } from "@/lib/translations"
 import Link from "next/link"
+import { motion } from "framer-motion"
 
 
 interface ServicesProps {
@@ -26,6 +27,11 @@ export function Services({ language }: ServicesProps) {
           {t.services.items.map((item, index) => {
             const Icon = icons[index]
             return (
+              <motion.div
+                whileHover={{ scale: 1.03 }}
+                transition={{ duration: 0.3 }}
+                className="group flex items-center gap-5 p-8 rounded-3xl bg-white"
+              >
               <div
                 key={index}
                 className="group flex items-center gap-5 p-8 rounded-3xl bg-white border border-gray-100 

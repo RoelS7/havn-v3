@@ -107,7 +107,10 @@ export function Navbar({ language, onLanguageChange }: NavbarProps) {
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="bg-black/95 backdrop-blur-md border-none">
+            <SheetContent 
+              side="right" 
+              className="bg-black/95 backdrop-blur-xl border-none p-8"
+            >
               <div className="flex flex-col gap-8 mt-12 px-2">
                 {navItems.map((item) => (
                   <button
@@ -124,7 +127,7 @@ export function Navbar({ language, onLanguageChange }: NavbarProps) {
                 ))}
                 <LanguageSelector currentLang={currentLang} onLanguageChange={onLanguageChange} />
                 <Button
-                  className="transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg bg-gold text-black hover:bg-gold/90 w-full"
+                  className="bg-gold text-black hover:bg-gold/80 transition-all duration-300 text-sm px-4 py-2"
                   onClick={() => handleNavClick("#contact")}
                 >
                   {t.nav.freeConsultation}

@@ -34,8 +34,10 @@ export function Hero({ language }: HeroProps) {
                 <Link href="https://calendly.com/smitsro7/consult">
                   {currentLang === "nl" ? "Gratis strategiegesprek inplannen" : "Book your free strategy call"}
                   <ArrowRight className="ml-2 h-5 w-5" />
+                  <span className="absolute inset-0 bg-white/10 animate-pulse rounded-lg"></span>
                 </Link>
               </Button>
+
 
               {/* Secundaire knop */}
               <Button

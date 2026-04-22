@@ -85,8 +85,14 @@
     font-family: var(--font-playfair), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   }
 
-  .luxury-card {
-    background-color: #ffffff;
-    box-shadow: 0 10px 30px -10px rgba(184, 146, 92, 0.15);
+ .luxury-card {
+  background-color: #ffffff;
+  box-shadow: 0 10px 30px -10px rgba(184, 146, 92, 0.15);
+  transition: all 0.3s ease;
+  }
+
+  .luxury-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px -15px rgba(184, 146, 92, 0.25);
   }
 }
