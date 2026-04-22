@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button"
 import { Settings, Link as LinkIcon, TrendingUp, Zap, FileText, Users, ArrowRight } from "lucide-react"
 import { translations } from "@/lib/translations"
+import Link from "next/link"
+
 
 interface ServicesProps {
   language: string
@@ -40,11 +42,14 @@ export function Services({ language }: ServicesProps) {
 
         <div className="text-center mt-12">
           <Button
+            asChild
             size="lg"
             className="bg-black text-gold hover:bg-gray-900 text-lg px-10 py-7 rounded-2xl"
           >
+            <Link href="https://calendly.com/smitsro7/consult">
             {t.services.cta}
             <ArrowRight className="ml-3 h-5 w-5" />
+            </Link>
           </Button>
         </div>
       </div>

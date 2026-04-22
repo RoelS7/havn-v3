@@ -6,7 +6,7 @@ export const translations = {
       caseStudy: "Case Study",
       faq: "FAQ",
       contact: "Contact",
-      freeConsultation: "Kennismakingsgesprek",
+      freeConsultation: "Gratis strategiegesprek",
     },
     hero: {
       title: "Meer rendement uit je vakantieverhuur",
@@ -261,7 +261,7 @@ export const translations = {
       caseStudy: "Case Study",
       faq: "FAQ",
       contact: "Contact",
-      freeConsultation: "Book your free strategy call",
+      freeConsultation: "Free strategy call",
     },
     hero: {
       title: "More revenue from your vacation rental",
