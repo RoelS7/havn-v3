@@ -40,23 +40,8 @@ export function Navbar({ language, onLanguageChange }: NavbarProps) {
     }
   }
 
-  const [scrolled, setScrolled] = useState(false)
-
-    useEffect(() => {
-      const handleScroll = () => {
-        setScrolled(window.scrollY > 20)
-      }
-
-      window.addEventListener("scroll", handleScroll)
-      return () => window.removeEventListener("scroll", handleScroll)
-    }, [])
-
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-black/95 backdrop-blur-md py-3 shadow-md"
-          : "bg-black/80 py-5"
-      }`}>
+    <nav className="fixed top-0 w-full bg-black/95 backdrop-blur-md z-50 relative">
     <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[90%] h-[1px] bg-gradient-to-r from-transparent via-[#b8925c]/70 to-transparent" />
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-24">
