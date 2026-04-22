@@ -58,13 +58,15 @@ export function Navbar({ language, onLanguageChange }: NavbarProps) {
             />
           </Link>
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-6">
+          <div className="hidden lg:flex items-center gap-10">
             {navItems.map((item) => (
               <button
                 key={item.name}
                 onClick={() => handleNavClick(item.href)}
-                className={`transition-colors duration-200 font-light text-sm relative ${
-                  activeSection === item.id ? "text-gold" : "text-white hover:text-gold"
+                className={`cursor-pointer transition-all duration-300 font-light text-sm tracking-wide relative ${
+                  activeSection === item.id
+                    ? "text-gold"
+                    : "text-white/80 hover:text-gold"
                 }`}
               >
                 {item.name}
