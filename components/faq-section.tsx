@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ChevronDown, MessageSquare, HelpCircle } from "lucide-react"
 import { translations } from "@/lib/translations"
+import Link from "next/link"
 
 interface FAQSectionProps {
   language: string
@@ -186,8 +187,12 @@ export function FAQSection({ language }: FAQSectionProps) {
                   : "Our team is ready to answer all your questions."}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="bg-gold text-black hover:bg-gold/90 text-lg px-10 py-6">
+                <Button 
+                  asChild
+                  className="bg-gold text-black hover:bg-gold/90 text-lg px-10 py-6">
+                  <Link href="https://calendly.com/smitsro7/consult">
                   {currentLang === "nl" ? "Gratis Consultatie" : "Free Consultation"}
+                  </Link>
                 </Button>
                 <Button
                   variant="outline"
