@@ -40,8 +40,23 @@ export function Navbar({ language, onLanguageChange }: NavbarProps) {
     }
   }
 
+  const [scrolled, setScrolled] = useState(false)
+
+    useEffect(() => {
+      const handleScroll = () => {
+        setScrolled(window.scrollY > 20)
+      }
+
+      window.addEventListener("scroll", handleScroll)
+      return () => window.removeEventListener("scroll", handleScroll)
+    }, [])
+
   return (
-    <nav className="fixed top-0 w-full bg-black/95 backdrop-blur-md z-50 relative">
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-black/95 backdrop-blur-md py-3 shadow-md"
+          : "bg-black/80 py-5"
+      }`}>
     <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[90%] h-[1px] bg-gradient-to-r from-transparent via-[#b8925c]/70 to-transparent" />
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-24">
@@ -79,7 +94,7 @@ export function Navbar({ language, onLanguageChange }: NavbarProps) {
             ))}
             <LanguageSelector currentLang={currentLang} onLanguageChange={onLanguageChange} />
             <Button
-              className="bg-gold text-black hover:bg-gold/90 text-sm px-5 py-2.5 rounded-full transition-all"
+              className="bg-gold text-black hover:bg-gold/90 text-sm px-4 py-2"
               onClick={() => handleNavClick("#contact")}
             >
               {t.nav.freeConsultation}
