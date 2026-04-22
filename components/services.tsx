@@ -14,7 +14,7 @@ export function Services({ language }: ServicesProps) {
   const icons = [Settings, LinkIcon, TrendingUp, Zap, FileText, Users]
 
   return (
-    <div className="pb-16">
+    <div id="services" className="pb-16">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-serif text-black mb-4">
