@@ -39,14 +39,12 @@ export function Hero({ language }: HeroProps) {
 
               {/* Secundaire knop */}
               <Button
-                asChild
                 size="lg"
                 variant="outline"
                 className="border-gold text-gold hover:bg-gold hover:text-black text-base lg:text-lg px-6 lg:px-8 bg-transparent"
+                onClick={() => handleNavClick("#services")}
               >
-                <Link href="https://calendly.com/smitsro7/consult">
                   {t.hero.secondaryCta}
-                </Link>
               </Button>
             </div>
            
