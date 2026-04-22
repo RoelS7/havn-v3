@@ -22,7 +22,7 @@ export function FinalCta({ language }: FinalCtaProps) {
           <Button 
               asChild
               size="lg" 
-              className="bg-gold text-black hover:bg-gold/90 text-lg px-8">
+              className="transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg bg-gold text-black hover:bg-gold/90 text-lg px-8">
               <Link href="https://calendly.com/smitsro7/consult">
               {t.finalCta.button}
             <ArrowRight className="ml-2 h-5 w-5" />

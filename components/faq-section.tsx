@@ -189,14 +189,14 @@ export function FAQSection({ language }: FAQSectionProps) {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button 
                   asChild
-                  className="bg-gold text-black hover:bg-gold/90 text-lg px-10 py-6">
+                  className="transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg bg-gold text-black hover:bg-gold/90 text-lg px-10 py-6">
                   <Link href="https://calendly.com/smitsro7/consult">
                   {currentLang === "nl" ? "Gratis Consultatie" : "Free Consultation"}
                   </Link>
                 </Button>
                 <Button
                   variant="outline"
-                  className="border-gold text-gold hover:bg-gold hover:text-black text-lg px-10 py-6"
+                  className="transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg border-gold text-gold hover:bg-gold hover:text-black text-lg px-10 py-6"
                   onClick={() => window.open("https://wa.me/573127659066?text=Hallo, ik heb een vraag over HAVN.", "_blank")}
                 >
                   <MessageSquare className="mr-2 h-5 w-5" />

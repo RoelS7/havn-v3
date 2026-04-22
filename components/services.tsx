@@ -44,7 +44,7 @@ export function Services({ language }: ServicesProps) {
           <Button
             asChild
             size="lg"
-            className="bg-black text-gold hover:bg-gray-900 text-lg px-10 py-7 rounded-2xl"
+            className="transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg bg-black text-gold hover:bg-gray-900 text-lg px-10 py-7 rounded-2xl"
           >
             <Link href="https://calendly.com/smitsro7/consult">
             {t.services.cta}

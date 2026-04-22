@@ -158,7 +158,7 @@ export function Contact() {
                       type="submit"
                       size="lg"
                       disabled={loading}
-                      className="bg-gold text-black hover:bg-gold/90 flex-1 text-lg py-7"
+                      className="transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg bg-gold text-black hover:bg-gold/90 flex-1 text-lg py-7"
                     >
                       {loading ? "Versturen..." : "Verstuur aanvraag"}
                     </Button>
@@ -167,7 +167,7 @@ export function Contact() {
                       type="button"
                       size="lg"
                       variant="outline"
-                      className="border-gold text-gold hover:bg-gold hover:text-black flex-1 text-lg py-7"
+                      className="transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg border-gold text-gold hover:bg-gold hover:text-black flex-1 text-lg py-7"
                       onClick={handleWhatsApp}
                     >
                       <MessageSquare className="mr-2 h-5 w-5" />
