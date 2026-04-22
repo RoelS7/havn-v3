@@ -194,7 +194,7 @@ export const translations = {
       },
     },
     contact: {
-      title: "Start Uw Gratis Consultatie",
+      title: "Start Uw Gratis Strategiegesprek",
       subtitle:
         "Klaar om uw revenue te maximaliseren? Neem contact op voor een vrijblijvende consultatie en ontdek hoe ik uw accommodatie kan helpen groeien.",
       form: {
@@ -236,7 +236,7 @@ export const translations = {
       whyChoose: {
         title: "Waarom Kiezen Voor HAVN?",
         points: [
-          "Gratis consultatie & analyse",
+          "Gratis strategiegesprek & analyse",
           "Geen langetermijn contracten",
           "Transparante prijzen",
           "Bewezen resultaten",
@@ -247,7 +247,7 @@ export const translations = {
     footer: {
       description: "Property Management Specialist voor B&B's, vakantiewoningen en kleine hotels.",
       services: "Services",
-      packages: "Gratis Consultatie",
+      packages: "Gratis strategiegesprek",
       contact: "Contact",
       rights: "Alle rechten voorbehouden.",
       privacy: "Privacy Policy",
@@ -449,11 +449,11 @@ export const translations = {
       },
     },
     contact: {
-      title: "Start Your Free Consultation",
+      title: "Start Your Free Strategy Call",
       subtitle:
-        "Ready to maximize your revenue? Contact us for a free consultation and discover how I can help your accommodation grow.",
+        "Ready to maximize your revenue? Contact us for a free strategy call and discover how I can help your accommodation grow.",
       form: {
-        title: "Request Your Free Consultation",
+        title: "Request Your Free Strategy Call",
         subtitle: "Tell me about your accommodation and I'll contact you within 24 hours.",
         name: "Name *",
         email: "Email *",
@@ -491,7 +491,7 @@ export const translations = {
       whyChoose: {
         title: "Why Choose HAVN?",
         points: [
-          "Free consultation & analysis",
+          "Free strategy call & analysis",
           "No long-term contracts",
           "Transparent pricing",
           "Proven results",
@@ -502,7 +502,7 @@ export const translations = {
     footer: {
       description: "Property Management Specialist for B&Bs, vacation rentals and small hotels.",
       services: "Services",
-      packages: "Free Consultation",
+      packages: "Free Strategy Call",
       contact: "Contact",
       rights: "All rights reserved.",
       privacy: "Privacy Policy",

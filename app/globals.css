@@ -43,6 +43,12 @@
     font-family: var(--font-montserrat), system-ui, sans-serif;
   }
 
+  button,
+  a,
+  [role="button"] {
+    cursor: pointer;
+  }
+
 /* Basis achtergrond voor alle secties */
   section, main > * {
     background-color: var(--background);
