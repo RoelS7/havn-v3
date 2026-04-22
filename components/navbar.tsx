@@ -41,7 +41,8 @@ export function Navbar({ language, onLanguageChange }: NavbarProps) {
   }
 
   return (
-    <nav className="fixed top-0 w-full bg-black/95 backdrop-blur-sm z-50 border-b border-gold/20">
+    <nav className="fixed top-0 w-full bg-black/95 backdrop-blur-md z-50 relative">
+    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[90%] h-[1px] bg-gradient-to-r from-transparent via-[#b8925c]/70 to-transparent" />
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-24">
           {" "}
@@ -72,7 +73,7 @@ export function Navbar({ language, onLanguageChange }: NavbarProps) {
                 {item.name}
                 {/* Active indicator */}
                 {activeSection === item.id && (
-                  <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gold rounded-full" />
+                  <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-6 h-[2px] bg-gold rounded-full" />
                 )}
               </button>
             ))}
@@ -91,15 +92,17 @@ export function Navbar({ language, onLanguageChange }: NavbarProps) {
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="bg-black border-gold/20">
-              <div className="flex flex-col space-y-6 mt-8">
+            <SheetContent side="right" className="bg-black/95 backdrop-blur-md border-none">
+              <div className="flex flex-col gap-8 mt-12 px-2">
                 {navItems.map((item) => (
                   <button
                     key={item.name}
                     onClick={() => handleNavClick(item.href)}
-                    className={`text-left transition-colors text-lg ${
-                      activeSection === item.id ? "text-gold" : "text-white hover:text-gold"
-                    }`}
+                    className={`text-left text-lg tracking-wide transition-all ${
+                    activeSection === item.id
+                      ? "text-gold"
+                      : "text-white/80 hover:text-gold"
+                  }`}
                   >
                     {item.name}
                   </button>
