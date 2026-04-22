@@ -124,7 +124,7 @@ export function Navbar({ language, onLanguageChange }: NavbarProps) {
                 ))}
                 <LanguageSelector currentLang={currentLang} onLanguageChange={onLanguageChange} />
                 <Button
-                  className="bg-gold text-black hover:bg-gold/90 w-full"
+                  className="transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg bg-gold text-black hover:bg-gold/90 w-full"
                   onClick={() => handleNavClick("#contact")}
                 >
                   {t.nav.freeConsultation}

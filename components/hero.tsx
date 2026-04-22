@@ -29,7 +29,7 @@ export function Hero({ language }: HeroProps) {
               <Button 
                 asChild 
                 size="lg" 
-                className="bg-gold text-black hover:bg-gold/90 text-base lg:text-lg px-6 lg:px-8"
+                className="transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg bg-gold text-black hover:bg-gold/90 text-base lg:text-lg px-6 lg:px-8"
               >
                 <Link href="https://calendly.com/smitsro7/consult">
                   {currentLang === "nl" ? "Gratis strategiegesprek inplannen" : "Book your free strategy call"}
@@ -42,7 +42,7 @@ export function Hero({ language }: HeroProps) {
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-gold text-gold hover:bg-gold hover:text-black text-base lg:text-lg px-6 lg:px-8 bg-transparent"
+                className="transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg border-gold text-gold hover:bg-gold hover:text-black text-base lg:text-lg px-6 lg:px-8 bg-transparent"
               >
                 <Link href="#services">
                   {t.hero.secondaryCta}
