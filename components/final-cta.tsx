@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 import { translations } from "@/lib/translations"
+import Link from "next/link"
+
 
 interface FinalCtaProps {
   language: string
@@ -17,9 +19,14 @@ export function FinalCta({ language }: FinalCtaProps) {
           <h2 className="text-3xl lg:text-4xl font-serif mb-8 text-balance">
             {t.finalCta.title}
           </h2>
-          <Button size="lg" className="bg-gold text-black hover:bg-gold/90 text-lg px-8">
-            {t.finalCta.button}
+          <Button 
+              asChild
+              size="lg" 
+              className="bg-gold text-black hover:bg-gold/90 text-lg px-8">
+              <Link href="https://calendly.com/smitsro7/consult">
+              {t.finalCta.button}
             <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
           </Button>
         </div>
       </div>
