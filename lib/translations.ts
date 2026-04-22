@@ -509,4 +509,88 @@ export const translations = {
       terms: "Terms & Conditions",
     },
   },
+  es: {
+      nav: {
+        home: "Inicio",
+        services: "Servicios",
+        caseStudy: "Caso de estudio",
+        faq: "FAQ",
+        contact: "Contacto",
+        freeConsultation: "Consulta gratuita",
+      },
+      hero: {
+        title: "Más ingresos de tu alquiler vacacional",
+        subtitle: "HAVN ayuda a hosts a gestionar su propiedad con sistemas inteligentes, automatización y estrategias de precios basadas en datos.",
+        cta: "Reservar consulta gratuita",
+        secondaryCta: "Ver cómo funciona",
+        positioning: "Para hosts que quieren operar como un negocio profesional.",
+        valueBullets: [
+          "Sistemas que funcionan juntos",
+          "Automatización de comunicación",
+          "Estrategias de precios inteligentes",
+        ],
+      },
+      services: {
+        title: "Qué optimiza HAVN",
+        items: [
+          "Configuración de sistemas de reservas",
+          "Integración de plataformas",
+          "Estrategias dinámicas de precios",
+          "Automatización de comunicación",
+          "Optimización de procesos",
+          "Consultoría operativa",
+        ],
+        cta: "Reservar consulta gratuita",
+      },
+      contact: {
+        title: "Empieza tu consulta gratuita",
+        subtitle: "Déjanos tus datos y te contactamos en 24h.",
+        form: {
+          title: "Solicita tu consulta gratuita",
+          subtitle: "Cuéntanos sobre tu propiedad.",
+          name: "Nombre *",
+          email: "Email *",
+          phone: "Teléfono",
+          propertyType: "Tipo de propiedad",
+          platforms: "Plataformas actuales",
+          message: "Mensaje",
+          submit: "Enviar solicitud",
+          whatsapp: "WhatsApp directo",
+          placeholders: {
+            name: "Tu nombre completo",
+            email: "tu@email.com",
+            phone: "+57...",
+            platforms: "Airbnb, Booking...",
+            message: "Describe tu situación...",
+            selectType: "Selecciona tipo",
+          },
+          propertyTypes: {
+            bnb: "B&B",
+            vacationRental: "Alquiler vacacional",
+            smallHotel: "Hotel pequeño",
+            apartment: "Apartamento",
+            other: "Otro",
+          },
+        },
+        info: {
+          title: "Información de contacto",
+          whatsapp: "WhatsApp",
+          email: "Email",
+          location: "Ubicación",
+          responseTime: "Tiempo de respuesta",
+          responseValue: "Dentro de 24h",
+          locationValue: "Colombia",
+        },
+        whyChoose: {
+          title: "Por qué HAVN",
+          points: [
+            "Consulta gratuita",
+            "Sin contratos largos",
+            "Precios transparentes",
+            "Resultados probados",
+            "Soporte 24/7",
+          ],
+        },
+      }
+    }
 }

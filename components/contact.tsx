@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { MessageSquare, Mail, MapPin, Clock } from "lucide-react"
 import { translations } from "@/lib/translations"
+import { useLanguage } from "@/hooks/use-language"
 
 export function Contact() {
   const [name, setName] = useState("")
@@ -19,8 +20,8 @@ export function Contact() {
   const [loading, setLoading] = useState(false)
 
   // Vertalingen ophalen
-  const currentLang = "nl" // Dit komt later uit je useLanguage hook als je dat wilt integreren
-  const t = translations[currentLang] || translations.nl
+  const { language } = useLanguage()
+  const t = translations[language] || translations.en
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -83,21 +84,21 @@ export function Contact() {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <Label htmlFor="name">Naam *</Label>
+                      <Label htmlFor="name">{t.contact.form.name} *</Label>
                       <Input
                         id="name"
-                        placeholder="Uw volledige naam"
+                        placeholder="{t.contact.form.placeholders.name}"
                         value={name}
                         required
                         onChange={(e) => setName(e.target.value)}
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="email">Email *</Label>
+                      <Label htmlFor="email">{t.contact.form.email} *</Label>
                       <Input
                         id="email"
                         type="email"
-                        placeholder="uw@email.com"
+                        placeholder="{t.contact.form.placeholders.email}"
                         value={email}
                         required
                         onChange={(e) => setEmail(e.target.value)}
@@ -107,19 +108,19 @@ export function Contact() {
 
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <Label htmlFor="phone">Telefoon</Label>
+                      <Label htmlFor="phone">{t.contact.form.phone}</Label>
                       <Input
                         id="phone"
-                        placeholder="+32 123 456 789"
+                        placeholder="{t.contact.form.placeholders.phone}"
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="property-type">Type accommodatie *</Label>
+                      <Label htmlFor="property-type">{t.contact.form.propertyType} *</Label>
                       <Select onValueChange={setPropertyType} value={propertyType}>
                         <SelectTrigger>
-                          <SelectValue placeholder="Selecteer type" />
+                          <SelectValue placeholder="{t.contact.form.placeholders.selectType}" />
                         </SelectTrigger>
                         <SelectContent>
                           <SelectItem value="bnb">B&B</SelectItem>
@@ -133,20 +134,20 @@ export function Contact() {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="platforms">Huidige platforms</Label>
+                    <Label htmlFor="platforms">{t.contact.form.platforms}</Label>
                     <Input
                       id="platforms"
-                      placeholder="Bijv. Airbnb, Booking.com, Expedia..."
+                      placeholder="{t.contact.form.placeholders.platforms}"
                       value={currentPlatforms}
                       onChange={(e) => setCurrentPlatforms(e.target.value)}
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="message">Bericht / Opmerkingen</Label>
+                    <Label htmlFor="message">{t.contact.form.message}</Label>
                     <Textarea
                       id="message"
-                      placeholder="Vertel me kort over uw accommodatie, huidige uitdagingen en doelen..."
+                      placeholder="{t.contact.form.placeholders.message}"
                       rows={5}
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
@@ -160,7 +161,7 @@ export function Contact() {
                       disabled={loading}
                       className="transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg bg-gold text-black hover:bg-gold/90 flex-1 text-lg py-7"
                     >
-                      {loading ? "Versturen..." : "Verstuur aanvraag"}
+                      {loading ? "..." : t.contact.form.submit}
                     </Button>
 
                     <Button
@@ -171,7 +172,7 @@ export function Contact() {
                       onClick={handleWhatsApp}
                     >
                       <MessageSquare className="mr-2 h-5 w-5" />
-                      WhatsApp Direct
+                      {t.contact.form.whatsapp}
                     </Button>
                   </div>
                 </form>
@@ -184,34 +185,34 @@ export function Contact() {
             {/* Contact Info */}
             <Card className="luxury-card border border-gold/20">
               <CardHeader>
-                <CardTitle className="text-xl font-serif text-black">Contact Informatie</CardTitle>
+                <CardTitle className="text-xl font-serif text-black">{t.contact.info.title}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="flex items-start gap-4">
                   <MessageSquare className="h-6 w-6 text-gold mt-1" />
                   <div>
-                    <div className="font-medium">WhatsApp</div>
+                    <div className="font-medium">{t.contact.info.whatsapp}</div>
                     <div className="text-gray-600">+57 312 765 9066</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <Mail className="h-6 w-6 text-gold mt-1" />
                   <div>
-                    <div className="font-medium">Email</div>
+                    <div className="font-medium">{t.contact.info.email}</div>
                     <div className="text-gray-600">projects@ateliersmits.be</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <MapPin className="h-6 w-6 text-gold mt-1" />
                   <div>
-                    <div className="font-medium">Locatie</div>
+                    <div className="font-medium">{t.contact.info.location}</div>
                     <div className="text-gray-600">Medellín, Colombia (remote)</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <Clock className="h-6 w-6 text-gold mt-1" />
                   <div>
-                    <div className="font-medium">Responstijd</div>
+                    <div className="font-medium">{t.contact.info.responseTime}</div>
                     <div className="text-gray-600">Binnen 24 uur</div>
                   </div>
                 </div>
@@ -222,7 +223,7 @@ export function Contact() {
             <Card className="bg-black text-white border-2 border-gold/20">
               <CardHeader>
                 <CardTitle className="text-xl font-serif text-gold">
-                  {t.contact?.whyTitle || "Waarom Kiezen Voor HAVN?"}
+                  {t.contact.whyChoose.title}
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4 text-sm">
@@ -246,6 +247,9 @@ export function Contact() {
                   <span className="text-gold text-xl">✓</span>
                   <span>24/7 gastcommunicatie</span>
                 </div>
+                {t.contact.whyChoose.points.map((point, i) => (
+  <div key={i}>{point}</div>
+))}
               </CardContent>
             </Card>
           </div>
