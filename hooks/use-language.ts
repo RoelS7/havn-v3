@@ -8,14 +8,16 @@ export function useLanguage() {
 
   useEffect(() => {
     const savedLang = localStorage.getItem("havn-language")
-    if (savedLang && (savedLang === "nl" || savedLang === "en")) {
+    // Update: "es" toegevoegd aan de toegestane talen bij het laden
+    if (savedLang && (savedLang === "nl" || savedLang === "en" || savedLang === "es")) {
       setLanguage(savedLang)
     }
     setIsLoaded(true)
   }, [])
 
   const changeLanguage = (newLang: string) => {
-    if (newLang === "nl" || newLang === "en") {
+    // Update: "es" toegevoegd aan de toegestane talen bij het wijzigen
+    if (newLang === "nl" || newLang === "en" || newLang === "es") {
       setLanguage(newLang)
       localStorage.setItem("havn-language", newLang)
     }
