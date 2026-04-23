@@ -84,7 +84,7 @@ export function Contact() {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <Label htmlFor="name">{t.contact.form.name} *</Label>
+                      <Label htmlFor="name">{t.contact.form.name}</Label>
                       <Input
                         id="name"
                         placeholder="{t.contact.form.placeholders.name}"
@@ -117,7 +117,7 @@ export function Contact() {
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="property-type">{t.contact.form.propertyType} *</Label>
+                      <Label htmlFor="property-type">{t.contact.form.propertyType}</Label>
                       <Select onValueChange={setPropertyType} value={propertyType}>
                         <SelectTrigger>
                           <SelectValue placeholder="{t.contact.form.placeholders.selectType}" />
