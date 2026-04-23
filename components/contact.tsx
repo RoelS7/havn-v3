@@ -244,8 +244,6 @@ export function Contact({ language }: ContactProps) {
         </div>
       </div>
     </section>
-  )
-}
 
             {/* Waarom HAVN - Zwart zoals je wilt */}
             <Card className="bg-black text-white border-2 border-gold/20">
