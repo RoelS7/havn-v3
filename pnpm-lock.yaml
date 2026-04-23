@@ -42,7 +42,7 @@ importers:
         specifier: 19.1.0
         version: 19.1.0(react@19.1.0)
       resend:
-        specifier: ^6.9.3
+        specifier: ^6.12.2
         version: 6.12.2
       tailwind-merge:
         specifier: ^2.6.0
