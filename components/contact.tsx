@@ -65,10 +65,10 @@ export function Contact() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-serif text-black mb-4">
-            {t.contact?.title || "Start Uw Gratis Consultatie"}
+            {t.contact.title || "Start Uw Gratis Consultatie"}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto font-light">
-            {t.contact?.subtitle || "Klaar om meer rendement te halen uit uw accommodatie? Laat uw gegevens achter en ik neem binnen 24 uur contact met u op."}
+            {t.contact.subtitle || "Klaar om meer rendement te halen uit uw accommodatie? Laat uw gegevens achter en ik neem binnen 24 uur contact met u op."}
           </p>
         </div>
 
@@ -78,10 +78,10 @@ export function Contact() {
             <Card className="luxury-card border border-gold/20">
               <CardHeader>
                 <CardTitle className="text-2xl font-serif text-black">
-                  {t.contact?.formTitle || "Vraag Uw Gratis Consultatie Aan"}
+                  {t.contact.formTitle}
                 </CardTitle>
                 <CardDescription className="text-lg">
-                  {t.contact?.formDescription || "Vertel me over uw accommodatie en ik neem binnen 24 uur contact met u op."}
+                  {t.contact.formDescription || "Vertel me over uw accommodatie en ik neem binnen 24 uur contact met u op."}
                 </CardDescription>
               </CardHeader>
 
@@ -92,7 +92,7 @@ export function Contact() {
                       <Label htmlFor="name">{t.contact.form.name}</Label>
                       <Input
                         id="name"
-                        placeholder="{t.contact.form.placeholders.name}"
+                        placeholder={t.contact.form.placeholders.name}
                         value={name}
                         required
                         onChange={(e) => setName(e.target.value)}
@@ -103,7 +103,7 @@ export function Contact() {
                       <Input
                         id="email"
                         type="email"
-                        placeholder="{t.contact.form.placeholders.email}"
+                        placeholder={t.contact.form.placeholders.email}
                         value={email}
                         required
                         onChange={(e) => setEmail(e.target.value)}
@@ -116,7 +116,7 @@ export function Contact() {
                       <Label htmlFor="phone">{t.contact.form.phone}</Label>
                       <Input
                         id="phone"
-                        placeholder="{t.contact.form.placeholders.phone}"
+                        placeholder={t.contact.form.placeholders.phone}
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
                       />
@@ -125,7 +125,7 @@ export function Contact() {
                       <Label htmlFor="property-type">{t.contact.form.propertyType}</Label>
                       <Select onValueChange={setPropertyType} value={propertyType}>
                         <SelectTrigger>
-                          <SelectValue placeholder="{t.contact.form.placeholders.selectType}" />
+                          <SelectValue placeholder={t.contact.form.placeholders.selectType} />
                         </SelectTrigger>
                         <SelectContent>
                           <SelectItem value="bnb">B&B</SelectItem>
@@ -142,7 +142,7 @@ export function Contact() {
                     <Label htmlFor="platforms">{t.contact.form.platforms}</Label>
                     <Input
                       id="platforms"
-                      placeholder="{t.contact.form.placeholders.platforms}"
+                      placeholder={t.contact.form.placeholders.platforms}
                       value={currentPlatforms}
                       onChange={(e) => setCurrentPlatforms(e.target.value)}
                     />
@@ -152,7 +152,7 @@ export function Contact() {
                     <Label htmlFor="message">{t.contact.form.message}</Label>
                     <Textarea
                       id="message"
-                      placeholder="{t.contact.form.placeholders.message}"
+                      placeholder={t.contact.form.placeholders.message}
                       rows={5}
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
