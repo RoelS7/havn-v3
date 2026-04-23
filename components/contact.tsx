@@ -21,7 +21,12 @@ export function Contact() {
 
   // Vertalingen ophalen
   const { language } = useLanguage()
-  const t = translations[language] || translations.en
+  const currentLang =
+  language === "nl" || language === "en" || language === "es"
+    ? language
+    : "en"
+
+  const t = translations[currentLang]
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -94,7 +99,7 @@ export function Contact() {
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="email">{t.contact.form.email} *</Label>
+                      <Label htmlFor="email">{t.contact.form.email}</Label>
                       <Input
                         id="email"
                         type="email"
