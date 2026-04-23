@@ -1,5 +1,5 @@
 "use client"
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -8,22 +8,14 @@ import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { MessageSquare, Mail, MapPin, Clock } from "lucide-react"
 import { translations } from "@/lib/translations"
-import { useLanguage } from "@/hooks/use-language"
 
-export function Contact() {
-  const { language } = useLanguage()
-  
-  // We forceren een her-berekening van de vertalingen zodra de taal wijzigt
-  const [currentLang, setCurrentLang] = useState<"nl" | "en" | "es">("nl")
+interface ContactProps {
+  language: string
+}
 
-  useEffect(() => {
-    if (language === "nl" || language === "en" || language === "es") {
-      setCurrentLang(language)
-    } else {
-      setCurrentLang("en") // fallback
-    }
-  }, [language])
-
+export function Contact({ language }: ContactProps) {
+  // Vertalingen ophalen op basis van de doorgegeven 'language' prop
+  const currentLang = language === "nl" || language === "en" || language === "es" ? language : "nl"
   const t = translations[currentLang]
 
   const [name, setName] = useState("")
@@ -54,7 +46,7 @@ export function Contact() {
     if (res.ok) {
       window.location.href = "/thank-you"
     } else {
-      alert(currentLang === "nl" ? "Er ging iets mis. Probeer het opnieuw." : "Something went wrong.")
+      alert(currentLang === "nl" ? "Er ging iets mis. Probeer het opnieuw." : "Something went wrong. Please try again.")
       setLoading(false)
     }
   }
@@ -70,9 +62,6 @@ export function Contact() {
     )
   }
 
-  // Als 't' nog niet geladen is (om crashes te voorkomen)
-  if (!t) return null;
-
   return (
     <section id="contact" className="py-20 bg-[var(--background)]">
       <div className="container mx-auto px-4">
@@ -86,6 +75,7 @@ export function Contact() {
         </div>
 
         <div className="grid lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
+          {/* Contact Form */}
           <div className="lg:col-span-2">
             <Card className="luxury-card border border-gold/20">
               <CardHeader>
@@ -197,6 +187,7 @@ export function Contact() {
             </Card>
           </div>
 
+          {/* Sidebar */}
           <div className="space-y-8">
             <Card className="luxury-card border border-gold/20">
               <CardHeader>
@@ -233,6 +224,28 @@ export function Contact() {
                 </div>
               </CardContent>
             </Card>
+
+            <Card className="bg-black text-white border-2 border-gold/20">
+              <CardHeader>
+                <CardTitle className="text-xl font-serif text-gold">
+                  {t.contact.whyChoose.title}
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4 text-sm">
+                {t.contact.whyChoose.points.map((point: string, index: number) => (
+                  <div key={index} className="flex items-center gap-3">
+                    <span className="text-gold text-xl">✓</span>
+                    <span>{point}</span>
+                  </div>
+                ))}
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
 
             {/* Waarom HAVN - Zwart zoals je wilt */}
             <Card className="bg-black text-white border-2 border-gold/20">

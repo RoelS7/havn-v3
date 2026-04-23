@@ -80,7 +80,7 @@ export default function Home() {
 
         {/* 9. Contact */}
         <section id="contact" className="bg-[var(--background)]">
-          <Contact />
+          <Contact language={language} />
         </section>
       </main>
 
