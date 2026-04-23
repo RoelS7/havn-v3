@@ -6,7 +6,8 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { MessageSquare, Mail, MapPin, Clock } from "lucide-react"
+import { MessageSquare, Mail, MapPin, Clock } from "lucide-material"
+import { MessageSquare as MessageIcon, Mail as MailIcon, MapPin as MapIcon, Clock as ClockIcon } from "lucide-react"
 import { translations } from "@/lib/translations"
 
 interface ContactProps {
@@ -14,7 +15,7 @@ interface ContactProps {
 }
 
 export function Contact({ language }: ContactProps) {
-  // Vertalingen ophalen op basis van de doorgegeven 'language' prop
+  // Bepaal de taal en haal de juiste vertalingen op
   const currentLang = language === "nl" || language === "en" || language === "es" ? language : "nl"
   const t = translations[currentLang]
 
@@ -30,22 +31,26 @@ export function Contact({ language }: ContactProps) {
     e.preventDefault()
     setLoading(true)
 
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        name,
-        email,
-        phone,
-        propertyType,
-        currentPlatforms,
-        message,
-      }),
-    })
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name,
+          email,
+          phone,
+          propertyType,
+          currentPlatforms,
+          message,
+        }),
+      })
 
-    if (res.ok) {
-      window.location.href = "/thank-you"
-    } else {
+      if (res.ok) {
+        window.location.href = "/thank-you"
+      } else {
+        throw new Error("Failed")
+      }
+    } catch (error) {
       alert(currentLang === "nl" ? "Er ging iets mis. Probeer het opnieuw." : "Something went wrong. Please try again.")
       setLoading(false)
     }
@@ -54,7 +59,7 @@ export function Contact({ language }: ContactProps) {
   const handleWhatsApp = () => {
     const whatsappText = currentLang === "nl" 
       ? "Hallo, ik ben geïnteresseerd in een gratis consultatie voor property management."
-      : "Hello, I am interested in a free consultation for property management.";
+      : "Hello, I am interested in a free consultation for property management."
     
     window.open(
       `https://wa.me/573127659066?text=${encodeURIComponent(whatsappText)}`,
@@ -75,7 +80,7 @@ export function Contact({ language }: ContactProps) {
         </div>
 
         <div className="grid lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
-          {/* Contact Form */}
+          {/* Linkerzijde: Formulier */}
           <div className="lg:col-span-2">
             <Card className="luxury-card border border-gold/20">
               <CardHeader>
@@ -166,7 +171,7 @@ export function Contact({ language }: ContactProps) {
                       type="submit"
                       size="lg"
                       disabled={loading}
-                      className="transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg bg-gold text-black hover:bg-gold/90 flex-1 text-lg py-7"
+                      className="bg-gold text-black hover:bg-gold/90 flex-1 text-lg py-7 transition-all duration-300 hover:-translate-y-0.5"
                     >
                       {loading ? "..." : t.contact.form.submit}
                     </Button>
@@ -175,10 +180,10 @@ export function Contact({ language }: ContactProps) {
                       type="button"
                       size="lg"
                       variant="outline"
-                      className="transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg border-gold text-gold hover:bg-gold hover:text-black flex-1 text-lg py-7"
+                      className="border-gold text-gold hover:bg-gold hover:text-black flex-1 text-lg py-7 transition-all duration-300 hover:-translate-y-0.5"
                       onClick={handleWhatsApp}
                     >
-                      <MessageSquare className="mr-2 h-5 w-5" />
+                      <MessageIcon className="mr-2 h-5 w-5" />
                       {t.contact.form.whatsapp}
                     </Button>
                   </div>
@@ -187,7 +192,7 @@ export function Contact({ language }: ContactProps) {
             </Card>
           </div>
 
-          {/* Sidebar */}
+          {/* Rechterzijde: Info & Waarom HAVN */}
           <div className="space-y-8">
             <Card className="luxury-card border border-gold/20">
               <CardHeader>
@@ -195,28 +200,28 @@ export function Contact({ language }: ContactProps) {
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <MessageSquare className="h-6 w-6 text-gold mt-1" />
+                  <MessageIcon className="h-6 w-6 text-gold mt-1" />
                   <div>
                     <div className="font-medium">{t.contact.info.whatsapp}</div>
                     <div className="text-gray-600">+57 312 765 9066</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <Mail className="h-6 w-6 text-gold mt-1" />
+                  <MailIcon className="h-6 w-6 text-gold mt-1" />
                   <div>
                     <div className="font-medium">{t.contact.info.email}</div>
                     <div className="text-gray-600">projects@ateliersmits.be</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <MapPin className="h-6 w-6 text-gold mt-1" />
+                  <MapIcon className="h-6 w-6 text-gold mt-1" />
                   <div>
                     <div className="font-medium">{t.contact.info.location}</div>
                     <div className="text-gray-600">{t.contact.info.locationValue}</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <Clock className="h-6 w-6 text-gold mt-1" />
+                  <ClockIcon className="h-6 w-6 text-gold mt-1" />
                   <div>
                     <div className="font-medium">{t.contact.info.responseTime}</div>
                     <div className="text-gray-600">{t.contact.info.responseValue}</div>
@@ -238,44 +243,6 @@ export function Contact({ language }: ContactProps) {
                     <span>{point}</span>
                   </div>
                 ))}
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </div>
-    </section>
-
-            {/* Waarom HAVN - Zwart zoals je wilt */}
-            <Card className="bg-black text-white border-2 border-gold/20">
-              <CardHeader>
-                <CardTitle className="text-xl font-serif text-gold">
-                  {t.contact.whyChoose.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4 text-sm">
-                <div className="flex items-center gap-3">
-                  <span className="text-gold text-xl">✓</span>
-                  <span>Persoonlijke aanpak per accommodatie</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className="text-gold text-xl">✓</span>
-                  <span>Geen langetermijncontracten</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className="text-gold text-xl">✓</span>
-                  <span>Transparante & eerlijke prijzen</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className="text-gold text-xl">✓</span>
-                  <span>Bewezen revenue groei</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className="text-gold text-xl">✓</span>
-                  <span>24/7 gastcommunicatie</span>
-                </div>
-                {t.contact.whyChoose.points.map((point, i) => (
-  <div key={i}>{point}</div>
-))}
               </CardContent>
             </Card>
           </div>
