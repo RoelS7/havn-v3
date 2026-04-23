@@ -9,7 +9,8 @@ interface FinalCtaProps {
 }
 
 export function FinalCta({ language }: FinalCtaProps) {
-  const currentLang = language === "nl" || language === "en" ? language : "nl"
+// UPDATE: Nu ook "es" toevoegen aan de toegestane talen
+  const currentLang = (language === "nl" || language === "en" || language === "es") ? language : "nl"
   const t = translations[currentLang]
 
   return (

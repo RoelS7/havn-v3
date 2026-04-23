@@ -11,7 +11,8 @@ interface FAQSectionProps {
 }
 
 export function FAQSection({ language }: FAQSectionProps) {
-  const currentLang = language === "nl" || language === "en" ? language : "nl"
+  // UPDATE: Nu ook "es" toevoegen aan de toegestane talen
+  const currentLang = (language === "nl" || language === "en" || language === "es") ? language : "nl"
   const t = translations[currentLang]
 
   const [openItems, setOpenItems] = useState<number[]>([0]) // Eerste item open

@@ -6,7 +6,8 @@ interface ProblemSectionProps {
 }
 
 export function ProblemSection({ language }: ProblemSectionProps) {
-  const currentLang = language === "nl" || language === "en" ? language : "nl"
+// UPDATE: Nu ook "es" toevoegen aan de toegestane talen
+  const currentLang = (language === "nl" || language === "en" || language === "es") ? language : "nl"
   const t = translations[currentLang]
   const icons = [Clock, TrendingDown, Layers]
 
