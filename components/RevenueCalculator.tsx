@@ -11,8 +11,6 @@ export default function RevenueCalculator() {
   const [result, setResult] = useState<number | null>(null)
   const [loading, setLoading] = useState(false)
 
-  const benchmarkRevenue = rooms * adr * 0.68 * 365
-
   const text = {
     nl: {
       title: "Hotel Revenue Calculator",
@@ -24,7 +22,8 @@ export default function RevenueCalculator() {
       increase: "Potentiële stijging met HAVN optimalisatie",
       email: "Email voor volledige analyse",
       cta: "Ontvang volledige analyse",
-      based: "Gebaseerd op gemiddelde optimalisaties van 10–20%"
+      based: "Gebaseerd op gemiddelde optimalisaties van 10–20%",
+      loading: "Bezig..."
     },
     en: {
       title: "Hotel Revenue Calculator",
@@ -36,9 +35,23 @@ export default function RevenueCalculator() {
       increase: "Potential increase with HAVN optimization",
       email: "Email for full analysis",
       cta: "Get full revenue analysis",
-      based: "Based on average optimization improvements of 10–20%"
+      based: "Based on average optimization improvements of 10–20%",
+      loading: "Loading..."
+    },
+    es: {
+      title: "Calculadora de Ingresos",
+      rooms: "Número de habitaciones",
+      adr: "Tarifa promedio por noche (€)",
+      occ: "Tasa de ocupación (%)",
+      calculate: "Calcular mis ingresos",
+      result: "Ingresos anuales estimados",
+      increase: "Aumento potencial con optimización HAVN",
+      email: "Email para análisis completo",
+      cta: "Obtener análisis de ingresos",
+      based: "Basado en mejoras promedio de optimización del 10–20%",
+      loading: "Cargando..."
     }
-  }[language || "en"]
+  }[(language === "nl" || language === "en" || language === "es" ? language : "en")]
 
   const calculate = () => {
     const revenue = rooms * adr * (occupancy / 100) * 365
@@ -106,7 +119,7 @@ export default function RevenueCalculator() {
           </button>
 
           {result !== null && (
-            <div className="mt-10 p-8 bg-[var(--background)] rounded-2xl border border-gold/30">
+            <div className="mt-10 p-8 bg-gray-50 rounded-2xl border border-gold/30">
               <p className="text-lg text-gray-600 mb-1">{text.result}</p>
               <p className="text-4xl font-bold text-black">€{Math.round(result).toLocaleString()}</p>
 
@@ -120,7 +133,7 @@ export default function RevenueCalculator() {
                 <label className="block text-sm font-medium text-gray-700 mb-2">{text.email}</label>
                 <input
                   type="email"
-                  placeholder="jouw@email.com"
+                  placeholder="email@ejemplo.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="w-full border border-gray-200 rounded-2xl p-4 text-lg"
@@ -130,7 +143,7 @@ export default function RevenueCalculator() {
                   disabled={!email || loading}
                   className="mt-4 w-full bg-gold hover:bg-gold/90 text-black font-medium py-4 rounded-2xl text-lg disabled:opacity-50 transition-all"
                 >
-                  {loading ? "Bezig..." : text.cta}
+                  {loading ? text.loading : text.cta}
                 </button>
               </div>
             </div>

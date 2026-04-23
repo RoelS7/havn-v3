@@ -8,7 +8,6 @@ interface TestimonialsProps {
 }
 
 export function Testimonials({ language }: TestimonialsProps) {
-// UPDATE: Nu ook "es" toevoegen aan de toegestane talen
   const currentLang = (language === "nl" || language === "en" || language === "es") ? language : "nl"
   const t = translations[currentLang]
 
@@ -17,34 +16,49 @@ export function Testimonials({ language }: TestimonialsProps) {
       name: "Marie Dubois",
       property: "Villa Serenity, Brugge",
       rating: 5,
-      text:
-        currentLang === "nl"
-          ? "Dankzij HAVN is onze revenue met 47% gestegen in slechts 4 maanden. De professionele aanpak en 24/7 support maken het verschil."
-          : "Thanks to HAVN, our revenue increased by 47% in just 4 months. The professional approach and 24/7 support make all the difference.",
+      text: {
+        nl: "Dankzij HAVN is onze revenue met 47% gestegen in slechts 4 maanden. De professionele aanpak en 24/7 support maken het verschil.",
+        en: "Thanks to HAVN, our revenue increased by 47% in just 4 months. The professional approach and 24/7 support make all the difference.",
+        es: "Gracias a HAVN, nuestros ingresos aumentaron un 47% en solo 4 meses. El enfoque profesional y el soporte 24/7 marcan la diferencia."
+      }[currentLang],
       image: "/placeholder.svg?height=80&width=80",
-      results: currentLang === "nl" ? "+47% Revenue" : "+47% Revenue",
+      results: {
+        nl: "+47% Revenue",
+        en: "+47% Revenue",
+        es: "+47% Ingresos"
+      }[currentLang],
     },
     {
       name: "Jan Vermeulen",
       property: "Cozy Loft Antwerpen",
       rating: 5,
-      text:
-        currentLang === "nl"
-          ? "Eindelijk kan ik met een gerust hart op vakantie. HAVN regelt alles perfect en mijn gasten zijn nog tevredener dan voorheen."
-          : "Finally I can go on vacation with peace of mind. HAVN handles everything perfectly and my guests are even more satisfied than before.",
+      text: {
+        nl: "Eindelijk kan ik met een gerust hart op vakantie. HAVN regelt alles perfect en mijn gasten zijn nog tevredener dan voorheen.",
+        en: "Finally I can go on vacation with peace of mind. HAVN handles everything perfectly and my guests are even more satisfied than before.",
+        es: "Finalmente puedo irme de vacaciones con tranquilidad. HAVN gestiona todo perfectamente y mis huéspedes están más satisfechos que antes."
+      }[currentLang],
       image: "/placeholder.svg?height=80&width=80",
-      results: currentLang === "nl" ? "100% Bezetting" : "100% Occupancy",
+      results: {
+        nl: "100% Bezetting",
+        en: "100% Occupancy",
+        es: "100% Ocupación"
+      }[currentLang],
     },
     {
       name: "Sophie Laurent",
       property: "B&B Le Charme, Gent",
       rating: 5,
-      text:
-        currentLang === "nl"
-          ? "De dynamische prijsstrategie heeft onze winst verdubbeld. Ik had nooit gedacht dat zoveel optimalisatie mogelijk was."
-          : "The dynamic pricing strategy doubled our profit. I never thought so much optimization was possible.",
+      text: {
+        nl: "De dynamische prijsstrategie heeft onze winst verdubbeld. Ik had nooit gedacht dat zoveel optimalisatie mogelijk was.",
+        en: "The dynamic pricing strategy doubled our profit. I never thought so much optimization was possible.",
+        es: "La estrategia de precios dinámicos duplicó nuestras ganancias. Nunca imaginé que fuera posible tanta optimización."
+      }[currentLang],
       image: "/placeholder.svg?height=80&width=80",
-      results: currentLang === "nl" ? "+120% Winst" : "+120% Profit",
+      results: {
+        nl: "+120% Winst",
+        en: "+120% Profit",
+        es: "+120% Ganancias"
+      }[currentLang],
     },
   ]
 
@@ -53,12 +67,18 @@ export function Testimonials({ language }: TestimonialsProps) {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-serif text-black mb-4">
-            {currentLang === "nl" ? "Wat Onze Klanten Zeggen" : "What Our Clients Say"}
+            {{
+              nl: "Wat Onze Klanten Zeggen",
+              en: "What Our Clients Say",
+              es: "Lo Que Dicen Nuestros Clientes"
+            }[currentLang]}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto font-light">
-            {currentLang === "nl"
-              ? "Ontdek hoe eigenaren van B&B's en hotels hun revenue maximaliseren met onze professionele service"
-              : "Discover how B&B and hotel owners maximize their revenue with our professional service"}
+            {{
+              nl: "Ontdek hoe eigenaren van B&B's en hotels hun revenue maximaliseren met onze professionele service",
+              en: "Discover how B&B and hotel owners maximize their revenue with our professional service",
+              es: "Descubre cómo los dueños de propiedades maximizan sus ingresos con nuestro servicio profesional"
+            }[currentLang]}
           </p>
         </div>
 
