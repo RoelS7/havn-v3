@@ -9,7 +9,8 @@ interface HeroProps {
 }
 
 export function Hero({ language }: HeroProps) {
-  const currentLang = language === "nl" || language === "en" ? language : "nl"
+  // UPDATE: Nu ook "es" toevoegen aan de toegestane talen
+  const currentLang = (language === "nl" || language === "en" || language === "es") ? language : "nl"
   const t = translations[currentLang]
 
   return (
@@ -25,21 +26,19 @@ export function Hero({ language }: HeroProps) {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 relative z-20">
-              {/* Primaire knop - nu gelinkt aan Calendly */}
               <Button 
                 asChild 
                 size="lg" 
                 className="transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg bg-gold text-black hover:bg-gold/90 text-base lg:text-lg px-6 lg:px-8"
               >
                 <Link href="https://calendly.com/smitsro7/consult">
-                  {currentLang === "nl" ? "Gratis strategiegesprek inplannen" : "Book your free strategy call"}
+                  {/* UPDATE: Gebruik hier de t-variabele voor automatische vertaling */}
+                  {t.hero.cta}
                   <ArrowRight className="ml-2 h-5 w-5" />
                   <span className="absolute inset-0 bg-white/10 animate-pulse rounded-lg"></span>
                 </Link>
               </Button>
 
-
-              {/* Secundaire knop */}
               <Button
                 asChild
                 size="lg"
@@ -51,7 +50,7 @@ export function Hero({ language }: HeroProps) {
                 </Link>
               </Button>
             </div>
-           
+            
             <p className="text-sm text-gray-400 italic pt-2">
               {t.hero.positioning}
             </p>
