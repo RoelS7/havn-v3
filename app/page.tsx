@@ -53,7 +53,7 @@ export default function Home() {
 
           {/* Revenue Calculator op exact dezelfde achtergrond */}
           <div className="mt-16 max-w-4xl mx-auto px-4 bg-[var(--background)]">
-            <RevenueCalculator />
+            <RevenueCalculator language={language} key={`calc-${language}`} />
           </div>
 
         </section>
