@@ -117,8 +117,7 @@ export const translations = {
     },
     pricing: {
       title: "Transparante Prijzen",
-      subtitle:
-        "Kies het pakket dat perfect past bij uw accommodatie en ambities. Alle pakketten zijn maandelijks opzegbaar en zonder verborgen kosten.",
+      subtitle: "Kies het pakket dat perfect past bij uw accommodatie en ambities. Alle pakketten zijn maandelijks opzegbaar en zonder verborgen kosten.",
       mostPopular: "Meest Populair",
       requestQuote: "Vraag Persoonlijke Offerte",
       freeConsultation: "Gratis strategiegesprek plannen",
@@ -174,10 +173,8 @@ export const translations = {
     },
     about: {
       title: "Over HAVN",
-      subtitle:
-        "Als ervaren property management specialist help ik eigenaren van B&B's, vakantiewoningen en kleine hotels om hun revenue te maximaliseren door professioneel beheer van online platforms.",
-      description:
-        "Met jarenlange ervaring in zowel hospitality als digital marketing, combineer ik technische expertise met diepgaande kennis van de toeristische sector. Van Airbnb optimalisatie tot complete revenue management strategieën - ik zorg ervoor dat uw accommodatie het maximale potentieel behaalt.",
+      subtitle: "Als ervaren property management specialist help ik eigenaren van B&B's, vakantiewoningen en kleine hotels om hun revenue te maximaliseren door professioneel beheer van online platforms.",
+      description: "Met jarenlange ervaring in zowel hospitality als digital marketing, combineer ik technische expertise met diepgaande kennis van de toeristische sector. Van Airbnb optimalisatie tot complete revenue management strategieën - ik zorg ervoor dat uw accommodatie het maximale potentieel behaalt.",
       approach: "Mijn Aanpak",
       points: [
         "Data-gedreven beslissingen voor optimale pricing",
@@ -195,8 +192,7 @@ export const translations = {
     },
     contact: {
       title: "Start Uw Gratis Strategiegesprek",
-      subtitle:
-        "Klaar om uw revenue te maximaliseren? Neem contact op voor een vrijblijvende consultatie en ontdek hoe ik uw accommodatie kan helpen groeien.",
+      subtitle: "Klaar om uw revenue te maximaliseren? Neem contact op voor een vrijblijvende consultatie en ontdek hoe ik uw accommodatie kan helpen groeien.",
       form: {
         title: "Vraag Uw Gratis Consultatie Aan",
         subtitle: "Vertel me over uw accommodatie en ik neem binnen 24 uur contact met u op.",
@@ -372,8 +368,7 @@ export const translations = {
     },
     pricing: {
       title: "Transparent Pricing",
-      subtitle:
-        "Choose the package that perfectly fits your accommodation and ambitions. All packages are monthly cancellable and without hidden costs.",
+      subtitle: "Choose the package that perfectly fits your accommodation and ambitions. All packages are monthly cancellable and without hidden costs.",
       mostPopular: "Most Popular",
       requestQuote: "Request Personal Quote",
       freeConsultation: "Book your free strategy call",
@@ -429,10 +424,8 @@ export const translations = {
     },
     about: {
       title: "About HAVN",
-      subtitle:
-        "As an experienced property management specialist, I help owners of B&Bs, vacation rentals and small hotels maximize their revenue through professional management of online platforms.",
-      description:
-        "With years of experience in both hospitality and digital marketing, I combine technical expertise with in-depth knowledge of the tourism sector. From Airbnb optimization to complete revenue management strategies - I ensure your accommodation reaches its maximum potential.",
+      subtitle: "As an experienced property management specialist, I help owners of B&Bs, vacation rentals and small hotels maximize their revenue through professional management of online platforms.",
+      description: "With years of experience in both hospitality and digital marketing, I combine technical expertise with in-depth knowledge of the tourism sector. From Airbnb optimization to complete revenue management strategies - I ensure your accommodation reaches its maximum potential.",
       approach: "My Approach",
       points: [
         "Data-driven decisions for optimal pricing",
@@ -450,8 +443,7 @@ export const translations = {
     },
     contact: {
       title: "Start Your Free Strategy Call",
-      subtitle:
-        "Ready to maximize your revenue? Contact us for a free strategy call and discover how I can help your accommodation grow.",
+      subtitle: "Ready to maximize your revenue? Contact us for a free strategy call and discover how I can help your accommodation grow.",
       form: {
         title: "Request Your Free Strategy Call",
         subtitle: "Tell me about your accommodation and I'll contact you within 24 hours.",
@@ -510,87 +502,254 @@ export const translations = {
     },
   },
   es: {
-      nav: {
-        home: "Inicio",
-        services: "Servicios",
-        caseStudy: "Caso de estudio",
-        faq: "FAQ",
-        contact: "Contacto",
-        freeConsultation: "Consulta gratuita",
-      },
-      hero: {
-        title: "Más ingresos de tu alquiler vacacional",
-        subtitle: "HAVN ayuda a hosts a gestionar su propiedad con sistemas inteligentes, automatización y estrategias de precios basadas en datos.",
-        cta: "Reservar consulta gratuita",
-        secondaryCta: "Ver cómo funciona",
-        positioning: "Para hosts que quieren operar como un negocio profesional.",
-        valueBullets: [
-          "Sistemas que funcionan juntos",
-          "Automatización de comunicación",
-          "Estrategias de precios inteligentes",
-        ],
-      },
-      services: {
-        title: "Qué optimiza HAVN",
-        items: [
-          "Configuración de sistemas de reservas",
-          "Integración de plataformas",
-          "Estrategias dinámicas de precios",
-          "Automatización de comunicación",
-          "Optimización de procesos",
-          "Consultoría operativa",
-        ],
-        cta: "Reservar consulta gratuita",
-      },
-      contact: {
-        title: "Empieza tu consulta gratuita",
-        subtitle: "Déjanos tus datos y te contactamos en 24h.",
-        form: {
-          title: "Solicita tu consulta gratuita",
-          subtitle: "Cuéntanos sobre tu propiedad.",
-          name: "Nombre *",
-          email: "Email *",
-          phone: "Teléfono",
-          propertyType: "Tipo de propiedad",
-          platforms: "Plataformas actuales",
-          message: "Mensaje",
-          submit: "Enviar solicitud",
-          whatsapp: "WhatsApp directo",
-          placeholders: {
-            name: "Tu nombre completo",
-            email: "tu@email.com",
-            phone: "+57...",
-            platforms: "Airbnb, Booking...",
-            message: "Describe tu situación...",
-            selectType: "Selecciona tipo",
-          },
-          propertyTypes: {
-            bnb: "B&B",
-            vacationRental: "Alquiler vacacional",
-            smallHotel: "Hotel pequeño",
-            apartment: "Apartamento",
-            other: "Otro",
-          },
+    nav: {
+      home: "Inicio",
+      services: "Servicios",
+      caseStudy: "Caso de Éxito",
+      faq: "Preguntas Frecuentes",
+      contact: "Contacto",
+      freeConsultation: "Asesoría estratégica gratuita",
+    },
+    hero: {
+      title: "Maximiza el rendimiento de tu propiedad vacacional",
+      subtitle: "HAVN ayuda a los anfitriones de rentas cortas a profesionalizar su gestión con sistemas inteligentes, automatización y estrategias de precios basadas en datos.",
+      cta: "Agendar asesoría gratuita",
+      secondaryCta: "Cómo funciona",
+      positioning: "Para anfitriones y operadores que buscan transformar su propiedad en un negocio de hospitalidad profesional.",
+      valueBullets: [
+        "Sistemas integrados que trabajan para ti",
+        "Automatización de mensajes y flujos de trabajo",
+        "Precios dinámicos para maximizar tus ingresos",
+      ],
+    },
+    problem: {
+      title: "Gestionar tu renta vacacional no tiene por qué ser un caos",
+      items: [
+        {
+          title: "Exceso de tareas manuales",
+          description: "Gestionar mensajes, reservas y plataformas consume demasiado de tu tiempo valioso.",
         },
-        info: {
-          title: "Información de contacto",
-          whatsapp: "WhatsApp",
-          email: "Email",
-          location: "Ubicación",
-          responseTime: "Tiempo de respuesta",
-          responseValue: "Dentro de 24h",
-          locationValue: "Colombia",
+        {
+          title: "Ingresos perdidos",
+          description: "Sin una estrategia de precios inteligente, estás dejando dinero sobre la mesa.",
         },
-        whyChoose: {
-          title: "Por qué HAVN",
-          points: [
-            "Consulta gratuita",
-            "Sin contratos largos",
-            "Precios transparentes",
-            "Resultados probados",
-            "Soporte 24/7",
+        {
+          title: "Sistemas desconectados",
+          description: "Tus calendarios y comunicaciones no se sincronizan, generando errores y estrés.",
+        },
+      ],
+    },
+    solution: {
+      title: "Una gestión profesional diseñada para escalar",
+      pillars: [
+        {
+          title: "Sistemas Pro",
+          description: "Configuración experta de motores de reserva, sincronización de calendarios y flujos operativos.",
+        },
+        {
+          title: "Optimización de Ingresos",
+          description: "Estrategias de Revenue Management para elevar tu ocupación y tarifa promedio.",
+        },
+        {
+          title: "Automatización Total",
+          description: "Mensajería, check-ins y tareas diarias que funcionan en piloto automático.",
+        },
+      ],
+    },
+    howItWorks: {
+      title: "El Método HAVN",
+      steps: [
+        {
+          step: "1",
+          title: "Auditoría",
+          description: "Analizamos tu operación actual e identificamos fugas de dinero y tiempo.",
+        },
+        {
+          step: "2",
+          title: "Implementación",
+          description: "Configuramos profesionalmente tus sistemas y flujos de trabajo.",
+        },
+        {
+          step: "3",
+          title: "Escalamiento",
+          description: "Refinamos la estrategia de precios y automatización para el máximo retorno.",
+        },
+      ],
+    },
+    finalCta: {
+      title: "¿Listo para profesionalizar tu operación?",
+      button: "Agendar mi asesoría gratuita",
+    },
+    services: {
+      title: "En qué nos enfocamos",
+      items: [
+        "Configuración de sistemas de reserva (PMS)",
+        "Integración de canales (Airbnb, Booking, etc.)",
+        "Estrategia de precios dinámicos",
+        "Automatización de la comunicación con el huésped",
+        "Optimización de flujos operativos",
+        "Consultoría para anfitriones y operadores",
+      ],
+      cta: "Quiero una asesoría gratuita",
+    },
+    caseStudy: {
+      title: "Resultados Reales",
+      subtitle: "Un ejemplo de cómo HAVN ayuda a transformar la gestión y rentabilidad de propiedades.",
+      card: {
+        title: "De Hoeveschuur – Automatización de Estancia Vacacional",
+        location: "Millen, Bélgica",
+        description: "Optimizamos todo el sistema de gestión para que el propietario redujera su carga administrativa y operara con un estándar de hotel profesional.",
+        optimizedTitle: "Mejoras implementadas",
+        optimizedItems: [
+          "Configuración avanzada del sistema de reservas",
+          "Automatización de la mensajería con huéspedes",
+          "Optimización de flujos de trabajo operativos",
+          "Diseño y desarrollo de sitio web de reservas directas",
+          "Reportes métricos detallados para el propietario",
+        ],
+        resultTitle: "Impacto logrado",
+        resultItems: [
+          "Reducción drástica de tareas administrativas",
+          "Comunicación instantánea y automática",
+          "Sistema de reservas profesional y centralizado",
+          "Mayor control sobre el rendimiento del negocio",
+        ],
+        quote: "HAVN nos devolvió nuestro tiempo y elevó nuestra propiedad a un nivel profesional que no creíamos posible.",
+      },
+    },
+    pricing: {
+      title: "Planes Claros y Transparentes",
+      subtitle: "Elige el plan que mejor se adapte a tu etapa actual. Sin letras chiquitas, cancela cuando quieras.",
+      mostPopular: "Más Popular",
+      requestQuote: "Solicitar Propuesta Personalizada",
+      freeConsultation: "Agendar asesoría gratuita",
+      notSure: "¿No sabes qué plan elegir? Resolvamos tus dudas en una llamada.",
+      packages: {
+        basic: {
+          name: "Básico",
+          description: "Ideal para quienes están iniciando y buscan orden",
+          features: [
+            "Optimización de perfiles en plataformas",
+            "Gestión básica de canales",
+            "Reporte de métricas mensual",
+            "Soporte vía email",
+            "Configuración de 2 plataformas",
           ],
         },
-      }
-    }
-}
+        growth: {
+          name: "Crecimiento",
+          description: "Para propiedades que buscan escalar y maximizar su ocupación",
+          features: [
+            "Todo lo del plan Básico",
+            "Estrategia de precios dinámicos",
+            "Gestión de comunicación 24/7",
+            "Analytics avanzados",
+            "Gestión activa de reseñas",
+            "Optimización por temporadas",
+            "Soporte prioritario por WhatsApp",
+          ],
+        },
+        fullManagement: {
+          name: "Gestión Total",
+          description: "Servicio premium para máximo ingreso y cero preocupaciones",
+          features: [
+            "Todo lo del plan Crecimiento",
+            "Account Manager dedicado",
+            "Sesiones de estrategia semanales",
+            "Análisis profundo de competencia",
+            "Campañas de marketing digital",
+            "Asesoría para expansión",
+            "Soporte VIP 24/7",
+            "Optimización continua de ingresos",
+          ],
+        },
+      },
+      guarantees: {
+        moneyBack: "Garantía de satisfacción",
+        support: "Soporte humano",
+        noContracts: "Sin contratos forzosos",
+        days: "30 Días",
+        available: "24/7",
+        none: "Cero",
+      },
+    },
+    about: {
+      title: "Sobre HAVN",
+      subtitle: "Como especialista en gestión de propiedades, ayudo a dueños de B&B's y alquileres vacacionales a dominar el mercado digital y maximizar sus utilidades.",
+      description: "Con años de experiencia en hospitalidad y marketing digital, combino la precisión técnica con un conocimiento profundo del sector turístico. Desde optimización en Airbnb hasta estrategias complejas de Revenue Management, mi enfoque es que tu propiedad alcance su máximo potencial.",
+      approach: "Mi Enfoque",
+      points: [
+        "Decisiones basadas en datos para precios óptimos",
+        "Servicio personalizado enfocado en tus metas reales",
+        "Reportes transparentes y mejora continua",
+        "Comunicación proactiva y soporte al huésped 24/7",
+      ],
+      cta: "Conectemos hoy",
+      stats: {
+        experience: "Años de Experiencia",
+        clients: "Clientes Satisfechos",
+        growth: "Crecimiento Promedio de Ingresos",
+        support: "Soporte",
+      },
+    },
+    contact: {
+      title: "Obtén tu asesoría estratégica gratuita",
+      subtitle: "¿Listo para disparar tus ingresos? Contáctanos para una consulta sin compromiso y descubre el potencial real de tu propiedad.",
+      form: {
+        title: "Solicita tu asesoría gratuita",
+        subtitle: "Cuéntame sobre tu propiedad y te contactaré en menos de 24 horas.",
+        name: "Nombre *",
+        email: "Correo electrónico *",
+        phone: "Teléfono",
+        propertyType: "Tipo de Propiedad *",
+        platforms: "Plataformas actuales",
+        message: "Mensaje",
+        submit: "Enviar Solicitud",
+        whatsapp: "WhatsApp Directo",
+        placeholders: {
+          name: "Tu nombre completo",
+          email: "tu@correo.com",
+          phone: "+57 300 000 0000",
+          platforms: "Ej. Airbnb, Booking.com, VRBO...",
+          message: "Cuéntame sobre tu propiedad, tus desafíos actuales y tus objetivos...",
+          selectType: "Selecciona tipo",
+        },
+        propertyTypes: {
+          bnb: "B&B",
+          vacationRental: "Alquiler Vacacional",
+          smallHotel: "Hotel Boutique / Pequeño",
+          apartment: "Apartamento",
+          other: "Otro",
+        },
+      },
+      info: {
+        title: "Información de Contacto",
+        whatsapp: "WhatsApp",
+        email: "Correo",
+        location: "Ubicación",
+        responseTime: "Tiempo de respuesta",
+        responseValue: "Menos de 24 horas",
+        locationValue: "Colombia / Global",
+      },
+      whyChoose: {
+        title: "¿Por qué elegir HAVN?",
+        points: [
+          "Asesoría y análisis inicial sin costo",
+          "Sin contratos de permanencia",
+          "Precios claros y sin sorpresas",
+          "Resultados medibles y probados",
+          "Soporte continuo 24/7",
+        ],
+      },
+    },
+    footer: {
+      description: "Especialista en gestión de propiedades para B&B's, rentas vacacionales y hoteles boutique.",
+      services: "Servicios",
+      packages: "Asesoría Gratuita",
+      contact: "Contacto",
+      rights: "Todos los derechos reservados.",
+      privacy: "Política de Privacidad",
+      terms: "Términos y Condiciones",
+    },
+  },
+};
