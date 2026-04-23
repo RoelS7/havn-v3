@@ -22,9 +22,9 @@ export function Contact() {
   // Vertalingen ophalen
   const { language } = useLanguage()
   const currentLang =
-  language === "nl" || language === "en" || language === "es"
-    ? language
-    : "en"
+    language === "nl" || language === "en" || language === "es"
+      ? language
+      : "en"
 
   const t = translations[currentLang]
 
@@ -48,14 +48,20 @@ export function Contact() {
     if (res.ok) {
       window.location.href = "/thank-you"
     } else {
-      alert("Er ging iets mis. Probeer het opnieuw.")
+      // Zelfs de error melding is nu vertaald (of valt terug op Engels)
+      alert(currentLang === "nl" ? "Er ging iets mis. Probeer het opnieuw." : "Something went wrong. Please try again.")
       setLoading(false)
     }
   }
 
   const handleWhatsApp = () => {
+    // De WhatsApp tekst is nu ook afhankelijk van de taal
+    const whatsappText = currentLang === "nl" 
+      ? "Hallo, ik ben geïnteresseerd in een gratis consultatie voor property management."
+      : "Hello, I am interested in a free consultation for property management.";
+    
     window.open(
-      "https://wa.me/573127659066?text=Hallo, ik ben geïnteresseerd in een gratis consultatie voor property management.",
+      `https://wa.me/573127659066?text=${encodeURIComponent(whatsappText)}`,
       "_blank"
     )
   }
@@ -65,10 +71,10 @@ export function Contact() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-serif text-black mb-4">
-            {t.contact.title || "Start Uw Gratis Consultatie"}
+            {t.contact.title}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto font-light">
-            {t.contact.subtitle || "Klaar om meer rendement te halen uit uw accommodatie? Laat uw gegevens achter en ik neem binnen 24 uur contact met u op."}
+            {t.contact.subtitle}
           </p>
         </div>
 
@@ -78,10 +84,10 @@ export function Contact() {
             <Card className="luxury-card border border-gold/20">
               <CardHeader>
                 <CardTitle className="text-2xl font-serif text-black">
-                  {t.contact.formTitle}
+                  {t.contact.form.title}
                 </CardTitle>
                 <CardDescription className="text-lg">
-                  {t.contact.formDescription || "Vertel me over uw accommodatie en ik neem binnen 24 uur contact met u op."}
+                  {t.contact.form.subtitle}
                 </CardDescription>
               </CardHeader>
 
@@ -128,11 +134,11 @@ export function Contact() {
                           <SelectValue placeholder={t.contact.form.placeholders.selectType} />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="bnb">B&B</SelectItem>
-                          <SelectItem value="vacation-rental">Vakantiewoning</SelectItem>
-                          <SelectItem value="small-hotel">Klein Hotel</SelectItem>
-                          <SelectItem value="apartment">Appartement</SelectItem>
-                          <SelectItem value="other">Andere</SelectItem>
+                          <SelectItem value="bnb">{t.contact.form.propertyTypes.bnb}</SelectItem>
+                          <SelectItem value="vacation-rental">{t.contact.form.propertyTypes.vacationRental}</SelectItem>
+                          <SelectItem value="small-hotel">{t.contact.form.propertyTypes.smallHotel}</SelectItem>
+                          <SelectItem value="apartment">{t.contact.form.propertyTypes.apartment}</SelectItem>
+                          <SelectItem value="other">{t.contact.form.propertyTypes.other}</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
@@ -211,14 +217,14 @@ export function Contact() {
                   <MapPin className="h-6 w-6 text-gold mt-1" />
                   <div>
                     <div className="font-medium">{t.contact.info.location}</div>
-                    <div className="text-gray-600">Medellín, Colombia (remote)</div>
+                    <div className="text-gray-600">{t.contact.info.locationValue}</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <Clock className="h-6 w-6 text-gold mt-1" />
                   <div>
                     <div className="font-medium">{t.contact.info.responseTime}</div>
-                    <div className="text-gray-600">Binnen 24 uur</div>
+                    <div className="text-gray-600">{t.contact.info.responseValue}</div>
                   </div>
                 </div>
               </CardContent>
