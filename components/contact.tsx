@@ -1,5 +1,5 @@
 "use client"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -11,6 +11,21 @@ import { translations } from "@/lib/translations"
 import { useLanguage } from "@/hooks/use-language"
 
 export function Contact() {
+  const { language } = useLanguage()
+  
+  // We forceren een her-berekening van de vertalingen zodra de taal wijzigt
+  const [currentLang, setCurrentLang] = useState<"nl" | "en" | "es">("nl")
+
+  useEffect(() => {
+    if (language === "nl" || language === "en" || language === "es") {
+      setCurrentLang(language)
+    } else {
+      setCurrentLang("en") // fallback
+    }
+  }, [language])
+
+  const t = translations[currentLang]
+
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [phone, setPhone] = useState("")
@@ -18,15 +33,6 @@ export function Contact() {
   const [currentPlatforms, setCurrentPlatforms] = useState("")
   const [message, setMessage] = useState("")
   const [loading, setLoading] = useState(false)
-
-  // Vertalingen ophalen
-  const { language } = useLanguage()
-  const currentLang =
-    language === "nl" || language === "en" || language === "es"
-      ? language
-      : "en"
-
-  const t = translations[currentLang]
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -48,14 +54,12 @@ export function Contact() {
     if (res.ok) {
       window.location.href = "/thank-you"
     } else {
-      // Zelfs de error melding is nu vertaald (of valt terug op Engels)
-      alert(currentLang === "nl" ? "Er ging iets mis. Probeer het opnieuw." : "Something went wrong. Please try again.")
+      alert(currentLang === "nl" ? "Er ging iets mis. Probeer het opnieuw." : "Something went wrong.")
       setLoading(false)
     }
   }
 
   const handleWhatsApp = () => {
-    // De WhatsApp tekst is nu ook afhankelijk van de taal
     const whatsappText = currentLang === "nl" 
       ? "Hallo, ik ben geïnteresseerd in een gratis consultatie voor property management."
       : "Hello, I am interested in a free consultation for property management.";
@@ -65,6 +69,9 @@ export function Contact() {
       "_blank"
     )
   }
+
+  // Als 't' nog niet geladen is (om crashes te voorkomen)
+  if (!t) return null;
 
   return (
     <section id="contact" className="py-20 bg-[var(--background)]">
@@ -79,7 +86,6 @@ export function Contact() {
         </div>
 
         <div className="grid lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
-          {/* Contact Form */}
           <div className="lg:col-span-2">
             <Card className="luxury-card border border-gold/20">
               <CardHeader>
@@ -191,9 +197,7 @@ export function Contact() {
             </Card>
           </div>
 
-          {/* Sidebar */}
           <div className="space-y-8">
-            {/* Contact Info */}
             <Card className="luxury-card border border-gold/20">
               <CardHeader>
                 <CardTitle className="text-xl font-serif text-black">{t.contact.info.title}</CardTitle>
