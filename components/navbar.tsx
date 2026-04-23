@@ -19,8 +19,8 @@ export function Navbar({ language, onLanguageChange }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false)
   const activeSection = useActiveSection()
 
-  // Fallback to 'nl' if language is not valid
-  const currentLang = language === "nl" || language === "en" ? language : "nl"
+  // UPDATE: Nu accepteren we ook "es" (Spaans)
+  const currentLang = (language === "nl" || language === "en" || language === "es") ? language : "nl"
   const t = translations[currentLang]
 
   const navItems = [
@@ -33,7 +33,6 @@ export function Navbar({ language, onLanguageChange }: NavbarProps) {
 
   const handleNavClick = (href: string) => {
     setIsOpen(false)
-    // Smooth scroll to section
     const element = document.querySelector(href)
     if (element) {
       element.scrollIntoView({ behavior: "smooth" })
@@ -42,14 +41,13 @@ export function Navbar({ language, onLanguageChange }: NavbarProps) {
 
   const [scrolled, setScrolled] = useState(false)
 
-    useEffect(() => {
-      const handleScroll = () => {
-        setScrolled(window.scrollY > 20)
-      }
-
-      window.addEventListener("scroll", handleScroll)
-      return () => window.removeEventListener("scroll", handleScroll)
-    }, [])
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20)
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
@@ -57,27 +55,27 @@ export function Navbar({ language, onLanguageChange }: NavbarProps) {
         ? "bg-black/95 backdrop-blur-md py-3 shadow-md"
         : "bg-black/80 py-5"
     }`}>
-    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[90%] h-[1px] bg-gradient-to-r from-transparent via-[#b8925c]/70 to-transparent" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[90%] h-[1px] bg-gradient-to-r from-transparent via-[#b8925c]/70 to-transparent" />
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-24">
-          {" "}
-          {/* Hoogte van navbar verhoogd naar h-24 (96px) */}
+          
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <Image
-              src="/logo-60x120.png" // Pad naar uw geüploade logo
+              src="/logo-60x120.png"
               alt="HAVN Logo"
-              width={320} // Intrinsieke breedte voor Next.js optimalisatie
-              height={160} // Intrinsieke hoogte voor Next.js optimalisatie
-              className="h-20 w-auto" // Tailwind class voor de gerenderde hoogte (80px)
+              width={320}
+              height={160}
+              className="h-20 w-auto"
               priority
             />
           </Link>
+
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-10">
             {navItems.map((item) => (
               <button
-                key={item.name}
+                key={item.id}
                 onClick={() => handleNavClick(item.href)}
                 className={`cursor-pointer transition-all duration-300 font-light text-sm tracking-wide relative ${
                   activeSection === item.id
@@ -86,13 +84,15 @@ export function Navbar({ language, onLanguageChange }: NavbarProps) {
                 }`}
               >
                 {item.name}
-                {/* Active indicator */}
                 {activeSection === item.id && (
                   <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-6 h-[2px] bg-gold rounded-full" />
                 )}
               </button>
             ))}
+            
+            {/* De selector die de talen toont */}
             <LanguageSelector currentLang={currentLang} onLanguageChange={onLanguageChange} />
+
             <Button
               className="bg-gold text-black hover:bg-gold/90 text-sm px-4 py-2"
               onClick={() => handleNavClick("#contact")}
@@ -100,6 +100,7 @@ export function Navbar({ language, onLanguageChange }: NavbarProps) {
               {t.nav.freeConsultation}
             </Button>
           </div>
+
           {/* Mobile Navigation */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild className="lg:hidden">
@@ -114,7 +115,7 @@ export function Navbar({ language, onLanguageChange }: NavbarProps) {
               <div className="flex flex-col gap-8 mt-12 px-2">
                 {navItems.map((item) => (
                   <button
-                    key={item.name}
+                    key={item.id}
                     onClick={() => handleNavClick(item.href)}
                     className={`text-left text-lg tracking-wide transition-all ${
                     activeSection === item.id
@@ -125,7 +126,9 @@ export function Navbar({ language, onLanguageChange }: NavbarProps) {
                     {item.name}
                   </button>
                 ))}
+                
                 <LanguageSelector currentLang={currentLang} onLanguageChange={onLanguageChange} />
+                
                 <Button
                   className="bg-gold text-black hover:bg-gold/90 text-sm px-4 py-2 
                              transition-all duration-300 transform 

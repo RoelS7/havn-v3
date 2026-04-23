@@ -12,6 +12,7 @@ export function LanguageSelector({ currentLang, onLanguageChange }: LanguageSele
   const languages = [
     { code: "nl", name: "Nederlands", flag: "🇳🇱" },
     { code: "en", name: "English", flag: "🇬🇧" },
+    { code: "es", name: "Español", flag: "🇪🇸" }, // Spaans toegevoegd
   ]
 
   return (
