@@ -117,7 +117,7 @@ export const translations = {
     },
     pricing: {
       title: "Transparante Prijzen",
-      subtitle: "Kies het pakket dat perfect past bij uw accommodatie en ambities. Alle pakketten zijn maandelijks opzegbaar en zonder verborgen kosten.",
+      subtitle: "Kies het pakket dat perfect past bij je accommodatie en ambities. Alle pakketten zijn maandelijks opzegbaar en zonder verborgen kosten.",
       mostPopular: "Meest Populair",
       requestQuote: "Vraag Persoonlijke Offerte",
       freeConsultation: "Gratis strategiegesprek plannen",
@@ -174,11 +174,11 @@ export const translations = {
     about: {
       title: "Over HAVN",
       subtitle: "Als ervaren property management specialist help ik eigenaren van B&B's, vakantiewoningen en kleine hotels om hun revenue te maximaliseren door professioneel beheer van online platforms.",
-      description: "Met jarenlange ervaring in zowel hospitality als digital marketing, combineer ik technische expertise met diepgaande kennis van de toeristische sector. Van Airbnb optimalisatie tot complete revenue management strategieën - ik zorg ervoor dat uw accommodatie het maximale potentieel behaalt.",
+      description: "Met jarenlange ervaring in zowel hospitality als digital marketing, combineer ik technische expertise met diepgaande kennis van de toeristische sector. Van Airbnb optimalisatie tot complete revenue management strategieën - ik zorg ervoor dat je accommodatie het maximale potentieel behaalt.",
       approach: "Mijn Aanpak",
       points: [
         "Data-gedreven beslissingen voor optimale pricing",
-        "Persoonlijke service met focus op uw specifieke doelen",
+        "Persoonlijke service met focus op je specifieke doelen",
         "Transparante rapportage en continue optimalisatie",
         "Proactieve communicatie en 24/7 guest support",
       ],
@@ -191,11 +191,11 @@ export const translations = {
       },
     },
     contact: {
-      title: "Start Uw Gratis Strategiegesprek",
-      subtitle: "Klaar om uw revenue te maximaliseren? Neem contact op voor een vrijblijvende consultatie en ontdek hoe ik uw accommodatie kan helpen groeien.",
+      title: "Start Je Gratis Strategiegesprek",
+      subtitle: "Klaar om je revenue te maximaliseren? Neem contact op voor een vrijblijvende consultatie en ontdek hoe ik je accommodatie kan helpen groeien.",
       form: {
-        title: "Vraag Uw Gratis Consultatie Aan",
-        subtitle: "Vertel me over uw accommodatie en ik neem binnen 24 uur contact met u op.",
+        title: "Vraag je Gratis Consultatie Aan",
+        subtitle: "Vertel me over je accommodatie en ik neem binnen 24 uur contact met u op.",
         name: "Naam *",
         email: "Email *",
         phone: "Telefoon",
@@ -205,11 +205,11 @@ export const translations = {
         submit: "Verstuur Aanvraag",
         whatsapp: "WhatsApp Direct",
         placeholders: {
-          name: "Uw volledige naam",
-          email: "uw@email.com",
+          name: "je volledige naam",
+          email: "je@email.com",
           phone: "+32 123 456 789",
           platforms: "Bijv. Airbnb, Booking.com, Expedia...",
-          message: "Vertel me over uw accommodatie, huidige uitdagingen en doelen...",
+          message: "Vertel me over je accommodatie, huidige uitdagingen en doelen...",
           selectType: "Selecteer type",
         },
         propertyTypes: {

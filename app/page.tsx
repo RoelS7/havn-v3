@@ -29,61 +29,50 @@ export default function Home() {
     <>
       <Navbar language={language} onLanguageChange={changeLanguage} />
       <ScrollToTop />
-
       <main>
         {/* 1. Hero */}
         <section id="home">
           <Hero language={language} />
         </section>
-
         {/* 2. Probleem */}
         <section className="bg-[var(--background)]">
           <ProblemSection language={language} />
         </section>
-
         {/* 3. Oplossing */}
         <section className="bg-[var(--background)]">
           <SolutionSection language={language} />
         </section>
-
-        {/* 4. Services + Revenue Calculator - Eén consistent highlight blok */}
-        <section id="services" className="bg-[var(--background)] py-20">   {/* Dit is een vaste warme beige kleur */}
-          
+        {/* 4. Services */}
+        <section id="services" className="bg-[var(--background)] py-20">
           <Services language={language} />
-
-          {/* Revenue Calculator op exact dezelfde achtergrond */}
-          <div className="mt-16 max-w-4xl mx-auto px-4 bg-[var(--background)]">
-            <RevenueCalculator language={language} key={`calc-${language}`} />
-          </div>
-
         </section>
-
         {/* 5. Hoe het werkt */}
         <section className="bg-[var(--muted)]">
           <HowItWorks language={language} />
         </section>
-
         {/* 6. Case Study */}
         <section className="bg-[var(--background)]">
           <CaseStudy language={language} />
         </section>
-
-        {/* 7. Final CTA - zwart voor impact */}
+        {/* 7. Revenue Calculator - na case study, vertrouwen is opgebouwd */}
+        <section className="bg-[var(--background)] pb-20">
+          <div className="max-w-4xl mx-auto px-4">
+            <RevenueCalculator language={language} key={`calc-${language}`} />
+          </div>
+        </section>
+        {/* 8. Final CTA - zwart voor impact */}
         <section className="bg-black text-white">
           <FinalCta language={language} />
         </section>
-
-        {/* 8. FAQ */}
+        {/* 9. FAQ */}
         <section id="faq" className="bg-[var(--muted)]">
           <FAQSection language={language} />
         </section>
-
-        {/* 9. Contact */}
+        {/* 10. Contact */>}
         <section id="contact" className="bg-[var(--background)]">
           <Contact language={language} />
         </section>
       </main>
-
       <Footer language={language} />
     </>
   )
