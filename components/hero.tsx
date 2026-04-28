@@ -26,6 +26,7 @@ export function Hero({ language }: HeroProps) {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 relative z-20">
+              <span className="absolute inset-0 bg-white/10 animate-pulse rounded-lg">
               <Button 
                 asChild 
                 size="lg" 
@@ -35,7 +36,7 @@ export function Hero({ language }: HeroProps) {
                   {/* UPDATE: Gebruik hier de t-variabele voor automatische vertaling */}
                   {t.hero.cta}
                   <ArrowRight className="ml-2 h-5 w-5" />
-                  <span className="absolute inset-0 bg-white/10 animate-pulse rounded-lg"></span>
+                  </span>
                 </Link>
               </Button>
 
