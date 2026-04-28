@@ -59,36 +59,32 @@ export async function POST(req: Request) {
       });
     }
 
-    // 4. AIRTABLE (Alleen als keys bestaan)
-    if (process.env.AIRTABLE_API_KEY && process.env.AIRTABLE_BASE_ID) {
-      await fetch(
-        `https://api.airtable.com/v0/${process.env.AIRTABLE_BASE_ID}/${process.env.AIRTABLE_TABLE}`,
-        {
-          method: "POST",
-          headers: {
-            Authorization: `Bearer ${process.env.AIRTABLE_API_KEY}`,
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            fields: {
-              Name: name,
-              Email: email,
-              Phone: phone,
-              Message: message,
-              Source: "Website",
-            },
-          }),
-        }
-      );
+    // 4. AIRTABLE
+if (process.env.AIRTABLE_API_KEY && process.env.AIRTABLE_BASE_ID && process.env.AIRTABLE_TABLE) {
+  const airtableRes = await fetch(
+    `https://api.airtable.com/v0/${process.env.AIRTABLE_BASE_ID}/${process.env.AIRTABLE_TABLE}`,
+    {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${process.env.AIRTABLE_API_KEY}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        fields: {
+          Name: name,
+          Email: email,
+          Phone: phone,
+          Message: message,
+          Source: "Website",
+        },
+      }),
     }
+  );
 
-    return new Response(JSON.stringify({ success: true }), { 
-      status: 200, 
-      headers: { 'Content-Type': 'application/json' } 
-    });
-
-  } catch (error: any) {
-    console.error("FULL API ERROR:", error);
-    return new Response(JSON.stringify({ error: error.message }), { status: 500 });
+  if (!airtableRes.ok) {
+    const errBody = await airtableRes.json();
+    console.error("AIRTABLE ERROR:", airtableRes.status, JSON.stringify(errBody));
+  } else {
+    console.log("AIRTABLE SUCCESS: rij aangemaakt");
   }
 }
