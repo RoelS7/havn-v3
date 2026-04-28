@@ -1,7 +1,5 @@
 import { Resend } from "resend";
-
 export const dynamic = "force-dynamic";
-
 export async function POST(req: Request) {
   try {
     const resendApiKey = process.env.RESEND_API_KEY;
@@ -10,15 +8,12 @@ export async function POST(req: Request) {
       console.error("CRITICAL: RESEND_API_KEY missing in process.env");
       return new Response(JSON.stringify({ error: "Server config error" }), { status: 500 });
     }
-
     const resend = new Resend(resendApiKey);
     const body = await req.json();
     const { name, email, phone, message, propertyType, currentPlatforms } = body;
-
     if (!name || !email) {
       return new Response(JSON.stringify({ error: "Missing fields" }), { status: 400 });
     }
-
     // 1. MAIL NAAR JOU
     await resend.emails.send({
       from: "HAVN <projects@ateliersmits.be>",
@@ -34,7 +29,6 @@ export async function POST(req: Request) {
         <p><b>Bericht:</b><br/>${message}</p>
       `,
     });
-
     // 2. BEVESTIGING NAAR KLANT
     await resend.emails.send({
       from: "HAVN <projects@ateliersmits.be>",
@@ -47,8 +41,7 @@ export async function POST(req: Request) {
         <p>Met vriendelijke groet,<br/>Roel - HAVN</p>
       `,
     });
-
-    // 3. SLACK NOTIFICATIE (Alleen als webhook bestaat)
+    // 3. SLACK NOTIFICATIE
     if (process.env.SLACK_WEBHOOK) {
       await fetch(process.env.SLACK_WEBHOOK, {
         method: "POST",
@@ -58,33 +51,40 @@ export async function POST(req: Request) {
         })
       });
     }
-
     // 4. AIRTABLE
-if (process.env.AIRTABLE_API_KEY && process.env.AIRTABLE_BASE_ID && process.env.AIRTABLE_TABLE) {
-  const airtableRes = await fetch(
-    `https://api.airtable.com/v0/${process.env.AIRTABLE_BASE_ID}/${process.env.AIRTABLE_TABLE}`,
-    {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${process.env.AIRTABLE_API_KEY}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        fields: {
-          Name: name,
-          Email: email,
-          Phone: phone,
-          Message: message,
-          Source: "Website",
-        },
-      }),
+    if (process.env.AIRTABLE_API_KEY && process.env.AIRTABLE_BASE_ID && process.env.AIRTABLE_TABLE) {
+      const airtableRes = await fetch(
+        `https://api.airtable.com/v0/${process.env.AIRTABLE_BASE_ID}/${process.env.AIRTABLE_TABLE}`,
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${process.env.AIRTABLE_API_KEY}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            fields: {
+              Name: name,
+              Email: email,
+              Phone: phone,
+              Message: message,
+              Source: "Website",
+            },
+          }),
+        }
+      );
+      if (!airtableRes.ok) {
+        const errBody = await airtableRes.json();
+        console.error("AIRTABLE ERROR:", airtableRes.status, JSON.stringify(errBody));
+      } else {
+        console.log("AIRTABLE SUCCESS: rij aangemaakt");
+      }
     }
-  );
-
-  if (!airtableRes.ok) {
-    const errBody = await airtableRes.json();
-    console.error("AIRTABLE ERROR:", airtableRes.status, JSON.stringify(errBody));
-  } else {
-    console.log("AIRTABLE SUCCESS: rij aangemaakt");
+    return new Response(JSON.stringify({ success: true }), { 
+      status: 200, 
+      headers: { "Content-Type": "application/json" } 
+    });
+  } catch (error: any) {
+    console.error("FULL API ERROR:", error);
+    return new Response(JSON.stringify({ error: error.message }), { status: 500 });
   }
 }
