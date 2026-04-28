@@ -52,6 +52,7 @@ export async function POST(req: Request) {
       });
     }
     // 4. AIRTABLE
+    console.log("AIRTABLE KEY PREVIEW:", process.env.AIRTABLE_API_KEY?.slice(0, 10));
     if (process.env.AIRTABLE_API_KEY && process.env.AIRTABLE_BASE_ID && process.env.AIRTABLE_TABLE) {
       const airtableRes = await fetch(
         `https://api.airtable.com/v0/${process.env.AIRTABLE_BASE_ID}/${process.env.AIRTABLE_TABLE}`,
