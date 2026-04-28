@@ -96,7 +96,7 @@ export const translations = {
       card: {
         title: "De Hoeveschuur – Automatisatie van een vakantieverblijf",
         location: "Millen, België",
-        description: "Voor De Hoeveschuur hebben we het volledige verhuursysteem geoptimaliseerd zodat de eigenaar minder tijd kwijt is aan administratie en het verblijf professioneler kan beheren.",
+        description: "De Hoeveschuur beheerde alles manueel: van gastberichten tot kalenders op meerdere platformen. We hebben het volledige systeem geautomatiseerd: boekingen synchroniseren automatisch, gasten krijgen op het juiste moment het juiste bericht, en de eigenaar heeft een live dashboard van zijn prestaties.",
         optimizedTitle: "Wat werd geoptimaliseerd",
         optimizedItems: [
           "Configuratie van het reserveringssysteem",
@@ -112,7 +112,7 @@ export const translations = {
           "Professioneel reserveringssysteem",
           "Meer inzicht in boekingen en prestaties",
         ],
-        quote: "HAVN heeft ons enorm veel tijd bespaard en onze verhuur veel professioneler gemaakt.",
+        quote: "Vroeger besteedde ik uren per week aan mails en administratie. Nu loopt alles automatisch en kan ik me focussen op mijn gasten. HAVN heeft ons verblijf getransformeerd naar een moderne business. - Dieter, uitbater De Hoeveschuur, Millen",
       },
     },
     pricing: {
@@ -347,7 +347,7 @@ export const translations = {
       card: {
         title: "De Hoeveschuur – Automation of a vacation rental",
         location: "Millen, Belgium",
-        description: "For De Hoeveschuur, we optimized the entire rental system so the owner spends less time on administration and can manage the property more professionally.",
+        description: "De Hoeveschuur managed everything manually: from guest messages to calendars on multiple platforms. We have automated the entire system: bookings synchronize automatically, guests receive the right message at the right time, and the owner has a live dashboard of his performance.",
         optimizedTitle: "What was optimized",
         optimizedItems: [
           "Configuration of the reservation system",
@@ -363,7 +363,7 @@ export const translations = {
           "Professional reservation system",
           "More insight into bookings and performance",
         ],
-        quote: "HAVN has saved us an enormous amount of time and made our rental much more professional.",
+        quote: "I used to spend hours a week on emails and administration. Now everything runs automatically, and I can focus on my guests. HAVN has transformed our accommodation into a modern business. - Dieter, owner of De Hoeveschuur, Millen",
       },
     },
     pricing: {
@@ -598,7 +598,7 @@ export const translations = {
       card: {
         title: "De Hoeveschuur – Automatización de Estancia Vacacional",
         location: "Millen, Bélgica",
-        description: "Optimizamos todo el sistema de gestión para que el propietario redujera su carga administrativa y operara con un estándar de hotel profesional.",
+        description: "De Hoeveschuur gestionaba todo manualmente: desde los mensajes a los huéspedes hasta los calendarios en múltiples plataformas. Nosotros hemos automatizado todo el sistema: las reservas se sincronizan automáticamente, los huéspedes reciben el mensaje correcto en el momento preciso y el propietario dispone de un panel de control en tiempo real con información sobre su rendimiento.",
         optimizedTitle: "Mejoras implementadas",
         optimizedItems: [
           "Configuración avanzada del sistema de reservas",
@@ -614,7 +614,7 @@ export const translations = {
           "Sistema de reservas profesional y centralizado",
           "Mayor control sobre el rendimiento del negocio",
         ],
-        quote: "HAVN nos devolvió nuestro tiempo y elevó nuestra propiedad a un nivel profesional que no creíamos posible.",
+        quote: "Antes dedicaba horas a la semana a correos electrónicos y tareas administrativas. Ahora todo funciona automáticamente y puedo centrarme en mis huéspedes. HAVN ha transformado nuestro alojamiento en un negocio moderno. - Dieter, propietario de De Hoeveschuur, Millen",
       },
     },
     pricing: {
