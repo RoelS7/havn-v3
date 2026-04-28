@@ -68,7 +68,7 @@ export default function Home() {
         <section id="faq" className="bg-[var(--muted)]">
           <FAQSection language={language} />
         </section>
-        {/* 10. Contact */>}
+        {/* 10. Contact */}
         <section id="contact" className="bg-[var(--background)]">
           <Contact language={language} />
         </section>
