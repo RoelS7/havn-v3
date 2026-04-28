@@ -55,7 +55,7 @@ export default function Home() {
           <CaseStudy language={language} />
         </section>
         {/* 7. Revenue Calculator - na case study, vertrouwen is opgebouwd */}
-        <section className="bg-[var(--background)] pb-20">
+        <section className="bg-[var(--muted)] pb-20">
           <div className="max-w-4xl mx-auto px-4">
             <RevenueCalculator language={language} key={`calc-${language}`} />
           </div>
