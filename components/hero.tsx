@@ -68,7 +68,7 @@ export function Hero({ language }: HeroProps) {
           <div className="relative order-1 lg:order-2">
             <div className="relative z-10">
               <Image
-                src="/images/home-pic-1.webp"
+                src="/images/hero-pic-1.webp"
                 alt="Stijlvolle slaapkamer in vakantieverblijf"
                 width={600}
                 height={400}
