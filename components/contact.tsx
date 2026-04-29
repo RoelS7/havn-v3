@@ -42,6 +42,7 @@ export function Contact({ language }: ContactProps) {
           propertyType,
           currentPlatforms,
           message,
+          language: currentLang,
         }),
       })
 
