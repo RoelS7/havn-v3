@@ -73,68 +73,45 @@ export async function POST(req: Request) {
     const platformsText = platforms || "not specified"
 
     /* ── AI RAPPORT ── */
-    let report = "Report temporarily unavailable. Book a call for a personal analysis."
+let report = "Report temporarily unavailable. Book a call for a personal analysis."
 
-    try {
-      const prompt = `You are a hotel and short-term rental revenue management expert working for HAVN, a premium STR consultancy.
+try {
+  console.log("Starting Anthropic call...")
+  console.log("API key present:", !!process.env.ANTHROPIC_API_KEY)
 
-Write a personalized revenue audit report for this property. Be specific, concrete and actionable. Avoid generic advice.
+  const controller = new AbortController()
+  const timeout = setTimeout(() => controller.abort(), 8000) // 8 sec timeout
 
-PROPERTY DETAILS:
-- Type: ${propertyLabel}
-- Market / Country: ${countryLabel}
-- Rooms / Units: ${rooms}
-- Average Nightly Rate: €${adr}
-- Current Occupancy: ${occupancy}%
-- Estimated Yearly Revenue: €${Math.round(revenue)}
-- Active Platforms: ${platformsText}
-- Biggest Challenge: ${challengeLabel}
+  const aiRes = await fetch("https://api.anthropic.com/v1/messages", {
+    method: "POST",
+    signal: controller.signal,
+    headers: {
+      "Content-Type": "application/json",
+      "x-api-key": process.env.ANTHROPIC_API_KEY || "",
+      "anthropic-version": "2023-06-01",
+    },
+    body: JSON.stringify({
+      model: "claude-haiku-4-5-20251001",
+      max_tokens: 600,
+      messages: [{ role: "user", content: prompt }],
+    }),
+  })
 
-Write the report in ${writingLanguage}. Structure it as follows:
+  clearTimeout(timeout)
 
-**1. Revenue Snapshot**
-A 2-3 sentence assessment of their current performance vs market benchmarks for their property type and market. Be honest but encouraging.
+  console.log("Anthropic status:", aiRes.status)
+  const aiData = await aiRes.json()
+  console.log("Anthropic response:", JSON.stringify(aiData).slice(0, 300))
 
-**2. Biggest Revenue Leak**
-Based on their biggest challenge (${challengeLabel}), identify the #1 specific thing costing them money right now. Give a concrete example or number if possible.
-
-**3. Quick Win (This Month)**
-One specific action they can take in the next 30 days to see improvement. Be very specific — not "optimize your listing" but HOW.
-
-**4. Pricing Strategy**
-Specific pricing advice for their property type and market. Include seasonal or demand-based recommendations relevant to ${countryLabel}.
-
-**5. Platform & Distribution**
-Based on their active platforms (${platformsText}), give specific advice on what's missing or what to improve. If they have no direct booking website, mention it.
-
-Keep the total to 250-300 words. Write in a professional but approachable tone. Do not use markdown bold (**) in the output — use plain text with numbered sections.`
-
-      const aiRes = await fetch("https://api.anthropic.com/v1/messages", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "x-api-key": process.env.ANTHROPIC_API_KEY || "",
-          "anthropic-version": "2023-06-01",
-        },
-        body: JSON.stringify({
-          model: "claude-haiku-4-5-20251001",
-          max_tokens: 600,
-          messages: [{ role: "user", content: prompt }],
-        }),
-      })
-
-      const aiData = await aiRes.json()
-      console.log("Anthropic status:", aiRes.status)
-      console.log("Anthropic response:", JSON.stringify(aiData))
-
-      if (!aiRes.ok) {
-        console.error("Anthropic error:", JSON.stringify(aiData))
-      } else {
-        report = aiData?.content?.[0]?.text || report
-      }
-    } catch (aiError) {
-      console.error("AI call failed:", aiError)
-    }
+  if (!aiRes.ok) {
+    console.error("Anthropic error:", JSON.stringify(aiData))
+  } else {
+    report = aiData?.content?.[0]?.text || report
+    console.log("Report generated, length:", report.length)
+  }
+} catch (aiError: any) {
+  console.error("AI call failed:", aiError?.message || aiError)
+}
 
     /* ── AIRTABLE ── */
     const airtableRes = await fetch(
