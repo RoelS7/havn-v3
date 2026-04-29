@@ -79,8 +79,41 @@ try {
   console.log("Starting Anthropic call...")
   console.log("API key present:", !!process.env.ANTHROPIC_API_KEY)
 
+  const prompt = `You are a hotel and short-term rental revenue management expert working for HAVN, a premium STR consultancy.
+
+Write a personalized revenue audit report for this property. Be specific, concrete and actionable. Avoid generic advice.
+
+PROPERTY DETAILS:
+- Type: ${propertyLabel}
+- Market / Country: ${countryLabel}
+- Rooms / Units: ${rooms}
+- Average Nightly Rate: €${adr}
+- Current Occupancy: ${occupancy}%
+- Estimated Yearly Revenue: €${Math.round(revenue)}
+- Active Platforms: ${platformsText}
+- Biggest Challenge: ${challengeLabel}
+
+Write the report in ${writingLanguage}. Structure it as follows:
+
+1. Revenue Snapshot
+A 2-3 sentence assessment of their current performance vs market benchmarks for their property type and market. Be honest but encouraging.
+
+2. Biggest Revenue Leak
+Based on their biggest challenge (${challengeLabel}), identify the #1 specific thing costing them money right now. Give a concrete example or number if possible.
+
+3. Quick Win (This Month)
+One specific action they can take in the next 30 days to see improvement. Be very specific.
+
+4. Pricing Strategy
+Specific pricing advice for their property type and market. Include seasonal recommendations relevant to ${countryLabel}.
+
+5. Platform & Distribution
+Based on their active platforms (${platformsText}), give specific advice on what is missing or what to improve.
+
+Keep the total to 250-300 words. Write in a professional but approachable tone. Do not use markdown bold in the output — use plain text with numbered sections.`
+
   const controller = new AbortController()
-  const timeout = setTimeout(() => controller.abort(), 8000) // 8 sec timeout
+  const timeout = setTimeout(() => controller.abort(), 8000)
 
   const aiRes = await fetch("https://api.anthropic.com/v1/messages", {
     method: "POST",
