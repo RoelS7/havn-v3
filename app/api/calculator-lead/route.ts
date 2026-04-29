@@ -125,6 +125,7 @@ Keep the total to 250-300 words. Write in a professional but approachable tone. 
 
       const aiData = await aiRes.json()
       console.log("Anthropic status:", aiRes.status)
+      console.log("Anthropic response:", JSON.stringify(aiData))
 
       if (!aiRes.ok) {
         console.error("Anthropic error:", JSON.stringify(aiData))
