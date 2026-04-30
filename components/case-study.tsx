@@ -1,6 +1,8 @@
+"use client"
+import { useState } from "react"
 import Image from "next/image"
-import { Card, CardContent, CardHeader } from "@/components/ui/card"
-import { CheckCircle, Quote, MapPin } from "lucide-react"
+import { Card, CardContent } from "@/components/ui/card"
+import { CheckCircle, Quote, MapPin, ChevronLeft, ChevronRight } from "lucide-react"
 import { translations } from "@/lib/translations"
 
 interface CaseStudyProps {
@@ -11,9 +13,11 @@ export function CaseStudy({ language }: CaseStudyProps) {
   const currentLang = (language === "nl" || language === "en" || language === "es") ? language : "nl"
   const t = translations[currentLang]
 
+  const [currentIndex, setCurrentIndex] = useState(0)
+
   const cases = [
     {
-      image: "public/images/hoeveschuur-foto.webp",
+      image: "/images/hoeveschuur-foto.webp",
       imageAlt: "De Hoeveschuur — Millen, België",
       title: {
         nl: "De Hoeveschuur – Automatisatie van een vakantieverblijf",
@@ -91,7 +95,7 @@ export function CaseStudy({ language }: CaseStudyProps) {
       quoteAuthor: "Eigenaar, De Hoeveschuur",
     },
     {
-      image: "public/images/cc-home.jpg",
+      image: "/images/cc-home.jpg",
       imageAlt: "Casa Clandestina Guest House — Medellín, Colombia",
       title: {
         nl: "Casa Clandestina Guest House – Professionele opstart in Medellín",
@@ -164,84 +168,20 @@ export function CaseStudy({ language }: CaseStudyProps) {
       }[currentLang],
       quoteAuthor: "Eigenaar, Casa Clandestina Guest House",
     },
-    {
-      image: "public/images/ccc-foto.webp",
-      imageAlt: "Casa Clandestina Campestre — San Rafael, Colombia",
-      title: {
-        nl: "Casa Clandestina Campestre – Van lokale verhuur naar internationaal platform",
-        en: "Casa Clandestina Campestre – From local rental to international platform",
-        es: "Casa Clandestina Campestre – De alquiler local a plataforma internacional",
-      }[currentLang],
-      location: "San Rafael, Colombia",
-      description: {
-        nl: "Casa Clandestina Campestre is een sfeervol landelijk verblijf in San Rafael. We hielpen de eigenaar om het volledige verhuurbeheer te professionaliseren en internationaal zichtbaar te maken via meerdere platformen.",
-        en: "Casa Clandestina Campestre is a charming rural property in San Rafael. We helped the owner professionalize the entire rental management and gain international visibility across multiple platforms.",
-        es: "Casa Clandestina Campestre es una encantadora propiedad rural en San Rafael. Ayudamos al propietario a profesionalizar toda la gestión de alquiler y ganar visibilidad internacional en múltiples plataformas.",
-      }[currentLang],
-      optimizedTitle: {
-        nl: "Wat werd opgezet",
-        en: "What was set up",
-        es: "Qué fue implementado",
-      }[currentLang],
-      optimizedItems: {
-        nl: [
-          "Volledige Airbnb setup en professionele fotostrategie",
-          "Beds24 channel manager voor multi-platform beheer",
-          "Dynamische prijsstrategie afgestemd op het Colombiaanse marktseizoen",
-          "Geautomatiseerde gastcommunicatie in meerdere talen",
-          "Koppeling met Booking.com en andere internationale platformen",
-        ],
-        en: [
-          "Complete Airbnb setup and professional photo strategy",
-          "Beds24 channel manager for multi-platform management",
-          "Dynamic pricing strategy tailored to the Colombian market season",
-          "Automated guest communication in multiple languages",
-          "Connection with Booking.com and other international platforms",
-        ],
-        es: [
-          "Configuración completa de Airbnb y estrategia fotográfica profesional",
-          "Channel manager Beds24 para gestión en múltiples plataformas",
-          "Estrategia de precios dinámica adaptada a la temporada del mercado colombiano",
-          "Comunicación automatizada con huéspedes en varios idiomas",
-          "Conexión con Booking.com y otras plataformas internacionales",
-        ],
-      }[currentLang],
-      resultTitle: {
-        nl: "Resultaat",
-        en: "Result",
-        es: "Resultado",
-      }[currentLang],
-      resultItems: {
-        nl: [
-          "Internationaal zichtbaar op meerdere boekingsplatformen",
-          "Bezettingsgraad gestegen in de eerste kwartaal",
-          "Volledig geautomatiseerd reserveringsbeheer",
-          "Eigenaar focust op gastvrijheid in plaats van administratie",
-        ],
-        en: [
-          "Internationally visible on multiple booking platforms",
-          "Occupancy rate increased in the first quarter",
-          "Fully automated reservation management",
-          "Owner focuses on hospitality instead of administration",
-        ],
-        es: [
-          "Visible internacionalmente en múltiples plataformas de reservas",
-          "Tasa de ocupación aumentada en el primer trimestre",
-          "Gestión de reservas completamente automatizada",
-          "El propietario se enfoca en la hospitalidad en lugar de la administración",
-        ],
-      }[currentLang],
-      quote: {
-        nl: "HAVN heeft ons verblijf op de kaart gezet. Gasten uit heel de wereld vinden ons nu en de boekingen lopen vanzelf.",
-        en: "HAVN put our property on the map. Guests from all over the world now find us and bookings run automatically.",
-        es: "HAVN puso nuestra propiedad en el mapa. Huéspedes de todo el mundo nos encuentran ahora y las reservas se gestionan solas.",
-      }[currentLang],
-      quoteAuthor: "Eigenaar, Casa Clandestina Campestre",
-    },
   ]
 
+  const nextCase = () => {
+    setCurrentIndex((prev) => (prev + 1) % cases.length)
+  }
+
+  const prevCase = () => {
+    setCurrentIndex((prev) => (prev - 1 + cases.length) % cases.length)
+  }
+
+  const current = cases[currentIndex]
+
   return (
-    <section id="case-study" className="py-20">
+    <section id="case-study" className="py-20 bg-[var(--background)]">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-serif text-black mb-4">
@@ -252,80 +192,91 @@ export function CaseStudy({ language }: CaseStudyProps) {
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto space-y-12">
-          {cases.map((c, i) => (
-            <Card key={i} className="border-2 border-gold/20 overflow-hidden">
+        <Card className="max-w-5xl mx-auto border-2 border-gold/20 overflow-hidden luxury-card">
+          {/* Foto bovenaan - landscape */}
+          <div className="relative h-[380px] md:h-[460px] w-full">
+            <Image
+              src={current.image}
+              alt={current.imageAlt}
+              fill
+              className="object-cover"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
 
-              {/* Foto */}
-              <div className="relative w-full h-64 md:h-80 overflow-hidden">
-                <Image
-                  src={c.image}
-                  alt={c.imageAlt}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 896px"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                <div className="absolute bottom-0 left-0 p-6">
-                  <h3 className="text-xl md:text-2xl font-serif font-medium text-white mb-1">
-                    {c.title}
-                  </h3>
-                  <div className="flex items-center gap-2 text-gold">
-                    <MapPin className="h-4 w-4" />
-                    <span className="font-light text-sm">{c.location}</span>
-                  </div>
-                </div>
+            {/* Slider pijltjes */}
+            <button
+              onClick={prevCase}
+              className="absolute left-6 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white p-3 rounded-full transition-all z-10"
+            >
+              <ChevronLeft className="h-6 w-6" />
+            </button>
+            <button
+              onClick={nextCase}
+              className="absolute right-6 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white p-3 rounded-full transition-all z-10"
+            >
+              <ChevronRight className="h-6 w-6" />
+            </button>
+          </div>
+
+          {/* Content */}
+          <CardContent className="p-8 lg:p-12">
+            <div className="flex items-center gap-2 text-gold mb-4">
+              <MapPin className="h-5 w-5" />
+              <span className="font-light">{current.location}</span>
+            </div>
+
+            <h3 className="text-3xl font-serif font-medium text-black mb-6">
+              {current.title}
+            </h3>
+
+            <p className="text-gray-700 text-lg leading-relaxed mb-10">
+              {current.description}
+            </p>
+
+            <div className="grid md:grid-cols-2 gap-10">
+              <div>
+                <h4 className="text-lg font-semibold text-black mb-4">
+                  {current.optimizedTitle}
+                </h4>
+                <ul className="space-y-3">
+                  {current.optimizedItems.map((item, index) => (
+                    <li key={index} className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-700">{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
 
-              <CardContent className="p-8 space-y-8">
-                <p className="text-gray-700 text-lg leading-relaxed">
-                  {c.description}
-                </p>
+              <div>
+                <h4 className="text-lg font-semibold text-black mb-4">
+                  {current.resultTitle}
+                </h4>
+                <ul className="space-y-3">
+                  {current.resultItems.map((item, index) => (
+                    <li key={index} className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-700">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
 
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div>
-                    <h4 className="text-lg font-semibold text-black mb-4">
-                      {c.optimizedTitle}
-                    </h4>
-                    <ul className="space-y-3">
-                      {c.optimizedItems.map((item, index) => (
-                        <li key={index} className="flex items-start gap-3">
-                          <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
-                          <span className="text-gray-700">{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-semibold text-black mb-4">
-                      {c.resultTitle}
-                    </h4>
-                    <ul className="space-y-3">
-                      {c.resultItems.map((item, index) => (
-                        <li key={index} className="flex items-start gap-3">
-                          <CheckCircle className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
-                          <span className="text-gray-700">{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+            <div className="border-t border-gray-200 pt-10 mt-10">
+              <div className="flex items-start gap-4">
+                <Quote className="h-8 w-8 text-gold flex-shrink-0 mt-1" />
+                <div>
+                  <p className="text-gray-600 italic text-lg leading-relaxed mb-2">
+                    "{current.quote}"
+                  </p>
+                  <p className="text-sm text-gray-500">{current.quoteAuthor}</p>
                 </div>
-
-                <div className="border-t border-gray-200 pt-8">
-                  <div className="flex items-start gap-4">
-                    <Quote className="h-8 w-8 text-gold flex-shrink-0 mt-1" />
-                    <div>
-                      <p className="text-gray-600 italic text-lg leading-relaxed mb-2">
-                        "{c.quote}"
-                      </p>
-                      <p className="text-sm text-gray-400">{c.quoteAuthor}</p>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
       </div>
     </section>
   )
