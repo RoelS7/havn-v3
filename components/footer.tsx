@@ -72,7 +72,7 @@ export function Footer({ language }: FooterProps) {
             <h4 className="text-lg font-semibold text-gold">{t.footer.contact}</h4>
             <ul className="space-y-2 text-gray-400 text-sm">
               <li>WhatsApp: +32 473 358 581</li>
-              <li>Email: info@havn.be</li>
+              <li>Email: info@havnrevenue.com</li>
               <li>België</li>
               <li>
                 <Link href="#contact" className="hover:text-gold transition-colors">
