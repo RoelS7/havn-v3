@@ -2,11 +2,11 @@
   "rewrites": [
     {
       "source": "/blog",
-      "destination": "https://havn-blog-d1uxtgjua-roel-6069s-projects.vercel.app"
+      "destination": "https://havn-blog.vercel.app/blog"
     },
     {
       "source": "/blog/:path*",
-      "destination": "https://havn-blog-d1uxtgjua-roel-6069s-projects.vercel.app/:path*"
+      "destination": "https://havn-blog.vercel.app/blog/:path*"
     }
   ]
 }
