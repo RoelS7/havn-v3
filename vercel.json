@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/blog",
+      "destination": "https://havn-blog-d1uxtgjua-roel-6069s-projects.vercel.app"
+    },
+    {
+      "source": "/blog/:path*",
+      "destination": "https://havn-blog-d1uxtgjua-roel-6069s-projects.vercel.app/:path*"
+    }
+  ]
+}
