@@ -227,7 +227,7 @@ export const translations = {
         location: "Locatie",
         responseTime: "Responstijd",
         responseValue: "Binnen 24 uur",
-        locationValue: "België",
+        locationValue: "België / Colombia / Wereldwijd",
       },
       whyChoose: {
         title: "Waarom Kiezen Voor HAVN?",
@@ -478,7 +478,7 @@ export const translations = {
         location: "Location",
         responseTime: "Response Time",
         responseValue: "Within 24 hours",
-        locationValue: "Belgium",
+        locationValue: "Belgium / Colombia / Global",
       },
       whyChoose: {
         title: "Why Choose HAVN?",
@@ -729,7 +729,7 @@ export const translations = {
         location: "Ubicación",
         responseTime: "Tiempo de respuesta",
         responseValue: "Menos de 24 horas",
-        locationValue: "Colombia / Global",
+        locationValue: "Bélgica / Colombia / Global",
       },
       whyChoose: {
         title: "¿Por qué elegir HAVN?",

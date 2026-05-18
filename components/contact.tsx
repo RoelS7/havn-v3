@@ -63,7 +63,7 @@ export function Contact({ language }: ContactProps) {
       : "Hello, I am interested in a free consultation for property management."
     
     window.open(
-      `https://wa.me/573127659066?text=${encodeURIComponent(whatsappText)}`,
+      `https://wa.me/32473358581?text=${encodeURIComponent(whatsappText)}`,
       "_blank"
     )
   }
@@ -213,7 +213,7 @@ export function Contact({ language }: ContactProps) {
                   <MessageIcon className="h-6 w-6 text-gold mt-1" />
                   <div>
                     <div className="font-medium">{t.contact.info.whatsapp}</div>
-                    <div className="text-gray-600">+57 312 765 9066</div>
+                    <div className="text-gray-600">+32 473 358 581</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
