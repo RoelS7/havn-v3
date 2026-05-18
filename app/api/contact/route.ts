@@ -4,7 +4,7 @@ export const dynamic = "force-dynamic";
 // === CONFIGURATIE ===
 const FROM_EMAIL = process.env.FROM_EMAIL || "info@havnrevenue.com";
 const REPLY_TO_EMAIL = process.env.REPLY_TO_EMAIL || "info@havnrevenue.com";
-const SENDER_NAME = "HAVN - Revenue Optimalisatie";   // Dit kun je makkelijk aanpassen
+const SENDER_NAME = "HAVN - Revenue Optimization";   // Dit kun je makkelijk aanpassen
 // =====================
 
 export async function POST(req: Request) {

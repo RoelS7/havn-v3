@@ -1,5 +1,9 @@
 import { Resend } from "resend"
 
+const FROM_EMAIL = process.env.FROM_EMAIL || "info@havnrevenue.com";
+const REPLY_TO_EMAIL = process.env.REPLY_TO_EMAIL || "info@havnrevenue.com";
+const SENDER_NAME = "HAVN - - Revenue optimization";
+
 export async function POST(req: Request) {
   const resend = new Resend(process.env.RESEND_API_KEY || "")
 
@@ -190,8 +194,9 @@ Keep the total to 250-300 words. Write in a professional but approachable tone. 
       .join("")
 
     await resend.emails.send({
-      from: "HAVN <projects@ateliersmits.be>",
-      to: [email],
+      from: `${SENDER_NAME} <${FROM_EMAIL}>`,
+      replyTo: REPLY_TO_EMAIL,
+      to: ["info@havnrevenue.com"],
       subject: lang.subject,
       html: `
         <!DOCTYPE html>
@@ -245,7 +250,7 @@ Keep the total to 250-300 words. Write in a professional but approachable tone. 
                 style="display:inline-block;background:#C9A96E;color:white;text-decoration:none;padding:14px 32px;border-radius:8px;font-size:14px;font-weight:600;letter-spacing:0.05em;">
                 ${lang.ctaText} →
               </a>
-              <p style="color:#555;font-size:11px;margin:20px 0 0;">HAVN · projects@ateliersmits.be</p>
+              <p style="color:#555;font-size:11px;margin:20px 0 0;">HAVN · info@havnrevenue.com</p>
             </div>
 
           </div>
