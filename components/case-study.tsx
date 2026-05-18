@@ -170,13 +170,8 @@ export function CaseStudy({ language }: CaseStudyProps) {
     },
   ]
 
-  const nextCase = () => {
-    setCurrentIndex((prev) => (prev + 1) % cases.length)
-  }
-
-  const prevCase = () => {
-    setCurrentIndex((prev) => (prev - 1 + cases.length) % cases.length)
-  }
+  const nextCase = () => setCurrentIndex((prev) => (prev + 1) % cases.length)
+  const prevCase = () => setCurrentIndex((prev) => (prev - 1 + cases.length) % cases.length)
 
   const current = cases[currentIndex]
 
@@ -193,27 +188,33 @@ export function CaseStudy({ language }: CaseStudyProps) {
         </div>
 
         <Card className="max-w-5xl mx-auto border-2 border-gold/20 overflow-hidden luxury-card">
-          {/* Foto bovenaan - landscape */}
-          <div className="relative h-[380px] md:h-[460px] w-full">
+          {/* Foto met originele verhouding */}
+          <div className="relative w-full aspect-[16/9] md:aspect-[16/10] bg-black">
             <Image
               src={current.image}
               alt={current.imageAlt}
               fill
-              className="object-cover"
+              className="object-contain"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+          </div>
 
-            {/* Slider pijltjes */}
+          {/* Slider Controls - buiten de foto */}
+          <div className="flex justify-between items-center px-6 -mt-8 relative z-10">
             <button
               onClick={prevCase}
-              className="absolute left-6 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white p-3 rounded-full transition-all z-10"
+              className="bg-white hover:bg-gray-100 text-black p-4 rounded-full shadow-lg transition-all"
             >
               <ChevronLeft className="h-6 w-6" />
             </button>
+
+            <div className="text-sm font-medium text-gray-500">
+              {currentIndex + 1} van {cases.length}
+            </div>
+
             <button
               onClick={nextCase}
-              className="absolute right-6 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white p-3 rounded-full transition-all z-10"
+              className="bg-white hover:bg-gray-100 text-black p-4 rounded-full shadow-lg transition-all"
             >
               <ChevronRight className="h-6 w-6" />
             </button>
@@ -277,6 +278,19 @@ export function CaseStudy({ language }: CaseStudyProps) {
             </div>
           </CardContent>
         </Card>
+
+        {/* Dots onder de card */}
+        <div className="flex justify-center gap-3 mt-8">
+          {cases.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`w-3 h-3 rounded-full transition-all ${
+                currentIndex === index ? "bg-gold scale-125" : "bg-gray-300"
+              }`}
+            />
+          ))}
+        </div>
       </div>
     </section>
   )
