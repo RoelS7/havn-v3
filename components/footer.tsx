@@ -19,10 +19,10 @@ export function Footer({ language }: FooterProps) {
             <h3 className="text-2xl font-serif font-bold text-gold">HAVN</h3>
             <p className="text-gray-400 text-sm">{t.footer.description}</p>
             <div className="flex space-x-4">
-              <Link href="#" className="text-gray-400 hover:text-gold transition-colors">
+              <Link href="https://wa.me/32473358581" className="text-gray-400 hover:text-gold transition-colors">
                 <MessageSquare className="h-5 w-5" />
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-gold transition-colors">
+              <Link href="mailto:info@havnrevenue.com" className="text-gray-400 hover:text-gold transition-colors">
                 <Mail className="h-5 w-5" />
               </Link>
               <Link href="#" className="text-gray-400 hover:text-gold transition-colors">
@@ -73,7 +73,7 @@ export function Footer({ language }: FooterProps) {
             <ul className="space-y-2 text-gray-400 text-sm">
               <li>WhatsApp: +32 473 358 581</li>
               <li>Email: info@havnrevenue.com</li>
-              <li>België</li>
+              <li>België / Colombia / Globaal</li>
               <li>
                 <Link href="#contact" className="hover:text-gold transition-colors">
                   Gratis Consultatie
@@ -102,7 +102,7 @@ export function Footer({ language }: FooterProps) {
                   GDPR Compliance
                 </Link>
               </li>
-              <li className="text-xs text-gray-500">NIT: 901.684.632</li>
+              <li className="text-xs text-gray-500">RUT: 700.288.175</li>
             </ul>
           </div>
         </div>

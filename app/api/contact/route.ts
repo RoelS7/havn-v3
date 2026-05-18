@@ -1,6 +1,12 @@
 import { Resend } from "resend";
 export const dynamic = "force-dynamic";
 
+// === CONFIGURATIE ===
+const FROM_EMAIL = process.env.FROM_EMAIL || "info@havnrevenue.com";
+const REPLY_TO_EMAIL = process.env.REPLY_TO_EMAIL || "info@havnrevenue.com";
+const SENDER_NAME = "HAVN - Revenue Optimalisatie";   // Dit kun je makkelijk aanpassen
+// =====================
+
 export async function POST(req: Request) {
   try {
     const resendApiKey = process.env.RESEND_API_KEY;
@@ -89,8 +95,9 @@ export async function POST(req: Request) {
 
     /* ── MAIL NAAR KLANT ── */
     await resend.emails.send({
-      from: "HAVN <projects@ateliersmits.be>",
+      from: `${SENDER_NAME} <${FROM_EMAIL}>`,
       to: [email],
+      replyTo: REPLY_TO_EMAIL,
       subject: lang.subjectToClient,
       html: `
         <!DOCTYPE html>
@@ -137,7 +144,7 @@ export async function POST(req: Request) {
             <div style="background:#0a0a0a;padding:28px 40px;text-align:center;">
               <p style="color:#aaa;font-size:13px;margin:0 0 4px;">${lang.greeting}</p>
               <p style="color:#C9A96E;font-size:14px;font-weight:600;margin:0 0 16px;">Roel — HAVN</p>
-              <p style="color:#555;font-size:11px;margin:0;">projects@ateliersmits.be</p>
+              <p style="color:#555;font-size:11px;margin:0;">info@havnrevenue.com</p>
             </div>
 
           </div>
@@ -148,8 +155,9 @@ export async function POST(req: Request) {
 
     /* ── MAIL NAAR JOU (intern) ── */
     await resend.emails.send({
-      from: "HAVN <projects@ateliersmits.be>",
-      to: ["projects@ateliersmits.be"],
+      from: `${SENDER_NAME} <${FROM_EMAIL}>`,
+      to: ["info@havnrevenue.com"],
+      replyTo: REPLY_TO_EMAIL,
       subject: lang.internalSubject,
       html: `
         <!DOCTYPE html>
