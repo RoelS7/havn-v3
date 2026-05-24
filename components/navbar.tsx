@@ -19,7 +19,6 @@ export function Navbar({ language, onLanguageChange }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false)
   const activeSection = useActiveSection()
 
-  // UPDATE: Nu accepteren we ook "es" (Spaans)
   const currentLang = (language === "nl" || language === "en" || language === "es") ? language : "nl"
   const t = translations[currentLang]
 
@@ -50,23 +49,24 @@ export function Navbar({ language, onLanguageChange }: NavbarProps) {
   }, [])
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+    <nav className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 ${
       scrolled
         ? "bg-black/95 backdrop-blur-md py-3 shadow-md"
-        : "bg-black/80 py-5"
+        : "bg-black/80 py-3 lg:py-5"
     }`}>
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[90%] h-[1px] bg-gradient-to-r from-transparent via-[#b8925c]/70 to-transparent" />
+      
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-24">
-          
+        <div className="flex items-center justify-between h-16 lg:h-24">
+
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
+          <Link href="/" className="flex items-center space-x-2 flex-shrink-0">
             <Image
               src="/logo-60x120.png"
               alt="HAVN Logo"
               width={320}
               height={160}
-              className="h-20 w-auto"
+              className="h-14 lg:h-20 w-auto"
               priority
             />
           </Link>
@@ -89,8 +89,7 @@ export function Navbar({ language, onLanguageChange }: NavbarProps) {
                 )}
               </button>
             ))}
-            
-            {/* De selector die de talen toont */}
+
             <LanguageSelector currentLang={currentLang} onLanguageChange={onLanguageChange} />
 
             <Button
@@ -101,45 +100,50 @@ export function Navbar({ language, onLanguageChange }: NavbarProps) {
             </Button>
           </div>
 
-          {/* Mobile Navigation */}
-          <Sheet open={isOpen} onOpenChange={setIsOpen}>
-            <SheetTrigger asChild className="lg:hidden">
-              <Button variant="ghost" size="icon" className="text-white">
-                <Menu className="h-6 w-6" />
-              </Button>
-            </SheetTrigger>
-            <SheetContent 
-              side="right" 
-              className="bg-black/95 backdrop-blur-xl border-none p-8"
-            >
-              <div className="flex flex-col gap-8 mt-12 px-2">
-                {navItems.map((item) => (
-                  <button
-                    key={item.id}
-                    onClick={() => handleNavClick(item.href)}
-                    className={`text-left text-lg tracking-wide transition-all ${
-                    activeSection === item.id
-                      ? "text-gold"
-                      : "text-white/80 hover:text-gold"
-                  }`}
-                  >
-                    {item.name}
-                  </button>
-                ))}
-                
-                <LanguageSelector currentLang={currentLang} onLanguageChange={onLanguageChange} />
-                
-                <Button
-                  className="bg-gold text-black hover:bg-gold/90 text-sm px-4 py-2 
-                             transition-all duration-300 transform 
-                             hover:-translate-y-1 hover:shadow-xl hover:scale-[1.02]"
-                  onClick={() => handleNavClick("#contact")}
+          {/* Mobile hamburger — altijd zichtbaar op niet-lg schermen */}
+          <div className="lg:hidden flex items-center">
+            <Sheet open={isOpen} onOpenChange={setIsOpen}>
+              <SheetTrigger asChild>
+                <button
+                  className="flex items-center justify-center w-10 h-10 rounded-lg bg-white/10 hover:bg-white/20 transition-colors"
+                  aria-label="Open menu"
                 >
-                  {t.nav.freeConsultation}
-                </Button>
-              </div>
-            </SheetContent>
-          </Sheet>
+                  <Menu className="h-5 w-5 text-white" />
+                </button>
+              </SheetTrigger>
+              <SheetContent
+                side="right"
+                className="bg-black/95 backdrop-blur-xl border-none p-8 w-[280px] max-w-[85vw]"
+              >
+                <div className="flex flex-col gap-8 mt-12 px-2">
+                  {navItems.map((item) => (
+                    <button
+                      key={item.id}
+                      onClick={() => handleNavClick(item.href)}
+                      className={`text-left text-lg tracking-wide transition-all ${
+                        activeSection === item.id
+                          ? "text-gold"
+                          : "text-white/80 hover:text-gold"
+                      }`}
+                    >
+                      {item.name}
+                    </button>
+                  ))}
+
+                  <LanguageSelector currentLang={currentLang} onLanguageChange={onLanguageChange} />
+
+                  <Button
+                    className="bg-gold text-black hover:bg-gold/90 text-sm px-4 py-2
+                               transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:scale-[1.02]"
+                    onClick={() => handleNavClick("#contact")}
+                  >
+                    {t.nav.freeConsultation}
+                  </Button>
+                </div>
+              </SheetContent>
+            </Sheet>
+          </div>
+
         </div>
       </div>
     </nav>
