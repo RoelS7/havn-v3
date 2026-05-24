@@ -1,5 +1,4 @@
 "use client"
-
 import { Button } from "@/components/ui/button"
 import { Settings, Link as LinkIcon, TrendingUp, Zap, FileText, Users, ArrowRight } from "lucide-react"
 import { translations } from "@/lib/translations"
@@ -11,16 +10,14 @@ interface ServicesProps {
 }
 
 export function Services({ language }: ServicesProps) {
-// UPDATE: Nu ook "es" toevoegen aan de toegestane talen
   const currentLang = (language === "nl" || language === "en" || language === "es") ? language : "nl"
   const t = translations[currentLang]
-
   const icons = [Settings, LinkIcon, TrendingUp, Zap, FileText, Users]
 
   return (
     <div className="pb-16">
       <div className="container mx-auto px-4">
-        
+
         {/* TITLE */}
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-serif text-black mb-4">
@@ -28,26 +25,24 @@ export function Services({ language }: ServicesProps) {
           </h2>
         </div>
 
-        {/* GRID */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        {/* GRID — 1 kolom op mobiel, 2 op tablet, 3 op desktop */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 max-w-5xl mx-auto">
           {t.services.items.map((item, index) => {
             const Icon = icons[index]
-
             return (
               <motion.div
                 key={index}
                 whileHover={{ scale: 1.04, y: -4 }}
                 transition={{ duration: 0.25 }}
-                className="group flex items-center gap-5 p-8 rounded-3xl bg-white border border-gray-100 
+                className="group flex items-center gap-4 p-5 md:p-8 rounded-2xl md:rounded-3xl bg-white border border-gray-100 
                            hover:border-gold hover:shadow-xl transition-all duration-300 luxury-card"
               >
                 {/* ICON */}
-                <div className="w-14 h-14 flex-shrink-0 flex items-center justify-center rounded-2xl bg-gold/10 group-hover:bg-gold/20 transition-colors duration-300">
-                  <Icon className="h-7 w-7 text-gold transition-transform duration-300 group-hover:scale-110" />
+                <div className="w-11 h-11 md:w-14 md:h-14 flex-shrink-0 flex items-center justify-center rounded-xl md:rounded-2xl bg-gold/10 group-hover:bg-gold/20 transition-colors duration-300">
+                  <Icon className="h-5 w-5 md:h-7 md:w-7 text-gold transition-transform duration-300 group-hover:scale-110" />
                 </div>
-
                 {/* TEXT */}
-                <span className="text-black font-medium text-lg leading-tight">
+                <span className="text-black font-medium text-base md:text-lg leading-snug">
                   {item}
                 </span>
               </motion.div>
@@ -69,7 +64,6 @@ export function Services({ language }: ServicesProps) {
             </Link>
           </Button>
         </div>
-
       </div>
     </div>
   )
