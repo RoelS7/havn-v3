@@ -50,25 +50,27 @@ export default function Home() {
         <section className="bg-[var(--muted)]">
           <HowItWorks language={language} />
         </section>
-        {/* 6. Case Study */}
+        {/* 6. Pakketten */}
+        <PricingSection />
+        {/* 7. Case Study */}
         <section className="bg-[var(--background)]">
           <CaseStudy language={language} />
         </section>
-        {/* 7. Revenue Calculator - na case study, vertrouwen is opgebouwd */}
+        {/* 8. Revenue Calculator - na case study, vertrouwen is opgebouwd */}
         <section className="bg-[var(--muted)] pb-20">
           <div className="max-w-4xl mx-auto px-4">
             <RevenueCalculator language={language} key={`calc-${language}`} />
           </div>
         </section>
-        {/* 8. Final CTA - zwart voor impact */}
+        {/* 9. Final CTA - zwart voor impact */}
         <section className="bg-black text-white">
           <FinalCta language={language} />
         </section>
-        {/* 9. FAQ */}
+        {/* 10. FAQ */}
         <section id="faq" className="bg-[var(--muted)]">
           <FAQSection language={language} />
         </section>
-        {/* 10. Contact */}
+        {/* 11. Contact */}
         <section id="contact" className="bg-[var(--background)]">
           <Contact language={language} />
         </section>
