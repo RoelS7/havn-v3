@@ -4,7 +4,7 @@ import { ProblemSection } from "@/components/problem-section"
 import { SolutionSection } from "@/components/solution-section"
 import { Services } from "@/components/services"
 import { HowItWorks } from "@/components/how-it-works"
-import PricingSection from "@/components/PricingSection"
+import { PricingSection } from "@/components/PricingSection"
 import { FinalCta } from "@/components/final-cta"
 import { CaseStudy } from "@/components/case-study"
 import { Contact } from "@/components/contact"
@@ -52,7 +52,7 @@ export default function Home() {
           <HowItWorks language={language} />
         </section>
         {/* 6. Pakketten */}
-        <PricingSection />
+        <PricingSection language={language} />
         {/* 7. Case Study */}
         <section className="bg-[var(--background)]">
           <CaseStudy language={language} />
