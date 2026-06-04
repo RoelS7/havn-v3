@@ -21,12 +21,10 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
-  title: "HAVN - Direct Booking & Automation voor B&B en Hotels",
+  title: "HAVN - Direct Bookings. Less Commission. More Revenue.",
   description:
-    "Maximaliseer uw revenue met professioneel beheer van Airbnb, Booking.com en andere platforms. Property management specialist voor B&B's, vakantiewoningen en kleine hotels.",
-  keywords:
-    "property management, airbnb beheer, booking.com optimalisatie, revenue management, B&B beheer, hotel management, vakantiewoning verhuur",
-  authors: [{ name: "HAVN Direct Booking & Automation" }],
+    "HAVN helps vacation rentals generate direct bookings, reduce OTA commissions and maximize revenue — through professional booking systems, automation and smart pricing.",
+  authors: [{ name: "HAVN Direct Bookings. Less Commission. More Revenue." }],
   creator: "HAVN",
   publisher: "HAVN",
   formatDetection: {
@@ -43,16 +41,16 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "HAVN - Short Term Rental Specialist",
-    description: "Maximaliseer uw revenue met professioneel beheer van Airbnb, Booking.com en andere platforms.",
+    title: "HAVN - Direct Bookings. Less Commission. More Revenue.",
+    description: "HAVN helps vacation rentals generate direct bookings, reduce OTA commissions and maximize revenue — through professional booking systems, automation and smart pricing.",
     url: "https://www.havn.be",
-    siteName: "HAVN Property Management",
+    siteName: "HAVN - Direct Bookings. Less Commission. More Revenue.",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "HAVN Direct Booking & Automation",
+        alt: "HAVN - Direct Bookings. Less Commission. More Revenue.",
       },
     ],
     locale: "nl_BE",
@@ -60,8 +58,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "HAVN - Direct Booking & Automation Specialist",
-    description: "Maximaliseer uw revenue met professioneel beheer van Airbnb, Booking.com en andere platforms.",
+    title: "HAVN - Direct Bookings. Less Commission. More Revenue.",
+    description: "HAVN helps vacation rentals generate direct bookings, reduce OTA commissions and maximize revenue — through professional booking systems, automation and smart pricing.",
     images: ["/og-image.jpg"],
   },
   robots: {
