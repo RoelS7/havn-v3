@@ -9,8 +9,8 @@ export const translations = {
       freeConsultation: "Gratis strategiegesprek",
     },
     hero: {
-      title: "Meer rendement uit je vakantieverhuur",
-      subtitle: "HAVN helpt short-term rental hosts hun verhuur professioneel te runnen met slimme systemen, automatisatie en datagedreven prijsstrategieën.",
+      title: "Meer directe boekingen. Minder afhankelijkheid van Booking.com en Airbnb.",
+      subtitle: "HAVN helpt vakantieverblijven een professioneel reserveringssysteem bouwen dat directe boekingen genereert, operaties automatiseert en omzet maximaliseert.",
       cta: "Gratis strategiegesprek plannen",
       secondaryCta: "Bekijk hoe het werkt",
       positioning: "Voor hosts en operators die hun verhuur willen runnen als een professionele hospitality business.",
@@ -25,15 +25,15 @@ export const translations = {
       items: [
         {
           title: "Te veel handmatig werk",
-          description: "Berichten, boekingen en platformen beheren kost vaak veel tijd.",
+          description: "Berichten, betalingen, reserveringen en platformen beheren kost vaak meer tijd dan nodig.",
         },
         {
           title: "Gemiste inkomsten",
-          description: "Zonder slimme prijsstrategie blijft veel omzet onbenut.",
+          description: "Veel accommodaties zijn te afhankelijk van OTA's en missen directe boekingen via hun eigen website.",
         },
         {
           title: "Versnipperde systemen",
-          description: "Kalenders, communicatie en boekingen werken niet altijd goed samen.",
+          description: "Kalenders, communicatie, betalingen en boekingen werken niet altijd goed samen.",
         },
       ],
     },
@@ -41,16 +41,16 @@ export const translations = {
       title: "Een professionelere manier om je verhuur te beheren",
       pillars: [
         {
-          title: "Systemen",
-          description: "Professionele configuratie van reserveringssystemen, kalenderkoppelingen en workflows.",
+          title: "Directe boekingen",
+          description: "Professionele booking engines en reserveringssystemen die gasten rechtstreeks laten boeken.",
         },
         {
           title: "Revenue optimalisatie",
-          description: "Prijsstrategieën en marktanalyse om bezettingsgraad en inkomsten te verhogen.",
+          description: "Prijsstrategieën en marktinzichten om opbrengst en bezetting te verhogen.",
         },
         {
           title: "Automatisatie",
-          description: "Berichten, reserveringen en dagelijkse taken die automatisch verlopen.",
+          description: "Communicatie, betalingen en operationele workflows die automatisch verlopen.",
         },
       ],
     },
@@ -79,14 +79,14 @@ export const translations = {
       button: "Gratis strategiegesprek plannen",
     },
     services: {
-      title: "Wat HAVN optimaliseert",
+      title: "Wat dit voor jou betekent",
       items: [
-        "Configuratie van reserveringssystemen",
-        "Integratie van boekingsplatformen",
-        "Dynamische prijsstrategie",
-        "Automatisatie van communicatie",
-        "Workflow optimalisatie",
-        "Operationele consultancy voor hosts",
+        "Ontvang directe boekingen via je eigen website",
+        "Beheer Booking.com, Airbnb en je eigen site vanuit één plek",
+        "Verdien meer per boeking zonder zelf de markt te volgen",
+        "Gasten worden automatisch begeleid van boeking tot vertrek",
+        "Stop met manueel werk — alles loopt automatisch",
+        "Verschijn in Google Hotels en vang directe zoekopdrachten op",
       ],
       cta: "Gratis strategiegesprek plannen",
     },
@@ -192,7 +192,7 @@ export const translations = {
     },
     contact: {
       title: "Start Je Gratis Strategiegesprek",
-      subtitle: "Klaar om je revenue te maximaliseren? Neem contact op voor een vrijblijvende consultatie en ontdek hoe ik je accommodatie kan helpen groeien.",
+      subtitle: "Klaar om meer directe boekingen te ontvangen? Neem contact op voor een vrijblijvende consultatie en ontdek hoe ik je accommodatie kan helpen groeien.",
       form: {
         title: "Vraag je Gratis Consultatie Aan",
         subtitle: "Vertel me over je accommodatie en ik neem binnen 24 uur contact met u op.",
@@ -241,7 +241,7 @@ export const translations = {
       },
     },
     footer: {
-      description: "Property Management Specialist voor B&B's, vakantiewoningen en kleine hotels.",
+      description: "Specialist in directe boekingen, automatisatie en revenue optimalisatie voor vakantieverblijven.",
       services: "Services",
       packages: "Gratis strategiegesprek",
       contact: "Contact",
@@ -260,8 +260,8 @@ export const translations = {
       freeConsultation: "Free strategy call",
     },
     hero: {
-      title: "More revenue from your vacation rental",
-      subtitle: "HAVN helps short-term rental hosts run their rental professionally with smart systems, automation and data-driven pricing strategies.",
+      title: "More direct bookings. Less reliance on Booking.com and Airbnb.",
+      subtitle: "HAVN helps vacation rentals build a professional booking system that generates direct bookings, automates operations, and maximizes revenue.",
       cta: "Book your free strategy call",
       secondaryCta: "See how it works",
       positioning: "For hosts and operators who want to run their rental as a professional hospitality business.",
@@ -276,15 +276,15 @@ export const translations = {
       items: [
         {
           title: "Too much manual work",
-          description: "Managing messages, bookings and platforms often takes a lot of time.",
+          description: "Managing messages, payments, reservations, and platforms often takes more time than necessary.",
         },
         {
           title: "Missed revenue",
-          description: "Without a smart pricing strategy, a lot of revenue remains untapped.",
+          description: "Many accommodations are over-reliant on OTAs and miss out on direct bookings via their own website.",
         },
         {
           title: "Fragmented systems",
-          description: "Calendars, communication and bookings don't always work well together.",
+          description: "Calendars, communication, payments, and bookings do not always work well together.",
         },
       ],
     },
@@ -292,16 +292,16 @@ export const translations = {
       title: "A more professional way to manage your rental",
       pillars: [
         {
-          title: "Systems",
-          description: "Professional configuration of reservation systems, calendar connections and workflows.",
+          title: "Direct bookings",
+          description: "Professional booking engines and reservation systems that allow guests to book directly.",
         },
         {
           title: "Revenue optimization",
-          description: "Pricing strategies and market analysis to increase occupancy and revenue.",
+          description: "Pricing strategies and market insights to increase revenue and occupancy.",
         },
         {
           title: "Automation",
-          description: "Messages, reservations and daily tasks that run automatically.",
+          description: "Automated communication, payments, and operational workflows.",
         },
       ],
     },
@@ -330,14 +330,14 @@ export const translations = {
       button: "Book your free strategy call",
     },
     services: {
-      title: "What HAVN optimizes",
+      title: "What this means for you",
       items: [
-        "Configuration of reservation systems",
-        "Booking platform integration",
-        "Dynamic pricing strategy",
-        "Communication automation",
-        "Workflow optimization",
-        "Operational consultancy for hosts",
+        "Receive direct bookings via your own website",
+        "Manage Booking.com, Airbnb, and your own site from one place",
+        "Earn more per booking without monitoring the market yourself",
+        "Guests are automatically guided from booking to check-out",
+        "Stop manual work — everything runs automatically",
+        "Appear in Google Hotels and capture direct searches",
       ],
       cta: "Book your free strategy call",
     },
@@ -443,7 +443,7 @@ export const translations = {
     },
     contact: {
       title: "Start Your Free Strategy Call",
-      subtitle: "Ready to maximize your revenue? Contact us for a free strategy call and discover how I can help your accommodation grow.",
+      subtitle: "Ready to receive more direct bookings? Contact us for a free strategy call and discover how I can help your accommodation grow.",
       form: {
         title: "Request Your Free Strategy Call",
         subtitle: "Tell me about your accommodation and I'll contact you within 24 hours.",
@@ -492,7 +492,7 @@ export const translations = {
       },
     },
     footer: {
-      description: "Property Management Specialist for B&Bs, vacation rentals and small hotels.",
+      description: "Specialist in direct bookings, automation, and revenue optimization for vacation rentals.",
       services: "Services",
       packages: "Free Strategy Call",
       contact: "Contact",
@@ -511,8 +511,8 @@ export const translations = {
       freeConsultation: "Asesoría estratégica gratuita",
     },
     hero: {
-      title: "Maximiza el rendimiento de tu propiedad vacacional",
-      subtitle: "HAVN ayuda a los anfitriones de rentas cortas a profesionalizar su gestión con sistemas inteligentes, automatización y estrategias de precios basadas en datos.",
+      title: "Más reservas directas. Menos dependencia de Booking.com y Airbnb.",
+      subtitle: "HAVN ayuda a los alquileres vacacionales a crear un sistema de reservas profesional que genera reservas directas, automatiza las operaciones y maximiza los ingresos.",
       cta: "Agendar asesoría gratuita",
       secondaryCta: "Cómo funciona",
       positioning: "Para anfitriones y operadores que buscan transformar su propiedad en un negocio de hospitalidad profesional.",
@@ -527,15 +527,15 @@ export const translations = {
       items: [
         {
           title: "Exceso de tareas manuales",
-          description: "Gestionar mensajes, reservas y plataformas consume demasiado de tu tiempo valioso.",
+          description: "Gestionar mensajes, pagos, reservas y plataformas suele consumir más tiempo del necesario.",
         },
         {
           title: "Ingresos perdidos",
-          description: "Sin una estrategia de precios inteligente, estás dejando dinero sobre la mesa.",
+          description: "Muchos alojamientos dependen excesivamente de las agencias de viajes online (OTA) y pierden reservas directas a través de su propia página web.",
         },
         {
           title: "Sistemas desconectados",
-          description: "Tus calendarios y comunicaciones no se sincronizan, generando errores y estrés.",
+          description: "Los calendarios, la comunicación, los pagos y las reservas no siempre se integran bien.",
         },
       ],
     },
@@ -543,16 +543,16 @@ export const translations = {
       title: "Una gestión profesional diseñada para escalar",
       pillars: [
         {
-          title: "Sistemas Pro",
-          description: "Configuración experta de motores de reserva, sincronización de calendarios y flujos operativos.",
+          title: "Reservas Directas",
+          description: "Motores y sistemas de reservas profesionales que permiten a los huéspedes reservar directamente.",
         },
         {
           title: "Optimización de Ingresos",
-          description: "Estrategias de Revenue Management para elevar tu ocupación y tarifa promedio.",
+          description: "Estrategias de precios y análisis de mercado para aumentar los ingresos y la ocupación.",
         },
         {
           title: "Automatización Total",
-          description: "Mensajería, check-ins y tareas diarias que funcionan en piloto automático.",
+          description: "Comunicación, pagos y flujos de trabajo operativos automatizados.",
         },
       ],
     },
@@ -581,14 +581,14 @@ export const translations = {
       button: "Agendar mi asesoría gratuita",
     },
     services: {
-      title: "En qué nos enfocamos",
+      title: "Qué significa esto para ti?",
       items: [
-        "Configuración de sistemas de reserva (PMS)",
-        "Integración de canales (Airbnb, Booking, etc.)",
-        "Estrategia de precios dinámicos",
-        "Automatización de la comunicación con el huésped",
-        "Optimización de flujos operativos",
-        "Consultoría para anfitriones y operadores",
+        "Recibe reservas directas a través de tu propia página web.",
+        "Gestiona Booking.com, Airbnb y tu propia página web desde un solo lugar.",
+        "Gana más por reserva sin tener que monitorizar el mercado manualmente.",
+        "Los huéspedes reciben asistencia automática desde la reserva hasta la salida.",
+        "Olvídate del trabajo manual: todo funciona automáticamente.",
+        "Aparece en Google Hotels y capta búsquedas directas.",
       ],
       cta: "Quiero una asesoría gratuita",
     },
@@ -694,7 +694,7 @@ export const translations = {
     },
     contact: {
       title: "Obtén tu asesoría estratégica gratuita",
-      subtitle: "¿Listo para disparar tus ingresos? Contáctanos para una consulta sin compromiso y descubre el potencial real de tu propiedad.",
+      subtitle: "¿Listo para recibir más reservas directas? Contáctanos para una consulta sin compromiso y descubre el potencial real de tu propiedad.",
       form: {
         title: "Solicita tu asesoría gratuita",
         subtitle: "Cuéntame sobre tu propiedad y te contactaré en menos de 24 horas.",
@@ -743,7 +743,7 @@ export const translations = {
       },
     },
     footer: {
-      description: "Especialista en gestión de propiedades para B&B's, rentas vacacionales y hoteles boutique.",
+      description: "Especialista en reservas directas, automatización y optimización de ingresos para alquileres vacacionales.",
       services: "Servicios",
       packages: "Asesoría Gratuita",
       contact: "Contacto",

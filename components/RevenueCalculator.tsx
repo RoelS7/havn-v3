@@ -8,7 +8,7 @@ const WHOLE_PROPERTY_TYPES = ["vacation", "villa", "apartment"]
 
 const text = {
   nl: {
-    title: "Revenue Calculator",
+    title: "Hoeveel commissie betaal jij elk jaar aan OTA's",
     subtitle: "Ontdek het verborgen potentieel van uw accommodatie",
     step1: "Uw accommodatie",
     step2: "Prestaties",
@@ -56,7 +56,7 @@ const text = {
     avgOccLabel: "Gemiddelde bezetting",
   },
   en: {
-    title: "Revenue Calculator",
+    title: "How much commission do you pay to OTAs every year?",
     subtitle: "Discover the hidden potential of your property",
     step1: "Your Property",
     step2: "Performance",
@@ -104,7 +104,7 @@ const text = {
     avgOccLabel: "Average occupancy",
   },
   es: {
-    title: "Calculadora de Ingresos",
+    title: "¿Cuánta comisión pagas a las agencias de viajes online cada año?",
     subtitle: "Descubre el potencial oculto de tu propiedad",
     step1: "Tu Propiedad",
     step2: "Rendimiento",
