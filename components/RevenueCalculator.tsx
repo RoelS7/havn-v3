@@ -54,6 +54,7 @@ const text = {
     required: "Vul alle verplichte velden in",
     seasonalityTitle: "Seizoenspatroon",
     avgOccLabel: "Gemiddelde bezetting",
+    commissionRate: "OTA commissie (%)",
   },
   en: {
     title: "How much commission do you pay to OTAs every year?",
@@ -102,6 +103,7 @@ const text = {
     required: "Please fill in all required fields",
     seasonalityTitle: "Seasonal pattern",
     avgOccLabel: "Average occupancy",
+    commissionRate: "OTA commission (%)",
   },
   es: {
     title: "¿Cuánta comisión pagas a las agencias de viajes online cada año?",
@@ -150,11 +152,11 @@ const text = {
     required: "Por favor completa todos los campos requeridos",
     seasonalityTitle: "Patrón estacional",
     avgOccLabel: "Ocupación promedio",
+    commissionRate: "Comisión OTA (%)",
   },
 }
 
 const BENCHMARKS: Record<string, number> = { be: 68, us: 72, mx: 65, co: 60, other: 65 }
-const COMMISSION_RATE = 0.15
 
 export default function RevenueCalculator({ language: langProp }: { language?: string }) {
   const { language: hookLang } = useLanguage()
@@ -170,6 +172,7 @@ export default function RevenueCalculator({ language: langProp }: { language?: s
   const [highSeasonOcc, setHighSeasonOcc] = useState(80)
   const [lowSeasonOcc, setLowSeasonOcc] = useState(45)
   const [highSeasonMonths, setHighSeasonMonths] = useState(5)
+  const [commissionRate, setCommissionRate] = useState(15)
   const [result, setResult] = useState<number | null>(null)
   const [email, setEmail] = useState("")
   const [loading, setLoading] = useState(false)
@@ -218,6 +221,7 @@ export default function RevenueCalculator({ language: langProp }: { language?: s
           highSeasonOcc,
           lowSeasonOcc,
           highSeasonMonths,
+          commissionRate,
         }),
       })
       setSent(true)
@@ -228,7 +232,7 @@ export default function RevenueCalculator({ language: langProp }: { language?: s
   const gain = result ? Math.round(result * 0.2) : 0
   const potential = result ? Math.round(result * 1.2) : 0
   const perMonth = result ? Math.round(result / 12) : 0
-  const annualCommission = result ? Math.round(result * COMMISSION_RATE) : 0
+  const annualCommission = result ? Math.round(result * (commissionRate / 100)) : 0
   const commissionSaving = result ? Math.round(annualCommission * 0.4) : 0
   const benchmarkOcc = country ? (BENCHMARKS[country] || 65) : 65
   const countryLabel = country ? ((t.countries as Record<string, string>)[country] || country) : ""
@@ -238,7 +242,7 @@ export default function RevenueCalculator({ language: langProp }: { language?: s
   const benchmarkLabel = benchmarkStatus === "above" ? t.benchmarkAbove : benchmarkStatus === "below" ? t.benchmarkBelow : t.benchmarkAvg
 
   return (
-    <div className="max-w-2xl mx-auto px-4">
+    <div className="max-w-2xl mx-auto px-4 pt-10">
       <div className="bg-white rounded-3xl shadow-xl border border-[#C9A96E]/20 p-8 md:p-10">
         <div className="text-center mb-10">
           <h2 className="text-3xl font-serif text-black mb-2">{t.title}</h2>
@@ -340,6 +344,19 @@ export default function RevenueCalculator({ language: langProp }: { language?: s
                 <div className="flex justify-between items-center pt-1 border-t border-gray-200">
                   <span className="text-xs text-gray-500">{t.avgOccLabel}</span>
                   <span className="text-sm font-bold text-[#C9A96E]">{avgOccupancy}%</span>
+                </div>
+              </div>
+              <div className="bg-gray-50 rounded-2xl p-5">
+                <div className="flex justify-between mb-1">
+                  <label className="text-xs text-gray-500">{t.commissionRate}</label>
+                  <span className="text-xs font-semibold text-[#C9A96E]">{commissionRate}%</span>
+                </div>
+                <input type="range" min="10" max="25" step="1" value={commissionRate} onChange={(e) => setCommissionRate(Number(e.target.value))}
+                  className="w-full h-2 rounded-full appearance-none cursor-pointer"
+                  style={{ background: `linear-gradient(to right, #C9A96E ${((commissionRate - 10) / 15) * 100}%, #e5e7eb ${((commissionRate - 10) / 15) * 100}%)` }} />
+                <div className="flex justify-between text-xs text-gray-400 mt-1">
+                  <span>10%</span>
+                  <span>25%</span>
                 </div>
               </div>
             </div>
