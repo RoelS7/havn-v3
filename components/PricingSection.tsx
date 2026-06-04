@@ -1,6 +1,7 @@
 "use client";
 
 import { Check, Minus } from "lucide-react";
+import { translations } from "@/lib/translations";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -35,127 +36,21 @@ interface MonthlyPlan {
   features: string[];
 }
 
-// ─── Data ─────────────────────────────────────────────────────────────────────
-
-const PACKAGES: Package[] = [
-  {
-    id: "launch",
-    name: "HAVN Launch",
-    tagline: "Jouw eerste directe boekingen",
-    price: "1.495",
-    priceTo: "2.500",
-    ideal:
-      "Vakantiehuizen, B&B's en kleine accommodaties die willen stoppen met het betalen van OTA-commissies.",
-    result: "Een professionele directe boekingsbasis — klaar om commissies te vermijden.",
-    features: [
-      "Directe boekingen via je eigen website",
-      "Koppeling met Booking.com & Airbnb",
-      "Online betalingen via Stripe",
-      "Automatische bevestigings- & check-inmails",
-      "Reviewverzoeken na verblijf",
-      "Housekeeping notificaties",
-      "Training & overdracht",
-    ],
-    notIncluded: ["Google Hotels", "Revenue management", "Doorlopende optimalisatie"],
-    featured: false,
-  },
-  {
-    id: "growth",
-    name: "HAVN Growth",
-    tagline: "Meer omzet per boeking",
-    price: "2.495",
-    priceTo: "3.500",
-    ideal:
-      "Accommodaties die niet alleen directe boekingen willen, maar ook hun opbrengst actief willen verhogen.",
-    result: "Meer zichtbaarheid, slimmere prijzen en hogere opbrengst per verblijf.",
-    features: [
-      "Alles uit HAVN Launch",
-      "Google Hotels — direct op jouw naam",
-      "Dynamische prijsstrategie & framework",
-      "Markt- & concurrentieanalyse",
-      "Minimum stay & kalenderstrategie",
-      "Upsell workflows",
-      "Gepersonaliseerde gastcommunicatie",
-      "Revenue dashboard",
-    ],
-    notIncluded: [],
-    featured: true,
-    badge: "Meest gekozen",
-  },
-  {
-    id: "scale",
-    name: "HAVN Scale",
-    tagline: "Volledig schaalbaar verhuurplatform",
-    price: "3.995",
-    priceTo: null,
-    ideal: "Operators, vakantieparken en complexe multi-property structuren.",
-    result:
-      "Een professioneel verhuurplatform met geavanceerde automatisatie en schaalbaarheid.",
-    features: [
-      "Alles uit HAVN Growth",
-      "Multi-property setup",
-      "Maatwerk automatisatie & workflows",
-      "Meerdere gebruikersrollen",
-      "Teamtraining",
-      "Uitgebreide rapportering",
-      "Strategisch advies op maat",
-    ],
-    notIncluded: [],
-    featured: false,
-    badge: "Op maat",
-  },
-];
-
-const MONTHLY: MonthlyPlan[] = [
-  {
-    id: "platform",
-    name: "HAVN Platform",
-    type: "Verplicht",
-    typeColor: "gold",
-    tagline: "De technische basis van jouw verhuur",
-    description:
-      "Bundelt je softwarelicentie, hosting, onderhoud, OTA-support en jaarlijkse systeemreview in één maandelijks bedrag. Geen verrassingen, geen aparte facturen.",
-    tiers: [
-      { label: "1 – 3 units", price: "€59", period: "/ maand" },
-      { label: "4 – 10 units", price: "€99", period: "/ maand" },
-      { label: "10+ units", price: "Offerte", period: "op maat" },
-    ],
-    features: [
-      "Softwarelicentie inbegrepen",
-      "Hosting & onderhoud",
-      "Technische support",
-      "OTA ondersteuning",
-      "Kleine configuratiewijzigingen",
-      "Jaarlijkse systeemreview",
-    ],
-  },
-  {
-    id: "revenue",
-    name: "HAVN Revenue",
-    type: "Optioneel",
-    typeColor: "slate",
-    tagline: "Actief revenue management",
-    description:
-      "Maandelijkse marktanalyse, bezettingsrapport en concrete prijsaanbevelingen — voor eigenaars die elke euro willen optimaliseren zonder zelf de markt te volgen.",
-    tiers: [
-      { label: "1 – 3 units", price: "€149", period: "/ maand" },
-      { label: "4 – 10 units", price: "€249", period: "/ maand" },
-      { label: "10+ units", price: "Offerte", period: "op maat" },
-    ],
-    features: [
-      "Maandelijkse revenue review",
-      "Bezettings- & concurrentieanalyse",
-      "Evenementen- & seizoensanalyse",
-      "Aanbevelingen prijsaanpassingen",
-      "Kalenderoptimalisatie",
-      "Strategiegesprek & rapportering",
-    ],
-  },
-];
+interface PricingSectionProps {
+  language: string;
+}
 
 // ─── PackageCard ──────────────────────────────────────────────────────────────
 
-function PackageCard({ pkg }: { pkg: Package }) {
+function PackageCard({
+  pkg,
+  resultLabel,
+  requestQuote,
+}: {
+  pkg: Package;
+  resultLabel: string;
+  requestQuote: string;
+}) {
   return (
     <div
       className={`relative flex flex-col rounded-2xl border transition-all duration-300 ${
@@ -218,7 +113,9 @@ function PackageCard({ pkg }: { pkg: Package }) {
         </div>
 
         <div
-          className={`h-px mb-5 ${pkg.featured ? "bg-white/10" : "bg-[#E8DFD0]"}`}
+          className={`h-px mb-5 ${
+            pkg.featured ? "bg-white/10" : "bg-[#E8DFD0]"
+          }`}
         />
 
         <p
@@ -261,7 +158,7 @@ function PackageCard({ pkg }: { pkg: Package }) {
               : "bg-[#F5EFE6] text-[#7A6040]"
           }`}
         >
-          <span className="font-medium">Resultaat: </span>
+          <span className="font-medium">{resultLabel}: </span>
           {pkg.result}
         </div>
 
@@ -273,7 +170,7 @@ function PackageCard({ pkg }: { pkg: Package }) {
               : "border border-[#0F1923] text-[#0F1923] hover:bg-[#0F1923] hover:text-white"
           }`}
         >
-          Offerte aanvragen
+          {requestQuote}
         </a>
       </div>
     </div>
@@ -348,7 +245,11 @@ function MonthlyCard({ plan }: { plan: MonthlyPlan }) {
 
 // ─── Main export ──────────────────────────────────────────────────────────────
 
-export default function PricingSection() {
+export function PricingSection({ language }: PricingSectionProps) {
+  const currentLang =
+    language === "nl" || language === "en" || language === "es" ? language : "nl";
+  const t = translations[currentLang].pricing;
+
   return (
     <section className="bg-[#F5EFE6] py-24 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
@@ -356,24 +257,28 @@ export default function PricingSection() {
         {/* Section header */}
         <div className="text-center mb-16">
           <p className="text-xs tracking-[0.18em] uppercase text-[#B8924A] font-medium mb-3">
-            Pakketten & Prijzen
+            {t.sectionLabel}
           </p>
           <h2
             className="text-4xl sm:text-5xl font-light text-[#0F1923] leading-tight mb-4"
             style={{ fontFamily: "'Cormorant Garamond', 'Georgia', serif" }}
           >
-            Kies je startpunt
+            {t.title}
           </h2>
           <p className="text-base text-[#5A6A7A] max-w-xl mx-auto leading-relaxed">
-            Eenmalige implementatie om jouw verhuurinfrastructuur te bouwen,
-            aangevuld met een maandelijks platform en optioneel revenue management.
+            {t.subtitle}
           </p>
         </div>
 
         {/* One-time packages */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          {PACKAGES.map((pkg) => (
-            <PackageCard key={pkg.id} pkg={pkg} />
+          {(t.packages as Package[]).map((pkg) => (
+            <PackageCard
+              key={pkg.id}
+              pkg={pkg}
+              resultLabel={t.resultLabel}
+              requestQuote={t.requestQuote}
+            />
           ))}
         </div>
 
@@ -390,48 +295,40 @@ export default function PricingSection() {
               />
             </svg>
           </span>
-          <p className="text-sm text-[#3A4A5A] leading-relaxed">
-            Elk implementatiepakket wordt aangevuld met het{" "}
-            <strong className="font-medium text-[#0F1923]">HAVN Platform</strong>{" "}
-            — het maandelijks abonnement dat je softwarelicentie, hosting en
-            technische support bundelt.
-          </p>
+          <p className="text-sm text-[#3A4A5A] leading-relaxed">{t.platformNote}</p>
         </div>
 
         {/* Monthly header */}
         <div className="text-center mb-12">
           <p className="text-xs tracking-[0.18em] uppercase text-[#B8924A] font-medium mb-3">
-            Maandelijkse diensten
+            {t.monthlyLabel}
           </p>
           <h2
             className="text-3xl sm:text-4xl font-light text-[#0F1923] leading-tight mb-4"
             style={{ fontFamily: "'Cormorant Garamond', 'Georgia', serif" }}
           >
-            De motor die blijft draaien
+            {t.monthlyTitle}
           </h2>
           <p className="text-base text-[#5A6A7A] max-w-xl mx-auto leading-relaxed">
-            Na implementatie hou je het systeem actueel en je omzet optimaal.
+            {t.monthlySubtitle}
           </p>
         </div>
 
         {/* Monthly cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-          {MONTHLY.map((plan) => (
+          {(t.monthly as MonthlyPlan[]).map((plan) => (
             <MonthlyCard key={plan.id} plan={plan} />
           ))}
         </div>
 
         {/* Bottom CTA */}
         <div className="text-center">
-          <p className="text-sm text-[#5A6A7A] mb-6">
-            Niet zeker welk pakket past? Plan een gratis strategiegesprek en we
-            bekijken het samen.
-          </p>
+          <p className="text-sm text-[#5A6A7A] mb-6">{t.notSure}</p>
           <a
             href="#contact"
             className="inline-flex items-center gap-2 bg-[#0F1923] text-white px-8 py-4 rounded-xl text-sm font-medium tracking-wide hover:bg-[#1A2A3A] transition-colors duration-200"
           >
-            Gratis strategiegesprek plannen
+            {t.cta}
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
               <path
                 d="M2 7h10M8 3l4 4-4 4"
