@@ -36,22 +36,22 @@ export function Footer({ language }: FooterProps) {
             <ul className="space-y-2 text-gray-400 text-sm">
               <li>
                 <Link href="#services" className="hover:text-gold transition-colors">
-                  Platform Optimalisatie
+                  Direct Booking Setup
                 </Link>
               </li>
               <li>
                 <Link href="#services" className="hover:text-gold transition-colors">
-                  Revenue Management
+                  Revenue Growth
                 </Link>
               </li>
               <li>
                 <Link href="#services" className="hover:text-gold transition-colors">
-                  Guest Experience
+                  Automation
                 </Link>
               </li>
               <li>
                 <Link href="#services" className="hover:text-gold transition-colors">
-                  Analytics
+                  Google Hotels
                 </Link>
               </li>
             </ul>
