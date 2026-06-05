@@ -19,95 +19,134 @@ export function FAQSection({ language }: FAQSectionProps) {
   const faqData = [
     {
       question: {
-        nl: "Hoe snel zie ik resultaten?",
-        en: "How quickly will I see results?",
-        es: "¿Qué tan pronto veré resultados?"
+      nl: "Hoe snel zie ik resultaten?",
+      en: "How quickly will I see results?",
+      es: "¿Qué tan pronto veré resultados?"
       }[currentLang],
       answer: {
-        nl: "De meeste klanten zien binnen 2-4 weken de eerste verbeteringen in hun bezettingsgraad en binnen 2-3 maanden significante revenue groei.",
-        en: "Most clients see initial improvements in occupancy within 2-4 weeks and significant revenue growth within 2-3 months.",
-        es: "La mayoría de los clientes ven mejoras iniciales en la ocupación en 2-4 semanas y un crecimiento significativo de los ingresos en 2-3 meses."
+      nl: "De technische implementatie is meestal binnen enkele weken afgerond. Directe boekingen kunnen onmiddellijk binnenkomen zodra het systeem live staat. Verbeteringen in bezetting, prijsstrategie en opbrengst worden doorgaans zichtbaar binnen de eerste 2 tot 3 maanden.",
+      en: "Technical implementation is usually completed within a few weeks. Direct bookings can start coming in as soon as the system goes live. Improvements in occupancy, pricing strategy and revenue are typically visible within the first 2 to 3 months.",
+      es: "La implementación técnica suele completarse en unas pocas semanas. Las reservas directas pueden comenzar a llegar tan pronto como el sistema esté activo. Las mejoras en ocupación, estrategia de precios e ingresos suelen ser visibles dentro de los primeros 2 o 3 meses."
       }[currentLang],
       category: "algemeen",
-    },
-    {
+      },
+      {
       question: {
-        nl: "Wat kost jullie service?",
-        en: "What does your service cost?",
-        es: "¿Cuánto cuesta su servicio?"
+      nl: "Wat kost jullie service?",
+      en: "What does your service cost?",
+      es: "¿Cuánto cuesta su servicio?"
       }[currentLang],
       answer: {
-        nl: "Omdat elke accommodatie anders is, werken we altijd met een persoonlijke offerte. Tijdens een gratis strategiegesprek bekijken we samen uw situatie en maken we een voorstel op maat. Er zijn geen verborgen kosten.",
-        en: "Because every property is different, we always work with a personalized quote. During a free strategy call, we look at your situation together and create a tailored proposal. There are no hidden costs.",
-        es: "Debido a que cada propiedad es diferente, siempre trabajamos con una cotización personalizada. Durante una llamada estratégica gratuita, analizamos su situación juntos y elaboramos una propuesta a medida. No hay costos ocultos."
+      nl: "HAVN werkt met vaste pakketten voor directe boekingen, automatisatie en revenue optimalisatie. De meeste projecten vallen binnen HAVN Launch, Growth of Scale. Tijdens een gratis strategiegesprek bekijken we welk pakket het beste aansluit bij jouw accommodatie.",
+      en: "HAVN works with fixed packages for direct bookings, automation and revenue optimization. Most projects fit within HAVN Launch, Growth or Scale. During a free strategy call we determine which package best suits your property.",
+      es: "HAVN trabaja con paquetes fijos para reservas directas, automatización y optimización de ingresos. La mayoría de los proyectos encajan en HAVN Launch, Growth o Scale. Durante una llamada estratégica gratuita determinamos qué paquete se adapta mejor a su propiedad."
       }[currentLang],
       category: "pricing",
-    },
-    {
+      },
+      {
       question: {
-        nl: "Moet ik langetermijn contracten tekenen?",
-        en: "Do I need to sign long-term contracts?",
-        es: "¿Tengo que firmar contratos a largo plazo?"
+      nl: "Moet ik langetermijncontracten tekenen?",
+      en: "Do I need to sign long-term contracts?",
+      es: "¿Tengo que firmar contratos a largo plazo?"
       }[currentLang],
       answer: {
-        nl: "Nee. We geloven in resultaten, niet in het vastzetten van klanten. Alles verloopt op basis van vertrouwen en bewezen meerwaarde.",
-        en: "No. We believe in results, not in locking in customers. Everything is based on trust and proven value.",
-        es: "No. Creemos en los resultados, no en retener a los clientes por contrato. Todo se basa en la confianza y el valor demostrado."
+      nl: "Nee. Onze implementatiepakketten zijn eenmalige projecten. Enkel wanneer je kiest voor HAVN Platform of HAVN Revenue geldt een maandelijks abonnement dat op elk moment kan worden stopgezet.",
+      en: "No. Our implementation packages are one-time projects. Only HAVN Platform and HAVN Revenue are recurring monthly services that can be cancelled at any time.",
+      es: "No. Nuestros paquetes de implementación son proyectos únicos. Solo HAVN Platform y HAVN Revenue son servicios mensuales recurrentes que pueden cancelarse en cualquier momento."
       }[currentLang],
-      category: "algemeen",
-    },
-    {
+      category: "pricing",
+      },
+      {
       question: {
-        nl: "Welke platforms optimaliseren jullie?",
-        en: "Which platforms do you optimize?",
-        es: "¿Qué plataformas optimizan?"
+      nl: "Heb ik een nieuwe website nodig?",
+      en: "Do I need a new website?",
+      es: "¿Necesito un nuevo sitio web?"
       }[currentLang],
       answer: {
-        nl: "We werken met alle grote platforms: Airbnb, Booking.com, Expedia, Vrbo en meer. Daarnaast helpen we ook bij het opzetten van directe boekingen via uw eigen website, wat commissiekosten bespaart.",
-        en: "We work with all major platforms: Airbnb, Booking.com, Expedia, Vrbo and more. We also help set up direct bookings through your own website, saving commission costs.",
-        es: "Trabajamos con todas las plataformas principales: Airbnb, Booking.com, Expedia, Vrbo y más. También ayudamos a configurar reservas directas a través de su propio sitio web, ahorrando costos de comisión."
+      nl: "Niet noodzakelijk. In veel gevallen kunnen we directe boekingen integreren in een bestaande website. Alleen wanneer de huidige website technisch beperkt is of niet meer aansluit bij je doelstellingen, bekijken we samen een nieuwe oplossing.",
+      en: "Not necessarily. In many cases we can integrate direct bookings into an existing website. Only when the current website is technically limited or no longer supports your goals do we consider a new solution.",
+      es: "No necesariamente. En muchos casos podemos integrar reservas directas en un sitio web existente. Solo cuando el sitio actual es técnicamente limitado o ya no cumple sus objetivos consideramos una nueva solución."
       }[currentLang],
       category: "services",
-    },
-    {
+      },
+      {
       question: {
-        nl: "Wat is dynamische prijsstrategie en waarom is het belangrijk?",
-        en: "What is dynamic pricing and why does it matter?",
-        es: "¿Qué es la fijación de precios dinámica y por qué es importante?"
+      nl: "Werkt HAVN ook met bestaande websites?",
+      en: "Does HAVN work with existing websites?",
+      es: "¿HAVN funciona con sitios web existentes?"
       }[currentLang],
       answer: {
-        nl: "Dynamische prijsstrategie betekent dat uw kamerprijzen automatisch worden aangepast op basis van vraag, seizoen, lokale events en concurrentie. Hosts die dit goed toepassen verdienen gemiddeld 20-30% meer dan hosts met vaste prijzen.",
-        en: "Dynamic pricing means your room rates are automatically adjusted based on demand, season, local events and competition. Hosts who apply this well earn an average of 20-30% more than hosts with fixed rates.",
-        es: "La fijación de precios dinámica significa que las tarifas de su propiedad se ajustan automáticamente según la demanda, la temporada, los eventos locales y la competencia. Los anfitriones que aplican esto correctamente ganan un promedio de 20-30% más que los que tienen precios fijos."
+      nl: "Ja. HAVN kan zowel bestaande websites uitbreiden als volledig nieuwe websites ontwikkelen. Het doel blijft hetzelfde: meer directe boekingen genereren via je eigen kanaal.",
+      en: "Yes. HAVN can enhance existing websites or develop entirely new ones. The goal remains the same: generating more direct bookings through your own channel.",
+      es: "Sí. HAVN puede mejorar sitios web existentes o desarrollar nuevos. El objetivo sigue siendo el mismo: generar más reservas directas a través de su propio canal."
       }[currentLang],
       category: "services",
-    },
-    {
+      },
+      {
       question: {
-        nl: "Werkt HAVN ook met kleine accommodaties of starters?",
-        en: "Does HAVN also work with small properties or beginners?",
-        es: "¿HAVN también trabaja con propiedades pequeñas o principiantes?"
+      nl: "Waarom zou ik directe boekingen stimuleren?",
+      en: "Why should I encourage direct bookings?",
+      es: "¿Por qué debería fomentar las reservas directas?"
       }[currentLang],
       answer: {
-        nl: "Ja. We werken met B&B's, vakantiewoningen, appartementen en kleine hotels — zowel met ervaren hosts als met mensen die net beginnen. Een gratis strategiegesprek is altijd de eerste stap.",
-        en: "Yes. We work with B&Bs, vacation rentals, apartments and small hotels — both with experienced hosts and people just starting out. A free strategy call is always the first step.",
-        es: "Sí. Trabajamos con B&Bs, alquileres vacacionales, apartamentos y pequeños hoteles, tanto con anfitriones experimentados como con personas que recién comienzan. Una llamada estratégica gratuita es siempre el primer paso."
+      nl: "Directe boekingen zorgen voor meer controle, minder afhankelijkheid van OTA's zoals Booking.com en Airbnb, en lagere commissiekosten. Daardoor blijft er meer opbrengst over per reservering.",
+      en: "Direct bookings provide more control, reduce dependence on OTAs such as Booking.com and Airbnb, and lower commission costs. This means more revenue remains from every reservation.",
+      es: "Las reservas directas ofrecen más control, reducen la dependencia de OTAs como Booking.com y Airbnb, y disminuyen las comisiones. Esto deja más ingresos por cada reserva."
       }[currentLang],
       category: "algemeen",
-    },
-    {
+      },
+      {
       question: {
-        nl: "Wat gebeurt er tijdens het gratis strategiegesprek?",
-        en: "What happens during the free strategy call?",
-        es: "¿Qué sucede durante la llamada estratégica gratuita?"
+      nl: "Wat is Google Hotels?",
+      en: "What is Google Hotels?",
+      es: "¿Qué es Google Hotels?"
       }[currentLang],
       answer: {
-        nl: "In 30 minuten bekijken we uw huidige setup, identificeren we de grootste opportuniteiten en bespreken we hoe HAVN u concreet kan helpen. Geen verkooppraatje — gewoon een eerlijk gesprek over wat er beter kan.",
-        en: "In 30 minutes we review your current setup, identify the biggest opportunities and discuss how HAVN can concretely help you. No sales pitch — just an honest conversation about what can be improved.",
-        es: "En 30 minutos revisamos su configuración actual, identificamos las mayores oportunidades y discutimos cómo HAVN puede ayudarle concretamente. Sin discurso de ventas, solo una conversación honesta sobre lo que se puede mejorar."
+      nl: "Google Hotels toont jouw accommodatie rechtstreeks in de hotelresultaten van Google. Gasten kunnen prijzen vergelijken en rechtstreeks doorklikken naar jouw website om te reserveren, wat extra directe boekingen kan opleveren.",
+      en: "Google Hotels displays your property directly in Google's hotel search results. Guests can compare prices and book directly through your website, generating additional direct bookings.",
+      es: "Google Hotels muestra su alojamiento directamente en los resultados hoteleros de Google. Los huéspedes pueden comparar precios y reservar directamente a través de su sitio web, generando más reservas directas."
+      }[currentLang],
+      category: "services",
+      },
+      {
+      question: {
+      nl: "Moet ik Booking.com verlaten?",
+      en: "Should I leave Booking.com?",
+      es: "¿Debería abandonar Booking.com?"
+      }[currentLang],
+      answer: {
+      nl: "Nee. OTA's zoals Booking.com blijven belangrijke verkoopkanalen. HAVN helpt je om minder afhankelijk te worden van commissies door daarnaast ook directe boekingen via je eigen website te stimuleren.",
+      en: "No. OTAs such as Booking.com remain valuable sales channels. HAVN helps you become less dependent on commissions by increasing direct bookings through your own website.",
+      es: "No. Las OTAs como Booking.com siguen siendo canales de venta importantes. HAVN le ayuda a depender menos de las comisiones aumentando las reservas directas a través de su propio sitio web."
+      }[currentLang],
+      category: "services",
+      },
+      {
+      question: {
+      nl: "Werkt HAVN ook met kleine accommodaties of starters?",
+      en: "Does HAVN also work with small properties or beginners?",
+      es: "¿HAVN también trabaja con propiedades pequeñas o principiantes?"
+      }[currentLang],
+      answer: {
+      nl: "Ja. HAVN werkt met B&B's, vakantiewoningen, appartementen en kleine hospitality operators. Zowel starters als ervaren hosts kunnen profiteren van betere systemen, automatisatie en directe boekingen.",
+      en: "Yes. HAVN works with B&Bs, vacation rentals, apartments and small hospitality operators. Both beginners and experienced hosts can benefit from better systems, automation and direct bookings.",
+      es: "Sí. HAVN trabaja con B&Bs, alquileres vacacionales, apartamentos y pequeños operadores de hospitalidad. Tanto principiantes como anfitriones experimentados pueden beneficiarse de mejores sistemas, automatización y reservas directas."
       }[currentLang],
       category: "algemeen",
-    },
+      },
+      {
+      question: {
+      nl: "Wat gebeurt er tijdens het gratis strategiegesprek?",
+      en: "What happens during the free strategy call?",
+      es: "¿Qué sucede durante la llamada estratégica gratuita?"
+      }[currentLang],
+      answer: {
+      nl: "Tijdens het gesprek bekijken we jouw huidige setup, website, boekingskanalen en grootste uitdagingen. Je krijgt concrete inzichten en aanbevelingen, ongeacht of je daarna met HAVN verderwerkt.",
+      en: "During the call we review your current setup, website, booking channels and biggest challenges. You'll receive concrete insights and recommendations regardless of whether you continue with HAVN afterwards.",
+      es: "Durante la llamada revisamos su configuración actual, sitio web, canales de reserva y principales desafíos. Recibirá recomendaciones concretas independientemente de si continúa trabajando con HAVN después."
+      }[currentLang],
+      category: "algemeen",
+      },
   ]
 
   const categories = [
