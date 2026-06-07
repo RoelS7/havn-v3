@@ -86,7 +86,7 @@ export const translations = {
         "Verschijn in Google Hotels en vang directe zoekopdrachten op",
         "Beheer Booking.com, Airbnb en je eigen website vanuit één centrale omgeving",
         "Gasten worden automatisch begeleid van boeking tot vertrek",
-        "Verdien meer per boeking dankzij slimme prijsstrategieën,"
+        "Verdien meer per boeking dankzij slimme prijsstrategieën,
       ],
       cta: "Gratis strategiegesprek plannen",
     },
@@ -205,9 +205,9 @@ export const translations = {
           tagline: "De technische basis van jouw verhuur",
           description: "Bundelt je softwarelicentie, hosting, onderhoud, OTA-support en jaarlijkse systeemreview in één maandelijks bedrag. Geen verrassingen, geen aparte facturen.",
           tiers: [
-            { label: "1 – 3 units", price: "€59", period: "/ maand" },
-            { label: "4 – 10 units", price: "€99", period: "/ maand" },
-            { label: "10+ units", price: "Offerte", period: "op maat" },
+            { label: "1 – 3 units, 1-2 OTA's", price: "€79", period: "/ maand" },
+            { label: "4–10 units, 2-3 OTA's", price: "129", period: "/ maand" },
+            { label: "10+ units / complex", price: "Offerte", period: "op maat" },
           ],
           features: [
             "Softwarelicentie inbegrepen",
@@ -226,9 +226,9 @@ export const translations = {
           tagline: "Maandelijkse revenue optimalisatie voor vakantieverblijven",
           description: "Voor eigenaars die hun prijzen, bezetting en opbrengst actief willen optimaliseren zonder zelf uren aan marktanalyses te besteden.",
           tiers: [
-            { label: "1 – 3 units", price: "€149", period: "/ maand" },
-            { label: "4 – 10 units", price: "€249", period: "/ maand" },
-            { label: "10+ units", price: "Offerte", period: "op maat" },
+            { label: "1 – 3 units, 1-2 OTA's", price: "€179", period: "/ maand" },
+            { label: "4–10 units, 2-3 OTA's", price: "€299", period: "/ maand" },
+            { label: "10+ units / complex", price: "Offerte", period: "op maat" },
           ],
           features: [
             "Revenue review van je prestaties",
