@@ -86,7 +86,7 @@ export const translations = {
         "Verschijn in Google Hotels en vang directe zoekopdrachten op",
         "Beheer Booking.com, Airbnb en je eigen website vanuit één centrale omgeving",
         "Gasten worden automatisch begeleid van boeking tot vertrek",
-        "Verdien meer per boeking dankzij slimme prijsstrategieën,
+        "Verdien meer per boeking dankzij slimme prijsstrategieën",
       ],
       cta: "Gratis strategiegesprek plannen",
     },
