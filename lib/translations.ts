@@ -3,7 +3,9 @@ export const translations = {
     nav: {
       home: "Home",
       services: "Services",
+      pricing: "Pricing",
       caseStudy: "Case Study",
+      blog: "Blog",
       faq: "FAQ",
       contact: "Contact",
       freeConsultation: "Gratis strategiegesprek",
@@ -325,7 +327,9 @@ export const translations = {
     nav: {
       home: "Home",
       services: "Services",
+      pricing: "Pricing",
       caseStudy: "Case Study",
+      blog: "Blog",
       faq: "FAQ",
       contact: "Contact",
       freeConsultation: "Free strategy call",
@@ -648,7 +652,9 @@ export const translations = {
     nav: {
       home: "Inicio",
       services: "Servicios",
+      pricing: "Precios"
       caseStudy: "Caso de Éxito",
+      blog: "Blog",
       faq: "Preguntas Frecuentes",
       contact: "Contacto",
       freeConsultation: "Asesoría estratégica gratuita",
