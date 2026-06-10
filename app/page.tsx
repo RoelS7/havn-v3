@@ -54,6 +54,7 @@ export default function Home() {
         {/* 6. Pakketten */}
         <section id="pricing">
         <PricingSection language={language} />
+        </section>
         {/* 7. Case Study */}
         <section className="bg-[var(--background)]">
           <CaseStudy language={language} />
