@@ -1,6 +1,7 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Playfair_Display, Montserrat } from "next/font/google"
+import { GoogleAnalytics } from "@next/third-parties/google" // <-- 1. Hier geïmporteerd
 import "./globals.css"
 
 // Optimized font loading with display swap
@@ -73,7 +74,7 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-    generator: 'v0.app'
+  generator: 'v0.app'
 }
 
 export default function RootLayout({
@@ -101,7 +102,12 @@ export default function RootLayout({
         {/* Theme color */}
         <meta name="theme-color" content="#b8925c" />
       </head>
-      <body className={`${montserrat.variable} ${playfair.variable} font-sans`}>{children}</body>
+      <body className={`${montserrat.variable} ${playfair.variable} font-sans`}>
+        {children}
+        
+        {/* 2. Google Analytics script — Vervang G-XXXXXXXXXX door jouw eigen ID */}
+        <GoogleAnalytics gaId="G-RM9DNK08FT" />
+      </body>
     </html>
   )
 }
