@@ -26,7 +26,7 @@ export function Navbar({ language, onLanguageChange }: NavbarProps) {
   const navItems = [
     { name: t.nav.home, href: "#home", id: "home" },
     { name: t.nav.services, href: "#services", id: "services" },
-    { name: t.nav.pricing || "Pricing", href: "#pricing", id: "pricing" }, // Fallback toegevoegd voor als de vertaling mist
+    { name: t.nav.pricing, href: "#pricing", id: "pricing" },
     { name: t.nav.caseStudy, href: "#case-study", id: "case-study" },
     { name: t.nav.blog || "Blog", href: "/blog", id: "blog", isExternal: true },
     { name: t.nav.faq, href: "#faq", id: "faq" },
