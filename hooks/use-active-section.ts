@@ -6,11 +6,21 @@ export function useActiveSection() {
   const [activeSection, setActiveSection] = useState<string>("home")
 
   useEffect(() => {
-    const sections = ["home", "services", "pricing", "CaseStudy", "testimonials", "pricing", "about", "faq", "contact"]
+    // GEFIXT: "case-study" in kleine letters met streepje, en dubbele "pricing" verwijderd
+    const sections = [
+      "home", 
+      "services", 
+      "pricing", 
+      "case-study", // <-- Matcht nu exact met id="case-study"
+      "testimonials", 
+      "about", 
+      "faq", 
+      "contact"
+    ]
 
     const observerOptions = {
       root: null,
-      rootMargin: "-20% 0px -60% 0px", // Trigger when section is 20% from top
+      rootMargin: "-20% 0px -60% 0px", // Trigger wanneer de sectie goed in beeld scrollt
       threshold: 0.1,
     }
 
