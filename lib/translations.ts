@@ -652,7 +652,7 @@ export const translations = {
     nav: {
       home: "Inicio",
       services: "Servicios",
-      pricing: "Precios"
+      pricing: "Precios",
       caseStudy: "Caso de Éxito",
       blog: "Blog",
       faq: "Preguntas Frecuentes",
