@@ -6,7 +6,7 @@ export function useActiveSection() {
   const [activeSection, setActiveSection] = useState<string>("home")
 
   useEffect(() => {
-    const sections = ["home", "services", "portfolio", "testimonials", "pricing", "about", "faq", "contact"]
+    const sections = ["home", "services", "pricing", "CaseStudy", "testimonials", "pricing", "about", "faq", "contact"]
 
     const observerOptions = {
       root: null,
