@@ -70,7 +70,9 @@ export function Navbar({ language, onLanguageChange }: NavbarProps) {
               alt="HAVN Logo"
               width={320}
               height={160}
-              className="h-14 lg:h-35 w-auto"
+              className={`h-14 w-auto transition-all duration-300 ${
+                  scrolled ? "lg:h-20" : "lg:h-35"
+                }`}
               priority
             />
           </Link>
