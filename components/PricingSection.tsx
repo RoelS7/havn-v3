@@ -90,7 +90,6 @@ function PackageCard({
                 pkg.featured ? "text-white/50" : "text-[#0F1923]/40"
               }`}
             >
-              Vanaf
             </span>
             <span
               className={`text-4xl font-light tracking-tight ${
@@ -106,7 +105,7 @@ function PackageCard({
                   pkg.featured ? "text-white/40" : "text-[#0F1923]/30"
                 }`}
               >
-                – €{pkg.priceTo}
+                {pkg.priceTo}
               </span>
             )}
           </div>
