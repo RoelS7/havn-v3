@@ -97,7 +97,7 @@ function PackageCard({
               }`}
               style={{ fontFamily: "'Cormorant Garamond', 'Georgia', serif" }}
             >
-              €{pkg.price}
+              {pkg.price}
             </span>
             {pkg.priceTo && (
               <span
