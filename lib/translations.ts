@@ -506,7 +506,7 @@ export const translations = {
           name: "HAVN Multi-Property",
           tagline: "Fully scalable rental platform",
           price: null,
-          priceTo: "Tailored quote – in a strategy meeting, we determine together what is needed.,
+          priceTo: "Tailored quote – in a strategy meeting, we determine together what is needed.",
           ideal: "Operators, holiday parks and complex multi-property structures.",
           result: "A professional rental platform with advanced automation and scalability.",
           featured: false,
