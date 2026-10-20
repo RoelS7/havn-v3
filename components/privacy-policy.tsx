@@ -33,7 +33,7 @@ export function PrivacyPolicy() {
                   <br />
                   België
                   <br />
-                  Email: privacy@havn.be
+                  Email: info@havnrevenue.com
                   <br />
                   Telefoon: +32 123 456 789
                 </p>
@@ -119,7 +119,7 @@ export function PrivacyPolicy() {
 
               <div className="bg-gold/10 p-4 rounded-lg">
                 <p className="text-sm">
-                  Om uw rechten uit te oefenen, neem contact op via <strong>privacy@havn.be</strong>. Wij reageren
+                  Om uw rechten uit te oefenen, neem contact op via <strong>info@havnrevenue.com</strong>. Wij reageren
                   binnen 30 dagen.
                 </p>
               </div>
@@ -180,7 +180,7 @@ export function PrivacyPolicy() {
               <p>Voor vragen over deze privacy policy of uw gegevens:</p>
               <div className="bg-gray-100 p-4 rounded-lg">
                 <p>
-                  <strong>Email:</strong> privacy@havn.be
+                  <strong>Email:</strong> info@havnrevenue.com
                   <br />
                   <strong>Telefoon:</strong> +32 123 456 789
                   <br />

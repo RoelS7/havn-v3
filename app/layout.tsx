@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://www.havn.be"),
+  metadataBase: new URL("https://www.havnrevenue.com"),
   alternates: {
     canonical: "/",
     languages: {
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "HAVN - Direct Bookings. Less Commission. More Revenue.",
     description: "HAVN helps vacation rentals generate direct bookings, reduce OTA commissions and maximize revenue — through professional booking systems, automation and smart pricing.",
-    url: "https://www.havn.be",
+    url: "https://www.havnrevenue.com",
     siteName: "HAVN - Direct Bookings. Less Commission. More Revenue.",
     images: [
       {

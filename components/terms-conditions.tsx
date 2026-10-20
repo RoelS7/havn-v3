@@ -217,7 +217,7 @@ export function TermsConditions() {
 
               <h4 className="font-medium mt-6">Contact voor Geschillen:</h4>
               <p className="text-gray-600">
-                Email: legal@havn.be
+                Email: info@havnrevenue.com
                 <br />
                 Telefoon: +32 123 456 789
                 <br />
