@@ -2,6 +2,7 @@ import Link from "next/link"
 import { MessageSquare, Mail, Shield } from "lucide-react"
 import { translations } from "@/lib/translations"
 import { CALENDLY_URL } from "@/lib/constants"
+import { OPEN_CONSENT_EVENT } from "@/components/cookie-consent"
 
 interface FooterProps {
   language: string
@@ -93,6 +94,15 @@ export function Footer({ language }: FooterProps) {
                   <Shield className="h-4 w-4 mr-1" aria-hidden="true" />
                   {t.footer.privacy}
                 </Link>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  onClick={() => window.dispatchEvent(new Event(OPEN_CONSENT_EVENT))}
+                  className="inline-block py-1 text-left hover:text-gold active:text-gold/80 transition-colors"
+                >
+                  {{ nl: "Cookie-instellingen", en: "Cookie settings", es: "Configuración de cookies" }[currentLang]}
+                </button>
               </li>
               <li className="text-xs text-gray-400">RUT: 700.288.175</li>
               <li className="text-xs text-gray-400">Cra. 54 #1A-9, Medellín</li>

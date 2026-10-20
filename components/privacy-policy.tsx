@@ -1,5 +1,5 @@
 // Privacybeleid HAVN Revenue. Feiten (bronnen, bewaartermijn, verwerkers) bevestigd door de eigenaar;
-// verwerkers komen overeen met wat de code gebruikt (Vercel, Resend, Airtable, Anthropic, Google Analytics, Calendly).
+// verwerkers komen overeen met wat de code gebruikt (Vercel, Resend, Airtable, Anthropic, Google Analytics, Calendly, Slack).
 
 const sections: { title: string; body: React.ReactNode }[] = [
   {
@@ -89,8 +89,10 @@ const sections: { title: string; body: React.ReactNode }[] = [
     body: (
       <p>
         Ik gebruik Google Analytics om te zien hoe de website gebruikt wordt, bijvoorbeeld welke pagina&apos;s bezocht
-        worden. Google Analytics plaatst daarvoor cookies en verwerkt onder meer je IP-adres en
-        browsergegevens. Je kunt cookies weigeren of verwijderen via de instellingen van je browser.
+        worden. Google Analytics plaatst daarvoor cookies en verwerkt onder meer je IP-adres en browsergegevens.
+        Dat gebeurt alleen als je daar bij je bezoek toestemming voor geeft (artikel 6.1.a AVG/GDPR). Weiger je,
+        dan wordt Google Analytics niet geladen. Je kunt je keuze altijd wijzigen via &ldquo;Cookie-instellingen&rdquo;
+        onderaan elke pagina. Je keuze zelf onthoud ik in je browser, zonder cookie.
       </p>
     ),
   },
@@ -118,6 +120,9 @@ const sections: { title: string; body: React.ReactNode }[] = [
           </li>
           <li>
             <strong>Calendly</strong>: inplannen van gesprekken
+          </li>
+          <li>
+            <strong>Slack</strong>: interne melding wanneer er een nieuwe aanvraag binnenkomt
           </li>
           <li>
             <strong>Mijn e-mailprovider</strong>: versturen en ontvangen van e-mail

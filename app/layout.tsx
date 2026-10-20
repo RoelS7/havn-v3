@@ -1,7 +1,7 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Playfair_Display } from "next/font/google"
-import { GoogleAnalytics } from "@next/third-parties/google" // <-- 1. Hier geïmporteerd
+import { CookieConsent } from "@/components/cookie-consent"
 import "./globals.css"
 
 // Optimized font loading with display swap
@@ -84,8 +84,8 @@ export default function RootLayout({
       <body className={`${playfair.variable} font-sans`}>
         {children}
         
-        {/* 2. Google Analytics script — Vervang G-XXXXXXXXXX door jouw eigen ID */}
-        <GoogleAnalytics gaId="G-RM9DNK08FT" />
+        {/* Google Analytics laadt pas na toestemming */}
+        <CookieConsent gaId="G-RM9DNK08FT" />
       </body>
     </html>
   )
