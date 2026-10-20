@@ -181,7 +181,7 @@ export function Contact({ language }: ContactProps) {
                   type="submit"
                   size="lg"
                   disabled={loading}
-                  className="bg-gold text-black hover:bg-gold/90 flex-1 text-lg py-7 transition-all duration-300 hover:-translate-y-0.5"
+                  className="bg-gold text-black hover:bg-gold/90 flex-1 text-lg py-7 duration-300 hover:-translate-y-0.5 active:translate-y-0"
                 >
                   {loading ? "..." : t.contact.form.submit}
                 </Button>
@@ -190,7 +190,7 @@ export function Contact({ language }: ContactProps) {
                   type="button"
                   size="lg"
                   variant="outline"
-                  className="border-gold text-gold hover:bg-gold hover:text-black flex-1 text-lg py-7 transition-all duration-300 hover:-translate-y-0.5"
+                  className="border-gold text-gold-ink bg-transparent hover:bg-gold hover:text-black flex-1 text-lg py-7 duration-300 hover:-translate-y-0.5 active:translate-y-0"
                   onClick={handleWhatsApp}
                 >
                   <MessageIcon className="mr-2 h-5 w-5" />

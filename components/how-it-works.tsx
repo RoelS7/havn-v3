@@ -22,7 +22,7 @@ export function HowItWorks({ language }: HowItWorksProps) {
           {t.howItWorks.steps.map((step, index) => (
             <div 
               key={index} 
-              className="relative luxury-card group p-10 rounded-3xl border border-gray-100 hover:border-gold transition-all duration-300 hover:-translate-y-2"
+              className="relative luxury-card group p-10 rounded-3xl border border-gray-100 hover:border-gold transition-[color,background-color,border-color,box-shadow,transform] duration-300 hover:-translate-y-2"
             >
               <div className="text-center">
                 <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gold text-black text-3xl font-bold mb-8 group-hover:scale-110 transition-transform">

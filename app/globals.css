@@ -1,6 +1,11 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@theme {
+  /* Donker goud voor kleine tekst op lichte vlakken (WCAG AA, ≥4.9:1) */
+  --color-gold-ink: #7d5f2e;
+}
+
 :root {
   --background: #f8f4ed;        /* Warm ivory */
   --foreground: #1a1a1a;
@@ -22,6 +27,7 @@
   --input: #f8f4ed;
   --ring: #b8925c;
   --radius: 0.75rem;
+  --focus: #7d5f2e;
 }
 
 .dark {
@@ -47,6 +53,57 @@
   a,
   [role="button"] {
     cursor: pointer;
+  }
+
+  /* Zichtbare toetsenbordfocus op lichte én donkere vlakken */
+  :focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background-color: rgba(184, 146, 92, 0.3);
+    color: inherit;
+  }
+
+  /* Range sliders in huisstijl */
+  input[type="range"] {
+    height: 1.5rem;
+    /* Inline 'background' zet clip terug; !important houdt de track dun */
+    background-clip: content-box !important;
+    padding-block: 0.5rem;
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 9999px;
+    background: #ffffff;
+    border: 2px solid #b8925c;
+    box-shadow: 0 1px 3px rgba(15, 25, 35, 0.25);
+  }
+  input[type="range"]::-moz-range-thumb {
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 9999px;
+    background: #ffffff;
+    border: 2px solid #b8925c;
+    box-shadow: 0 1px 3px rgba(15, 25, 35, 0.25);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    /* Kleur- en schaduwfeedback blijft, beweging valt weg */
+    *,
+    ::before,
+    ::after {
+      transition-property: color, background-color, border-color, box-shadow, opacity !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+    }
   }
 
 /* Basis achtergrond voor alle secties */
@@ -88,7 +145,7 @@
  .luxury-card {
   background-color: #ffffff;
   box-shadow: 0 10px 30px -10px rgba(184, 146, 92, 0.15);
-  transition: all 0.3s ease;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease;
   }
 
   .luxury-card:hover {

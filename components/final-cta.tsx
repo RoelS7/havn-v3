@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 import { translations } from "@/lib/translations"
 import Link from "next/link"
+import { CALENDLY_URL } from "@/lib/constants"
 
 
 interface FinalCtaProps {
@@ -23,8 +24,8 @@ export function FinalCta({ language }: FinalCtaProps) {
           <Button 
               asChild
               size="lg" 
-              className="transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg bg-gold text-black hover:bg-gold/90 text-lg px-8">
-              <Link href="https://calendly.com/smitsro7/consult">
+              className="duration-300 hover:-translate-y-0.5 active:translate-y-0 hover:shadow-[0_10px_24px_-10px_rgba(184,146,92,0.6)] bg-gold text-black hover:bg-gold/90 text-lg px-8 h-12">
+              <Link href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
               {t.finalCta.button}
             <ArrowRight className="ml-2 h-5 w-5" />
               </Link>

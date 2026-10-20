@@ -26,7 +26,7 @@ export function ProblemSection({ language }: ProblemSectionProps) {
             return (
               <div
                 key={index}
-                className="luxury-card group text-center p-8 rounded-2xl border border-gray-100 hover:border-gold transition-all duration-300 hover:shadow-xl"
+                className="luxury-card group text-center p-8 rounded-2xl border border-gray-100 hover:border-gold transition-[color,background-color,border-color,box-shadow,transform] duration-300 hover:shadow-xl"
               >
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gold/10 mb-6 group-hover:bg-gold/20 transition-colors">
                   <Icon className="h-8 w-8 text-gold" />

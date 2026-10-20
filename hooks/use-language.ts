@@ -15,6 +15,11 @@ export function useLanguage() {
     setIsLoaded(true)
   }, [])
 
+  // Houd <html lang> gelijk aan de gekozen taal (schermlezers, vertaaltools)
+  useEffect(() => {
+    document.documentElement.lang = language
+  }, [language])
+
   const changeLanguage = (newLang: string) => {
     // Update: "es" toegevoegd aan de toegestane talen bij het wijzigen
     if (newLang === "nl" || newLang === "en" || newLang === "es") {

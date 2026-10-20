@@ -92,7 +92,12 @@ export function CaseStudy({ language }: CaseStudyProps) {
         en: "HAVN has saved us an enormous amount of time and made our rental much more professional.",
         es: "HAVN nos ha ahorrado muchísimo tiempo y ha hecho nuestra gestión mucho más profesional.",
       }[currentLang],
-      quoteAuthor: "Eigenaar, De Hoeveschuur",
+      quoteAuthor: {
+        nl: "Eigenaar, De Hoeveschuur",
+        en: "Owner, De Hoeveschuur",
+        es: "Propietario, De Hoeveschuur",
+      }[currentLang],
+      isQuote: true,
     },
     {
       image: "/images/cc-home.jpg",
@@ -105,8 +110,8 @@ export function CaseStudy({ language }: CaseStudyProps) {
       location: "Medellín, Colombia",
       description: {
         nl: "Voor Casa Clandestina Guest House in Medellín werd een professionele verhuurstructuur opgezet met directe boekingen, geautomatiseerde processen en een slimme prijsstrategie.",
-        en: "Voor Casa Clandestina Guest House in Medellín has a professional verhuurstructuur opgezet with directe boekingen, geautomatiseerde processes in a slimme prijsstrategie.",
-        es: "Para Casa Clandestina Guest House en Medellín contamos con una estructura de estructura profesional realizada con libros directos, procesos automatizados y una estrategia de precio delgada.",
+        en: "For Casa Clandestina Guest House in Medellín, we set up a professional rental structure with direct bookings, automated processes and a smart pricing strategy.",
+        es: "Para Casa Clandestina Guest House en Medellín implementamos una estructura de alquiler profesional con reservas directas, procesos automatizados y una estrategia de precios inteligente.",
       }[currentLang],
       optimizedTitle: {
         nl: "Wat werd opgezet",
@@ -174,9 +179,20 @@ export function CaseStudy({ language }: CaseStudyProps) {
         en: "By correctly setting up direct bookings, automation, and price optimization from the start, a scalable rental operation was created that operates more efficiently and generates a higher return from every booking.",
         es: "Al configurar correctamente las reservas directas, la automatización y la optimización de precios desde el principio, se creó una operación de alquiler escalable que funciona de manera más eficiente y genera un mayor retorno por cada reserva.",
       }[currentLang],
-      quoteAuthor: "Belangrijkste inzicht",
+      quoteAuthor: {
+        nl: "Belangrijkste inzicht",
+        en: "Key insight",
+        es: "Conclusión clave",
+      }[currentLang],
+      isQuote: false,
     },
   ]
+
+  const labels = {
+    nl: { prev: "Vorige case", next: "Volgende case", of: "van", goTo: "Ga naar case" },
+    en: { prev: "Previous case", next: "Next case", of: "of", goTo: "Go to case" },
+    es: { prev: "Caso anterior", next: "Caso siguiente", of: "de", goTo: "Ir al caso" },
+  }[currentLang]
 
   const nextCase = () => setCurrentIndex((prev) => (prev + 1) % cases.length)
   const prevCase = () => setCurrentIndex((prev) => (prev - 1 + cases.length) % cases.length)
@@ -196,14 +212,14 @@ export function CaseStudy({ language }: CaseStudyProps) {
         </div>
 
         <Card className="max-w-5xl mx-auto border-2 border-gold/20 overflow-hidden luxury-card">
-          {/* Foto met originele verhouding */}
+          {/* Foto vult het kader */}
           <div className="relative w-full aspect-[16/9] md:aspect-[16/10] bg-black">
             <Image
               src={current.image}
               alt={current.imageAlt}
               fill
-              className="object-contain"
-              priority
+              className="object-cover"
+              sizes="(min-width: 1024px) 1024px, 100vw"
             />
           </div>
 
@@ -211,18 +227,20 @@ export function CaseStudy({ language }: CaseStudyProps) {
           <div className="flex justify-between items-center px-6 -mt-8 relative z-10">
             <button
               onClick={prevCase}
-              className="bg-white hover:bg-gray-100 text-black p-4 rounded-full shadow-lg transition-all"
+              aria-label={labels.prev}
+              className="bg-white hover:bg-gray-100 active:scale-95 text-black p-4 rounded-full shadow-lg transition-[background-color,transform] duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--ring)]"
             >
               <ChevronLeft className="h-6 w-6" />
             </button>
 
-            <div className="text-sm font-medium text-gray-500">
-              {currentIndex + 1} van {cases.length}
+            <div className="text-sm font-medium text-gray-600" aria-live="polite">
+              {currentIndex + 1} {labels.of} {cases.length}
             </div>
 
             <button
               onClick={nextCase}
-              className="bg-white hover:bg-gray-100 text-black p-4 rounded-full shadow-lg transition-all"
+              aria-label={labels.next}
+              className="bg-white hover:bg-gray-100 active:scale-95 text-black p-4 rounded-full shadow-lg transition-[background-color,transform] duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--ring)]"
             >
               <ChevronRight className="h-6 w-6" />
             </button>
@@ -230,7 +248,7 @@ export function CaseStudy({ language }: CaseStudyProps) {
 
           {/* Content */}
           <CardContent className="p-8 lg:p-12">
-            <div className="flex items-center gap-2 text-gold mb-4">
+            <div className="flex items-center gap-2 text-gold-ink mb-4">
               <MapPin className="h-5 w-5" />
               <span className="font-light">{current.location}</span>
             </div>
@@ -275,12 +293,16 @@ export function CaseStudy({ language }: CaseStudyProps) {
 
             <div className="border-t border-gray-200 pt-10 mt-10">
               <div className="flex items-start gap-4">
-                <Quote className="h-8 w-8 text-gold flex-shrink-0 mt-1" />
+                {current.isQuote && <Quote className="h-8 w-8 text-gold flex-shrink-0 mt-1" aria-hidden="true" />}
                 <div>
-                  <p className="text-gray-600 italic text-lg leading-relaxed mb-2">
-                    "{current.quote}"
-                  </p>
-                  <p className="text-sm text-gray-500">{current.quoteAuthor}</p>
+                  {current.isQuote ? (
+                    <p className="text-gray-700 italic text-lg leading-relaxed mb-2">
+                      &ldquo;{current.quote}&rdquo;
+                    </p>
+                  ) : (
+                    <p className="text-gray-700 text-lg leading-relaxed mb-2">{current.quote}</p>
+                  )}
+                  <p className="text-sm text-gray-600">{current.quoteAuthor}</p>
                 </div>
               </div>
             </div>
@@ -288,15 +310,21 @@ export function CaseStudy({ language }: CaseStudyProps) {
         </Card>
 
         {/* Dots onder de card */}
-        <div className="flex justify-center gap-3 mt-8">
+        <div className="flex justify-center gap-1 mt-6">
           {cases.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className={`w-3 h-3 rounded-full transition-all ${
-                currentIndex === index ? "bg-gold scale-125" : "bg-gray-300"
-              }`}
-            />
+              aria-label={`${labels.goTo} ${index + 1}`}
+              aria-current={currentIndex === index}
+              className="group flex items-center justify-center w-11 h-11 rounded-full focus-visible:outline-2 focus-visible:outline-[var(--ring)]"
+            >
+              <span
+                className={`block w-3 h-3 rounded-full transition-[background-color,transform] duration-200 ${
+                  currentIndex === index ? "bg-gold scale-125" : "bg-gray-300 group-hover:bg-gray-400"
+                }`}
+              />
+            </button>
           ))}
         </div>
       </div>

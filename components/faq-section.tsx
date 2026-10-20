@@ -1,8 +1,8 @@
 "use client"
 import { useState } from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { ChevronDown, HelpCircle } from "lucide-react"
+import { ChevronDown } from "lucide-react"
 import { translations } from "@/lib/translations"
 
 interface FAQSectionProps {
@@ -170,10 +170,8 @@ export function FAQSection({ language }: FAQSectionProps) {
     <section className="py-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <HelpCircle className="h-16 w-16 text-gold mx-auto mb-4" />
-          <h2 className="text-4xl font-serif text-black mb-4">
-            {{ nl: "Veelgestelde ", en: "Frequently Asked ", es: "Preguntas " }[currentLang]}
-            <span className="text-gold">{{ nl: "Vragen", en: "Questions", es: "Frecuentes" }[currentLang]}</span>
+          <h2 className="text-3xl lg:text-4xl font-serif text-black mb-4">
+            {{ nl: "Veelgestelde vragen", en: "Frequently asked questions", es: "Preguntas frecuentes" }[currentLang]}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto font-light">
             {{
@@ -189,9 +187,12 @@ export function FAQSection({ language }: FAQSectionProps) {
             <Button
               key={category.key}
               variant={activeCategory === category.key ? "default" : "outline"}
-              size="sm"
-              onClick={() => setActiveCategory(category.key)}
-              className={activeCategory === category.key ? "bg-gold text-black" : "border-gold text-gold hover:bg-gold hover:text-black"}
+              onClick={() => {
+                setActiveCategory(category.key)
+                setOpenItems([])
+              }}
+              aria-pressed={activeCategory === category.key}
+              className={`min-h-11 px-5 active:scale-[0.97] ${activeCategory === category.key ? "bg-gold text-black hover:bg-gold/90" : "border-gold text-gold-ink bg-transparent hover:bg-gold hover:text-black"}`}
             >
               {category.label}
             </Button>
@@ -200,15 +201,23 @@ export function FAQSection({ language }: FAQSectionProps) {
 
         <div className="max-w-4xl mx-auto space-y-4">
           {filteredFAQs.map((faq, index) => (
-            <Card key={index} className="luxury-card border border-gray-100 hover:border-gold transition-all duration-300">
-              <CardHeader className="cursor-pointer" onClick={() => toggleItem(index)}>
-                <CardTitle className="flex items-center justify-between text-lg">
-                  <span className="text-left pr-8">{faq.question}</span>
-                  <ChevronDown className={`h-5 w-5 text-gold transition-transform ${openItems.includes(index) ? "rotate-180" : ""}`} />
-                </CardTitle>
+            <Card key={faq.question} className="luxury-card border border-gray-100 hover:border-gold transition-[border-color,transform,box-shadow] duration-300">
+              <CardHeader>
+                <h3 className="text-lg font-semibold">
+                  <button
+                    type="button"
+                    onClick={() => toggleItem(index)}
+                    aria-expanded={openItems.includes(index)}
+                    aria-controls={`faq-answer-${index}`}
+                    className="flex w-full items-center justify-between text-left rounded-md min-h-11"
+                  >
+                    <span className="pr-8">{faq.question}</span>
+                    <ChevronDown aria-hidden="true" className={`h-5 w-5 flex-shrink-0 text-gold-ink transition-transform duration-200 ${openItems.includes(index) ? "rotate-180" : ""}`} />
+                  </button>
+                </h3>
               </CardHeader>
               {openItems.includes(index) && (
-                <CardContent className="pt-0 pb-8">
+                <CardContent id={`faq-answer-${index}`} className="pt-0 pb-8">
                   <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
                 </CardContent>
               )}

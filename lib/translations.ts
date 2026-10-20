@@ -14,7 +14,7 @@ export const translations = {
       title: "Meer directe boekingen. Minder afhankelijkheid van Booking.com en Airbnb.",
       subtitle: "HAVN helpt vakantieverblijven meer directe boekingen genereren met slimme systemen, automatisatie en revenue optimalisatie zodat er minder commissie verloren gaat aan OTA's zoals Airbnb en Booking.",
       cta: "Gratis strategiegesprek plannen",
-      secondaryCta: "Bekijk hoe het werkt",
+      secondaryCta: "Bereken wat OTA's je kosten",
       positioning: "Voor vakantieverblijven die meer directe boekingen willen realiseren en minder afhankelijk willen zijn van OTA's.",
       valueBullets: [
         "Meer directe boekingen via je eigen website",
@@ -208,7 +208,7 @@ export const translations = {
           description: "Bundelt je softwarelicentie, hosting, onderhoud, OTA-support en jaarlijkse systeemreview in één maandelijks bedrag. Geen verrassingen, geen aparte facturen.",
           tiers: [
             { label: "1 – 3 units, 1-2 OTA's", price: "€79", period: "/ maand" },
-            { label: "4–10 units, 2-3 OTA's", price: "129", period: "/ maand" },
+            { label: "4–10 units, 2-3 OTA's", price: "€129", period: "/ maand" },
             { label: "10+ units / complex", price: "Offerte", period: "op maat" },
           ],
           features: [
@@ -338,7 +338,7 @@ export const translations = {
       title: "More direct bookings. Less reliance on Booking.com and Airbnb.",
       subtitle: "HAVN helps vacation rentals generate more direct bookings with smart systems, automation, and revenue optimization so that less commission is lost to OTAs like Airbnb and Booking.",
       cta: "Book your free strategy call",
-      secondaryCta: "See how it works",
+      secondaryCta: "Calculate what OTAs cost you",
       positioning: "For vacation rentals that want to generate more direct bookings and be less dependent on OTAs.",
       valueBullets: [
             "More direct bookings via your own website",
@@ -663,7 +663,7 @@ export const translations = {
       title: "Más reservas directas. Menos dependencia de Booking.com y Airbnb.",
       subtitle: "HAVN ayuda a los alojamientos vacacionales a generar más reservas directas mediante sistemas inteligentes, automatización y optimización de ingresos, de modo que se pierden menos comisiones a manos de agencias de viajes online como Airbnb y Booking.",
       cta: "Agendar asesoría gratuita",
-      secondaryCta: "Cómo funciona",
+      secondaryCta: "Calcula lo que te cuestan las OTA",
       positioning: "Para alojamientos vacacionales que desean generar más reservas directas y depender menos de las agencias de viajes online (OTA).",
       valueBullets: [
         "Más reservas directas a través de tu propio sitio web",

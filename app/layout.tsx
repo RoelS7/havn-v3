@@ -36,10 +36,6 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.havnrevenue.com"),
   alternates: {
     canonical: "/",
-    languages: {
-      "nl-BE": "/",
-      "en-US": "/en",
-    },
   },
   openGraph: {
     title: "HAVN - Direct Bookings. Less Commission. More Revenue.",
@@ -96,8 +92,7 @@ export default function RootLayout({
         {/* Favicon and app icons */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="manifest" href="/manifest.json" />
+        <link rel="apple-touch-icon" href="/apple-icon.png" />
 
         {/* Theme color */}
         <meta name="theme-color" content="#b8925c" />

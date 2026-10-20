@@ -16,67 +16,48 @@ import RevenueCalculator from "@/components/RevenueCalculator"
 import { useLanguage } from "@/hooks/use-language"
 
 export default function Home() {
-  const { language, changeLanguage, isLoaded } = useLanguage()
-
-  if (!isLoaded) {
-    return (
-      <div className="min-h-screen bg-black flex items-center justify-center">
-        <div className="text-gold text-2xl font-serif">Loading...</div>
-      </div>
-    )
-  }
+  // Rendert meteen in het Nederlands (server-side); een opgeslagen taal wordt na het laden toegepast
+  const { language, changeLanguage } = useLanguage()
 
   return (
     <>
       <Navbar language={language} onLanguageChange={changeLanguage} />
       <ScrollToTop />
       <main>
-        {/* 1. Hero */}
-        <section id="home">
-          <Hero language={language} />
-        </section>
+        {/* 1. Hero (eigen <section id="home">) */}
+        <Hero language={language} />
         {/* 2. Probleem */}
-        <section className="bg-[var(--background)]">
-          <ProblemSection language={language} />
-        </section>
+        <ProblemSection language={language} />
         {/* 3. Oplossing */}
-        <section className="bg-[var(--background)]">
-          <SolutionSection language={language} />
-        </section>
+        <SolutionSection language={language} />
         {/* 4. Services */}
         <section id="services" className="bg-[var(--background)] py-20">
           <Services language={language} />
         </section>
         {/* 5. Hoe het werkt */}
-        <section className="bg-[var(--muted)]">
+        <div className="bg-[var(--muted)]">
           <HowItWorks language={language} />
-        </section>
-        {/* 6. Pakketten */}
-        <section id="pricing">
-        <PricingSection language={language} />
-        </section>
-        {/* 7. Case Study */}
-        <section className="bg-[var(--background)]">
-          <CaseStudy language={language} />
-        </section>
-        {/* 8. Revenue Calculator - na case study, vertrouwen is opgebouwd */}
-        <section className="bg-[var(--muted)] pb-20">
+        </div>
+        {/* 6. Case Study - bewijs vóór de prijzen (eigen <section id="case-study">) */}
+        <CaseStudy language={language} />
+        {/* 7. Revenue Calculator - maakt de kost van OTA's concreet vóór de pakketten */}
+        <section id="calculator" className="bg-[var(--muted)] pb-20 scroll-mt-24">
           <div className="max-w-4xl mx-auto px-4">
             <RevenueCalculator language={language} key={`calc-${language}`} />
           </div>
         </section>
+        {/* 8. Pakketten */}
+        <div id="pricing">
+          <PricingSection language={language} />
+        </div>
         {/* 9. Final CTA - zwart voor impact */}
-        <section className="bg-black text-white">
-          <FinalCta language={language} />
-        </section>
+        <FinalCta language={language} />
         {/* 10. FAQ */}
-        <section id="faq" className="bg-[var(--muted)]">
+        <div id="faq" className="bg-[var(--muted)]">
           <FAQSection language={language} />
-        </section>
-        {/* 11. Contact */}
-        <section id="contact" className="bg-[var(--background)]">
-          <Contact language={language} />
-        </section>
+        </div>
+        {/* 11. Contact (eigen <section id="contact">) */}
+        <Contact language={language} />
       </main>
       <Footer language={language} />
     </>

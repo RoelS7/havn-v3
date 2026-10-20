@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button"
 import { Settings, Link as LinkIcon, TrendingUp, Zap, FileText, Users, ArrowRight } from "lucide-react"
 import { translations } from "@/lib/translations"
 import Link from "next/link"
+import { CALENDLY_URL } from "@/lib/constants"
 import { motion } from "framer-motion"
 
 interface ServicesProps {
@@ -35,7 +36,7 @@ export function Services({ language }: ServicesProps) {
                 whileHover={{ scale: 1.04, y: -4 }}
                 transition={{ duration: 0.25 }}
                 className="group flex items-center gap-4 p-5 md:p-8 rounded-2xl md:rounded-3xl bg-white border border-gray-100 
-                           hover:border-gold hover:shadow-xl transition-all duration-300 luxury-card"
+                           hover:border-gold hover:shadow-xl transition-[color,background-color,border-color,box-shadow,transform] duration-300 luxury-card"
               >
                 {/* ICON */}
                 <div className="w-11 h-11 md:w-14 md:h-14 flex-shrink-0 flex items-center justify-center rounded-xl md:rounded-2xl bg-gold/10 group-hover:bg-gold/20 transition-colors duration-300">
@@ -55,10 +56,10 @@ export function Services({ language }: ServicesProps) {
           <Button
             asChild
             size="lg"
-            className="bg-black text-gold hover:bg-gray-900 text-lg px-10 py-7 rounded-2xl 
-                       transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+            className="group bg-black text-gold hover:bg-gray-900 text-lg px-10 py-7 rounded-2xl 
+                       duration-300 hover:-translate-y-1 active:translate-y-0 hover:shadow-[0_12px_28px_-12px_rgba(15,25,35,0.5)]"
           >
-            <Link href="https://calendly.com/smitsro7/consult">
+            <Link href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
               {t.services.cta}
               <ArrowRight className="ml-3 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>

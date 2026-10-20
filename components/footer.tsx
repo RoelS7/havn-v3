@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { MessageSquare, Mail, Linkedin, Shield, FileText } from "lucide-react"
+import { MessageSquare, Mail, Shield, FileText } from "lucide-react"
 import { translations } from "@/lib/translations"
 
 interface FooterProps {
@@ -18,16 +18,13 @@ export function Footer({ language }: FooterProps) {
           <div className="space-y-4">
             <h3 className="text-2xl font-serif font-bold text-gold">HAVN</h3>
             <p className="text-gray-400 text-sm">{t.footer.description}</p>
-            <div className="flex space-x-4">
-              <Link href="https://wa.me/32473358581" className="text-gray-400 hover:text-gold transition-colors">
-                <MessageSquare className="h-5 w-5" />
-              </Link>
-              <Link href="mailto:info@havnrevenue.com" className="text-gray-400 hover:text-gold transition-colors">
-                <Mail className="h-5 w-5" />
-              </Link>
-              <Link href="#" className="text-gray-400 hover:text-gold transition-colors">
-                <Linkedin className="h-5 w-5" />
-              </Link>
+            <div className="flex -ml-3">
+              <a href="https://wa.me/32473358581" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="flex h-11 w-11 items-center justify-center rounded-full text-gray-400 hover:text-gold active:text-gold/80 transition-colors">
+                <MessageSquare className="h-5 w-5" aria-hidden="true" />
+              </a>
+              <a href="mailto:info@havnrevenue.com" aria-label="E-mail info@havnrevenue.com" className="flex h-11 w-11 items-center justify-center rounded-full text-gray-400 hover:text-gold active:text-gold/80 transition-colors">
+                <Mail className="h-5 w-5" aria-hidden="true" />
+              </a>
             </div>
           </div>
 
@@ -35,22 +32,22 @@ export function Footer({ language }: FooterProps) {
             <h4 className="text-lg font-semibold text-gold">{t.footer.services}</h4>
             <ul className="space-y-2 text-gray-400 text-sm">
               <li>
-                <Link href="#services" className="hover:text-gold transition-colors">
+                <Link href="#services" className="inline-block py-1 hover:text-gold active:text-gold/80 transition-colors">
                   Direct Booking Setup
                 </Link>
               </li>
               <li>
-                <Link href="#services" className="hover:text-gold transition-colors">
+                <Link href="#services" className="inline-block py-1 hover:text-gold active:text-gold/80 transition-colors">
                   Revenue Growth
                 </Link>
               </li>
               <li>
-                <Link href="#services" className="hover:text-gold transition-colors">
+                <Link href="#services" className="inline-block py-1 hover:text-gold active:text-gold/80 transition-colors">
                   Automation
                 </Link>
               </li>
               <li>
-                <Link href="#services" className="hover:text-gold transition-colors">
+                <Link href="#services" className="inline-block py-1 hover:text-gold active:text-gold/80 transition-colors">
                   Google Hotels
                 </Link>
               </li>
@@ -61,7 +58,7 @@ export function Footer({ language }: FooterProps) {
             <h4 className="text-lg font-semibold text-gold">{t.footer.packages}</h4>
             <ul className="space-y-2 text-gray-400 text-sm">
               <li>
-                <Link href="#pricing" className="hover:text-gold transition-colors">
+                <Link href="#pricing" className="inline-block py-1 hover:text-gold active:text-gold/80 transition-colors">
                   Persoonlijke Offerte
                 </Link>
               </li>
@@ -75,7 +72,7 @@ export function Footer({ language }: FooterProps) {
               <li>Email: info@havnrevenue.com</li>
               <li>België / Colombia / Globaal</li>
               <li>
-                <Link href="#contact" className="hover:text-gold transition-colors">
+                <Link href="#contact" className="inline-block py-1 hover:text-gold active:text-gold/80 transition-colors">
                   Gratis Consultatie
                 </Link>
               </li>
@@ -86,37 +83,24 @@ export function Footer({ language }: FooterProps) {
             <h4 className="text-lg font-semibold text-gold">Legal</h4>
             <ul className="space-y-2 text-gray-400 text-sm">
               <li>
-                <Link href="/privacy-policy" className="hover:text-gold transition-colors flex items-center">
-                  <Shield className="h-4 w-4 mr-1" />
+                <Link href="/privacy-policy" className="inline-flex items-center py-1 hover:text-gold active:text-gold/80 transition-colors">
+                  <Shield className="h-4 w-4 mr-1" aria-hidden="true" />
                   {t.footer.privacy}
                 </Link>
               </li>
               <li>
-                <Link href="/terms-conditions" className="hover:text-gold transition-colors flex items-center">
-                  <FileText className="h-4 w-4 mr-1" />
+                <Link href="/terms-conditions" className="inline-flex items-center py-1 hover:text-gold active:text-gold/80 transition-colors">
+                  <FileText className="h-4 w-4 mr-1" aria-hidden="true" />
                   {t.footer.terms}
                 </Link>
               </li>
-              <li>
-                <Link href="#" className="hover:text-gold transition-colors">
-                  GDPR Compliance
-                </Link>
-              </li>
-              <li className="text-xs text-gray-500">RUT: 700.288.175</li>
+              <li className="text-xs text-gray-400">RUT: 700.288.175</li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-gold/20 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-400">
           <p className="text-sm">&copy; 2026 HAVN. {t.footer.rights}</p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link href="#" className="hover:text-gold transition-colors text-sm">
-              {currentLang === "nl" ? "NL" : "EN"}
-            </Link>
-            <Link href="#" className="hover:text-gold transition-colors text-sm">
-              {currentLang === "nl" ? "EN" : "NL"}
-            </Link>
-          </div>
         </div>
       </div>
     </footer>

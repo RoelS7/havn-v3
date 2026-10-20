@@ -27,7 +27,7 @@ export function SolutionSection({ language }: SolutionSectionProps) {
               <div
                 key={index}
                 className="group relative text-center p-8 rounded-2xl bg-white/5 border border-gold/30 
-                           hover:border-gold hover:bg-white/10 transition-all duration-300 
+                           hover:border-gold hover:bg-white/10 transition-[color,background-color,border-color,box-shadow,transform] duration-300 
                            hover:-translate-y-2 hover:shadow-2xl"
               >
                 {/* Icon container */}
@@ -48,7 +48,7 @@ export function SolutionSection({ language }: SolutionSectionProps) {
 
                 {/* Subtiele gouden underline op hover */}
                 <div className="absolute bottom-6 left-1/2 -translate-x-1/2 h-0.5 w-8 bg-gold/40 
-                                group-hover:w-12 group-hover:bg-gold transition-all duration-300" />
+                                group-hover:scale-x-150 group-hover:bg-gold transition-[transform,background-color] duration-300" />
               </div>
             )
           })}
