@@ -211,14 +211,14 @@ export function CaseStudy({ language }: CaseStudyProps) {
           </p>
         </div>
 
-        <Card className="max-w-5xl mx-auto border-2 border-gold/20 overflow-hidden luxury-card">
+        <Card className="group max-w-5xl mx-auto border-2 border-gold/20 overflow-hidden luxury-card">
           {/* Foto vult het kader */}
           <div className="relative w-full aspect-[16/9] md:aspect-[16/10] bg-black">
             <Image
               src={current.image}
               alt={current.imageAlt}
               fill
-              className="object-cover"
+              className="object-cover transition-transform duration-[1400ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03]"
               sizes="(min-width: 1024px) 1024px, 100vw"
             />
           </div>

@@ -2,6 +2,8 @@
 @import "tw-animate-css";
 
 @theme {
+  /* Merkgoud als themakleur, zodat ook varianten als border-gold/20 werken */
+  --color-gold: #b8925c;
   /* Donker goud voor kleine tekst op lichte vlakken (WCAG AA, ≥4.9:1) */
   --color-gold-ink: #7d5f2e;
 }
@@ -59,6 +61,15 @@
   :focus-visible {
     outline: 2px solid var(--focus);
     outline-offset: 3px;
+  }
+
+  /* Rustige, gebalanceerde koppen; geen losse woorden onderaan alinea's */
+  h1, h2 {
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
   }
 
   ::selection {
@@ -129,15 +140,6 @@
 
 /* ==================== UTILITIES ==================== */
 @layer utilities {
-  .text-gold { color: #b8925c; }
-  .bg-gold { background-color: #b8925c; }
-  .border-gold { border-color: #b8925c; }
-  .bg-gold\/90 { background-color: rgba(184, 146, 92, 0.9); }
-  .bg-gold\/20 { background-color: rgba(184, 146, 92, 0.2); }
-
-  .hover\:text-gold:hover { color: #b8925c; }
-  .hover\:bg-gold:hover { background-color: #b8925c; }
-
   .font-serif {
     font-family: var(--font-playfair), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   }
@@ -149,7 +151,68 @@
   }
 
   .luxury-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 50px -15px rgba(184, 146, 92, 0.25);
+    transform: translateY(-3px);
+    box-shadow: 0 1px 2px rgba(15, 25, 35, 0.04), 0 24px 48px -20px rgba(184, 146, 92, 0.32);
+  }
+
+  /* Warm 'avondlicht' op donkere vlakken: diep zwart met een zachte gouden gloed */
+  .surface-ink {
+    background-image:
+      radial-gradient(55% 60% at 78% 32%, rgba(184, 146, 92, 0.13), transparent 70%),
+      radial-gradient(40% 45% at 8% 100%, rgba(184, 146, 92, 0.06), transparent 70%);
+  }
+
+  /* Eén geregisseerd moment: de hero komt rustig binnen */
+  .havn-enter {
+    animation: havn-rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-delay: var(--d, 0ms);
+  }
+  .havn-reveal {
+    animation: havn-unveil 1.3s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+  }
+
+  /* Subtiele lichtglans over gouden knoppen bij hover */
+  .btn-sheen {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .btn-sheen::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(105deg, transparent 35%, rgba(255, 255, 255, 0.35) 50%, transparent 65%);
+    transform: translateX(-110%);
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+  }
+  .btn-sheen:hover::after,
+  .btn-sheen:focus-visible::after {
+    transform: translateX(110%);
+  }
+}
+
+@keyframes havn-rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes havn-unveil {
+  from {
+    opacity: 0;
+    clip-path: inset(8% 8% 8% 8% round 0.5rem);
+    transform: scale(1.04);
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0 round 0.5rem);
+    transform: none;
   }
 }

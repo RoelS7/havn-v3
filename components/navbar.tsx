@@ -114,7 +114,7 @@ export function Navbar({ language, onLanguageChange }: NavbarProps) {
 
             <LanguageSelector currentLang={currentLang} onLanguageChange={onLanguageChange} />
 
-            <Button asChild className="bg-gold text-black hover:bg-gold/90 active:scale-[0.98] text-sm px-4 py-2">
+            <Button asChild className="btn-sheen bg-gold text-black hover:bg-gold/90 active:scale-[0.98] text-sm px-4 py-2">
               <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
                 {t.nav.freeConsultation}
               </a>

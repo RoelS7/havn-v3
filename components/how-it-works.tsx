@@ -22,10 +22,10 @@ export function HowItWorks({ language }: HowItWorksProps) {
           {t.howItWorks.steps.map((step, index) => (
             <div 
               key={index} 
-              className="relative luxury-card group p-10 rounded-3xl border border-gray-100 hover:border-gold transition-[color,background-color,border-color,box-shadow,transform] duration-300 hover:-translate-y-2"
+              className="relative luxury-card group p-10 rounded-3xl border border-gray-100 hover:border-gold transition-[color,background-color,border-color,box-shadow,transform] duration-300"
             >
               <div className="text-center">
-                <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gold text-black text-3xl font-bold mb-8 group-hover:scale-110 transition-transform">
+                <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gold text-black font-serif text-3xl mb-8 shadow-[0_10px_24px_-12px_rgba(184,146,92,0.8)] group-hover:scale-105 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
                   {step.step}
                 </div>
                 <h3 className="text-2xl font-medium text-black mb-5">{step.title}</h3>

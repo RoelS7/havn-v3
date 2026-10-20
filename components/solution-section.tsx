@@ -12,7 +12,7 @@ export function SolutionSection({ language }: SolutionSectionProps) {
   const icons = [Settings, TrendingUp, Zap]
 
   return (
-    <section className="py-20 bg-black text-white">
+    <section className="py-20 bg-black surface-ink text-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-serif mb-4 text-balance text-white">

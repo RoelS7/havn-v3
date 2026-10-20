@@ -56,10 +56,13 @@ function PackageCard({
     <div
       className={`relative flex flex-col rounded-2xl border transition-[border-color,box-shadow] duration-300 ${
         pkg.featured
-          ? "border-[#B8924A] bg-[#0F1923] text-white shadow-2xl shadow-[#B8924A]/10 scale-[1.02]"
+          ? "border-[#B8924A]/70 bg-[#0F1923] bg-[radial-gradient(80%_50%_at_50%_0%,rgba(184,146,92,0.14),transparent_70%)] text-white shadow-[0_30px_60px_-30px_rgba(15,25,35,0.6),0_20px_40px_-24px_rgba(184,146,92,0.25)] scale-[1.02]"
           : "border-[#E8DFD0] bg-white text-[#0F1923] hover:border-[#B8924A]/40 hover:shadow-lg"
       }`}
     >
+      {pkg.featured && (
+        <div aria-hidden="true" className="absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-[#D4AF7A] to-transparent" />
+      )}
       {pkg.badge && (
         <div
           className={`absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-xs font-medium tracking-widest uppercase whitespace-nowrap ${
@@ -162,7 +165,7 @@ function PackageCard({
           rel="noopener noreferrer"
           className={`block text-center rounded-xl py-3.5 text-sm font-medium tracking-wide transition-[background-color,color,transform] duration-200 active:scale-[0.98] ${
             pkg.featured
-              ? "bg-[#B8924A] text-[#0F1923] hover:bg-[#C9A46C]"
+              ? "btn-sheen bg-[#B8924A] text-[#0F1923] hover:bg-[#C9A46C]"
               : "border border-[#0F1923] text-[#0F1923] hover:bg-[#0F1923] hover:text-white"
           }`}
         >
