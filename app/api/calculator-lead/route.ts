@@ -26,9 +26,9 @@ export async function POST(req: Request) {
       perMonthLabel: string; commissionLabel: string; seasonLabel: string
     }> = {
       nl: {
-        subject: "Uw persoonlijk revenue rapport — HAVN",
-        intro: `<p>Bedankt voor het invullen van onze revenue calculator.</p><p>Op basis van uw accommodatie hebben we een persoonlijke analyse gemaakt.</p>`,
-        auditTitle: "Uw Persoonlijk Revenue Rapport",
+        subject: "Je persoonlijk revenue rapport — HAVN",
+        intro: `<p>Bedankt voor het invullen van de revenue calculator.</p><p>Op basis van je verblijf heb ik een persoonlijke analyse gemaakt.</p>`,
+        auditTitle: "Je Persoonlijk Revenue Rapport",
         revenueLabel: "Geschatte jaaromzet",
         ctaText: "Plan gratis strategiegesprek",
         potentialLabel: "Potentieel met HAVN (+20%)",
@@ -38,7 +38,7 @@ export async function POST(req: Request) {
       },
       es: {
         subject: "Tu informe de ingresos personalizado — HAVN",
-        intro: `<p>Gracias por usar nuestra calculadora de ingresos.</p><p>Basado en tu propiedad, hemos preparado un análisis personalizado.</p>`,
+        intro: `<p>Gracias por usar la calculadora de ingresos.</p><p>Con base en tu alojamiento, he preparado un análisis personalizado.</p>`,
         auditTitle: "Tu Informe de Ingresos Personalizado",
         revenueLabel: "Ingresos anuales estimados",
         ctaText: "Agendar llamada estratégica gratuita",
@@ -49,7 +49,7 @@ export async function POST(req: Request) {
       },
       en: {
         subject: "Your personal revenue report — HAVN",
-        intro: `<p>Thank you for using our revenue calculator.</p><p>Based on your property details, we've prepared a personalized analysis.</p>`,
+        intro: `<p>Thank you for using the revenue calculator.</p><p>Based on your property details, I have prepared a personalised analysis.</p>`,
         auditTitle: "Your Personal Revenue Report",
         revenueLabel: "Estimated yearly revenue",
         ctaText: "Book free strategy call",

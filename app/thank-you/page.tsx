@@ -8,16 +8,16 @@ import { useLanguage } from "@/hooks/use-language"
 const content = {
   nl: {
     eyebrow: "Aanvraag ontvangen",
-    title: "Bedankt voor uw aanvraag",
-    subtitle: "We hebben uw bericht goed ontvangen en nemen binnen 24 uur persoonlijk contact met u op.",
+    title: "Bedankt voor je aanvraag",
+    subtitle: "Ik heb je bericht goed ontvangen en neem binnen 24 uur persoonlijk contact met je op.",
     steps: [
-      { number: "01", title: "Aanvraag ontvangen", description: "Uw gegevens zijn veilig ontvangen.", done: true },
-      { number: "02", title: "Persoonlijke analyse", description: "We analyseren uw accommodatie en situatie.", done: false },
-      { number: "03", title: "Strategiegesprek", description: "We bespreken de opportuniteiten samen.", done: false },
+      { number: "01", title: "Aanvraag ontvangen", description: "Je gegevens zijn veilig ontvangen.", done: true },
+      { number: "02", title: "Persoonlijke analyse", description: "Ik bekijk je verblijf en je situatie.", done: false },
+      { number: "03", title: "Strategiegesprek", description: "We bespreken de kansen samen.", done: false },
     ],
     calendly: {
-      title: "Wil u sneller van start?",
-      subtitle: "Plan direct een gratis strategiegesprek in — kies zelf het moment dat u uitkomt.",
+      title: "Wil je sneller van start?",
+      subtitle: "Plan meteen een vrijblijvend gesprek in — kies zelf het moment dat je uitkomt.",
     },
     back: "← Terug naar home",
     trustItems: [
@@ -29,15 +29,15 @@ const content = {
   en: {
     eyebrow: "Request received",
     title: "Thank you for your request",
-    subtitle: "We have received your message and will personally contact you within 24 hours.",
+    subtitle: "I have received your message and will personally contact you within 24 hours.",
     steps: [
       { number: "01", title: "Request received", description: "Your details have been safely received.", done: true },
-      { number: "02", title: "Personal analysis", description: "We analyze your accommodation and situation.", done: false },
+      { number: "02", title: "Personal analysis", description: "I look at your property and your situation.", done: false },
       { number: "03", title: "Strategy call", description: "We discuss the opportunities together.", done: false },
     ],
     calendly: {
       title: "Want to get started faster?",
-      subtitle: "Schedule a free strategy call directly — choose the moment that suits you.",
+      subtitle: "Schedule a no-obligation call right away — choose the moment that suits you.",
     },
     back: "← Back to home",
     trustItems: [
@@ -48,16 +48,16 @@ const content = {
   },
   es: {
     eyebrow: "Solicitud recibida",
-    title: "Gracias por su solicitud",
-    subtitle: "Hemos recibido su mensaje y nos pondremos en contacto personalmente en menos de 24 horas.",
+    title: "Gracias por tu solicitud",
+    subtitle: "He recibido tu mensaje y me pondré en contacto contigo personalmente en menos de 24 horas.",
     steps: [
-      { number: "01", title: "Solicitud recibida", description: "Sus datos han sido recibidos de forma segura.", done: true },
-      { number: "02", title: "Análisis personal", description: "Analizamos su propiedad y situación.", done: false },
-      { number: "03", title: "Llamada estratégica", description: "Discutimos las oportunidades juntos.", done: false },
+      { number: "01", title: "Solicitud recibida", description: "Tus datos se han recibido de forma segura.", done: true },
+      { number: "02", title: "Análisis personal", description: "Miro tu alojamiento y tu situación.", done: false },
+      { number: "03", title: "Llamada estratégica", description: "Hablamos juntos de las oportunidades.", done: false },
     ],
     calendly: {
-      title: "¿Quiere empezar más rápido?",
-      subtitle: "Reserve directamente una asesoría gratuita — elija el momento que más le convenga.",
+      title: "¿Quieres empezar más rápido?",
+      subtitle: "Agenda ahora una conversación sin compromiso — elige el momento que mejor te venga.",
     },
     back: "← Volver al inicio",
     trustItems: [

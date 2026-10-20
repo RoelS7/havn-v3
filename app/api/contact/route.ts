@@ -42,10 +42,10 @@ export async function POST(req: Request) {
       labelSource: string
     }> = {
       nl: {
-        subjectToClient: `Bedankt voor uw aanvraag, ${name}`,
+        subjectToClient: `Bedankt voor je aanvraag, ${name}`,
         thankYouTitle: "Aanvraag ontvangen",
-        thankYouIntro: `Bedankt voor uw interesse in HAVN, ${name}.`,
-        receivedMsg: "We hebben uw aanvraag goed ontvangen en nemen binnen 24 uur persoonlijk contact met u op voor een gratis strategiegesprek.",
+        thankYouIntro: `Bedankt voor je interesse in HAVN, ${name}.`,
+        receivedMsg: "Ik heb je aanvraag goed ontvangen en neem binnen 24 uur persoonlijk contact met je op voor een vrijblijvend gesprek.",
         bookCall: "Plan direct een gesprek in",
         greeting: "Met vriendelijke groet,",
         internalSubject: `🚀 Nieuwe lead: ${name}`,
@@ -61,7 +61,7 @@ export async function POST(req: Request) {
         subjectToClient: `Thank you for your request, ${name}`,
         thankYouTitle: "Request received",
         thankYouIntro: `Thank you for your interest in HAVN, ${name}.`,
-        receivedMsg: "We have received your request and will personally contact you within 24 hours for a free strategy call.",
+        receivedMsg: "I have received your request and will personally contact you within 24 hours for a no-obligation call.",
         bookCall: "Book a call directly",
         greeting: "Kind regards,",
         internalSubject: `🚀 New lead: ${name}`,
@@ -74,10 +74,10 @@ export async function POST(req: Request) {
         labelSource: "Source",
       },
       es: {
-        subjectToClient: `Gracias por su solicitud, ${name}`,
+        subjectToClient: `Gracias por tu solicitud, ${name}`,
         thankYouTitle: "Solicitud recibida",
-        thankYouIntro: `Gracias por su interés en HAVN, ${name}.`,
-        receivedMsg: "Hemos recibido su solicitud y nos pondremos en contacto personalmente en menos de 24 horas para una asesoría gratuita.",
+        thankYouIntro: `Gracias por tu interés en HAVN, ${name}.`,
+        receivedMsg: "He recibido tu solicitud y me pondré en contacto contigo personalmente en menos de 24 horas para una conversación sin compromiso.",
         bookCall: "Agendar una llamada directamente",
         greeting: "Un cordial saludo,",
         internalSubject: `🚀 Nuevo lead: ${name}`,

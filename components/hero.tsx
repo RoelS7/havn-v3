@@ -20,7 +20,10 @@ export function Hero({ language }: HeroProps) {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           <div className="space-y-6">
             <h1 className="havn-enter text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-serif font-medium leading-tight text-balance">
-              {t.hero.title}
+              {/* Elke zin van de kop begint op een eigen regel */}
+              {t.hero.title.split(/(?<=\.)\s+/).map((sentence, i) => (
+                <span key={i} className="block">{sentence}</span>
+              ))}
             </h1>
             <p className="havn-enter [--d:120ms] text-lg lg:text-xl text-gray-300 leading-relaxed font-light">
               {t.hero.subtitle}

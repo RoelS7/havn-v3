@@ -220,7 +220,7 @@ export function Contact({ language }: ContactProps) {
                   <MailIcon className="h-6 w-6 text-gold mt-1" />
                   <div>
                     <div className="font-medium">{t.contact.info.email}</div>
-                    <div className="text-gray-600">projects@ateliersmits.be</div>
+                    <div className="text-gray-600">info@havnrevenue.com</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">

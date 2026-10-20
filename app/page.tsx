@@ -1,5 +1,7 @@
 "use client"
 import { Hero } from "@/components/hero"
+import { FocusAreas } from "@/components/focus-areas"
+import { IndependenceNote } from "@/components/independence-note"
 import { ProblemSection } from "@/components/problem-section"
 import { SolutionSection } from "@/components/solution-section"
 import { Services } from "@/components/services"
@@ -26,6 +28,8 @@ export default function Home() {
       <main>
         {/* 1. Hero (eigen <section id="home">) */}
         <Hero language={language} />
+        {/* 1b. Waar ik naar kijk */}
+        <FocusAreas language={language} />
         {/* 2. Probleem */}
         <ProblemSection language={language} />
         {/* 3. Oplossing */}
@@ -46,7 +50,8 @@ export default function Home() {
             <RevenueCalculator language={language} key={`calc-${language}`} />
           </div>
         </section>
-        {/* 8. Pakketten */}
+        {/* 8. Pakketten, voorafgegaan door 'Waarom onafhankelijk' */}
+        <IndependenceNote language={language} />
         <div id="pricing">
           <PricingSection language={language} />
         </div>

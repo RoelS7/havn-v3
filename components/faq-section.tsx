@@ -24,9 +24,9 @@ export function FAQSection({ language }: FAQSectionProps) {
       es: "¿Qué tan pronto veré resultados?"
       }[currentLang],
       answer: {
-      nl: "De technische implementatie is meestal binnen enkele weken afgerond. Directe boekingen kunnen onmiddellijk binnenkomen zodra het systeem live staat. Verbeteringen in bezetting, prijsstrategie en opbrengst worden doorgaans zichtbaar binnen de eerste 2 tot 3 maanden.",
-      en: "Technical implementation is usually completed within a few weeks. Direct bookings can start coming in as soon as the system goes live. Improvements in occupancy, pricing strategy and revenue are typically visible within the first 2 to 3 months.",
-      es: "La implementación técnica suele completarse en unas pocas semanas. Las reservas directas pueden comenzar a llegar tan pronto como el sistema esté activo. Las mejoras en ocupación, estrategia de precios e ingresos suelen ser visibles dentro de los primeros 2 o 3 meses."
+      nl: "Hoe snel je resultaat ziet, hangt af van je seizoen en van wat we aanpakken. Een prijsaanpassing merk je vaak al bij de volgende boekingen; een nieuwe reservatieflow heeft wat tijd nodig. Ik beloof geen cijfers, wel een eerlijk beeld.",
+      en: "How quickly you see results depends on your season and on what we tackle. You often notice a price adjustment with the very next bookings; a new booking flow needs some time. I don't promise figures, but I do give you an honest picture.",
+      es: "La rapidez con la que veas resultados depende de tu temporada y de lo que abordemos. Un ajuste de precios a menudo se nota ya en las siguientes reservas; un nuevo flujo de reservas necesita algo de tiempo. No prometo cifras, pero sí una imagen honesta."
       }[currentLang],
       category: "algemeen",
       },

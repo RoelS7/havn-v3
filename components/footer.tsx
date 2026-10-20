@@ -95,6 +95,7 @@ export function Footer({ language }: FooterProps) {
                 </Link>
               </li>
               <li className="text-xs text-gray-400">RUT: 700.288.175</li>
+              <li className="text-xs text-gray-400">Cra. 54 #1A-9, Medellín</li>
             </ul>
           </div>
         </div>

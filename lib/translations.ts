@@ -11,9 +11,9 @@ export const translations = {
       freeConsultation: "Gratis strategiegesprek",
     },
     hero: {
-      title: "Meer directe boekingen. Minder afhankelijkheid van Booking.com en Airbnb.",
-      subtitle: "HAVN helpt vakantieverblijven meer directe boekingen genereren met slimme systemen, automatisatie en revenue optimalisatie zodat er minder commissie verloren gaat aan OTA's zoals Airbnb en Booking.",
-      cta: "Gratis strategiegesprek plannen",
+      title: "Meer rendement uit je vakantieverblijf. Niet noodzakelijk meer gasten.",
+      subtitle: "Ik bekijk je verblijf zoals een eigenaar dat zou doen: je prijzen, hoe gasten reserveren, je afhankelijkheid van Booking.com en Airbnb, en het werk achter de schermen. Daar zoek ik waar er rendement blijft liggen, en waar het past help ik het ook zelf realiseren.",
+      cta: "Plan een vrijblijvend gesprek",
       secondaryCta: "Bereken wat OTA's je kosten",
       positioning: "Voor vakantieverblijven die meer directe boekingen willen realiseren en minder afhankelijk willen zijn van OTA's.",
       valueBullets: [
@@ -56,23 +56,36 @@ export const translations = {
         },
       ],
     },
+    focus: {
+      title: "Waar ik naar kijk",
+      items: [
+        { title: "Prijsstrategie", description: "Seizoenen, weekends, minimumverblijven, en hoe je eigen prijs zich verhoudt tot Booking.com." },
+        { title: "Reservaties", description: "Kunnen gasten rechtstreeks boeken, of verloopt alles via mail, telefoon of een platform?" },
+        { title: "Distributie", description: "Zichtbaar zijn op de platformen, zonder er afhankelijk van te worden." },
+        { title: "Werking", description: "Minder manuele opvolging, zodat je tijd gaat naar je gasten." },
+      ],
+    },
+    independence: {
+      title: "Waarom onafhankelijk",
+      text: "Ik vertrek van jouw zaak, niet van een tool. Ik ontvang geen commissie van boekingsplatformen. Wanneer ik een systeem installeer, is dat omdat het in jouw situatie rendement oplevert.",
+    },
     howItWorks: {
       title: "Hoe HAVN werkt",
       steps: [
         {
           step: "1",
-          title: "Analyse",
-          description: "We bekijken je huidige setup en identificeren optimalisaties.",
+          title: "Quick Scan",
+          description: "Ik analyseer je verblijf en we praten een uur. Je krijgt een kort rapport met de paar kansen die je tijd echt waard zijn.",
         },
         {
           step: "2",
-          title: "Setup",
-          description: "Systemen en workflows worden professioneel geconfigureerd.",
+          title: "Advies",
+          description: "Wat eerst, wat kan wachten, wat optioneel is. Soms is mijn advies gewoon om te houden wat werkt.",
         },
         {
           step: "3",
-          title: "Optimalisatie",
-          description: "Prijsstrategie en automatisatie worden verfijnd.",
+          title: "Uitvoering, waar het past",
+          description: "Een reservatiemodule, een prijsstrategie, revenue management: ik zet het mee op, zodat het ook echt gebeurt.",
         },
       ],
     },
@@ -268,7 +281,7 @@ export const translations = {
       subtitle: "Klaar om meer directe boekingen te ontvangen? Neem contact op voor een vrijblijvende consultatie en ontdek hoe ik je accommodatie kan helpen groeien.",
       form: {
         title: "Vraag je Gratis Consultatie Aan",
-        subtitle: "Vertel me over je accommodatie en ik neem binnen 24 uur contact met u op.",
+        subtitle: "Vertel me over je accommodatie en ik neem binnen 24 uur contact met je op.",
         name: "Naam *",
         email: "Email *",
         phone: "Telefoon",
@@ -335,9 +348,9 @@ export const translations = {
       freeConsultation: "Free strategy call",
     },
     hero: {
-      title: "More direct bookings. Less reliance on Booking.com and Airbnb.",
-      subtitle: "HAVN helps vacation rentals generate more direct bookings with smart systems, automation, and revenue optimization so that less commission is lost to OTAs like Airbnb and Booking.",
-      cta: "Book your free strategy call",
+      title: "More return from your holiday rental. Not necessarily more guests.",
+      subtitle: "I look at your property the way an owner would: your prices, how guests book, your dependence on Booking.com and Airbnb, and the work behind the scenes. That is where I look for return that is being left on the table, and where it fits, I help make it happen myself.",
+      cta: "Schedule a no-obligation call",
       secondaryCta: "Calculate what OTAs cost you",
       positioning: "For vacation rentals that want to generate more direct bookings and be less dependent on OTAs.",
       valueBullets: [
@@ -380,23 +393,36 @@ export const translations = {
         },
       ],
     },
+    focus: {
+      title: "What I look at",
+      items: [
+        { title: "Pricing strategy", description: "Seasons, weekends, minimum stays, and how your own price compares to Booking.com." },
+        { title: "Reservations", description: "Can guests book directly, or does everything go through email, phone or a platform?" },
+        { title: "Distribution", description: "Being visible on the platforms, without becoming dependent on them." },
+        { title: "Operations", description: "Less manual follow-up, so your time goes to your guests." },
+      ],
+    },
+    independence: {
+      title: "Why independent",
+      text: "I start from your business, not from a tool. I receive no commission from booking platforms. When I install a system, it is because it delivers a return in your situation.",
+    },
     howItWorks: {
       title: "How HAVN works",
       steps: [
         {
           step: "1",
-          title: "Analysis",
-          description: "We review your current setup and identify optimizations.",
+          title: "Quick Scan",
+          description: "I analyse your property and we talk for an hour. You get a short report with the few opportunities that are truly worth your time.",
         },
         {
           step: "2",
-          title: "Setup",
-          description: "Systems and workflows are professionally configured.",
+          title: "Advice",
+          description: "What comes first, what can wait, what is optional. Sometimes my advice is simply to keep what works.",
         },
         {
           step: "3",
-          title: "Optimization",
-          description: "Pricing strategy and automation are refined.",
+          title: "Implementation, where it fits",
+          description: "A booking module, a pricing strategy, revenue management: I help set it up, so that it actually happens.",
         },
       ],
     },
@@ -660,9 +686,9 @@ export const translations = {
       freeConsultation: "Asesoría estratégica gratuita",
     },
     hero: {
-      title: "Más reservas directas. Menos dependencia de Booking.com y Airbnb.",
-      subtitle: "HAVN ayuda a los alojamientos vacacionales a generar más reservas directas mediante sistemas inteligentes, automatización y optimización de ingresos, de modo que se pierden menos comisiones a manos de agencias de viajes online como Airbnb y Booking.",
-      cta: "Agendar asesoría gratuita",
+      title: "Más rentabilidad de tu alojamiento vacacional. No necesariamente más huéspedes.",
+      subtitle: "Miro tu alojamiento como lo haría un propietario: tus precios, cómo reservan los huéspedes, tu dependencia de Booking.com y Airbnb, y el trabajo entre bastidores. Ahí busco dónde se está quedando rentabilidad sin aprovechar y, donde tiene sentido, también ayudo a hacerlo realidad.",
+      cta: "Agenda una conversación sin compromiso",
       secondaryCta: "Calcula lo que te cuestan las OTA",
       positioning: "Para alojamientos vacacionales que desean generar más reservas directas y depender menos de las agencias de viajes online (OTA).",
       valueBullets: [
@@ -706,23 +732,36 @@ export const translations = {
         },
       ],
     },
+    focus: {
+      title: "En qué me fijo",
+      items: [
+        { title: "Estrategia de precios", description: "Temporadas, fines de semana, estancias mínimas, y cómo se compara tu propio precio con Booking.com." },
+        { title: "Reservas", description: "¿Pueden los huéspedes reservar directamente, o todo pasa por correo, teléfono o una plataforma?" },
+        { title: "Distribución", description: "Ser visible en las plataformas, sin llegar a depender de ellas." },
+        { title: "Operación", description: "Menos seguimiento manual, para que tu tiempo vaya a tus huéspedes." },
+      ],
+    },
+    independence: {
+      title: "Por qué independiente",
+      text: "Parto de tu negocio, no de una herramienta. No recibo comisiones de las plataformas de reservas. Cuando instalo un sistema, es porque en tu situación genera rentabilidad.",
+    },
     howItWorks: {
       title: "El Método HAVN",
       steps: [
         {
           step: "1",
-          title: "Auditoría",
-          description: "Analizamos tu operación actual e identificamos fugas de dinero y tiempo.",
+          title: "Quick Scan",
+          description: "Analizo tu alojamiento y hablamos durante una hora. Recibes un informe breve con las pocas oportunidades que realmente valen tu tiempo.",
         },
         {
           step: "2",
-          title: "Implementación",
-          description: "Configuramos profesionalmente tus sistemas y flujos de trabajo.",
+          title: "Asesoría",
+          description: "Qué va primero, qué puede esperar, qué es opcional. A veces mi consejo es simplemente mantener lo que funciona.",
         },
         {
           step: "3",
-          title: "Escalamiento",
-          description: "Refinamos la estrategia de precios y automatización para el máximo retorno.",
+          title: "Implementación, donde tiene sentido",
+          description: "Un módulo de reservas, una estrategia de precios, revenue management: lo pongo en marcha contigo, para que realmente suceda.",
         },
       ],
     },

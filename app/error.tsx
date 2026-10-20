@@ -24,7 +24,7 @@ export default function Error({ error, reset }: { error: Error & { digest?: stri
 
         <Card className="bg-gray-900 border-2 border-gold/20 mb-8">
           <CardHeader>
-            <CardTitle className="text-gold font-serif">Wat kunt u doen?</CardTitle>
+            <CardTitle className="text-gold font-serif">Wat kan je doen?</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="grid md:grid-cols-2 gap-4">
@@ -49,7 +49,7 @@ export default function Error({ error, reset }: { error: Error & { digest?: stri
           <div className="grid md:grid-cols-2 gap-4 text-left">
             <a href="/#services" className="block p-4 bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors">
               <h4 className="font-medium text-gold mb-1">Onze Services</h4>
-              <p className="text-sm text-gray-400">Bekijk wat we voor u kunnen doen</p>
+              <p className="text-sm text-gray-400">Bekijk wat ik voor je kan doen</p>
             </a>
             <a href="/#contact" className="block p-4 bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors">
               <h4 className="font-medium text-gold mb-1">Direct Contact</h4>
@@ -65,7 +65,7 @@ export default function Error({ error, reset }: { error: Error & { digest?: stri
             className="border-gold text-gold hover:bg-gold hover:text-black bg-transparent"
             onClick={() =>
               window.open(
-                `https://wa.me/32123456789?text=Hallo, ik ondervind een technisch probleem op jullie website. Error: ${error.message}`,
+                `https://wa.me/32456791365?text=Hallo, ik ondervind een technisch probleem op je website. Error: ${error.message}`,
                 "_blank",
               )
             }
@@ -79,7 +79,7 @@ export default function Error({ error, reset }: { error: Error & { digest?: stri
           <a href="/" className="text-2xl font-serif text-gold hover:text-gold/80 transition-colors">
             HAVN
           </a>
-          <p className="text-sm text-gray-500 mt-2">Property Management Specialist</p>
+          <p className="text-sm text-gray-500 mt-2">Commerciële optimalisatie voor vakantieverblijven</p>
         </div>
       </div>
     </div>

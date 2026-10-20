@@ -29,7 +29,7 @@ export function PrivacyPolicy() {
               <div className="bg-gray-100 p-4 rounded-lg">
                 <h4 className="font-medium mb-2">Contactgegevens:</h4>
                 <p>
-                  HAVN Property Management
+                  HAVN Revenue
                   <br />
                   België
                   <br />

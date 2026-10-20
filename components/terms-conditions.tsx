@@ -21,7 +21,7 @@ export function TermsConditions() {
             </CardHeader>
             <CardContent className="space-y-4">
               <p>
-                Deze algemene voorwaarden zijn van toepassing op alle diensten verleend door HAVN Property Management
+                Deze algemene voorwaarden zijn van toepassing op alle diensten verleend door HAVN Revenue
                 ("HAVN", "wij", "ons").
               </p>
 
@@ -221,7 +221,7 @@ export function TermsConditions() {
                 <br />
                 Telefoon: +32 123 456 789
                 <br />
-                Adres: HAVN Property Management, België
+                Adres: HAVN Revenue, België
               </p>
             </CardContent>
           </Card>

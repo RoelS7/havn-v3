@@ -12,12 +12,12 @@ export default function NotFound() {
         <div className="mb-8">
           <h1 className="text-8xl font-serif text-gold mb-4">404</h1>
           <h2 className="text-3xl font-serif mb-4">Pagina Niet Gevonden</h2>
-          <p className="text-xl text-gray-300 mb-8">Sorry, de pagina die u zoekt bestaat niet of is verplaatst.</p>
+          <p className="text-xl text-gray-300 mb-8">Sorry, de pagina die je zoekt bestaat niet of is verplaatst.</p>
         </div>
 
         <Card className="bg-gray-900 border-2 border-gold/20 mb-8">
           <CardHeader>
-            <CardTitle className="text-gold font-serif">Wat kunt u doen?</CardTitle>
+            <CardTitle className="text-gold font-serif">Wat kan je doen?</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="grid md:grid-cols-2 gap-4">
@@ -43,8 +43,8 @@ export default function NotFound() {
           <h3 className="text-xl font-serif text-gold">Populaire Pagina's</h3>
           <div className="grid md:grid-cols-2 gap-4 text-left">
             <Link href="/#services" className="block p-4 bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors">
-              <h4 className="font-medium text-gold mb-1">Property Management</h4>
-              <p className="text-sm text-gray-400">Onze professionele services</p>
+              <h4 className="font-medium text-gold mb-1">Diensten</h4>
+              <p className="text-sm text-gray-400">Waar ik je mee help</p>
             </Link>
             <Link href="/#pricing" className="block p-4 bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors">
               <h4 className="font-medium text-gold mb-1">Prijzen</h4>
@@ -68,7 +68,7 @@ export default function NotFound() {
             className="border-gold text-gold hover:bg-gold hover:text-black bg-transparent"
             onClick={() =>
               window.open(
-                "https://wa.me/32123456789?text=Hallo, ik kan een pagina niet vinden op jullie website.",
+                "https://wa.me/32456791365?text=Hallo, ik kan een pagina niet vinden op je website.",
                 "_blank",
               )
             }
@@ -82,7 +82,7 @@ export default function NotFound() {
           <Link href="/" className="text-2xl font-serif text-gold hover:text-gold/80 transition-colors">
             HAVN
           </Link>
-          <p className="text-sm text-gray-500 mt-2">Property Management Specialist</p>
+          <p className="text-sm text-gray-500 mt-2">Commerciële optimalisatie voor vakantieverblijven</p>
         </div>
       </div>
     </div>
