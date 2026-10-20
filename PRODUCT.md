@@ -8,51 +8,52 @@ web
 
 ## Users
 
-Primary: owners and operators of small vacation rentals in Belgium (Flanders) and the Netherlands: vacation homes, B&Bs, guesthouses and small hotels, typically 1–10 units. They run the property themselves next to everything else, depend on Booking.com and Airbnb for most reservations, and lose 15–25% commission per booking. They visit the site to judge whether HAVN can get them more direct bookings and less admin, and whether a free call is worth their time.
+Primary: owners of small vacation rentals in Belgium (Flanders) and the Netherlands: B&B's, vacation homes, guesthouses and small hotels, typically 1–10 units. They run the property themselves and depend on Booking.com and Airbnb for many reservations. Most arrive on the site from a personal e-mail from Roel, so the site must continue that tone.
 
-Secondary: English- and Spanish-speaking owners (the site ships NL, EN, ES; one client is in Medellín, Colombia). Dutch is the default and leading language; EN and ES are supporting translations.
+Secondary: English- and Spanish-speaking owners (the site ships NL, EN, ES; one client is in Medellín, Colombia). Dutch (as spoken in Flanders) is the default and leading language; EN and ES are faithful translations.
 
 ## Product Purpose
 
-HAVN builds and runs the rental infrastructure that lets small accommodations take bookings directly: a direct booking website/engine, channel sync with OTAs, online payments, automated guest communication, Google Hotels presence and revenue (pricing) optimisation. Success for the owner: a larger share of direct bookings, less commission paid to OTAs, less manual admin. Success for the site: a qualified owner books a free strategy call (strategiegesprek).
+HAVN Revenue is an independent advisor for small vacation rentals. Core idea: more return from a property, not necessarily more guests. Roel analyses (Quick Scan), advises what comes first and what can wait, and where it fits also implements (booking module, pricing strategy, revenue management). Success for the site: an owner books a no-obligation call via Calendly.
 
 ## Positioning
 
-A done-for-you service, not a software subscription the owner must configure: HAVN analyses, sets up and keeps optimising the owner's system, then bundles licence, hosting and support in one monthly fee. Aimed at independent small properties that are too small for an in-house revenue manager.
+Independent: starts from the owner's business, not from a tool. Receives no commission from booking platforms. Installs a system only when it delivers a return in that owner's situation; sometimes the advice is to keep what works.
 
 ## Operating Context
 
-- Owners evaluate on mobile and desktop, often in the evening after operational work.
-- Conversion path: free strategy call booked via Calendly (`https://calendly.com/smitsro7/consult`). All "Gratis strategiegesprek" calls to action lead there. The contact form and WhatsApp (+32 473 35 85 81) are secondary channels.
-- Pricing model: one-time implementation packages (HAVN Launch, HAVN Growth, HAVN Multi-Property) quoted per project ("op maat"), plus monthly HAVN Platform (€79 / €129 / quote by size) and optional HAVN Revenue (€179 / €299 / quote).
-- A revenue calculator on the homepage estimates commission paid to OTAs.
+- Primary conversion: "Plan een vrijblijvend gesprek" via Calendly (`https://calendly.com/smitsro7/consult`, constant in `lib/constants.ts`). Secondary: contact form and WhatsApp (+32 456 79 13 65).
+- Pricing: implementation packages HAVN Launch, Growth, Multi-Property are quoted per project ("op maat"); monthly HAVN Platform €79 / €129 / quote and optional HAVN Revenue €179 / €299 / quote. The pricing section copy and prices are fixed by the owner; do not change them without explicit request.
+- A revenue calculator estimates OTA commission; its +20% figure is labelled as an indicative scenario, not a promise.
 - Blog is served from a separate app under `/blog`.
+- Google Analytics loads only after cookie consent (`components/cookie-consent.tsx`).
 
 ## Capabilities and Constraints
 
 - Next.js on Vercel, auto-deployed from `main` of `RoelS7/havn-v3`; live at https://www.havnrevenue.com.
-- Contact: info@havnrevenue.com (general/legal/privacy), roel@havnrevenue.com.
-- Implementation package prices stay "op maat" (custom quote); do not publish starting prices.
-- Google Analytics is installed.
+- Controller: Roel Smits, handelend onder de naam HAVN Revenue, Cra. 54 #1A-9, Medellín, Colombia, RUT 700.288.175. Contact info@havnrevenue.com.
+- Processors in use: Vercel, Resend, Airtable, Anthropic (calculator report), Google Analytics, Calendly, Slack, own mailbox.
+- No terms & conditions page (removed on purpose; the old template did not match the service).
 
 ## Brand Commitments
 
-- Name: HAVN. Tagline in logo: "Direct Bookings. Less Commission. More Revenue."
-- Logo: `public/logo-60x120.png`.
-- Voice: direct, practical, owner-to-owner Dutch (Flemish usage such as "automatisatie" is intentional).
+- Name: HAVN / HAVN Revenue. Logo: `public/logo-60x120.png`.
+- Visual design (colors, fonts, layout, images, animations) is approved; refine only on request.
+- Voice: calm, respectful, honest, no sales talk. Flemish Dutch, address the visitor with je/jij/jouw (never u/uw), first person singular ("ik", not "we"; "we samen" is fine for owner + Roel).
+- No result promises: no percentages, no timelines for results, no invented figures, client counts or testimonials.
 
 ## Evidence on Hand
 
-- Case study: De Hoeveschuur, Millen (BE): direct booking system, payments, automated guest communication, calendar sync. Image `public/images/hoeveschuur-foto.webp`. Owner quote exists; the owner is named "Dieter, uitbater De Hoeveschuur" in the Dutch copy.
-- Case study: Casa Clandestina Guest House, Medellín (CO). Images `public/images/cc-home.jpg`, `public/images/ccc-foto.webp`. No owner quote.
-- No quantified results (percentages, hours saved, commission saved), no client logos, no reviews, no press. Future work must not invent numbers, names, quotes or counts. Qualitative results only until the owner supplies data.
+- Case study: De Hoeveschuur, Millen (BE): booking system, automated guest communication, workflows, website. Owner quote available (attributed as "Eigenaar, De Hoeveschuur").
+- Case study: Casa Clandestina Guest House, Medellín (CO). Key insight text, no owner quote.
+- No quantified results, logos, reviews or press. Do not fabricate.
 
 ## Product Principles
 
-1. One clear next step: every persuasive moment points to the free strategy call.
-2. Honest proof over impressive proof: show real properties and real words; never fabricate metrics.
-3. Speak to the independent owner's pain (commission, admin, dependency) in their own language before explaining features.
-4. Transparent where possible: monthly fees are public; custom work is clearly explained as custom.
+1. One clear next step: a no-obligation conversation.
+2. Honest over impressive: real properties, real words, no promises.
+3. Start from the owner's situation and return, not from tools or features.
+4. Transparent where possible: monthly prices public; custom work explained as custom.
 
 ## Accessibility & Inclusion
 
