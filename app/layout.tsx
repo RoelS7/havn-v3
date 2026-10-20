@@ -1,6 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Playfair_Display, Montserrat } from "next/font/google"
+import { Playfair_Display } from "next/font/google"
 import { GoogleAnalytics } from "@next/third-parties/google" // <-- 1. Hier geïmporteerd
 import "./globals.css"
 
@@ -9,14 +9,6 @@ const playfair = Playfair_Display({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-playfair",
-  display: "swap",
-  preload: true,
-})
-
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-montserrat",
   display: "swap",
   preload: true,
 })
@@ -81,14 +73,6 @@ export default function RootLayout({
   return (
     <html lang="nl" className="scroll-smooth">
       <head>
-        {/* Preconnect to external domains */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-
-        {/* DNS prefetch for performance */}
-        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="//fonts.gstatic.com" />
-
         {/* Favicon and app icons */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
@@ -97,7 +81,7 @@ export default function RootLayout({
         {/* Theme color */}
         <meta name="theme-color" content="#b8925c" />
       </head>
-      <body className={`${montserrat.variable} ${playfair.variable} font-sans`}>
+      <body className={`${playfair.variable} font-sans`}>
         {children}
         
         {/* 2. Google Analytics script — Vervang G-XXXXXXXXXX door jouw eigen ID */}

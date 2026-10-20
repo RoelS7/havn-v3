@@ -146,7 +146,7 @@ export const translations = {
       monthlyTitle: "De motor die blijft draaien",
       monthlySubtitle: "Na implementatie hou je het systeem actueel en je omzet optimaal.",
       notSure: "Niet zeker welk pakket past? Plan een gratis strategiegesprek en we bekijken het samen.",
-      cta: "Gratis strategiegesprek plannen",
+      cta: "Plan een vrijblijvend gesprek",
       packages: [
         {
           id: "launch",
@@ -483,7 +483,7 @@ export const translations = {
       monthlyTitle: "The engine that keeps running",
       monthlySubtitle: "After implementation, keep your system up to date and your revenue optimised.",
       notSure: "Not sure which package fits? Book a free strategy call and we'll figure it out together.",
-      cta: "Book your free strategy call",
+      cta: "Schedule a no-obligation call",
       packages: [
         {
           id: "launch",
@@ -558,9 +558,9 @@ export const translations = {
           tagline: "The technical foundation of your rental",
           description: "Bundles your software licence, hosting, maintenance, OTA support and annual system review into one monthly fee. No surprises, no separate invoices.",
           tiers: [
-            { label: "1 – 3 units", price: "€59", period: "/ month" },
-            { label: "4 – 10 units", price: "€99", period: "/ month" },
-            { label: "10+ units", price: "Quote", period: "on request" },
+            { label: "1 – 3 units, 1-2 OTAs", price: "€79", period: "/ month" },
+            { label: "4–10 units, 2-3 OTAs", price: "€129", period: "/ month" },
+            { label: "10+ units / complex", price: "Quote", period: "on request" },
           ],
           features: [
             "Software licence included",
@@ -579,9 +579,9 @@ export const translations = {
           tagline: "Monthly revenue optimisation for vacation rentals",
           description: "For owners who want to actively optimise their prices, occupancy and revenue without spending hours on market analysis themselves.",
           tiers: [
-            { label: "1 – 3 units", price: "€149", period: "/ month" },
-            { label: "4 – 10 units", price: "€249", period: "/ month" },
-            { label: "10+ units", price: "Quote", period: "on request" },
+            { label: "1 – 3 units, 1-2 OTAs", price: "€179", period: "/ month" },
+            { label: "4–10 units, 2-3 OTAs", price: "€299", period: "/ month" },
+            { label: "10+ units / complex", price: "Quote", period: "on request" },
           ],
           features: [
             "Revenue review of your performance",
@@ -821,7 +821,7 @@ export const translations = {
       monthlyTitle: "El motor que sigue funcionando",
       monthlySubtitle: "Tras la implementación, mantén tu sistema actualizado y tus ingresos optimizados.",
       notSure: "¿No sabes qué paquete encaja mejor? Agenda una asesoría gratuita y lo vemos juntos.",
-      cta: "Agendar asesoría gratuita",
+      cta: "Agenda una conversación sin compromiso",
       packages: [
         {
           id: "launch",
@@ -896,9 +896,9 @@ export const translations = {
           tagline: "La base técnica de tu alquiler",
           description: "Incluye tu licencia de software, alojamiento, mantenimiento, soporte OTA y revisión anual del sistema en una sola cuota mensual. Sin sorpresas, sin facturas separadas.",
           tiers: [
-            { label: "1 – 3 unidades", price: "€59", period: "/ mes" },
-            { label: "4 – 10 unidades", price: "€99", period: "/ mes" },
-            { label: "10+ unidades", price: "Presupuesto", period: "a medida" },
+            { label: "1 – 3 unidades, 1-2 OTA", price: "€79", period: "/ mes" },
+            { label: "4–10 unidades, 2-3 OTA", price: "€129", period: "/ mes" },
+            { label: "10+ unidades / complejo", price: "Presupuesto", period: "a medida" },
           ],
           features: [
             "Licencia de software incluida",
@@ -917,9 +917,9 @@ export const translations = {
           tagline: "Optimización mensual de ingresos para alquileres vacacionales",
           description: "Para propietarios que quieren optimizar activamente sus precios, ocupación e ingresos sin dedicar horas al análisis de mercado.",
           tiers: [
-            { label: "1 – 3 unidades", price: "€149", period: "/ mes" },
-            { label: "4 – 10 unidades", price: "€249", period: "/ mes" },
-            { label: "10+ unidades", price: "Presupuesto", period: "a medida" },
+            { label: "1 – 3 unidades, 1-2 OTA", price: "€179", period: "/ mes" },
+            { label: "4–10 unidades, 2-3 OTA", price: "€299", period: "/ mes" },
+            { label: "10+ unidades / complejo", price: "Presupuesto", period: "a medida" },
           ],
           features: [
             "Revisión de ingresos de tu rendimiento",
