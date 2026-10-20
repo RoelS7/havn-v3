@@ -58,12 +58,14 @@ export function Contact({ language }: ContactProps) {
   }
 
   const handleWhatsApp = () => {
-    const whatsappText = currentLang === "nl" 
-      ? "Hallo, ik ben geïnteresseerd in een gratis consultatie voor property management."
-      : "Hello, I am interested in a free consultation for property management."
+    const whatsappText = {
+      nl: "Hallo, ik zou graag eens praten over mijn vakantieverblijf.",
+      en: "Hello, I would like to talk about my holiday rental.",
+      es: "Hola, me gustaría hablar sobre mi alojamiento vacacional.",
+    }[currentLang]
     
     window.open(
-      `https://wa.me/32473358581?text=${encodeURIComponent(whatsappText)}`,
+      `https://wa.me/32456791365?text=${encodeURIComponent(whatsappText)}`,
       "_blank"
     )
   }
@@ -213,7 +215,7 @@ export function Contact({ language }: ContactProps) {
                   <MessageIcon className="h-6 w-6 text-gold mt-1" />
                   <div>
                     <div className="font-medium">{t.contact.info.whatsapp}</div>
-                    <div className="text-gray-600">+32 473 358 581</div>
+                    <div className="text-gray-600">+32 456 79 13 65</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">

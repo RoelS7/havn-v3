@@ -30,8 +30,8 @@ export async function POST(req: Request) {
         intro: `<p>Bedankt voor het invullen van de revenue calculator.</p><p>Op basis van je verblijf heb ik een persoonlijke analyse gemaakt.</p>`,
         auditTitle: "Je Persoonlijk Revenue Rapport",
         revenueLabel: "Geschatte jaaromzet",
-        ctaText: "Plan gratis strategiegesprek",
-        potentialLabel: "Potentieel met HAVN (+20%)",
+        ctaText: "Plan een vrijblijvend gesprek",
+        potentialLabel: "Indicatief scenario (+20%)",
         perMonthLabel: "Gemiddeld per maand",
         commissionLabel: "Besparing directe boekingen",
         seasonLabel: "Seizoenspatroon",
@@ -41,8 +41,8 @@ export async function POST(req: Request) {
         intro: `<p>Gracias por usar la calculadora de ingresos.</p><p>Con base en tu alojamiento, he preparado un análisis personalizado.</p>`,
         auditTitle: "Tu Informe de Ingresos Personalizado",
         revenueLabel: "Ingresos anuales estimados",
-        ctaText: "Agendar llamada estratégica gratuita",
-        potentialLabel: "Potencial con HAVN (+20%)",
+        ctaText: "Agenda una conversación sin compromiso",
+        potentialLabel: "Escenario indicativo (+20%)",
         perMonthLabel: "Promedio por mes",
         commissionLabel: "Ahorro reservas directas",
         seasonLabel: "Patrón estacional",
@@ -52,8 +52,8 @@ export async function POST(req: Request) {
         intro: `<p>Thank you for using the revenue calculator.</p><p>Based on your property details, I have prepared a personalised analysis.</p>`,
         auditTitle: "Your Personal Revenue Report",
         revenueLabel: "Estimated yearly revenue",
-        ctaText: "Book free strategy call",
-        potentialLabel: "Potential with HAVN (+20%)",
+        ctaText: "Schedule a no-obligation call",
+        potentialLabel: "Indicative scenario (+20%)",
         perMonthLabel: "Average per month",
         commissionLabel: "Direct booking savings",
         seasonLabel: "Seasonal pattern",
@@ -274,7 +274,7 @@ Keep the total to 250-300 words. Write in a professional but approachable tone. 
     const footerBlock = `
       <div style="background:#0a0a0a;padding:36px 40px;text-align:center;">
         <p style="color:#aaa;font-size:13px;margin:0 0 20px;">
-          ${language === "nl" ? "Klaar om dit potentieel te benutten?" : language === "es" ? "¿Listo para aprovechar este potencial?" : "Ready to unlock this potential?"}
+          ${language === "nl" ? "Benieuwd wat er echt in je verblijf zit?" : language === "es" ? "¿Quieres saber qué hay realmente en tu alojamiento?" : "Curious what is really in your property?"}
         </p>
         <a href="https://calendly.com/smitsro7/consult"
           style="display:inline-block;background:#C9A96E;color:white;text-decoration:none;padding:14px 32px;border-radius:8px;font-size:14px;font-weight:600;letter-spacing:0.05em;">

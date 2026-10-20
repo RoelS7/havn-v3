@@ -18,7 +18,7 @@ export default function Error({ error, reset }: { error: Error & { digest?: stri
           <AlertTriangle className="h-24 w-24 text-gold mx-auto mb-6" />
           <h1 className="text-4xl font-serif text-gold mb-4">Er is iets misgegaan</h1>
           <p className="text-xl text-gray-300 mb-8">
-            We hebben een onverwachte fout ondervonden. Ons team is automatisch op de hoogte gesteld.
+            Er ging iets mis bij het laden van deze pagina. Probeer het opnieuw, of laat het me weten via WhatsApp.
           </p>
         </div>
 
@@ -48,7 +48,7 @@ export default function Error({ error, reset }: { error: Error & { digest?: stri
           <h3 className="text-xl font-serif text-gold">Alternatieve Opties</h3>
           <div className="grid md:grid-cols-2 gap-4 text-left">
             <a href="/#services" className="block p-4 bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors">
-              <h4 className="font-medium text-gold mb-1">Onze Services</h4>
+              <h4 className="font-medium text-gold mb-1">Diensten</h4>
               <p className="text-sm text-gray-400">Bekijk wat ik voor je kan doen</p>
             </a>
             <a href="/#contact" className="block p-4 bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors">
@@ -59,7 +59,7 @@ export default function Error({ error, reset }: { error: Error & { digest?: stri
         </div>
 
         <div className="mt-8 pt-8 border-t border-gray-800">
-          <p className="text-gray-400 mb-4">Blijft het probleem bestaan? Laat het ons weten:</p>
+          <p className="text-gray-400 mb-4">Blijft het probleem bestaan? Laat het me weten:</p>
           <Button
             variant="outline"
             className="border-gold text-gold hover:bg-gold hover:text-black bg-transparent"

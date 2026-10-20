@@ -39,7 +39,7 @@ export default function Home() {
           <Services language={language} />
         </section>
         {/* 5. Hoe het werkt */}
-        <div className="bg-[var(--muted)]">
+        <div id="how-it-works" className="bg-[var(--muted)] scroll-mt-24">
           <HowItWorks language={language} />
         </div>
         {/* 6. Case Study - bewijs vóór de prijzen (eigen <section id="case-study">) */}

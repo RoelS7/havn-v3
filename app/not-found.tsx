@@ -50,13 +50,13 @@ export default function NotFound() {
               <h4 className="font-medium text-gold mb-1">Prijzen</h4>
               <p className="text-sm text-gray-400">Transparante pakketten</p>
             </Link>
-            <Link href="/#about" className="block p-4 bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors">
-              <h4 className="font-medium text-gold mb-1">Over HAVN</h4>
-              <p className="text-sm text-gray-400">Onze expertise en aanpak</p>
+            <Link href="/#how-it-works" className="block p-4 bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors">
+              <h4 className="font-medium text-gold mb-1">Hoe ik werk</h4>
+              <p className="text-sm text-gray-400">Van quick scan tot uitvoering</p>
             </Link>
             <Link href="/#contact" className="block p-4 bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors">
               <h4 className="font-medium text-gold mb-1">Contact</h4>
-              <p className="text-sm text-gray-400">Gratis consultatie</p>
+              <p className="text-sm text-gray-400">Plan een gesprek</p>
             </Link>
           </div>
         </div>

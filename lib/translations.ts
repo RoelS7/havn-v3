@@ -8,7 +8,7 @@ export const translations = {
       blog: "Blog",
       faq: "FAQ",
       contact: "Contact",
-      freeConsultation: "Gratis strategiegesprek",
+      freeConsultation: "Plan een gesprek",
     },
     hero: {
       title: "Meer rendement uit je vakantieverblijf. Niet noodzakelijk meer gasten.",
@@ -17,13 +17,13 @@ export const translations = {
       secondaryCta: "Bereken wat OTA's je kosten",
       positioning: "Voor vakantieverblijven die meer directe boekingen willen realiseren en minder afhankelijk willen zijn van OTA's.",
       valueBullets: [
-        "Meer directe boekingen via je eigen website",
-        "Minder commissie aan Booking.com en Airbnb",
-        "Slimmere systemen en hogere opbrengst",
+        "Onafhankelijk advies, zonder commissie van boekingsplatformen",
+        "Eerst een eerlijk beeld, dan pas een plan",
+        "Uitvoering alleen waar het rendement oplevert",
       ],
     },
     problem: {
-      title: "Het beheren van een vakantieverblijf hoeft niet chaotisch te zijn",
+      title: "Wat ik vaak tegenkom",
       items: [
         {
           title: "Te veel handmatig werk",
@@ -40,7 +40,7 @@ export const translations = {
       ],
     },
     solution: {
-      title: "Een professionelere manier om je verhuur te beheren",
+      title: "Waar ik je mee help",
       pillars: [
         {
           title: "Directe boekingen",
@@ -90,24 +90,24 @@ export const translations = {
       ],
     },
     finalCta: {
-      title: "Klaar om je verhuur te optimaliseren?",
-      button: "Gratis strategiegesprek plannen",
+      title: "Benieuwd waar er in jouw verblijf rendement blijft liggen?",
+      button: "Plan een vrijblijvend gesprek",
     },
     services: {
       title: "Wat dit voor jou betekent",
       items: [
-        "Betaal minder commissie aan Booking.com en Airbnb",
-        "Ontvang directe boekingen via je eigen website",
-        "Verschijn in Google Hotels en vang directe zoekopdrachten op",
-        "Beheer Booking.com, Airbnb en je eigen website vanuit één centrale omgeving",
-        "Gasten worden automatisch begeleid van boeking tot vertrek",
-        "Verdien meer per boeking dankzij slimme prijsstrategieën",
+        "Minder afhankelijk van Booking.com en Airbnb",
+        "Gasten die rechtstreeks kunnen boeken via je eigen website",
+        "Zichtbaar in Google Hotels, met een link naar je eigen site",
+        "Booking.com, Airbnb en je eigen website vanuit één omgeving beheren",
+        "Gasten automatisch begeleid van boeking tot vertrek",
+        "Prijzen die meebewegen met seizoen en vraag",
       ],
-      cta: "Gratis strategiegesprek plannen",
+      cta: "Plan een vrijblijvend gesprek",
     },
     caseStudy: {
-      title: "Resultaten in de praktijk",
-      subtitle: "Een voorbeeld van hoe HAVN verhuurders helpt hun systemen en automatisatie te optimaliseren.",
+      title: "Uit de praktijk",
+      subtitle: "Twee verblijven, twee situaties: wat ik bekeek en wat er veranderde.",
       card: {
         title: "De Hoeveschuur – Van manuele verhuur naar een professioneel direct booking systeem",
         location: "Millen, België",
@@ -277,25 +277,25 @@ export const translations = {
       },
     },
     contact: {
-      title: "Start Je Gratis Strategiegesprek",
-      subtitle: "Klaar om meer directe boekingen te ontvangen? Neem contact op voor een vrijblijvende consultatie en ontdek hoe ik je accommodatie kan helpen groeien.",
+      title: "Liever eerst een bericht sturen?",
+      subtitle: "Vertel me kort over je verblijf en waar je tegenaan loopt. Ik lees elk bericht zelf en antwoord persoonlijk.",
       form: {
-        title: "Vraag je Gratis Consultatie Aan",
-        subtitle: "Vertel me over je accommodatie en ik neem binnen 24 uur contact met je op.",
+        title: "Stuur me een bericht",
+        subtitle: "Vertel me over je verblijf en ik neem binnen 24 uur contact met je op.",
         name: "Naam *",
         email: "Email *",
         phone: "Telefoon",
         propertyType: "Type Accommodatie *",
         platforms: "Huidige Platforms",
         message: "Bericht",
-        submit: "Verstuur Aanvraag",
+        submit: "Verstuur bericht",
         whatsapp: "WhatsApp Direct",
         placeholders: {
           name: "je volledige naam",
           email: "je@email.com",
           phone: "+32 123 456 789",
           platforms: "Bijv. Airbnb, Booking.com, Expedia...",
-          message: "Vertel me over je accommodatie, huidige uitdagingen en doelen...",
+          message: "Vertel me over je verblijf, waar je tegenaan loopt en wat je wilt bereiken...",
           selectType: "Selecteer type",
         },
         propertyTypes: {
@@ -316,20 +316,20 @@ export const translations = {
         locationValue: "België / Colombia / Wereldwijd",
       },
       whyChoose: {
-        title: "Waarom Kiezen Voor HAVN?",
+        title: "Wat je mag verwachten",
         points: [
-          "Gratis strategiegesprek & analyse",
-          "Geen langetermijn contracten",
+          "Een vrijblijvend eerste gesprek",
+          "Onafhankelijk: geen commissie van boekingsplatformen",
+          "Geen langetermijncontracten",
           "Transparante prijzen",
-          "Bewezen resultaten",
-          "24/7 support",
+          "Persoonlijk contact, rechtstreeks met mij",
         ],
       },
     },
     footer: {
-      description: "Specialist in directe boekingen, automatisatie en revenue optimalisatie voor vakantieverblijven.",
+      description: "Onafhankelijk advies voor kleine vakantieverblijven. Meer rendement, niet noodzakelijk meer gasten.",
       services: "Services",
-      packages: "Gratis strategiegesprek",
+      packages: "Kennismaken",
       contact: "Contact",
       rights: "Alle rechten voorbehouden.",
       privacy: "Privacy Policy",
@@ -345,7 +345,7 @@ export const translations = {
       blog: "Blog",
       faq: "FAQ",
       contact: "Contact",
-      freeConsultation: "Free strategy call",
+      freeConsultation: "Schedule a call",
     },
     hero: {
       title: "More return from your holiday rental. Not necessarily more guests.",
@@ -354,13 +354,13 @@ export const translations = {
       secondaryCta: "Calculate what OTAs cost you",
       positioning: "For vacation rentals that want to generate more direct bookings and be less dependent on OTAs.",
       valueBullets: [
-            "More direct bookings via your own website",
-            "Less commission to Booking.com and Airbnb",
-            "Smarter systems and higher revenue",
+        "Independent advice, no commission from booking platforms",
+        "An honest picture first, a plan second",
+        "Implementation only where it delivers a return",
       ],
     },
     problem: {
-      title: "Managing a vacation rental doesn't have to be chaotic",
+      title: "What I often come across",
       items: [
         {
           title: "Too much manual work",
@@ -377,7 +377,7 @@ export const translations = {
       ],
     },
     solution: {
-      title: "A more professional way to manage your rental",
+      title: "What I help with",
       pillars: [
         {
           title: "Direct bookings",
@@ -427,24 +427,24 @@ export const translations = {
       ],
     },
     finalCta: {
-      title: "Ready to optimize your rental?",
-      button: "Book your free strategy call",
+      title: "Curious where return is being left on the table in your property?",
+      button: "Schedule a no-obligation call",
     },
     services: {
       title: "What this means for you",
       items: [
-        "Pay less commission to Booking.com and Airbnb",
-        "Receive direct bookings through your own website",
-        "Appear in Google Hotels and capture direct searches",
-        "Manage Booking.com, Airbnb, and your own website from one central environment",
-        "Guests are automatically guided from booking to departure",
-        "Earn more per booking thanks to smart pricing strategies",
+        "Less dependent on Booking.com and Airbnb",
+        "Guests who can book directly through your own website",
+        "Visible in Google Hotels, with a link to your own site",
+        "Booking.com, Airbnb and your own website managed from one place",
+        "Guests guided automatically from booking to departure",
+        "Prices that move with season and demand",
       ],
-      cta: "Book your free strategy call",
+      cta: "Schedule a no-obligation call",
     },
     caseStudy: {
-      title: "Results in practice",
-      subtitle: "An example of how HAVN helps landlords optimize their systems and automation.",
+      title: "From practice",
+      subtitle: "Two properties, two situations: what I looked at and what changed.",
       card: {
         title: "De Hoeveschuur – From manual rentals to a professional direct booking system",
         location: "Millen, Belgium",
@@ -615,10 +615,10 @@ export const translations = {
       },
     },
     contact: {
-      title: "Start Your Free Strategy Call",
-      subtitle: "Ready to receive more direct bookings? Contact us for a free strategy call and discover how I can help your accommodation grow.",
+      title: "Prefer to send a message first?",
+      subtitle: "Tell me briefly about your property and what you are running into. I read every message myself and reply personally.",
       form: {
-        title: "Request Your Free Strategy Call",
+        title: "Send me a message",
         subtitle: "Tell me about your accommodation and I'll contact you within 24 hours.",
         name: "Name *",
         email: "Email *",
@@ -626,7 +626,7 @@ export const translations = {
         propertyType: "Property Type *",
         platforms: "Current Platforms",
         message: "Message",
-        submit: "Send Request",
+        submit: "Send message",
         whatsapp: "WhatsApp Direct",
         placeholders: {
           name: "Your full name",
@@ -654,20 +654,20 @@ export const translations = {
         locationValue: "Belgium / Colombia / Global",
       },
       whyChoose: {
-        title: "Why Choose HAVN?",
+        title: "What you can expect",
         points: [
-          "Free strategy call & analysis",
+          "A no-obligation first conversation",
+          "Independent: no commission from booking platforms",
           "No long-term contracts",
           "Transparent pricing",
-          "Proven results",
-          "24/7 support",
+          "Personal contact, directly with me",
         ],
       },
     },
     footer: {
-      description: "Specialist in direct bookings, automation, and revenue optimization for vacation rentals.",
+      description: "Independent advice for small holiday rentals. More return, not necessarily more guests.",
       services: "Services",
-      packages: "Free Strategy Call",
+      packages: "Get in touch",
       contact: "Contact",
       rights: "All rights reserved.",
       privacy: "Privacy Policy",
@@ -683,7 +683,7 @@ export const translations = {
       blog: "Blog",
       faq: "Preguntas Frecuentes",
       contact: "Contacto",
-      freeConsultation: "Asesoría estratégica gratuita",
+      freeConsultation: "Agenda una conversación",
     },
     hero: {
       title: "Más rentabilidad de tu alojamiento vacacional. No necesariamente más huéspedes.",
@@ -692,14 +692,13 @@ export const translations = {
       secondaryCta: "Calcula lo que te cuestan las OTA",
       positioning: "Para alojamientos vacacionales que desean generar más reservas directas y depender menos de las agencias de viajes online (OTA).",
       valueBullets: [
-        "Más reservas directas a través de tu propio sitio web",
-        "Menos comisiones para Booking.com y Airbnb",
-        "Sistemas más inteligentes y mayores ingresos",
-
+        "Asesoría independiente, sin comisiones de plataformas de reservas",
+        "Primero una imagen honesta, después un plan",
+        "Implementación solo donde genera rentabilidad",
       ],
     },
     problem: {
-      title: "Gestionar tu renta vacacional no tiene por qué ser un caos",
+      title: "Lo que encuentro a menudo",
       items: [
         {
           title: "Exceso de tareas manuales",
@@ -716,7 +715,7 @@ export const translations = {
       ],
     },
     solution: {
-      title: "Una gestión profesional diseñada para escalar",
+      title: "En qué te ayudo",
       pillars: [
         {
           title: "Reservas Directas",
@@ -766,23 +765,24 @@ export const translations = {
       ],
     },
     finalCta: {
-      title: "¿Listo para profesionalizar tu operación?",
-      button: "Agendar mi asesoría gratuita",
+      title: "¿Te preguntas dónde se queda rentabilidad sin aprovechar en tu alojamiento?",
+      button: "Agenda una conversación sin compromiso",
     },
     services: {
-      title: "Qué significa esto para ti?",
+      title: "¿Qué significa esto para ti?",
       items: [
-        "Paga menos comisión a Booking.com y Airbnb",
-        "Recibe reservas directas a través de tu propio sitio web",
-        "Aparece en Google Hotels y capta búsquedas directas",
-        "Gestiona Booking.com, Airbnb y tu propio sitio web desde un entorno centralizado",
-        "Los huéspedes son guiados automáticamente desde la reserva hasta la salida",
-        "Gana más por reserva gracias a estrategias de precios inteligentes",      ],
-      cta: "Quiero una asesoría gratuita",
+        "Menos dependencia de Booking.com y Airbnb",
+        "Huéspedes que pueden reservar directamente en tu propio sitio web",
+        "Visible en Google Hotels, con un enlace a tu propio sitio",
+        "Booking.com, Airbnb y tu propio sitio web gestionados desde un solo lugar",
+        "Huéspedes acompañados automáticamente desde la reserva hasta la salida",
+        "Precios que se ajustan a la temporada y la demanda",
+      ],
+      cta: "Agenda una conversación sin compromiso",
     },
     caseStudy: {
-      title: "Resultados Reales",
-      subtitle: "Un ejemplo de cómo HAVN ayuda a transformar la gestión y rentabilidad de propiedades.",
+      title: "Desde la práctica",
+      subtitle: "Dos alojamientos, dos situaciones: qué analicé y qué cambió.",
       card: {
         title: "De Hoeveschuur: De alquileres manuales a un sistema profesional de reservas directas",
         location: "Millen, Bélgica",
@@ -953,10 +953,10 @@ export const translations = {
       },
     },
     contact: {
-      title: "Obtén tu asesoría estratégica gratuita",
-      subtitle: "¿Listo para recibir más reservas directas? Contáctanos para una consulta sin compromiso y descubre el potencial real de tu propiedad.",
+      title: "¿Prefieres escribirme primero?",
+      subtitle: "Cuéntame brevemente sobre tu alojamiento y con qué te encuentras. Leo cada mensaje yo mismo y respondo personalmente.",
       form: {
-        title: "Solicita tu asesoría gratuita",
+        title: "Envíame un mensaje",
         subtitle: "Cuéntame sobre tu propiedad y te contactaré en menos de 24 horas.",
         name: "Nombre *",
         email: "Correo electrónico *",
@@ -964,7 +964,7 @@ export const translations = {
         propertyType: "Tipo de Propiedad *",
         platforms: "Plataformas actuales",
         message: "Mensaje",
-        submit: "Enviar Solicitud",
+        submit: "Enviar mensaje",
         whatsapp: "WhatsApp Directo",
         placeholders: {
           name: "Tu nombre completo",
@@ -992,20 +992,20 @@ export const translations = {
         locationValue: "Bélgica / Colombia / Global",
       },
       whyChoose: {
-        title: "¿Por qué elegir HAVN?",
+        title: "Qué puedes esperar",
         points: [
-          "Asesoría y análisis inicial sin costo",
+          "Una primera conversación sin compromiso",
+          "Independiente: sin comisiones de plataformas de reservas",
           "Sin contratos de permanencia",
-          "Precios claros y sin sorpresas",
-          "Resultados medibles y probados",
-          "Soporte continuo 24/7",
+          "Precios claros",
+          "Contacto personal, directamente conmigo",
         ],
       },
     },
     footer: {
-      description: "Especialista en reservas directas, automatización y optimización de ingresos para alquileres vacacionales.",
+      description: "Asesoría independiente para pequeños alojamientos vacacionales. Más rentabilidad, no necesariamente más huéspedes.",
       services: "Servicios",
-      packages: "Asesoría Gratuita",
+      packages: "Conversemos",
       contact: "Contacto",
       rights: "Todos los derechos reservados.",
       privacy: "Política de Privacidad",

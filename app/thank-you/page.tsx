@@ -13,7 +13,7 @@ const content = {
     steps: [
       { number: "01", title: "Aanvraag ontvangen", description: "Je gegevens zijn veilig ontvangen.", done: true },
       { number: "02", title: "Persoonlijke analyse", description: "Ik bekijk je verblijf en je situatie.", done: false },
-      { number: "03", title: "Strategiegesprek", description: "We bespreken de kansen samen.", done: false },
+      { number: "03", title: "Gesprek", description: "We bespreken de kansen samen.", done: false },
     ],
     calendly: {
       title: "Wil je sneller van start?",
@@ -23,7 +23,7 @@ const content = {
     trustItems: [
       "Geen verplichtingen",
       "Reactie binnen 24 uur",
-      "100% gratis gesprek",
+      "Vrijblijvend gesprek",
     ],
   },
   en: {
@@ -33,7 +33,7 @@ const content = {
     steps: [
       { number: "01", title: "Request received", description: "Your details have been safely received.", done: true },
       { number: "02", title: "Personal analysis", description: "I look at your property and your situation.", done: false },
-      { number: "03", title: "Strategy call", description: "We discuss the opportunities together.", done: false },
+      { number: "03", title: "Conversation", description: "We discuss the opportunities together.", done: false },
     ],
     calendly: {
       title: "Want to get started faster?",
@@ -43,7 +43,7 @@ const content = {
     trustItems: [
       "No obligations",
       "Response within 24 hours",
-      "100% free call",
+      "No-obligation call",
     ],
   },
   es: {
@@ -53,7 +53,7 @@ const content = {
     steps: [
       { number: "01", title: "Solicitud recibida", description: "Tus datos se han recibido de forma segura.", done: true },
       { number: "02", title: "Análisis personal", description: "Miro tu alojamiento y tu situación.", done: false },
-      { number: "03", title: "Llamada estratégica", description: "Hablamos juntos de las oportunidades.", done: false },
+      { number: "03", title: "Conversación", description: "Hablamos juntos de las oportunidades.", done: false },
     ],
     calendly: {
       title: "¿Quieres empezar más rápido?",
@@ -63,7 +63,7 @@ const content = {
     trustItems: [
       "Sin compromiso",
       "Respuesta en 24 horas",
-      "Llamada 100% gratuita",
+      "Conversación sin compromiso",
     ],
   },
 }

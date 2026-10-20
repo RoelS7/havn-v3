@@ -30,9 +30,9 @@ export function CaseStudy({ language }: CaseStudyProps) {
         es: "Millen, Bélgica",
       }[currentLang],
       description: {
-        nl: "Voor De Hoeveschuur hebben we het volledige verhuursysteem geoptimaliseerd zodat de eigenaar minder tijd kwijt is aan administratie en het verblijf professioneler kan beheren.",
-        en: "For De Hoeveschuur, we optimized the entire rental system so the owner spends less time on administration and can manage the property more professionally.",
-        es: "Para De Hoeveschuur, optimizamos todo el sistema de gestión para que el propietario dedique menos tiempo a la administración y pueda gestionar la propiedad de manera más profesional.",
+        nl: "Voor De Hoeveschuur heb ik het volledige verhuursysteem geoptimaliseerd, zodat de eigenaar minder tijd kwijt is aan administratie en het verblijf professioneler kan beheren.",
+        en: "For De Hoeveschuur, I optimised the entire rental system so the owner spends less time on administration and can manage the property more professionally.",
+        es: "Para De Hoeveschuur, optimicé todo el sistema de alquiler para que el propietario dedique menos tiempo a la administración y pueda gestionar el alojamiento de manera más profesional.",
       }[currentLang],
       optimizedTitle: {
         nl: "Wat werd geoptimaliseerd",
@@ -109,9 +109,9 @@ export function CaseStudy({ language }: CaseStudyProps) {
       }[currentLang],
       location: "Medellín, Colombia",
       description: {
-        nl: "Voor Casa Clandestina Guest House in Medellín werd een professionele verhuurstructuur opgezet met directe boekingen, geautomatiseerde processen en een slimme prijsstrategie.",
-        en: "For Casa Clandestina Guest House in Medellín, we set up a professional rental structure with direct bookings, automated processes and a smart pricing strategy.",
-        es: "Para Casa Clandestina Guest House en Medellín implementamos una estructura de alquiler profesional con reservas directas, procesos automatizados y una estrategia de precios inteligente.",
+        nl: "Voor Casa Clandestina Guest House in Medellín zette ik een professionele verhuurstructuur op, met directe boekingen, geautomatiseerde processen en een doordachte prijsstrategie.",
+        en: "For Casa Clandestina Guest House in Medellín, I set up a professional rental structure with direct bookings, automated processes and a well-considered pricing strategy.",
+        es: "Para Casa Clandestina Guest House en Medellín implementé una estructura de alquiler profesional, con reservas directas, procesos automatizados y una estrategia de precios bien pensada.",
       }[currentLang],
       optimizedTitle: {
         nl: "Wat werd opgezet",
