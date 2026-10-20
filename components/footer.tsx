@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { MessageSquare, Mail, Shield, FileText } from "lucide-react"
+import { MessageSquare, Mail, Shield } from "lucide-react"
 import { translations } from "@/lib/translations"
 import { CALENDLY_URL } from "@/lib/constants"
 
@@ -34,17 +34,17 @@ export function Footer({ language }: FooterProps) {
             <ul className="space-y-2 text-gray-400 text-sm">
               <li>
                 <Link href="#services" className="inline-block py-1 hover:text-gold active:text-gold/80 transition-colors">
-                  Direct Booking Setup
+                  {{ nl: "Directe boekingen", en: "Direct bookings", es: "Reservas directas" }[currentLang]}
                 </Link>
               </li>
               <li>
                 <Link href="#services" className="inline-block py-1 hover:text-gold active:text-gold/80 transition-colors">
-                  Revenue Growth
+                  {{ nl: "Prijsstrategie", en: "Pricing strategy", es: "Estrategia de precios" }[currentLang]}
                 </Link>
               </li>
               <li>
                 <Link href="#services" className="inline-block py-1 hover:text-gold active:text-gold/80 transition-colors">
-                  Automation
+                  {{ nl: "Automatisatie", en: "Automation", es: "Automatización" }[currentLang]}
                 </Link>
               </li>
               <li>
@@ -76,7 +76,7 @@ export function Footer({ language }: FooterProps) {
             <ul className="space-y-2 text-gray-400 text-sm">
               <li>WhatsApp: +32 456 79 13 65</li>
               <li>Email: info@havnrevenue.com</li>
-              <li>België / Colombia / Globaal</li>
+              <li>{t.contact.info.locationValue}</li>
               <li>
                 <Link href="#contact" className="inline-block py-1 hover:text-gold active:text-gold/80 transition-colors">
                   {{ nl: "Stuur een bericht", en: "Send a message", es: "Envía un mensaje" }[currentLang]}
@@ -86,18 +86,12 @@ export function Footer({ language }: FooterProps) {
           </div>
 
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-gold">Legal</h4>
+            <h4 className="text-lg font-semibold text-gold">{{ nl: "Juridisch", en: "Legal", es: "Legal" }[currentLang]}</h4>
             <ul className="space-y-2 text-gray-400 text-sm">
               <li>
                 <Link href="/privacy-policy" className="inline-flex items-center py-1 hover:text-gold active:text-gold/80 transition-colors">
                   <Shield className="h-4 w-4 mr-1" aria-hidden="true" />
                   {t.footer.privacy}
-                </Link>
-              </li>
-              <li>
-                <Link href="/terms-conditions" className="inline-flex items-center py-1 hover:text-gold active:text-gold/80 transition-colors">
-                  <FileText className="h-4 w-4 mr-1" aria-hidden="true" />
-                  {t.footer.terms}
                 </Link>
               </li>
               <li className="text-xs text-gray-400">RUT: 700.288.175</li>

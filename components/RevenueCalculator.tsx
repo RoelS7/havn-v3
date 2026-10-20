@@ -243,7 +243,7 @@ export default function RevenueCalculator({ language: langProp }: { language?: s
 
   return (
     <div className="max-w-2xl mx-auto px-4 pt-10">
-      <div className="bg-white rounded-3xl shadow-xl border border-[#C9A96E]/20 p-8 md:p-10">
+      <div className="bg-white rounded-3xl shadow-xl border border-gold/20 p-8 md:p-10">
         <div className="text-center mb-10">
           <h2 className="text-3xl font-serif text-black mb-2 text-balance">{t.title}</h2>
           <p className="text-gray-600 text-sm">{t.subtitle}</p>
@@ -256,14 +256,14 @@ export default function RevenueCalculator({ language: langProp }: { language?: s
             <div className="grid grid-cols-1 gap-4">
               <div>
                 <label htmlFor="calc-type" className="block text-sm font-medium text-gray-700 mb-2">{t.propertyType} <span className="text-gold-ink">*</span></label>
-                <select id="calc-type" required value={propertyType} onChange={(e) => setPropertyType(e.target.value)} className="w-full border border-gray-200 rounded-2xl p-4 text-base focus:border-[#C9A96E] focus:ring-2 focus:ring-[#C9A96E]/20 bg-white">
+                <select id="calc-type" required value={propertyType} onChange={(e) => setPropertyType(e.target.value)} className="w-full border border-gray-200 rounded-2xl p-4 text-base focus:border-gold focus:ring-2 focus:ring-gold/20 bg-white">
                   <option value="">{t.selectType}</option>
                   {Object.entries(t.propertyTypes).map(([k, v]) => <option key={k} value={k}>{v}</option>)}
                 </select>
               </div>
               <div>
                 <label htmlFor="calc-country" className="block text-sm font-medium text-gray-700 mb-2">{t.country} <span className="text-gold-ink">*</span></label>
-                <select id="calc-country" required value={country} onChange={(e) => setCountry(e.target.value)} className="w-full border border-gray-200 rounded-2xl p-4 text-base focus:border-[#C9A96E] focus:ring-2 focus:ring-[#C9A96E]/20 bg-white">
+                <select id="calc-country" required value={country} onChange={(e) => setCountry(e.target.value)} className="w-full border border-gray-200 rounded-2xl p-4 text-base focus:border-gold focus:ring-2 focus:ring-gold/20 bg-white">
                   <option value="">{t.selectCountry}</option>
                   {Object.entries(t.countries).map(([k, v]) => <option key={k} value={k}>{v}</option>)}
                 </select>
@@ -273,7 +273,7 @@ export default function RevenueCalculator({ language: langProp }: { language?: s
                 <div role="group" aria-labelledby="calc-platforms" className="flex flex-wrap gap-2">
                   {Object.entries(t.platformList).map(([k, v]) => (
                     <button key={k} type="button" onClick={() => togglePlatform(k)} aria-pressed={platforms.includes(k)}
-                      className={`min-h-11 px-4 py-2 rounded-full text-sm border transition-colors active:scale-[0.97] ${platforms.includes(k) ? "bg-[#C9A96E] border-[#C9A96E] text-[#0F1923]" : "bg-white border-gray-200 text-gray-700 hover:border-[#C9A96E]"}`}>
+                      className={`min-h-11 px-4 py-2 rounded-full text-sm border transition-colors active:scale-[0.97] ${platforms.includes(k) ? "bg-gold border-gold text-[#0F1923]" : "bg-white border-gray-200 text-gray-700 hover:border-gold"}`}>
                       {v}
                     </button>
                   ))}
@@ -281,7 +281,7 @@ export default function RevenueCalculator({ language: langProp }: { language?: s
               </div>
               <div>
                 <label htmlFor="calc-challenge" className="block text-sm font-medium text-gray-700 mb-2">{t.challenges} <span className="text-gold-ink">*</span></label>
-                <select id="calc-challenge" required value={challenge} onChange={(e) => setChallenge(e.target.value)} className="w-full border border-gray-200 rounded-2xl p-4 text-base focus:border-[#C9A96E] focus:ring-2 focus:ring-[#C9A96E]/20 bg-white">
+                <select id="calc-challenge" required value={challenge} onChange={(e) => setChallenge(e.target.value)} className="w-full border border-gray-200 rounded-2xl p-4 text-base focus:border-gold focus:ring-2 focus:ring-gold/20 bg-white">
                   <option value="">{t.selectChallenge}</option>
                   {Object.entries(t.challengeList).map(([k, v]) => <option key={k} value={k}>{v}</option>)}
                 </select>
@@ -291,7 +291,7 @@ export default function RevenueCalculator({ language: langProp }: { language?: s
 
           <div className="flex items-center gap-3">
             <div className="flex-1 h-px bg-gray-100" />
-            <span className="w-1.5 h-1.5 rounded-full bg-[#C9A96E]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-gold" />
             <div className="flex-1 h-px bg-gray-100" />
           </div>
 
@@ -303,7 +303,7 @@ export default function RevenueCalculator({ language: langProp }: { language?: s
                 <div>
                   <label htmlFor="calc-rooms" className="block text-sm font-medium text-gray-700 mb-2">{t.rooms}</label>
                   <input id="calc-rooms" type="number" min="1" value={rooms} onChange={(e) => setRooms(Number(e.target.value))}
-                    className="w-full border border-gray-200 rounded-2xl p-4 text-lg focus:border-[#C9A96E] focus:ring-2 focus:ring-[#C9A96E]/20" />
+                    className="w-full border border-gray-200 rounded-2xl p-4 text-lg focus:border-gold focus:ring-2 focus:ring-gold/20" />
                 </div>
               )}
               <div>
@@ -313,7 +313,7 @@ export default function RevenueCalculator({ language: langProp }: { language?: s
                 <div className="relative">
                   <span aria-hidden="true" className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 text-lg">€</span>
                   <input id="calc-adr" type="number" min="10" value={adr} onChange={(e) => setAdr(Number(e.target.value))}
-                    className="w-full border border-gray-200 rounded-2xl p-4 pl-8 text-lg focus:border-[#C9A96E] focus:ring-2 focus:ring-[#C9A96E]/20" />
+                    className="w-full border border-gray-200 rounded-2xl p-4 pl-8 text-lg focus:border-gold focus:ring-2 focus:ring-gold/20" />
                 </div>
               </div>
               <div className="bg-gray-50 rounded-2xl p-5 space-y-4">
@@ -329,7 +329,7 @@ export default function RevenueCalculator({ language: langProp }: { language?: s
                     </div>
                     <input id={`calc-${min}`} type="range" min={min} max={max} value={value} onChange={(e) => setter(Number(e.target.value))}
                       className="w-full rounded-full appearance-none cursor-pointer"
-                      style={{ background: `linear-gradient(to right, #C9A96E ${value}%, #e5e7eb ${value}%)` }} />
+                      style={{ background: `linear-gradient(to right, #B8925C ${value}%, #e5e7eb ${value}%)` }} />
                   </div>
                 ))}
                 <div>
@@ -339,7 +339,7 @@ export default function RevenueCalculator({ language: langProp }: { language?: s
                   </div>
                   <input id="calc-months" type="range" min="1" max="11" value={highSeasonMonths} onChange={(e) => setHighSeasonMonths(Number(e.target.value))}
                     className="w-full rounded-full appearance-none cursor-pointer"
-                    style={{ background: `linear-gradient(to right, #C9A96E ${(highSeasonMonths / 11) * 100}%, #e5e7eb ${(highSeasonMonths / 11) * 100}%)` }} />
+                    style={{ background: `linear-gradient(to right, #B8925C ${(highSeasonMonths / 11) * 100}%, #e5e7eb ${(highSeasonMonths / 11) * 100}%)` }} />
                 </div>
                 <div className="flex justify-between items-center pt-1 border-t border-gray-200">
                   <span className="text-xs text-gray-500">{t.avgOccLabel}</span>
@@ -353,7 +353,7 @@ export default function RevenueCalculator({ language: langProp }: { language?: s
                 </div>
                 <input id="calc-commission" type="range" min="10" max="25" step="1" value={commissionRate} onChange={(e) => setCommissionRate(Number(e.target.value))}
                   className="w-full rounded-full appearance-none cursor-pointer"
-                  style={{ background: `linear-gradient(to right, #C9A96E ${((commissionRate - 10) / 15) * 100}%, #e5e7eb ${((commissionRate - 10) / 15) * 100}%)` }} />
+                  style={{ background: `linear-gradient(to right, #B8925C ${((commissionRate - 10) / 15) * 100}%, #e5e7eb ${((commissionRate - 10) / 15) * 100}%)` }} />
                 <div className="flex justify-between text-xs text-gray-500 mt-1">
                   <span>10%</span>
                   <span>25%</span>
@@ -370,13 +370,13 @@ export default function RevenueCalculator({ language: langProp }: { language?: s
 
           {/* STEP 3 */}
           {result !== null && (
-            <div aria-live="polite" className="mt-2 rounded-2xl border border-[#C9A96E]/30 overflow-hidden">
+            <div aria-live="polite" className="mt-2 rounded-2xl border border-gold/30 overflow-hidden">
               <div className="bg-black p-6 text-white text-center">
-                <p className="text-xs tracking-[0.15em] uppercase text-[#C9A96E] mb-1">03 — {t.step3}</p>
+                <p className="text-xs tracking-[0.15em] uppercase text-gold mb-1">03 — {t.step3}</p>
                 <p className="text-sm text-gray-400 mb-1">{t.result}</p>
                 <p className="text-4xl font-bold">€{Math.round(result).toLocaleString()}</p>
               </div>
-              <div className="grid grid-cols-2 divide-x divide-[#C9A96E]/20 bg-[#C9A96E]/5">
+              <div className="grid grid-cols-2 divide-x divide-gold/20 bg-gold/5">
                 <div className="p-5 text-center">
                   <p className="text-xs text-gray-500 mb-1">{t.potential}</p>
                   <p className="text-2xl font-bold text-black">€{potential.toLocaleString()}</p>
@@ -429,9 +429,9 @@ export default function RevenueCalculator({ language: langProp }: { language?: s
                   <>
                     <label htmlFor="calc-email" className="block text-sm font-medium text-gray-700 mb-2">{t.email}</label>
                     <input id="calc-email" type="email" autoComplete="email" placeholder={t.emailPlaceholder} value={email} onChange={(e) => setEmail(e.target.value)}
-                      className="w-full border border-gray-200 rounded-2xl p-4 text-base focus:border-[#C9A96E] focus:ring-2 focus:ring-[#C9A96E]/20 mb-3" />
+                      className="w-full border border-gray-200 rounded-2xl p-4 text-base focus:border-gold focus:ring-2 focus:ring-gold/20 mb-3" />
                     <button onClick={submitLead} disabled={!email || loading}
-                      className="w-full py-4 rounded-2xl text-base font-medium bg-[#C9A96E] text-[#0F1923] hover:bg-[#BF9C5E] active:scale-[0.99] transition-[background-color,transform] disabled:opacity-50">
+                      className="w-full py-4 rounded-2xl text-base font-medium bg-gold text-[#0F1923] hover:bg-[#BF9C5E] active:scale-[0.99] transition-[background-color,transform] disabled:opacity-50">
                       {loading ? t.loading : t.cta}
                     </button>
                   </>

@@ -56,8 +56,8 @@ function PackageCard({
     <div
       className={`relative flex flex-col rounded-2xl border transition-[border-color,box-shadow] duration-300 ${
         pkg.featured
-          ? "border-[#B8924A]/70 bg-[#0F1923] bg-[radial-gradient(80%_50%_at_50%_0%,rgba(184,146,92,0.14),transparent_70%)] text-white shadow-[0_30px_60px_-30px_rgba(15,25,35,0.6),0_20px_40px_-24px_rgba(184,146,92,0.25)] scale-[1.02]"
-          : "border-[#E8DFD0] bg-white text-[#0F1923] hover:border-[#B8924A]/40 hover:shadow-lg"
+          ? "border-gold/70 bg-[#0F1923] bg-[radial-gradient(80%_50%_at_50%_0%,rgba(184,146,92,0.14),transparent_70%)] text-white shadow-[0_30px_60px_-30px_rgba(15,25,35,0.6),0_20px_40px_-24px_rgba(184,146,92,0.25)] scale-[1.02]"
+          : "border-[#E8DFD0] bg-white text-[#0F1923] hover:border-gold/40 hover:shadow-lg"
       }`}
     >
       {pkg.featured && (
@@ -66,7 +66,7 @@ function PackageCard({
       {pkg.badge && (
         <div
           className={`absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-xs font-medium tracking-widest uppercase whitespace-nowrap ${
-            pkg.featured ? "bg-[#B8924A] text-[#0F1923]" : "bg-[#0F1923] text-white"
+            pkg.featured ? "bg-gold text-[#0F1923]" : "bg-[#0F1923] text-white"
           }`}
         >
           {pkg.badge}
@@ -128,7 +128,7 @@ function PackageCard({
             <li key={i} className="flex items-start gap-2.5">
               <Check
                 size={14}
-                className="mt-0.5 flex-shrink-0 text-[#B8924A]"
+                className="mt-0.5 flex-shrink-0 text-gold"
                 strokeWidth={2.5}
               />
               <span
@@ -151,7 +151,7 @@ function PackageCard({
         <div
           className={`rounded-xl p-3.5 mb-6 text-xs leading-relaxed ${
             pkg.featured
-              ? "bg-[#B8924A]/15 text-[#D4AF7A]"
+              ? "bg-gold/15 text-[#D4AF7A]"
               : "bg-[#F5EFE6] text-[#7A6040]"
           }`}
         >
@@ -165,7 +165,7 @@ function PackageCard({
           rel="noopener noreferrer"
           className={`block text-center rounded-xl py-3.5 text-sm font-medium tracking-wide transition-[background-color,color,transform] duration-200 active:scale-[0.98] ${
             pkg.featured
-              ? "btn-sheen bg-[#B8924A] text-[#0F1923] hover:bg-[#C9A46C]"
+              ? "btn-sheen bg-gold text-[#0F1923] hover:bg-[#C9A46C]"
               : "border border-[#0F1923] text-[#0F1923] hover:bg-[#0F1923] hover:text-white"
           }`}
         >
@@ -180,13 +180,13 @@ function PackageCard({
 
 function MonthlyCard({ plan }: { plan: MonthlyPlan }) {
   return (
-    <div className="rounded-2xl border border-[#E8DFD0] bg-white overflow-hidden hover:border-[#B8924A]/40 hover:shadow-[0_16px_36px_-18px_rgba(184,146,92,0.35)] transition-[border-color,box-shadow] duration-300">
+    <div className="rounded-2xl border border-[#E8DFD0] bg-white overflow-hidden hover:border-gold/40 hover:shadow-[0_16px_36px_-18px_rgba(184,146,92,0.35)] transition-[border-color,box-shadow] duration-300">
       <div className="p-7">
         <div className="mb-4">
           <span
             className={`inline-block text-xs font-medium tracking-widest uppercase px-3 py-1 rounded-full mb-3 ${
               plan.typeColor === "gold"
-                ? "bg-[#B8924A]/10 text-gold-ink"
+                ? "bg-gold/10 text-gold-ink"
                 : "bg-[#5A6A7A]/10 text-[#4A5866]"
             }`}
           >
@@ -228,7 +228,7 @@ function MonthlyCard({ plan }: { plan: MonthlyPlan }) {
             <li key={i} className="flex items-center gap-2.5">
               <Check
                 size={13}
-                className="flex-shrink-0 text-[#B8924A]"
+                className="flex-shrink-0 text-gold"
                 strokeWidth={2.5}
               />
               <span className="text-sm text-[#3A4A5A]">{f}</span>
@@ -277,12 +277,12 @@ export function PricingSection({ language }: PricingSectionProps) {
 
         {/* Platform note */}
         <div className="flex items-start gap-3 bg-[#0F1923]/5 border border-[#0F1923]/10 rounded-xl px-5 py-4 mb-20 max-w-2xl mx-auto">
-          <span className="text-[#B8924A] mt-0.5 flex-shrink-0">
+          <span className="text-gold mt-0.5 flex-shrink-0">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <circle cx="8" cy="8" r="7" stroke="#B8924A" strokeWidth="1.5" />
+              <circle cx="8" cy="8" r="7" stroke="#B8925C" strokeWidth="1.5" />
               <path
                 d="M8 7v4M8 5.5v.5"
-                stroke="#B8924A"
+                stroke="#B8925C"
                 strokeWidth="1.5"
                 strokeLinecap="round"
               />

@@ -218,7 +218,7 @@ export function FAQSection({ language }: FAQSectionProps) {
               </CardHeader>
               {openItems.includes(index) && (
                 <CardContent id={`faq-answer-${index}`} className="pt-0 pb-8">
-                  <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                  <p className="text-gray-600 leading-relaxed max-w-[68ch]">{faq.answer}</p>
                 </CardContent>
               )}
             </Card>

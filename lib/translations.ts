@@ -2,9 +2,9 @@ export const translations = {
   nl: {
     nav: {
       home: "Home",
-      services: "Services",
-      pricing: "Pricing",
-      caseStudy: "Case Study",
+      services: "Diensten",
+      pricing: "Prijzen",
+      caseStudy: "Praktijk",
       blog: "Blog",
       faq: "FAQ",
       contact: "Contact",
@@ -328,11 +328,11 @@ export const translations = {
     },
     footer: {
       description: "Onafhankelijk advies voor kleine vakantieverblijven. Meer rendement, niet noodzakelijk meer gasten.",
-      services: "Services",
+      services: "Diensten",
       packages: "Kennismaken",
       contact: "Contact",
       rights: "Alle rechten voorbehouden.",
-      privacy: "Privacy Policy",
+      privacy: "Privacybeleid",
       terms: "Algemene Voorwaarden",
     },
   },

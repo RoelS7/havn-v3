@@ -10,16 +10,17 @@ interface LanguageSelectorProps {
 
 export function LanguageSelector({ currentLang, onLanguageChange }: LanguageSelectorProps) {
   const languages = [
-    { code: "nl", name: "Nederlands", flag: "🇳🇱" },
-    { code: "en", name: "English", flag: "🇬🇧" },
-    { code: "es", name: "Español", flag: "🇪🇸" }, // Spaans toegevoegd
+    { code: "nl", name: "Nederlands" },
+    { code: "en", name: "English" },
+    { code: "es", name: "Español" },
   ]
+  const label = { nl: "Taal kiezen", en: "Choose language", es: "Elegir idioma" }[currentLang] ?? "Taal kiezen"
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="sm" className="text-white hover:text-gold">
-          <Globe className="h-4 w-4 mr-2" />
+        <Button variant="ghost" size="sm" aria-label={`${label}: ${currentLang.toUpperCase()}`} className="min-h-11 text-white hover:text-gold hover:bg-white/10 active:bg-white/15">
+          <Globe className="h-4 w-4 mr-2" aria-hidden="true" />
           {currentLang.toUpperCase()}
         </Button>
       </DropdownMenuTrigger>
@@ -28,9 +29,10 @@ export function LanguageSelector({ currentLang, onLanguageChange }: LanguageSele
           <DropdownMenuItem
             key={lang.code}
             onClick={() => onLanguageChange(lang.code)}
-            className="text-white hover:text-gold hover:bg-gray-900 cursor-pointer"
+            lang={lang.code}
+            aria-current={lang.code === currentLang ? "true" : undefined}
+            className={`min-h-11 cursor-pointer hover:bg-gray-900 focus:bg-gray-900 ${lang.code === currentLang ? "text-gold" : "text-white hover:text-gold focus:text-gold"}`}
           >
-            <span className="mr-2">{lang.flag}</span>
             {lang.name}
           </DropdownMenuItem>
         ))}

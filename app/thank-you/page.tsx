@@ -110,7 +110,7 @@ export default function ThankYou() {
             }}
           />
           {/* Gold accent line top */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-transparent to-[var(--gold,#C9A96E)]" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-transparent to-[var(--gold,#B8925C)]" />
 
           <div
             className="max-w-3xl mx-auto text-center"
@@ -121,11 +121,11 @@ export default function ThankYou() {
             }}
           >
             {/* Checkmark */}
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full border border-[var(--gold,#C9A96E)] mb-8">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full border border-[var(--gold,#B8925C)] mb-8">
               <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
                 <path
                   d="M5 14L11 20L23 8"
-                  stroke="var(--gold, #C9A96E)"
+                  stroke="var(--gold, #B8925C)"
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -133,7 +133,7 @@ export default function ThankYou() {
               </svg>
             </div>
 
-            <p className="text-xs tracking-[0.2em] uppercase text-[var(--gold,#C9A96E)] mb-4 font-medium">
+            <p className="text-xs tracking-[0.2em] uppercase text-gold-ink mb-4 font-medium">
               {c.eyebrow}
             </p>
             <h1 className="text-4xl md:text-5xl font-serif mb-6 text-[var(--foreground)]">
@@ -147,7 +147,7 @@ export default function ThankYou() {
             <div className="flex flex-wrap justify-center gap-6 mb-10">
               {c.trustItems.map((item) => (
                 <span key={item} className="flex items-center gap-2 text-sm text-gray-500">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[var(--gold,#C9A96E)] inline-block" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[var(--gold,#B8925C)] inline-block" />
                   {item}
                 </span>
               ))}
@@ -170,7 +170,7 @@ export default function ThankYou() {
                 key={step.number}
                 className="relative p-6 rounded-xl border"
                 style={{
-                  borderColor: step.done ? "var(--gold, #C9A96E)" : "rgba(0,0,0,0.08)",
+                  borderColor: step.done ? "var(--gold, #B8925C)" : "rgba(0,0,0,0.08)",
                   background: step.done ? "rgba(201,169,110,0.04)" : "white",
                   opacity: visible ? 1 : 0,
                   transform: visible ? "translateY(0)" : "translateY(16px)",
@@ -179,7 +179,7 @@ export default function ThankYou() {
               >
                 <span
                   className="text-xs font-mono tracking-widest mb-3 block"
-                  style={{ color: step.done ? "var(--gold, #C9A96E)" : "#aaa" }}
+                  style={{ color: step.done ? "#7D5F2E" : "#6B7280" }}
                 >
                   {step.number}
                 </span>
@@ -188,8 +188,8 @@ export default function ThankYou() {
                 {step.done && (
                   <span className="absolute top-4 right-4">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                      <circle cx="8" cy="8" r="7" stroke="var(--gold,#C9A96E)" strokeWidth="1" />
-                      <path d="M4.5 8L7 10.5L11.5 5.5" stroke="var(--gold,#C9A96E)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                      <circle cx="8" cy="8" r="7" stroke="var(--gold,#B8925C)" strokeWidth="1" />
+                      <path d="M4.5 8L7 10.5L11.5 5.5" stroke="var(--gold,#B8925C)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </span>
                 )}
@@ -202,7 +202,7 @@ export default function ThankYou() {
         <div className="max-w-3xl mx-auto px-4 mb-16">
           <div className="flex items-center gap-4">
             <div className="flex-1 h-px bg-gray-100" />
-            <span className="w-1.5 h-1.5 rounded-full bg-[var(--gold,#C9A96E)]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[var(--gold,#B8925C)]" />
             <div className="flex-1 h-px bg-gray-100" />
           </div>
         </div>

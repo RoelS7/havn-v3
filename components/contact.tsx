@@ -26,9 +26,22 @@ export function Contact({ language }: ContactProps) {
   const [currentPlatforms, setCurrentPlatforms] = useState("")
   const [message, setMessage] = useState("")
   const [loading, setLoading] = useState(false)
+  const [formError, setFormError] = useState<string | null>(null)
+
+  const errors = {
+    nl: { type: "Kies het type verblijf, dan weet ik waarover het gaat.", send: "Je bericht kon niet verstuurd worden. Probeer het opnieuw, of stuur me een WhatsApp." },
+    en: { type: "Choose your type of property, so I know what it is about.", send: "Your message could not be sent. Please try again, or send me a WhatsApp." },
+    es: { type: "Elige el tipo de alojamiento, así sé de qué se trata.", send: "No se pudo enviar tu mensaje. Inténtalo de nuevo o envíame un WhatsApp." },
+  }[currentLang]
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
+    setFormError(null)
+    if (!propertyType) {
+      setFormError(errors.type)
+      document.getElementById("property-type")?.focus()
+      return
+    }
     setLoading(true)
 
     try {
@@ -52,7 +65,7 @@ export function Contact({ language }: ContactProps) {
         throw new Error("Failed")
       }
     } catch (error) {
-      alert(currentLang === "nl" ? "Er ging iets mis. Probeer het opnieuw." : "Something went wrong. Please try again.")
+      setFormError(errors.send)
       setLoading(false)
     }
   }
@@ -140,8 +153,8 @@ export function Contact({ language }: ContactProps) {
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="property-type">{t.contact.form.propertyType}</Label>
-                  <Select onValueChange={setPropertyType} value={propertyType}>
-                    <SelectTrigger id="property-type"> {/* ID toegevoegd aan trigger */}
+                  <Select onValueChange={(v) => { setPropertyType(v); setFormError(null) }} value={propertyType}>
+                    <SelectTrigger id="property-type" aria-required="true" aria-invalid={formError === errors.type} className="w-full">
                       <SelectValue placeholder={t.contact.form.placeholders.selectType} />
                     </SelectTrigger>
                     <SelectContent>
@@ -177,6 +190,12 @@ export function Contact({ language }: ContactProps) {
                   onChange={(e) => setMessage(e.target.value)}
                 />
               </div>
+
+              {formError && (
+                <p role="alert" className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800">
+                  {formError}
+                </p>
+              )}
 
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <Button

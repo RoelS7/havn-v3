@@ -1,201 +1,202 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Shield, Lock, Eye, FileText } from "lucide-react"
+// Privacybeleid HAVN Revenue. Feiten (bronnen, bewaartermijn, verwerkers) bevestigd door de eigenaar;
+// verwerkers komen overeen met wat de code gebruikt (Vercel, Resend, Airtable, Anthropic, Google Analytics, Calendly).
+
+const sections: { title: string; body: React.ReactNode }[] = [
+  {
+    title: "Wie ik ben",
+    body: (
+      <>
+        <p>
+          Dit privacybeleid geldt voor havnrevenue.com en voor de persoonlijke e-mails die ik naar eigenaars van
+          vakantieverblijven stuur. Verantwoordelijk voor de verwerking van je gegevens is:
+        </p>
+        <p className="pl-4 border-l border-gold/40">
+          Roel Smits, handelend onder de naam HAVN Revenue
+          <br />
+          Cra. 54 #1A-9, Medellín, Colombia
+          <br />
+          RUT: 700.288.175
+          <br />
+          E-mail: <a href="mailto:info@havnrevenue.com">info@havnrevenue.com</a>
+        </p>
+      </>
+    ),
+  },
+  {
+    title: "Waarom je een e-mail van mij kreeg",
+    body: (
+      <>
+        <p>
+          Kreeg je een persoonlijke e-mail van mij over je vakantieverblijf? Dan vond ik je zakelijke contactgegevens
+          op een openbare plaats: de website van je verblijf, je Google-bedrijfsprofiel (Google Maps), een openbaar
+          toerisme- of beroepsregister, of je openbare vermelding op een boekingsplatform.
+        </p>
+        <p>
+          Ik gebruik daarvoor alleen gegevens die je zelf openbaar maakt als uitbater: de naam van je verblijf, het
+          zakelijke e-mailadres en eventueel je naam, de gemeente of regio, en openbare informatie over je verblijf
+          zoals het type en de manier waarop gasten kunnen boeken.
+        </p>
+        <p>
+          Ik doe dat op basis van mijn gerechtvaardigd belang (artikel 6.1.f van de AVG/GDPR): ik wil eigenaars van
+          kleine vakantieverblijven op een persoonlijke manier laten weten wat ik voor hen kan doen. Ik stuur die
+          e-mails zelf vanuit mijn eigen zakelijke mailbox, één voor één, en niet via een mailingprogramma.
+        </p>
+        <p>
+          <strong>Geen interesse? Dat is helemaal in orde.</strong> Antwoord gewoon op mijn e-mail met
+          &ldquo;geen interesse&rdquo; of &ldquo;stop&rdquo;, of mail naar{" "}
+          <a href="mailto:info@havnrevenue.com">info@havnrevenue.com</a>. Ik verwijder je gegevens dan meteen en
+          mail je niet meer. Om dat te garanderen, bewaar ik alleen je e-mailadres op een uitsluitingslijst.
+        </p>
+        <p>
+          Reageer je niet, dan verwijder ik je gegevens uiterlijk 12 maanden na mijn laatste e-mail.
+        </p>
+      </>
+    ),
+  },
+  {
+    title: "Als je zelf contact opneemt",
+    body: (
+      <>
+        <p>Je kunt op verschillende manieren contact met me opnemen. Ik verwerk dan de volgende gegevens:</p>
+        <ul>
+          <li>
+            <strong>Contactformulier:</strong> je naam, e-mailadres, eventueel je telefoonnummer, het type
+            verblijf, de platformen die je gebruikt en je bericht. Ik gebruik die om je te antwoorden en je een
+            bevestiging te sturen.
+          </li>
+          <li>
+            <strong>Rekentool:</strong> de gegevens die je invult over je verblijf (zoals type, land, prijs per
+            nacht, bezetting en platformen) en, als je het rapport aanvraagt, je e-mailadres. Ik gebruik die om je
+            het rapport te sturen en om je eventueel op te volgen.
+          </li>
+          <li>
+            <strong>Een gesprek inplannen:</strong> dat loopt via Calendly. Je naam, e-mailadres en wat je daar
+            invult, gebruik ik om het gesprek voor te bereiden.
+          </li>
+          <li>
+            <strong>WhatsApp of e-mail:</strong> je nummer of adres en de inhoud van je berichten.
+          </li>
+        </ul>
+        <p>
+          De grondslag is je verzoek zelf: ik verwerk deze gegevens om te antwoorden op je vraag en, als je dat
+          wilt, een samenwerking voor te bereiden (artikel 6.1.b AVG/GDPR).
+        </p>
+      </>
+    ),
+  },
+  {
+    title: "Websitestatistieken",
+    body: (
+      <p>
+        Ik gebruik Google Analytics om te zien hoe de website gebruikt wordt, bijvoorbeeld welke pagina&apos;s bezocht
+        worden. Google Analytics plaatst daarvoor cookies en verwerkt onder meer je IP-adres en
+        browsergegevens. Je kunt cookies weigeren of verwijderen via de instellingen van je browser.
+      </p>
+    ),
+  },
+  {
+    title: "Wie je gegevens nog verwerkt",
+    body: (
+      <>
+        <p>Ik verkoop je gegevens nooit. Voor de werking van de website en mijn opvolging gebruik ik deze diensten:</p>
+        <ul>
+          <li>
+            <strong>Vercel</strong>: hosting van de website
+          </li>
+          <li>
+            <strong>Resend</strong>: verzenden van bevestigingsmails en het rapport van de rekentool
+          </li>
+          <li>
+            <strong>Airtable</strong>: bijhouden van aanvragen en opvolging
+          </li>
+          <li>
+            <strong>Anthropic</strong>: opstellen van het rapport van de rekentool, op basis van de gegevens over je
+            verblijf
+          </li>
+          <li>
+            <strong>Google</strong>: websitestatistieken (Google Analytics)
+          </li>
+          <li>
+            <strong>Calendly</strong>: inplannen van gesprekken
+          </li>
+          <li>
+            <strong>Mijn e-mailprovider</strong>: versturen en ontvangen van e-mail
+          </li>
+        </ul>
+        <p>
+          Sommige van deze diensten verwerken gegevens buiten de Europese Economische Ruimte, onder meer in de
+          Verenigde Staten. Ze bieden daarvoor passende waarborgen, zoals de standaardcontractbepalingen van de
+          Europese Commissie.
+        </p>
+      </>
+    ),
+  },
+  {
+    title: "Hoe lang ik je gegevens bewaar",
+    body: (
+      <ul>
+        <li>Eigenaars die ik mailde en die niet reageerden: uiterlijk 12 maanden na mijn laatste e-mail.</li>
+        <li>Bezwaar gemaakt: meteen verwijderd; alleen je e-mailadres blijft op mijn uitsluitingslijst.</li>
+        <li>
+          Aanvragen via formulier, rekentool, Calendly of WhatsApp zonder samenwerking: uiterlijk 12 maanden na ons
+          laatste contact.
+        </li>
+        <li>Klanten: zolang we samenwerken, en daarna zolang de wet dat vereist voor mijn boekhouding.</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Je rechten",
+    body: (
+      <>
+        <p>
+          Je kunt me altijd vragen welke gegevens ik over je heb, ze laten verbeteren of verwijderen, de verwerking
+          laten beperken, bezwaar maken tegen de verwerking, of je gegevens in een gangbaar formaat ontvangen. Mail
+          daarvoor naar <a href="mailto:info@havnrevenue.com">info@havnrevenue.com</a>. Ik antwoord binnen 30
+          dagen.
+        </p>
+        <p>
+          Ben je niet tevreden over hoe ik met je gegevens omga, dan kun je een klacht indienen bij de
+          Gegevensbeschermingsautoriteit in België (
+          <a href="https://www.gegevensbeschermingsautoriteit.be" target="_blank" rel="noopener noreferrer">
+            gegevensbeschermingsautoriteit.be
+          </a>
+          ) of bij de toezichthouder in je eigen land.
+        </p>
+      </>
+    ),
+  },
+  {
+    title: "Wijzigingen",
+    body: (
+      <p>
+        Verandert er iets aan hoe ik met gegevens omga, dan pas ik dit beleid aan. De datum bovenaan toont de
+        laatste versie.
+      </p>
+    ),
+  },
+]
 
 export function PrivacyPolicy() {
   return (
-    <div className="min-h-screen bg-gray-50 py-20">
-      <div className="container mx-auto px-4 max-w-4xl">
-        <div className="text-center mb-12">
-          <Shield className="h-16 w-16 text-gold mx-auto mb-4" />
-          <h1 className="text-4xl font-serif text-black mb-4">Privacy Policy</h1>
-          <p className="text-gray-600">Laatst bijgewerkt: 15 maart 2024</p>
+    <div className="bg-[var(--background)] py-16 lg:py-20">
+      <article className="container mx-auto px-4 max-w-2xl">
+        <header className="mb-12">
+          <h1 className="text-4xl lg:text-5xl font-serif text-black mb-4">Privacybeleid</h1>
+          <p className="text-gray-600">Laatst bijgewerkt: 20 oktober 2026</p>
+        </header>
+
+        <div className="space-y-12">
+          {sections.map((section) => (
+            <section key={section.title}>
+              <h2 className="text-2xl font-serif text-black mb-4">{section.title}</h2>
+              <div className="space-y-4 text-gray-700 leading-[1.75] [&_a]:text-gold-ink [&_a]:underline [&_a]:underline-offset-4 [&_a:hover]:text-black [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-2 [&_strong]:text-black [&_strong]:font-semibold">
+                {section.body}
+              </div>
+            </section>
+          ))}
         </div>
-
-        <div className="space-y-8">
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center text-xl">
-                <FileText className="h-6 w-6 text-gold mr-2" />
-                Algemene Informatie
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <p>
-                HAVN ("wij", "ons", "onze") respecteert uw privacy en zet zich in voor de bescherming van uw
-                persoonlijke gegevens. Deze privacy policy legt uit hoe wij uw informatie verzamelen, gebruiken en
-                beschermen.
-              </p>
-
-              <div className="bg-gray-100 p-4 rounded-lg">
-                <h4 className="font-medium mb-2">Contactgegevens:</h4>
-                <p>
-                  HAVN Revenue
-                  <br />
-                  België
-                  <br />
-                  Email: info@havnrevenue.com
-                  <br />
-                  Telefoon: +32 123 456 789
-                </p>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center text-xl">
-                <Eye className="h-6 w-6 text-gold mr-2" />
-                Welke Gegevens Verzamelen Wij
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <h4 className="font-medium">Persoonlijke Gegevens:</h4>
-              <ul className="list-disc list-inside space-y-2 text-gray-600">
-                <li>Naam en contactgegevens (email, telefoon)</li>
-                <li>Bedrijfsinformatie en accommodatiedetails</li>
-                <li>Communicatie en correspondentie</li>
-                <li>Betalingsinformatie (verwerkt door beveiligde derde partijen)</li>
-              </ul>
-
-              <h4 className="font-medium mt-6">Technische Gegevens:</h4>
-              <ul className="list-disc list-inside space-y-2 text-gray-600">
-                <li>IP-adres en browserinformatie</li>
-                <li>Website gebruiksstatistieken (via Google Analytics)</li>
-                <li>Cookies en vergelijkbare technologieën</li>
-              </ul>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center text-xl">
-                <Lock className="h-6 w-6 text-gold mr-2" />
-                Hoe Wij Uw Gegevens Gebruiken
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <p>Wij gebruiken uw gegevens voor:</p>
-              <ul className="list-disc list-inside space-y-2 text-gray-600">
-                <li>Het leveren van onze property management services</li>
-                <li>Communicatie over uw account en services</li>
-                <li>Verbetering van onze website en services</li>
-                <li>Marketing (alleen met uw toestemming)</li>
-                <li>Naleving van wettelijke verplichtingen</li>
-              </ul>
-
-              <div className="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-400">
-                <p className="text-sm">
-                  <strong>Rechtsgrondslag:</strong> Wij verwerken uw gegevens op basis van contractuele noodzaak,
-                  gerechtvaardigd belang, en uw toestemming waar vereist.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-xl">Uw Rechten (GDPR)</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <p>Onder de GDPR heeft u de volgende rechten:</p>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <h5 className="font-medium">Toegang & Correctie</h5>
-                  <p className="text-sm text-gray-600">Recht op inzage en correctie van uw gegevens</p>
-                </div>
-                <div className="space-y-2">
-                  <h5 className="font-medium">Verwijdering</h5>
-                  <p className="text-sm text-gray-600">Recht op verwijdering ("recht om vergeten te worden")</p>
-                </div>
-                <div className="space-y-2">
-                  <h5 className="font-medium">Beperking</h5>
-                  <p className="text-sm text-gray-600">Recht op beperking van verwerking</p>
-                </div>
-                <div className="space-y-2">
-                  <h5 className="font-medium">Overdraagbaarheid</h5>
-                  <p className="text-sm text-gray-600">Recht op gegevensoverdraagbaarheid</p>
-                </div>
-              </div>
-
-              <div className="bg-gold/10 p-4 rounded-lg">
-                <p className="text-sm">
-                  Om uw rechten uit te oefenen, neem contact op via <strong>info@havnrevenue.com</strong>. Wij reageren
-                  binnen 30 dagen.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-xl">Beveiliging & Bewaring</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <h4 className="font-medium">Beveiligingsmaatregelen:</h4>
-              <ul className="list-disc list-inside space-y-2 text-gray-600">
-                <li>SSL-encryptie voor alle datatransmissie</li>
-                <li>Beveiligde servers en regelmatige backups</li>
-                <li>Toegangscontrole en authenticatie</li>
-                <li>Regelmatige beveiligingsaudits</li>
-              </ul>
-
-              <h4 className="font-medium mt-6">Bewaartermijnen:</h4>
-              <p className="text-gray-600">
-                Wij bewaren uw gegevens niet langer dan noodzakelijk voor de doeleinden waarvoor ze zijn verzameld, of
-                zoals vereist door de wet (maximaal 7 jaar voor boekhoudkundige gegevens).
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-xl">Cookies & Tracking</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <p>Onze website gebruikt cookies voor:</p>
-              <ul className="list-disc list-inside space-y-2 text-gray-600">
-                <li>
-                  <strong>Essentiële cookies:</strong> Voor basisfunctionaliteit
-                </li>
-                <li>
-                  <strong>Analytische cookies:</strong> Google Analytics voor websitestatistieken
-                </li>
-                <li>
-                  <strong>Functionele cookies:</strong> Taalvoorkeuren en instellingen
-                </li>
-              </ul>
-
-              <p className="text-sm text-gray-600">
-                U kunt cookies beheren via uw browserinstellingen. Het uitschakelen van cookies kan de functionaliteit
-                beïnvloeden.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-xl">Contact & Klachten</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <p>Voor vragen over deze privacy policy of uw gegevens:</p>
-              <div className="bg-gray-100 p-4 rounded-lg">
-                <p>
-                  <strong>Email:</strong> info@havnrevenue.com
-                  <br />
-                  <strong>Telefoon:</strong> +32 123 456 789
-                  <br />
-                  <strong>Responstijd:</strong> Binnen 48 uur
-                </p>
-              </div>
-
-              <p className="text-sm text-gray-600">
-                U heeft ook het recht om een klacht in te dienen bij de Belgische Gegevensbeschermingsautoriteit (GBA)
-                als u van mening bent dat wij uw gegevens niet correct verwerken.
-              </p>
-            </CardContent>
-          </Card>
-        </div>
-      </div>
+      </article>
     </div>
   )
 }

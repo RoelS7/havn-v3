@@ -4,7 +4,6 @@ import { Settings, Link as LinkIcon, TrendingUp, Zap, FileText, Users, ArrowRigh
 import { translations } from "@/lib/translations"
 import Link from "next/link"
 import { CALENDLY_URL } from "@/lib/constants"
-import { motion } from "framer-motion"
 
 interface ServicesProps {
   language: string
@@ -31,22 +30,20 @@ export function Services({ language }: ServicesProps) {
           {t.services.items.map((item, index) => {
             const Icon = icons[index]
             return (
-              <motion.div
+              <div
                 key={index}
-                whileHover={{ scale: 1.04, y: -4 }}
-                transition={{ duration: 0.25 }}
                 className="group flex items-center gap-4 p-5 md:p-8 rounded-2xl md:rounded-3xl bg-white border border-gray-100 
                            hover:border-gold hover:shadow-xl transition-[color,background-color,border-color,box-shadow,transform] duration-300 luxury-card"
               >
                 {/* ICON */}
                 <div className="w-11 h-11 md:w-14 md:h-14 flex-shrink-0 flex items-center justify-center rounded-xl md:rounded-2xl bg-gold/10 group-hover:bg-gold/20 transition-colors duration-300">
-                  <Icon className="h-5 w-5 md:h-7 md:w-7 text-gold transition-transform duration-300 group-hover:scale-110" />
+                  <Icon className="h-5 w-5 md:h-7 md:w-7 text-gold transition-transform duration-300 group-hover:scale-110" aria-hidden="true" />
                 </div>
                 {/* TEXT */}
                 <span className="text-black font-medium text-base md:text-lg leading-snug">
                   {item}
                 </span>
-              </motion.div>
+              </div>
             )
           })}
         </div>

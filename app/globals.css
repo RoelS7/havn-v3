@@ -4,6 +4,8 @@
 @theme {
   /* Merkgoud als themakleur, zodat ook varianten als border-gold/20 werken */
   --color-gold: #b8925c;
+  /* Placeholders en hulpteksten (shadcn); zonder deze token vielen ze terug op 50% grijs */
+  --color-muted-foreground: #5f5f5f;
   /* Donker goud voor kleine tekst op lichte vlakken (WCAG AA, ≥4.9:1) */
   --color-gold-ink: #7d5f2e;
 }

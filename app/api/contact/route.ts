@@ -107,7 +107,7 @@ export async function POST(req: Request) {
 
             <!-- Header -->
             <div style="background:#0a0a0a;padding:36px 40px;text-align:center;">
-              <p style="color:#C9A96E;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;margin:0 0 8px;">HAVN Revenue Management</p>
+              <p style="color:#B8925C;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;margin:0 0 8px;">HAVN Revenue Management</p>
               <h1 style="color:white;font-size:24px;margin:0;font-weight:400;">${lang.thankYouTitle}</h1>
             </div>
 
@@ -119,7 +119,7 @@ export async function POST(req: Request) {
               <!-- Divider -->
               <div style="display:flex;align-items:center;gap:12px;margin:0 0 32px;">
                 <div style="flex:1;height:1px;background:#f0ebe4;"></div>
-                <div style="width:6px;height:6px;border-radius:50%;background:#C9A96E;"></div>
+                <div style="width:6px;height:6px;border-radius:50%;background:#B8925C;"></div>
                 <div style="flex:1;height:1px;background:#f0ebe4;"></div>
               </div>
 
@@ -134,7 +134,7 @@ export async function POST(req: Request) {
               <!-- CTA -->
               <div style="text-align:center;">
                 <a href="https://calendly.com/smitsro7/consult"
-                  style="display:inline-block;background:#C9A96E;color:white;text-decoration:none;padding:14px 32px;border-radius:8px;font-size:14px;font-weight:600;letter-spacing:0.05em;">
+                  style="display:inline-block;background:#B8925C;color:white;text-decoration:none;padding:14px 32px;border-radius:8px;font-size:14px;font-weight:600;letter-spacing:0.05em;">
                   ${lang.bookCall} →
                 </a>
               </div>
@@ -143,7 +143,7 @@ export async function POST(req: Request) {
             <!-- Footer -->
             <div style="background:#0a0a0a;padding:28px 40px;text-align:center;">
               <p style="color:#aaa;font-size:13px;margin:0 0 4px;">${lang.greeting}</p>
-              <p style="color:#C9A96E;font-size:14px;font-weight:600;margin:0 0 16px;">Roel — HAVN</p>
+              <p style="color:#B8925C;font-size:14px;font-weight:600;margin:0 0 16px;">Roel — HAVN</p>
               <p style="color:#555;font-size:11px;margin:0;">info@havnrevenue.com</p>
             </div>
 
@@ -167,7 +167,7 @@ export async function POST(req: Request) {
 
             <!-- Header -->
             <div style="background:#0a0a0a;padding:28px 40px;text-align:center;">
-              <p style="color:#C9A96E;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;margin:0 0 6px;">HAVN — Nieuwe Lead</p>
+              <p style="color:#B8925C;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;margin:0 0 6px;">HAVN — Nieuwe Lead</p>
               <h1 style="color:white;font-size:20px;margin:0;font-weight:400;">${name}</h1>
             </div>
 
@@ -181,7 +181,7 @@ export async function POST(req: Request) {
                 <tr>
                   <td style="padding:10px 0;border-bottom:1px solid #f0ebe4;font-size:12px;color:#888;text-transform:uppercase;letter-spacing:0.05em;">${lang.labelEmail}</td>
                   <td style="padding:10px 0;border-bottom:1px solid #f0ebe4;font-size:14px;color:#1a1a1a;">
-                    <a href="mailto:${email}" style="color:#C9A96E;text-decoration:none;">${email}</a>
+                    <a href="mailto:${email}" style="color:#B8925C;text-decoration:none;">${email}</a>
                   </td>
                 </tr>
                 ${phone ? `
@@ -218,7 +218,7 @@ export async function POST(req: Request) {
                   Reply →
                 </a>
                 <a href="https://calendly.com/smitsro7/consult"
-                  style="display:inline-block;background:transparent;color:#C9A96E;text-decoration:none;padding:12px 24px;border-radius:8px;font-size:13px;font-weight:600;border:1px solid #C9A96E;">
+                  style="display:inline-block;background:transparent;color:#B8925C;text-decoration:none;padding:12px 24px;border-radius:8px;font-size:13px;font-weight:600;border:1px solid #B8925C;">
                   Calendly →
                 </a>
               </div>
@@ -242,7 +242,6 @@ export async function POST(req: Request) {
     }
 
     /* ── AIRTABLE ── */
-    console.log("AIRTABLE KEY PREVIEW:", process.env.AIRTABLE_API_KEY?.slice(0, 10));
     if (process.env.AIRTABLE_API_KEY && process.env.AIRTABLE_BASE_ID && process.env.AIRTABLE_TABLE) {
       const airtableRes = await fetch(
         `https://api.airtable.com/v0/${process.env.AIRTABLE_BASE_ID}/${process.env.AIRTABLE_TABLE}`,

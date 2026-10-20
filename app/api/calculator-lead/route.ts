@@ -208,7 +208,7 @@ Keep the total to 250-300 words. Write in a professional but approachable tone. 
       .split("\n")
       .map((line: string) => {
         if (/^\d\./.test(line.trim())) {
-          return `<h3 style="color:#1a1a1a;font-size:15px;margin:24px 0 6px;font-weight:600;border-left:3px solid #C9A96E;padding-left:10px;">${line.trim()}</h3>`
+          return `<h3 style="color:#1a1a1a;font-size:15px;margin:24px 0 6px;font-weight:600;border-left:3px solid #B8925C;padding-left:10px;">${line.trim()}</h3>`
         }
         if (line.trim() === "") return ""
         return `<p style="color:#555;font-size:14px;line-height:1.8;margin:0 0 8px;">${line.trim()}</p>`
@@ -267,7 +267,7 @@ Keep the total to 250-300 words. Write in a professional but approachable tone. 
 
     const headerBlock = `
       <div style="background:#0a0a0a;padding:36px 40px;text-align:center;">
-        <p style="color:#C9A96E;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;margin:0 0 8px;">HAVN Revenue Management</p>
+        <p style="color:#B8925C;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;margin:0 0 8px;">HAVN Revenue Management</p>
         <h1 style="color:white;font-size:24px;margin:0;font-weight:400;">${lang.auditTitle}</h1>
       </div>`
 
@@ -277,7 +277,7 @@ Keep the total to 250-300 words. Write in a professional but approachable tone. 
           ${language === "nl" ? "Benieuwd wat er echt in je verblijf zit?" : language === "es" ? "¿Quieres saber qué hay realmente en tu alojamiento?" : "Curious what is really in your property?"}
         </p>
         <a href="https://calendly.com/smitsro7/consult"
-          style="display:inline-block;background:#C9A96E;color:white;text-decoration:none;padding:14px 32px;border-radius:8px;font-size:14px;font-weight:600;letter-spacing:0.05em;">
+          style="display:inline-block;background:#B8925C;color:white;text-decoration:none;padding:14px 32px;border-radius:8px;font-size:14px;font-weight:600;letter-spacing:0.05em;">
           ${lang.ctaText} →
         </a>
         <p style="color:#555;font-size:11px;margin:20px 0 0;">HAVN · ${FROM_EMAIL}</p>
